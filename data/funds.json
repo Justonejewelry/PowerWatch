@@ -2,7 +2,7 @@
  "updated": "2026-11-15",
  "stats": {
   "funds_tracked": 11,
-  "fresh_filings": 0
+  "fresh_filings": 11
  },
  "consensus": [
   {
@@ -468,6 +468,7 @@
      "cusip": "69608A108",
      "value": 912100000,
      "shares": 0,
+     "option": "put",
      "pct": 66.04
     },
     {
@@ -476,6 +477,7 @@
      "cusip": "67066G104",
      "value": 186580000,
      "shares": 0,
+     "option": "put",
      "pct": 13.51
     },
     {
@@ -484,6 +486,7 @@
      "cusip": "717081103",
      "value": 152880000,
      "shares": 0,
+     "option": "call",
      "pct": 11.07
     },
     {
@@ -492,6 +495,7 @@
      "cusip": "406216101",
      "value": 61500000,
      "shares": 0,
+     "option": "call",
      "pct": 4.45
     },
     {
@@ -534,28 +538,32 @@
       "name": "PALANTIR TECHNOLOGIES INC",
       "cusip": "69608A108",
       "value": 912100000,
-      "shares": 0
+      "shares": 0,
+      "option": "put"
      },
      {
       "symbol": "NVDA",
       "name": "NVIDIA CORPORATION",
       "cusip": "67066G104",
       "value": 186580000,
-      "shares": 0
+      "shares": 0,
+      "option": "put"
      },
      {
       "symbol": "PFE",
       "name": "PFIZER INC",
       "cusip": "717081103",
       "value": 152880000,
-      "shares": 0
+      "shares": 0,
+      "option": "call"
      },
      {
       "symbol": "HAL",
       "name": "HALLIBURTON CO",
       "cusip": "406216101",
       "value": 61500000,
-      "shares": 0
+      "shares": 0,
+      "option": "call"
      },
      {
       "symbol": "MOH",
@@ -585,56 +593,64 @@
       "name": "UNITEDHEALTH GROUP INC",
       "cusip": "91324P102",
       "value": 115428900,
-      "shares": 20000
+      "shares": 20000,
+      "option": "call"
      },
      {
       "symbol": "REGN",
       "name": "REGENERON PHARMACEUTICALS",
       "cusip": "75886F107",
       "value": 112875000,
-      "shares": 15000
+      "shares": 15000,
+      "option": "call"
      },
      {
       "symbol": "META",
       "name": "META PLATFORMS INC",
       "cusip": "30303M102",
       "value": 73809000,
-      "shares": 0
+      "shares": 0,
+      "option": "call"
      },
      {
       "symbol": "EL",
       "name": "LAUDER ESTEE COS INC",
       "cusip": "518439104",
       "value": 52520000,
-      "shares": 150000
+      "shares": 150000,
+      "option": "call"
      },
      {
       "symbol": "JD",
       "name": "JD.COM INC",
       "cusip": "47215P106",
       "value": 32640000,
-      "shares": 0
+      "shares": 0,
+      "option": "call"
      },
      {
       "symbol": "BABA",
       "name": "ALIBABA GROUP HLDG LTD",
       "cusip": "01609W102",
       "value": 28352500,
-      "shares": 0
+      "shares": 0,
+      "option": "call"
      },
      {
       "symbol": null,
       "name": "ASML HOLDING N V",
       "cusip": "N07059210",
       "value": 20034750,
-      "shares": 0
+      "shares": 0,
+      "option": "call"
      },
      {
       "symbol": "VFC",
       "name": "V F CORP",
       "cusip": "918204108",
       "value": 17625000,
-      "shares": 0
+      "shares": 0,
+      "option": "call"
      },
      {
       "symbol": "BRKR",
@@ -1057,6 +1073,7 @@
      "cusip": "78462F103",
      "value": 59248649655,
      "shares": 436890,
+     "option": "call",
      "pct": 6.77
     },
     {
@@ -1065,6 +1082,7 @@
      "cusip": "46090E103",
      "value": 50079342986,
      "shares": 46426,
+     "option": "put",
      "pct": 5.72
     },
     {
@@ -1073,6 +1091,7 @@
      "cusip": "595112103",
      "value": 39282246684,
      "shares": 600523,
+     "option": "put",
      "pct": 4.49
     },
     {
@@ -1081,6 +1100,7 @@
      "cusip": "88160R101",
      "value": 23800550243,
      "shares": 1226238,
+     "option": "call",
      "pct": 2.72
     },
     {
@@ -1089,6 +1109,7 @@
      "cusip": "67066G104",
      "value": 23733448648,
      "shares": 11815467,
+     "option": "call",
      "pct": 2.71
     },
     {
@@ -1097,6 +1118,7 @@
      "cusip": "80004C200",
      "value": 22214071526,
      "shares": 67432,
+     "option": "put",
      "pct": 2.54
     },
     {
@@ -1105,6 +1127,7 @@
      "cusip": "007903107",
      "value": 19309059190,
      "shares": 1599430,
+     "option": "put",
      "pct": 2.21
     },
     {
@@ -1113,6 +1136,7 @@
      "cusip": "594918104",
      "value": 17428354212,
      "shares": 3770405,
+     "option": "call",
      "pct": 1.99
     },
     {
@@ -1121,6 +1145,7 @@
      "cusip": "037833100",
      "value": 17391541815,
      "shares": 7296076,
+     "option": "call",
      "pct": 1.99
     },
     {
@@ -1129,6 +1154,7 @@
      "cusip": "92189F676",
      "value": 16506924646,
      "shares": 3315,
+     "option": "put",
      "pct": 1.89
     }
    ],
@@ -1139,35 +1165,40 @@
       "name": "SPACE EXPLORATION TECHN CORP",
       "cusip": "84615Q103",
       "value": 3265029350,
-      "shares": 5129884
+      "shares": 5129884,
+      "option": "call"
      },
      {
       "symbol": "DRAM",
       "name": "ROUNDHILL ETF TRUST",
       "cusip": "77926X320",
       "value": 1736435050,
-      "shares": 60000
+      "shares": 60000,
+      "option": "call"
      },
      {
       "symbol": "CBRS",
       "name": "CEREBRAS SYSTEMS INC",
       "cusip": "15675D103",
       "value": 688342070,
-      "shares": 1248170
+      "shares": 1248170,
+      "option": "call"
      },
      {
       "symbol": "HON",
       "name": "HONEYWELL INTL INC",
       "cusip": "438516205",
       "value": 421586012,
-      "shares": 679171
+      "shares": 679171,
+      "option": "put"
      },
      {
       "symbol": null,
       "name": "CARNIVAL CORP LTD",
       "cusip": "G2004J103",
       "value": 309237138,
-      "shares": 2204741
+      "shares": 2204741,
+      "option": "put"
      },
      {
       "symbol": "MAIR",
@@ -1181,7 +1212,8 @@
       "name": "QUANTINUUM INC",
       "cusip": "74768A104",
       "value": 199077525,
-      "shares": 2299997
+      "shares": 2299997,
+      "option": "call"
      },
      {
       "symbol": "GOOGL 6.25 05/15/29 B",
@@ -1216,7 +1248,8 @@
       "name": "ASCENDIS PHARMA A/S",
       "cusip": "K08588103",
       "value": 108498762,
-      "shares": 137889
+      "shares": 137889,
+      "option": "call"
      }
     ],
     "exited": [
@@ -1232,21 +1265,24 @@
       "name": "HONEYWELL INTL INC",
       "cusip": "438516106",
       "value": 423378149,
-      "shares": 521906
+      "shares": 521906,
+      "option": "call"
      },
      {
       "symbol": null,
       "name": "CARNIVAL CORP",
       "cusip": "143658300",
       "value": 329852453,
-      "shares": 4692458
+      "shares": 4692458,
+      "option": "put"
      },
      {
       "symbol": "CTRA",
       "name": "COTERRA ENERGY INC",
       "cusip": "127097103",
       "value": 243136646,
-      "shares": 6158585
+      "shares": 6158585,
+      "option": "put"
      },
      {
       "symbol": "LYV 3.125 01/15/29",
@@ -1260,28 +1296,32 @@
       "name": "CLEARWATER ANALYTICS HLDGS I",
       "cusip": "185123106",
       "value": 204880329,
-      "shares": 8441416
+      "shares": 8441416,
+      "option": "put"
      },
      {
       "symbol": "430",
       "name": "TERNS PHARMACEUTICALS INC",
       "cusip": "880881107",
       "value": 197558183,
-      "shares": 3218810
+      "shares": 3218810,
+      "option": "put"
      },
      {
       "symbol": "DWDPEUR",
       "name": "DUPONT DE NEMOURS INC",
       "cusip": "26614N102",
       "value": 89485872,
-      "shares": 898340
+      "shares": 898340,
+      "option": "call"
      },
      {
       "symbol": "HO1",
       "name": "HOLOGIC INC",
       "cusip": "436440101",
       "value": 84340298,
-      "shares": 1090660
+      "shares": 1090660,
+      "option": "put"
      },
      {
       "symbol": "GVA 3.75 05/15/28",
@@ -1295,7 +1335,8 @@
       "name": "MASIMO CORP",
       "cusip": "574795100",
       "value": 59189088,
-      "shares": 281366
+      "shares": 281366,
+      "option": "call"
      },
      {
       "symbol": "WEC 4.375 06/01/29",
@@ -1312,6 +1353,7 @@
       "cusip": "78462F103",
       "value": 59248649655,
       "shares": 436890,
+      "option": "call",
       "pct_change": 25.6,
       "value_change": 17258813474
      },
@@ -1321,6 +1363,7 @@
       "cusip": "007903107",
       "value": 19309059190,
       "shares": 1599430,
+      "option": "put",
       "pct_change": 154.9,
       "value_change": 13737932330
      },
@@ -1330,6 +1373,7 @@
       "cusip": "464287200",
       "value": 13437699477,
       "shares": 17676489,
+      "option": "call",
       "pct_change": 335.3,
       "value_change": 10523827648
      },
@@ -1339,6 +1383,7 @@
       "cusip": "594918104",
       "value": 17428354212,
       "shares": 3770405,
+      "option": "call",
       "pct_change": 42.9,
       "value_change": 5517607340
      },
@@ -1348,6 +1393,7 @@
       "cusip": "958102105",
       "value": 5594726044,
       "shares": 657878,
+      "option": "put",
       "pct_change": 147.4,
       "value_change": 4012909180
      },
@@ -1357,6 +1403,7 @@
       "cusip": "G7997R103",
       "value": 4985957175,
       "shares": 755495,
+      "option": "put",
       "pct_change": 582.2,
       "value_change": 3680320994
      }
@@ -1368,6 +1415,7 @@
       "cusip": "595112103",
       "value": 39282246684,
       "shares": 600523,
+      "option": "put",
       "pct_change": -86.9,
       "value_change": 28596444511
      },
@@ -1377,6 +1425,7 @@
       "cusip": "46090E103",
       "value": 50079342986,
       "shares": 46426,
+      "option": "put",
       "pct_change": -45.0,
       "value_change": 18235188804
      },
@@ -1386,6 +1435,7 @@
       "cusip": "80004C200",
       "value": 22214071526,
       "shares": 67432,
+      "option": "put",
       "pct_change": -88.9,
       "value_change": 18019740459
      },
@@ -1395,6 +1445,7 @@
       "cusip": "78463V107",
       "value": 7898436317,
       "shares": 1002,
+      "option": "call",
       "pct_change": -99.5,
       "value_change": -6921492242
      },
@@ -1404,6 +1455,7 @@
       "cusip": "458140100",
       "value": 8327283402,
       "shares": 4218311,
+      "option": "put",
       "pct_change": -33.3,
       "value_change": 5891945257
      },
@@ -1413,6 +1465,7 @@
       "cusip": "573874104",
       "value": 5428181667,
       "shares": 378401,
+      "option": "put",
       "pct_change": -52.3,
       "value_change": 4513223834
      }
@@ -2617,7 +2670,8 @@
       "name": "STATE STR SPDR S&P 500 ETF T",
       "cusip": "78462F103",
       "value": 28800000,
-      "shares": 0
+      "shares": 0,
+      "option": "put"
      },
      {
       "symbol": "GOOGL 6.25 05/15/29 B",
@@ -3100,7 +3154,8 @@
       "name": "APPLE INC",
       "cusip": "037833100",
       "value": 241615600,
-      "shares": 0
+      "shares": 0,
+      "option": "put"
      },
      {
       "symbol": "BA",
@@ -3142,7 +3197,8 @@
       "name": "BERKSHIRE HATHAWAY INC DEL",
       "cusip": "084670702",
       "value": 12509750,
-      "shares": 0
+      "shares": 0,
+      "option": "put"
      },
      {
       "symbol": "GT",
