@@ -1,0 +1,38 @@
+name: PowerWatch Daily Update
+
+# Scans the latest day of SEC Form 4 insider filings, scores open-market
+# insider buying, refreshes prediction prices/grades, and commits the
+# dashboard data. Runs after the US market close on weekdays.
+on:
+  schedule:
+    - cron: "35 22 * * 1-5"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run insider signal engine
+        run: python scripts/insider_engine.py --site
+
+      - name: Commit data updates
+        run: |
+          git config user.name "powerwatch-bot"
+          git config user.email "actions@github.com"
+          git add data/
+          git diff --cached --quiet || git commit -m "Daily insider signal update"
+          git push
