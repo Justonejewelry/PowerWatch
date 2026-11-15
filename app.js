@@ -190,7 +190,7 @@ function renderFunds(f) {
       <td>${c.funds}</td><td>${money(c.total_value)}</td>
       <td>${c.symbol ? `<a class="mini-link" href="${rh(c.symbol)}" target="_blank" rel="noopener">Robinhood ↗</a>` : ""}</td></tr>`).join("");
   const symList = (arr, extra) => arr.slice(0, 6).map(x =>
-    `<span class="chip">${x.symbol || x.name}${extra ? " " + extra(x) : ""}</span>`).join("");
+    `<span class="chip">${x.symbol || x.name}${x.option ? ` (${x.option}s)` : ""}${extra ? " " + extra(x) : ""}</span>`).join("");
   $("fundGrid").innerHTML = (f.funds || []).map(fd => {
     const ch = fd.changes || {};
     return `<div class="fund-card">
@@ -198,7 +198,7 @@ function renderFunds(f) {
       <div class="fmeta">${fd.label ? fd.label + " · " : ""}quarter ended ${fd.period} · filed ${fd.filed}<br>
       Portfolio ${money(fd.total_value)} across ${fd.positions} positions</div>
       <div class="chips">${(fd.top_holdings || []).slice(0, 5).map(h =>
-        `<span class="chip"><b>${h.symbol || h.name}</b> ${h.pct}%</span>`).join("")}</div>
+        `<span class="chip"><b>${h.symbol || h.name}</b> ${h.pct}%${h.option ? ` · ${h.option}s` : ""}</span>`).join("")}</div>
       ${ch.new && ch.new.length ? `<p class="chg"><span class="up"><b>NEW</b></span> ${symList(ch.new)}</p>` : ""}
       ${ch.exited && ch.exited.length ? `<p class="chg"><span class="down"><b>EXITED</b></span> ${symList(ch.exited)}</p>` : ""}
       ${ch.increased && ch.increased.length ? `<p class="chg"><b>ADDED</b> ${symList(ch.increased, x => `<span class="up">+${x.pct_change}%</span>`)}</p>` : ""}
@@ -222,7 +222,8 @@ function renderSmart(latest, congress, funds) {
   if (funds) {
     const newBy = {};
     (funds.funds || []).forEach(fd => (fd.changes.new || []).forEach(n => {
-      if (n.symbol) (newBy[n.symbol] = newBy[n.symbol] || []).push(fd.name);
+      // Put positions are bearish bets — they don't count as bullish evidence.
+      if (n.symbol && n.option !== "put") (newBy[n.symbol] = newBy[n.symbol] || []).push(fd.name);
     }));
     Object.entries(newBy).forEach(([sym, names]) => {
       const e = entry(sym);
