@@ -1,0 +1,2301 @@
+{
+ "updated": "2026-11-15",
+ "version": 2,
+ "legs": {
+  "insider_sells": {
+   "status": "live",
+   "filing_days": [
+    "2026-11-13"
+   ],
+   "filings_scanned": 1197,
+   "sell_txns_in_window": 781,
+   "clusters_found": 101,
+   "note": "SEC Form 4 code-S sales, 10b5-1 excluded, rolling 30-day cluster window. Confirmation only \u2014 never a standalone trigger (report \u00a71)."
+  },
+  "finra_short_interest": {
+   "status": "unavailable",
+   "note": "FINRA consolidated files unreachable from this network (tried settlement dates: 2026-11-15 (HTTPError), 2026-10-31 (HTTPError), 2026-10-15 (HTTPError), 2026-09-30 (HTTPError), 2026-09-15 (HTTPError), 2026-08-31 (HTTPError), 2026-08-15 (HTTPError), 2026-07-31 (HTTPError)). The file pattern is shrt{YYYYMMDD}.txt per FINRA's catalog; GitHub Actions egress may reach it.",
+   "settlement_latest": null,
+   "settlement_prior": null,
+   "symbols": 0
+  },
+  "borrow_ibkr": {
+   "status": "unavailable",
+   "note": "IBKR FTP fetch failed (error_proto). Port 21 is blocked from this network; the leg runs from GitHub Actions. IBKR's file is a snapshot of IBKR's own inventory, updated ~15 min, no history \u2014 PowerWatch archives daily snapshots itself.",
+   "snapshot_date": null
+  },
+  "threshold_list": {
+   "status": "live",
+   "date": "2026-11-13",
+   "count": 77,
+   "note": "Reg SHO threshold list: >=10k shares failed AND >=0.5% of shares outstanding for 5 consecutive settlement days. Risk flag only \u2014 persistent fails historically precede POSITIVE returns (report \u00a72)."
+  },
+  "prices": {
+   "status": "live",
+   "source": "Yahoo Finance chart API",
+   "symbols_priced": 79
+  }
+ },
+ "candidates": [
+  {
+   "symbol": "NMIH",
+   "issuer": "NMI Holdings, Inc.",
+   "score": 5,
+   "insider": {
+    "score": 3,
+    "detail": {
+     "cluster_ge3": false,
+     "opportunistic": null,
+     "big_pct_of_holdings": true,
+     "value_ge_250k": true,
+     "selling_into_strength": false,
+     "ceo_cfo_selling": false
+    },
+    "cluster": {
+     "symbol": "NMIH",
+     "issuer": "NMI Holdings, Inc.",
+     "n_insiders": 1,
+     "total_value": 4654590,
+     "max_pct_holdings_sold": 54.9,
+     "any_ceo_cfo": false,
+     "sellers": [
+      {
+       "owner": "Leatherberry William J",
+       "role": "Chief Admin. Officer & GC",
+       "value": 4654590
+      }
+     ],
+     "first_date": "2026-11-13",
+     "last_date": "2026-11-13"
+    }
+   },
+   "si": null,
+   "borrow": null,
+   "crowd_points": 0,
+   "crowd_points_raw": 0,
+   "fund_put": null,
+   "congress_sells": null,
+   "on_threshold_list": false,
+   "tech": {
+    "price": 38.65,
+    "sma50": 41.44,
+    "sma50_rising": false,
+    "vs_sma50_pct": -6.7,
+    "vs_sma200_pct": -4.3,
+    "rsi": 36.6,
+    "rsi70_streak": 0,
+    "mom_1m_pct": -3.6,
+    "mom_3m_pct": -15.2,
+    "mom_6m_pct": 2.9,
+    "extended_context": false,
+    "breakdown": true,
+    "breakdown_volume_surge": false,
+    "ttm_squeeze_on": false
+   },
+   "gates": [
+    {
+     "gate": "crowding",
+     "status": "unknown",
+     "detail": "no FINRA short-interest data for this name yet"
+    },
+    {
+     "gate": "borrow",
+     "status": "unknown",
+     "detail": "borrow fee not available yet (IBKR leg pending)"
+    },
+    {
+     "gate": "trend",
+     "status": "pass",
+     "detail": "not shorting into a rising trend"
+    },
+    {
+     "gate": "catalyst",
+     "status": "unknown",
+     "detail": "next earnings date not available from free sources \u2014 verify manually; no naked short within 5 trading days of earnings (report \u00a79)"
+    }
+   ],
+   "status": "watch",
+   "squeeze_score": 0,
+   "squeeze_detail": []
+  },
+  {
+   "symbol": "ALMR",
+   "issuer": "Alamar Biosciences, Inc.",
+   "score": 4,
+   "insider": {
+    "score": 4,
+    "detail": {
+     "cluster_ge3": false,
+     "opportunistic": null,
+     "big_pct_of_holdings": true,
+     "value_ge_250k": true,
+     "selling_into_strength": true,
+     "ceo_cfo_selling": false
+    },
+    "cluster": {
+     "symbol": "ALMR",
+     "issuer": "Alamar Biosciences, Inc.",
+     "n_insiders": 1,
+     "total_value": 20591004,
+     "max_pct_holdings_sold": 30.0,
+     "any_ceo_cfo": false,
+     "sellers": [
+      {
+       "owner": "Qiming Corporate GP VI, Ltd.",
+       "role": "10% owner",
+       "value": 20591004
+      }
+     ],
+     "first_date": "2026-11-11",
+     "last_date": "2026-11-11"
+    }
+   },
+   "si": null,
+   "borrow": null,
+   "crowd_points": 0,
+   "crowd_points_raw": 0,
+   "fund_put": null,
+   "congress_sells": null,
+   "on_threshold_list": false,
+   "tech": {
+    "price": 30.81,
+    "sma50": 30.25,
+    "sma50_rising": true,
+    "vs_sma50_pct": 1.8,
+    "vs_sma200_pct": null,
+    "rsi": 51.7,
+    "rsi70_streak": 0,
+    "mom_1m_pct": 12.4,
+    "mom_3m_pct": -4.1,
+    "mom_6m_pct": 43.0,
+    "extended_context": false,
+    "breakdown": false,
+    "breakdown_volume_surge": false,
+    "ttm_squeeze_on": false
+   },
+   "gates": [
+    {
+     "gate": "crowding",
+     "status": "unknown",
+     "detail": "no FINRA short-interest data for this name yet"
+    },
+    {
+     "gate": "borrow",
+     "status": "unknown",
+     "detail": "borrow fee not available yet (IBKR leg pending)"
+    },
+    {
+     "gate": "trend",
+     "status": "block",
+     "detail": "price above a RISING 50-day average \u2014 never short strength"
+    },
+    {
+     "gate": "catalyst",
+     "status": "unknown",
+     "detail": "next earnings date not available from free sources \u2014 verify manually; no naked short within 5 trading days of earnings (report \u00a79)"
+    }
+   ],
+   "status": "blocked",
+   "squeeze_score": 0,
+   "squeeze_detail": []
+  },
+  {
+   "symbol": "APPN",
+   "issuer": "APPIAN CORP",
+   "score": 4,
+   "insider": {
+    "score": 4,
+    "detail": {
+     "cluster_ge3": false,
+     "opportunistic": null,
+     "big_pct_of_holdings": true,
+     "value_ge_250k": true,
+     "selling_into_strength": true,
+     "ceo_cfo_selling": false
+    },
+    "cluster": {
+     "symbol": "APPN",
+     "issuer": "APPIAN CORP",
+     "n_insiders": 1,
+     "total_value": 1013168,
+     "max_pct_holdings_sold": 33.4,
+     "any_ceo_cfo": false,
+     "sellers": [
+      {
+       "owner": "Lynch Mark Steven",
+       "role": "Director",
+       "value": 1013168
+      }
+     ],
+     "first_date": "2026-11-11",
+     "last_date": "2026-11-11"
+    }
+   },
+   "si": null,
+   "borrow": null,
+   "crowd_points": 0,
+   "crowd_points_raw": 0,
+   "fund_put": null,
+   "congress_sells": null,
+   "on_threshold_list": false,
+   "tech": {
+    "price": 54.51,
+    "sma50": 42.75,
+    "sma50_rising": true,
+    "vs_sma50_pct": 27.5,
+    "vs_sma200_pct": 81.3,
+    "rsi": 66.0,
+    "rsi70_streak": 0,
+    "mom_1m_pct": 24.4,
+    "mom_3m_pct": 56.1,
+    "mom_6m_pct": 179.1,
+    "extended_context": true,
+    "breakdown": false,
+    "breakdown_volume_surge": false,
+    "ttm_squeeze_on": false
+   },
+   "gates": [
+    {
+     "gate": "crowding",
+     "status": "unknown",
+     "detail": "no FINRA short-interest data for this name yet"
+    },
+    {
+     "gate": "borrow",
+     "status": "unknown",
+     "detail": "borrow fee not available yet (IBKR leg pending)"
+    },
+    {
+     "gate": "trend",
+     "status": "block",
+     "detail": "price above a RISING 50-day average \u2014 never short strength"
+    },
+    {
+     "gate": "catalyst",
+     "status": "unknown",
+     "detail": "next earnings date not available from free sources \u2014 verify manually; no naked short within 5 trading days of earnings (report \u00a79)"
+    }
+   ],
+   "status": "blocked",
+   "squeeze_score": 0,
+   "squeeze_detail": []
+  },
+  {
+   "symbol": "CHEF",
+   "issuer": "Chefs' Warehouse, Inc.",
+   "score": 4,
+   "insider": {
+    "score": 4,
+    "detail": {
+     "cluster_ge3": false,
+     "opportunistic": null,
+     "big_pct_of_holdings": true,
+     "value_ge_250k": true,
+     "selling_into_strength": true,
+     "ceo_cfo_selling": false
+    },
+    "cluster": {
+     "symbol": "CHEF",
+     "issuer": "Chefs' Warehouse, Inc.",
+     "n_insiders": 1,
+     "total_value": 2145320,
+     "max_pct_holdings_sold": 33.9,
+     "any_ceo_cfo": false,
+     "sellers": [
+      {
+       "owner": "McCauley Tim",
+       "role": "Chief Accounting Officer",
+       "value": 2145320
+      }
+     ],
+     "first_date": "2026-11-11",
+     "last_date": "2026-11-11"
+    }
+   },
+   "si": null,
+   "borrow": null,
+   "crowd_points": 0,
+   "crowd_points_raw": 0,
+   "fund_put": null,
+   "congress_sells": null,
+   "on_threshold_list": false,
+   "tech": {
+    "price": 106.66,
+    "sma50": 109.21,
+    "sma50_rising": false,
+    "vs_sma50_pct": -2.3,
+    "vs_sma200_pct": 19.8,
+    "rsi": 48.8,
+    "rsi70_streak": 0,
+    "mom_1m_pct": -6.7,
+    "mom_3m_pct": -3.5,
+    "mom_6m_pct": 32.8,
+    "extended_context": false,
+    "breakdown": false,
+    "breakdown_volume_surge": false,
+    "ttm_squeeze_on": true
+   },
+   "gates": [
+    {
+     "gate": "crowding",
+     "status": "unknown",
+     "detail": "no FINRA short-interest data for this name yet"
+    },
+    {
+     "gate": "borrow",
+     "status": "unknown",
+     "detail": "borrow fee not available yet (IBKR leg pending)"
+    },
+    {
+     "gate": "trend",
+     "status": "pass",
+     "detail": "not shorting into a rising trend"
+    },
+    {
+     "gate": "catalyst",
+     "status": "unknown",
+     "detail": "next earnings date not available from free sources \u2014 verify manually; no naked short within 5 trading days of earnings (report \u00a79)"
+    }
+   ],
+   "status": "watch",
+   "squeeze_score": 0,
+   "squeeze_detail": [
+    "TTM volatility compression active (coiled \u2014 breakout risk both ways)"
+   ]
+  },
+  {
+   "symbol": "CRCL",
+   "issuer": "Circle Internet Group, Inc.",
+   "score": 4,
+   "insider": {
+    "score": 2,
+    "detail": {
+     "cluster_ge3": false,
+     "opportunistic": null,
+     "big_pct_of_holdings": true,
+     "value_ge_250k": false,
+     "selling_into_strength": false,
+     "ceo_cfo_selling": false
+    },
+    "cluster": {
+     "symbol": "CRCL",
+     "issuer": "Circle Internet Group, Inc.",
+     "n_insiders": 1,
+     "total_value": 194220,
+     "max_pct_holdings_sold": 49.1,
+     "any_ceo_cfo": false,
+     "sellers": [
+      {
+       "owner": "Ostling Danita K",
+       "role": "Director",
+       "value": 194220
+      }
+     ],
+     "first_date": "2026-11-12",
+     "last_date": "2026-11-12"
+    }
+   },
+   "si": null,
+   "borrow": null,
+   "crowd_points": 0,
+   "crowd_points_raw": 0,
+   "fund_put": null,
+   "congress_sells": null,
+   "on_threshold_list": false,
+   "tech": {
+    "price": 62.2,
+    "sma50": 82.68,
+    "sma50_rising": false,
+    "vs_sma50_pct": -24.8,
+    "vs_sma200_pct": -27.6,
+    "rsi": 31.5,
+    "rsi70_streak": 0,
+    "mom_1m_pct": -28.5,
+    "mom_3m_pct": -16.6,
+    "mom_6m_pct": -45.4,
+    "extended_context": false,
+    "breakdown": true,
+    "breakdown_volume_surge": false,
+    "ttm_squeeze_on": false
+   },
+   "gates": [
+    {
+     "gate": "crowding",
+     "status": "unknown",
+     "detail": "no FINRA short-interest data for this name yet"
+    },
+    {
+     "gate": "borrow",
+     "status": "unknown",
+     "detail": "borrow fee not available yet (IBKR leg pending)"
+    },
+    {
+     "gate": "trend",
+     "status": "pass",
+     "detail": "not shorting into a rising trend"
+    },
+    {
+     "gate": "catalyst",
+     "status": "unknown",
+     "detail": "next earnings date not available from free sources \u2014 verify manually; no naked short within 5 trading days of earnings (report \u00a79)"
+    }
+   ],
+   "status": "watch",
+   "squeeze_score": 0,
+   "squeeze_detail": []
+  },
+  {
+   "symbol": "CVCO",
+   "issuer": "CAVCO INDUSTRIES, INC.",
+   "score": 4,
+   "insider": {
+    "score": 4,
+    "detail": {
+     "cluster_ge3": false,
+     "opportunistic": null,
+     "big_pct_of_holdings": true,
+     "value_ge_250k": true,
+     "selling_into_strength": true,
+     "ceo_cfo_selling": false
+    },
+    "cluster": {
+     "symbol": "CVCO",
+     "issuer": "CAVCO INDUSTRIES, INC.",
+     "n_insiders": 1,
+     "total_value": 1588580,
+     "max_pct_holdings_sold": 55.5,
+     "any_ceo_cfo": false,
+     "sellers": [
+      {
+       "owner": "CIRA BRIAN R",
+       "role": "President,Manufactured Housing",
+       "value": 1588580
+      }
+     ],
+     "first_date": "2026-11-10",
+     "last_date": "2026-11-10"
+    }
+   },
+   "si": null,
+   "borrow": null,
+   "crowd_points": 0,
+   "crowd_points_raw": 0,
+   "fund_put": null,
+   "congress_sells": null,
+   "on_threshold_list": false,
+   "tech": {
+    "price": 644.27,
+    "sma50": 565.74,
+    "sma50_rising": true,
+    "vs_sma50_pct": 13.9,
+    "vs_sma200_pct": 17.2,
+    "rsi": 60.0,
+    "rsi70_streak": 0,
+    "mom_1m_pct": 20.3,
+    "mom_3m_pct": 7.4,
+    "mom_6m_pct": 41.4,
+    "extended_context": false,
+    "breakdown": false,
+    "breakdown_volume_surge": false,
+    "ttm_squeeze_on": false
+   },
+   "gates": [
+    {
+     "gate": "crowding",
+     "status": "unknown",
+     "detail": "no FINRA short-interest data for this name yet"
+    },
+    {
+     "gate": "borrow",
+     "status": "unknown",
+     "detail": "borrow fee not available yet (IBKR leg pending)"
+    },
+    {
+     "gate": "trend",
+     "status": "block",
+     "detail": "price above a RISING 50-day average \u2014 never short strength"
+    },
+    {
+     "gate": "catalyst",
+     "status": "unknown",
+     "detail": "next earnings date not available from free sources \u2014 verify manually; no naked short within 5 trading days of earnings (report \u00a79)"
+    }
+   ],
+   "status": "blocked",
+   "squeeze_score": 0,
+   "squeeze_detail": []
+  },
+  {
+   "symbol": "DCTH",
+   "issuer": "DELCATH SYSTEMS, INC.",
+   "score": 4,
+   "insider": {
+    "score": 4,
+    "detail": {
+     "cluster_ge3": false,
+     "opportunistic": null,
+     "big_pct_of_holdings": true,
+     "value_ge_250k": true,
+     "selling_into_strength": true,
+     "ceo_cfo_selling": false
+    },
+    "cluster": {
+     "symbol": "DCTH",
+     "issuer": "DELCATH SYSTEMS, INC.",
+     "n_insiders": 1,
+     "total_value": 488508,
+     "max_pct_holdings_sold": 100.0,
+     "any_ceo_cfo": false,
+     "sellers": [
+      {
+       "owner": "Martell Bridget A",
+       "role": "Director",
+       "value": 488508
+      }
+     ],
+     "first_date": "2026-11-12",
+     "last_date": "2026-11-12"
+    }
+   },
+   "si": null,
+   "borrow": null,
+   "crowd_points": 0,
+   "crowd_points_raw": 0,
+   "fund_put": null,
+   "congress_sells": null,
+   "on_threshold_list": false,
+   "tech": {
+    "price": 20.55,
+    "sma50": 15.88,
+    "sma50_rising": true,
+    "vs_sma50_pct": 29.4,
+    "vs_sma200_pct": 61.7,
+    "rsi": 71.5,
+    "rsi70_streak": 5,
+    "mom_1m_pct": 38.8,
+    "mom_3m_pct": 20.5,
+    "mom_6m_pct": 85.6,
+    "extended_context": true,
+    "breakdown": false,
+    "breakdown_volume_surge": false,
+    "ttm_squeeze_on": false
+   },
+   "gates": [
+    {
+     "gate": "crowding",
+     "status": "unknown",
+     "detail": "no FINRA short-interest data for this name yet"
+    },
+    {
+     "gate": "borrow",
+     "status": "unknown",
+     "detail": "borrow fee not available yet (IBKR leg pending)"
+    },
+    {
+     "gate": "trend",
+     "status": "block",
+     "detail": "price above a RISING 50-day average \u2014 never short strength"
+    },
+    {
+     "gate": "catalyst",
+     "status": "unknown",
+     "detail": "next earnings date not available from free sources \u2014 verify manually; no naked short within 5 trading days of earnings (report \u00a79)"
+    }
+   ],
+   "status": "blocked",
+   "squeeze_score": 0,
+   "squeeze_detail": []
+  },
+  {
+   "symbol": "EL",
+   "issuer": "ESTEE LAUDER COMPANIES INC",
+   "score": 4,
+   "insider": {
+    "score": 4,
+    "detail": {
+     "cluster_ge3": false,
+     "opportunistic": null,
+     "big_pct_of_holdings": true,
+     "value_ge_250k": true,
+     "selling_into_strength": true,
+     "ceo_cfo_selling": false
+    },
+    "cluster": {
+     "symbol": "EL",
+     "issuer": "ESTEE LAUDER COMPANIES INC",
+     "n_insiders": 1,
+     "total_value": 467824,
+     "max_pct_holdings_sold": 100.0,
+     "any_ceo_cfo": false,
+     "sellers": [
+      {
+       "owner": "Webster Meridith",
+       "role": "Exec VP GlobalComm/PubAffairs",
+       "value": 467824
+      }
+     ],
+     "first_date": "2026-11-13",
+     "last_date": "2026-11-13"
+    }
+   },
+   "si": null,
+   "borrow": null,
+   "crowd_points": 0,
+   "crowd_points_raw": 0,
+   "fund_put": null,
+   "congress_sells": null,
+   "on_threshold_list": false,
+   "tech": {
+    "price": 111.75,
+    "sma50": 101.79,
+    "sma50_rising": true,
+    "vs_sma50_pct": 9.8,
+    "vs_sma200_pct": 22.5,
+    "rsi": 59.5,
+    "rsi70_streak": 0,
+    "mom_1m_pct": 4.3,
+    "mom_3m_pct": 32.5,
+    "mom_6m_pct": 39.2,
+    "extended_context": true,
+    "breakdown": false,
+    "breakdown_volume_surge": false,
+    "ttm_squeeze_on": true
+   },
+   "gates": [
+    {
+     "gate": "crowding",
+     "status": "unknown",
+     "detail": "no FINRA short-interest data for this name yet"
+    },
+    {
+     "gate": "borrow",
+     "status": "unknown",
+     "detail": "borrow fee not available yet (IBKR leg pending)"
+    },
+    {
+     "gate": "trend",
+     "status": "block",
+     "detail": "price above a RISING 50-day average \u2014 never short strength"
+    },
+    {
+     "gate": "catalyst",
+     "status": "unknown",
+     "detail": "next earnings date not available from free sources \u2014 verify manually; no naked short within 5 trading days of earnings (report \u00a79)"
+    }
+   ],
+   "status": "blocked",
+   "squeeze_score": 0,
+   "squeeze_detail": [
+    "TTM volatility compression active (coiled \u2014 breakout risk both ways)"
+   ]
+  },
+  {
+   "symbol": "FA",
+   "issuer": "FIRST ADVANTAGE CORP",
+   "score": 4,
+   "insider": {
+    "score": 4,
+    "detail": {
+     "cluster_ge3": false,
+     "opportunistic": null,
+     "big_pct_of_holdings": true,
+     "value_ge_250k": true,
+     "selling_into_strength": true,
+     "ceo_cfo_selling": false
+    },
+    "cluster": {
+     "symbol": "FA",
+     "issuer": "FIRST ADVANTAGE CORP",
+     "n_insiders": 1,
+     "total_value": 1944000000,
+     "max_pct_holdings_sold": 63.0,
+     "any_ceo_cfo": false,
+     "sellers": [
+      {
+       "owner": "SLTA V (GP), L.L.C.",
+       "role": "Director",
+       "value": 1944000000
+      }
+     ],
+     "first_date": "2026-11-12",
+     "last_date": "2026-11-12"
+    }
+   },
+   "si": null,
+   "borrow": null,
+   "crowd_points": 0,
+   "crowd_points_raw": 0,
+   "fund_put": null,
+   "congress_sells": null,
+   "on_threshold_list": false,
+   "tech": {
+    "price": 21.48,
+    "sma50": 20.42,
+    "sma50_rising": true,
+    "vs_sma50_pct": 5.2,
+    "vs_sma200_pct": 28.3,
+    "rsi": 52.5,
+    "rsi70_streak": 0,
+    "mom_1m_pct": 7.0,
+    "mom_3m_pct": 5.8,
+    "mom_6m_pct": 44.5,
+    "extended_context": true,
+    "breakdown": false,
+    "breakdown_volume_surge": false,
+    "ttm_squeeze_on": false
+   },
+   "gates": [
+    {
+     "gate": "crowding",
+     "status": "unknown",
+     "detail": "no FINRA short-interest data for this name yet"
+    },
+    {
+     "gate": "borrow",
+     "status": "unknown",
+     "detail": "borrow fee not available yet (IBKR leg pending)"
+    },
+    {
+     "gate": "trend",
+     "status": "block",
+     "detail": "price above a RISING 50-day average \u2014 never short strength"
+    },
+    {
+     "gate": "catalyst",
+     "status": "unknown",
+     "detail": "next earnings date not available from free sources \u2014 verify manually; no naked short within 5 trading days of earnings (report \u00a79)"
+    }
+   ],
+   "status": "blocked",
+   "squeeze_score": 0,
+   "squeeze_detail": []
+  },
+  {
+   "symbol": "G",
+   "issuer": "Genpact LTD",
+   "score": 4,
+   "insider": {
+    "score": 4,
+    "detail": {
+     "cluster_ge3": false,
+     "opportunistic": null,
+     "big_pct_of_holdings": true,
+     "value_ge_250k": true,
+     "selling_into_strength": true,
+     "ceo_cfo_selling": false
+    },
+    "cluster": {
+     "symbol": "G",
+     "issuer": "Genpact LTD",
+     "n_insiders": 1,
+     "total_value": 17218000,
+     "max_pct_holdings_sold": 71.8,
+     "any_ceo_cfo": false,
+     "sellers": [
+      {
+       "owner": "Mehta Piyush",
+       "role": "Senior Vice President and CHRO",
+       "value": 17218000
+      }
+     ],
+     "first_date": "2026-11-10",
+     "last_date": "2026-11-10"
+    }
+   },
+   "si": null,
+   "borrow": null,
+   "crowd_points": 0,
+   "crowd_points_raw": 0,
+   "fund_put": null,
+   "congress_sells": null,
+   "on_threshold_list": false,
+   "tech": {
+    "price": 43.61,
+    "sma50": 37.06,
+    "sma50_rising": true,
+    "vs_sma50_pct": 17.7,
+    "vs_sma200_pct": 23.3,
+    "rsi": 72.7,
+    "rsi70_streak": 6,
+    "mom_1m_pct": 16.0,
+    "mom_3m_pct": 29.4,
+    "mom_6m_pct": 50.1,
+    "extended_context": true,
+    "breakdown": false,
+    "breakdown_volume_surge": false,
+    "ttm_squeeze_on": false
+   },
+   "gates": [
+    {
+     "gate": "crowding",
+     "status": "unknown",
+     "detail": "no FINRA short-interest data for this name yet"
+    },
+    {
+     "gate": "borrow",
+     "status": "unknown",
+     "detail": "borrow fee not available yet (IBKR leg pending)"
+    },
+    {
+     "gate": "trend",
+     "status": "block",
+     "detail": "price above a RISING 50-day average \u2014 never short strength"
+    },
+    {
+     "gate": "catalyst",
+     "status": "unknown",
+     "detail": "next earnings date not available from free sources \u2014 verify manually; no naked short within 5 trading days of earnings (report \u00a79)"
+    }
+   ],
+   "status": "blocked",
+   "squeeze_score": 0,
+   "squeeze_detail": []
+  },
+  {
+   "symbol": "ICUI",
+   "issuer": "ICU MEDICAL INC/DE",
+   "score": 4,
+   "insider": {
+    "score": 4,
+    "detail": {
+     "cluster_ge3": false,
+     "opportunistic": null,
+     "big_pct_of_holdings": true,
+     "value_ge_250k": true,
+     "selling_into_strength": true,
+     "ceo_cfo_selling": false
+    },
+    "cluster": {
+     "symbol": "ICUI",
+     "issuer": "ICU MEDICAL INC/DE",
+     "n_insiders": 1,
+     "total_value": 315935,
+     "max_pct_holdings_sold": 26.6,
+     "any_ceo_cfo": false,
+     "sellers": [
+      {
+       "owner": "FINNEY ELISHA W",
+       "role": "Director",
+       "value": 315935
+      }
+     ],
+     "first_date": "2026-11-12",
+     "last_date": "2026-11-13"
+    }
+   },
+   "si": null,
+   "borrow": null,
+   "crowd_points": 0,
+   "crowd_points_raw": 0,
+   "fund_put": null,
+   "congress_sells": null,
+   "on_threshold_list": false,
+   "tech": {
+    "price": 179.27,
+    "sma50": 163.72,
+    "sma50_rising": true,
+    "vs_sma50_pct": 9.5,
+    "vs_sma200_pct": 19.8,
+    "rsi": 62.0,
+    "rsi70_streak": 0,
+    "mom_1m_pct": 7.2,
+    "mom_3m_pct": -1.8,
+    "mom_6m_pct": 51.0,
+    "extended_context": false,
+    "breakdown": false,
+    "breakdown_volume_surge": false,
+    "ttm_squeeze_on": false
+   },
+   "gates": [
+    {
+     "gate": "crowding",
+     "status": "unknown",
+     "detail": "no FINRA short-interest data for this name yet"
+    },
+    {
+     "gate": "borrow",
+     "status": "unknown",
+     "detail": "borrow fee not available yet (IBKR leg pending)"
+    },
+    {
+     "gate": "trend",
+     "status": "block",
+     "detail": "price above a RISING 50-day average \u2014 never short strength"
+    },
+    {
+     "gate": "catalyst",
+     "status": "unknown",
+     "detail": "next earnings date not available from free sources \u2014 verify manually; no naked short within 5 trading days of earnings (report \u00a79)"
+    }
+   ],
+   "status": "blocked",
+   "squeeze_score": 0,
+   "squeeze_detail": []
+  },
+  {
+   "symbol": "LILA",
+   "issuer": "Liberty Latin America Ltd.",
+   "score": 4,
+   "insider": {
+    "score": 4,
+    "detail": {
+     "cluster_ge3": false,
+     "opportunistic": null,
+     "big_pct_of_holdings": true,
+     "value_ge_250k": true,
+     "selling_into_strength": true,
+     "ceo_cfo_selling": false
+    },
+    "cluster": {
+     "symbol": "LILA",
+     "issuer": "Liberty Latin America Ltd.",
+     "n_insiders": 1,
+     "total_value": 549472,
+     "max_pct_holdings_sold": 78.9,
+     "any_ceo_cfo": false,
+     "sellers": [
+      {
+       "owner": "ZOOK BRIAN D",
+       "role": "MD, CHIEF ACCOUNTING OFFICER",
+       "value": 549472
+      }
+     ],
+     "first_date": "2026-11-11",
+     "last_date": "2026-11-11"
+    }
+   },
+   "si": null,
+   "borrow": null,
+   "crowd_points": 0,
+   "crowd_points_raw": 0,
+   "fund_put": null,
+   "congress_sells": null,
+   "on_threshold_list": false,
+   "tech": {
+    "price": 9.84,
+    "sma50": 8.6,
+    "sma50_rising": true,
+    "vs_sma50_pct": 14.4,
+    "vs_sma200_pct": 43.2,
+    "rsi": 66.8,
+    "rsi70_streak": 0,
+    "mom_1m_pct": 19.3,
+    "mom_3m_pct": 15.6,
+    "mom_6m_pct": 101.7,
+    "extended_context": true,
+    "breakdown": false,
+    "breakdown_volume_surge": false,
+    "ttm_squeeze_on": false
+   },
+   "gates": [
+    {
+     "gate": "crowding",
+     "status": "unknown",
+     "detail": "no FINRA short-interest data for this name yet"
+    },
+    {
+     "gate": "borrow",
+     "status": "unknown",
+     "detail": "borrow fee not available yet (IBKR leg pending)"
+    },
+    {
+     "gate": "trend",
+     "status": "block",
+     "detail": "price above a RISING 50-day average \u2014 never short strength"
+    },
+    {
+     "gate": "catalyst",
+     "status": "unknown",
+     "detail": "next earnings date not available from free sources \u2014 verify manually; no naked short within 5 trading days of earnings (report \u00a79)"
+    }
+   ],
+   "status": "blocked",
+   "squeeze_score": 0,
+   "squeeze_detail": []
+  },
+  {
+   "symbol": "LTH",
+   "issuer": "Life Time Group Holdings, Inc.",
+   "score": 4,
+   "insider": {
+    "score": 4,
+    "detail": {
+     "cluster_ge3": false,
+     "opportunistic": null,
+     "big_pct_of_holdings": true,
+     "value_ge_250k": true,
+     "selling_into_strength": true,
+     "ceo_cfo_selling": false
+    },
+    "cluster": {
+     "symbol": "LTH",
+     "issuer": "Life Time Group Holdings, Inc.",
+     "n_insiders": 2,
+     "total_value": 552271202,
+     "max_pct_holdings_sold": 100.0,
+     "any_ceo_cfo": false,
+     "sellers": [
+      {
+       "owner": "Green LTF Holdings II LP",
+       "role": "Director",
+       "value": 473375316
+      },
+      {
+       "owner": "DANHAKL JOHN G",
+       "role": "Director",
+       "value": 78895886
+      }
+     ],
+     "first_date": "2026-11-10",
+     "last_date": "2026-11-10"
+    }
+   },
+   "si": null,
+   "borrow": null,
+   "crowd_points": 0,
+   "crowd_points_raw": 0,
+   "fund_put": null,
+   "congress_sells": null,
+   "on_threshold_list": false,
+   "tech": {
+    "price": 46.52,
+    "sma50": 42.2,
+    "sma50_rising": true,
+    "vs_sma50_pct": 10.2,
+    "vs_sma200_pct": 28.7,
+    "rsi": 60.3,
+    "rsi70_streak": 0,
+    "mom_1m_pct": 14.7,
+    "mom_3m_pct": 2.6,
+    "mom_6m_pct": 37.9,
+    "extended_context": true,
+    "breakdown": false,
+    "breakdown_volume_surge": false,
+    "ttm_squeeze_on": false
+   },
+   "gates": [
+    {
+     "gate": "crowding",
+     "status": "unknown",
+     "detail": "no FINRA short-interest data for this name yet"
+    },
+    {
+     "gate": "borrow",
+     "status": "unknown",
+     "detail": "borrow fee not available yet (IBKR leg pending)"
+    },
+    {
+     "gate": "trend",
+     "status": "block",
+     "detail": "price above a RISING 50-day average \u2014 never short strength"
+    },
+    {
+     "gate": "catalyst",
+     "status": "unknown",
+     "detail": "next earnings date not available from free sources \u2014 verify manually; no naked short within 5 trading days of earnings (report \u00a79)"
+    }
+   ],
+   "status": "blocked",
+   "squeeze_score": 0,
+   "squeeze_detail": []
+  },
+  {
+   "symbol": "LYV",
+   "issuer": "Live Nation Entertainment, Inc.",
+   "score": 4,
+   "insider": {
+    "score": 4,
+    "detail": {
+     "cluster_ge3": true,
+     "opportunistic": null,
+     "big_pct_of_holdings": false,
+     "value_ge_250k": true,
+     "selling_into_strength": false,
+     "ceo_cfo_selling": true
+    },
+    "cluster": {
+     "symbol": "LYV",
+     "issuer": "Live Nation Entertainment, Inc.",
+     "n_insiders": 3,
+     "total_value": 72881858,
+     "max_pct_holdings_sold": 17.2,
+     "any_ceo_cfo": true,
+     "sellers": [
+      {
+       "owner": "Rapino Michael",
+       "role": "President & CEO",
+       "value": 35405734
+      },
+      {
+       "owner": "Berchtold Joe",
+       "role": "President & CFO",
+       "value": 33457112
+      },
+      {
+       "owner": "Hopmans John",
+       "role": "EVP, M&A and Strategic Finance",
+       "value": 4019012
+      }
+     ],
+     "first_date": "2026-11-12",
+     "last_date": "2026-11-13"
+    }
+   },
+   "si": null,
+   "borrow": null,
+   "crowd_points": 0,
+   "crowd_points_raw": 0,
+   "fund_put": null,
+   "congress_sells": null,
+   "on_threshold_list": false,
+   "tech": {
+    "price": 178.45,
+    "sma50": 172.76,
+    "sma50_rising": false,
+    "vs_sma50_pct": 3.3,
+    "vs_sma200_pct": 6.0,
+    "rsi": 55.0,
+    "rsi70_streak": 0,
+    "mom_1m_pct": 3.4,
+    "mom_3m_pct": -3.2,
+    "mom_6m_pct": 5.7,
+    "extended_context": false,
+    "breakdown": false,
+    "breakdown_volume_surge": false,
+    "ttm_squeeze_on": true
+   },
+   "gates": [
+    {
+     "gate": "crowding",
+     "status": "unknown",
+     "detail": "no FINRA short-interest data for this name yet"
+    },
+    {
+     "gate": "borrow",
+     "status": "unknown",
+     "detail": "borrow fee not available yet (IBKR leg pending)"
+    },
+    {
+     "gate": "trend",
+     "status": "pass",
+     "detail": "not shorting into a rising trend"
+    },
+    {
+     "gate": "catalyst",
+     "status": "unknown",
+     "detail": "next earnings date not available from free sources \u2014 verify manually; no naked short within 5 trading days of earnings (report \u00a79)"
+    }
+   ],
+   "status": "watch",
+   "squeeze_score": 0,
+   "squeeze_detail": [
+    "TTM volatility compression active (coiled \u2014 breakout risk both ways)"
+   ]
+  },
+  {
+   "symbol": "MANE",
+   "issuer": "Veradermics, Inc",
+   "score": 4,
+   "insider": {
+    "score": 4,
+    "detail": {
+     "cluster_ge3": false,
+     "opportunistic": null,
+     "big_pct_of_holdings": true,
+     "value_ge_250k": true,
+     "selling_into_strength": true,
+     "ceo_cfo_selling": false
+    },
+    "cluster": {
+     "symbol": "MANE",
+     "issuer": "Veradermics, Inc",
+     "n_insiders": 2,
+     "total_value": 375950000,
+     "max_pct_holdings_sold": 45.4,
+     "any_ceo_cfo": false,
+     "sellers": [
+      {
+       "owner": "Longitude Capital Partners V, LLC",
+       "role": "10% owner",
+       "value": 225570000
+      },
+      {
+       "owner": "ENRIGHT PATRICK G",
+       "role": "Director",
+       "value": 150380000
+      }
+     ],
+     "first_date": "2026-11-11",
+     "last_date": "2026-11-11"
+    }
+   },
+   "si": null,
+   "borrow": null,
+   "crowd_points": 0,
+   "crowd_points_raw": 0,
+   "fund_put": null,
+   "congress_sells": null,
+   "on_threshold_list": false,
+   "tech": {
+    "price": 129.66,
+    "sma50": 122.23,
+    "sma50_rising": true,
+    "vs_sma50_pct": 6.1,
+    "vs_sma200_pct": null,
+    "rsi": 48.0,
+    "rsi70_streak": 0,
+    "mom_1m_pct": 12.7,
+    "mom_3m_pct": 19.8,
+    "mom_6m_pct": 30.0,
+    "extended_context": false,
+    "breakdown": false,
+    "breakdown_volume_surge": false,
+    "ttm_squeeze_on": false
+   },
+   "gates": [
+    {
+     "gate": "crowding",
+     "status": "unknown",
+     "detail": "no FINRA short-interest data for this name yet"
+    },
+    {
+     "gate": "borrow",
+     "status": "unknown",
+     "detail": "borrow fee not available yet (IBKR leg pending)"
+    },
+    {
+     "gate": "trend",
+     "status": "block",
+     "detail": "price above a RISING 50-day average \u2014 never short strength"
+    },
+    {
+     "gate": "catalyst",
+     "status": "unknown",
+     "detail": "next earnings date not available from free sources \u2014 verify manually; no naked short within 5 trading days of earnings (report \u00a79)"
+    }
+   ],
+   "status": "blocked",
+   "squeeze_score": 0,
+   "squeeze_detail": []
+  },
+  {
+   "symbol": "MGNI",
+   "issuer": "MAGNITE, INC.",
+   "score": 4,
+   "insider": {
+    "score": 4,
+    "detail": {
+     "cluster_ge3": false,
+     "opportunistic": null,
+     "big_pct_of_holdings": true,
+     "value_ge_250k": true,
+     "selling_into_strength": true,
+     "ceo_cfo_selling": false
+    },
+    "cluster": {
+     "symbol": "MGNI",
+     "issuer": "MAGNITE, INC.",
+     "n_insiders": 1,
+     "total_value": 1166800,
+     "max_pct_holdings_sold": 39.5,
+     "any_ceo_cfo": false,
+     "sellers": [
+      {
+       "owner": "Yu Diane",
+       "role": "Director",
+       "value": 1166800
+      }
+     ],
+     "first_date": "2026-11-12",
+     "last_date": "2026-11-12"
+    }
+   },
+   "si": null,
+   "borrow": null,
+   "crowd_points": 0,
+   "crowd_points_raw": 0,
+   "fund_put": null,
+   "congress_sells": null,
+   "on_threshold_list": false,
+   "tech": {
+    "price": 29.29,
+    "sma50": 24.58,
+    "sma50_rising": true,
+    "vs_sma50_pct": 19.2,
+    "vs_sma200_pct": 61.0,
+    "rsi": 71.6,
+    "rsi70_streak": 3,
+    "mom_1m_pct": 19.6,
+    "mom_3m_pct": 21.1,
+    "mom_6m_pct": 128.5,
+    "extended_context": true,
+    "breakdown": false,
+    "breakdown_volume_surge": false,
+    "ttm_squeeze_on": false
+   },
+   "gates": [
+    {
+     "gate": "crowding",
+     "status": "unknown",
+     "detail": "no FINRA short-interest data for this name yet"
+    },
+    {
+     "gate": "borrow",
+     "status": "unknown",
+     "detail": "borrow fee not available yet (IBKR leg pending)"
+    },
+    {
+     "gate": "trend",
+     "status": "block",
+     "detail": "price above a RISING 50-day average \u2014 never short strength"
+    },
+    {
+     "gate": "catalyst",
+     "status": "unknown",
+     "detail": "next earnings date not available from free sources \u2014 verify manually; no naked short within 5 trading days of earnings (report \u00a79)"
+    }
+   ],
+   "status": "blocked",
+   "squeeze_score": 0,
+   "squeeze_detail": []
+  },
+  {
+   "symbol": "CCNE",
+   "issuer": "CNB FINANCIAL CORP/PA",
+   "score": 3,
+   "insider": {
+    "score": 3,
+    "detail": {
+     "cluster_ge3": false,
+     "opportunistic": null,
+     "big_pct_of_holdings": true,
+     "value_ge_250k": true,
+     "selling_into_strength": false,
+     "ceo_cfo_selling": false
+    },
+    "cluster": {
+     "symbol": "CCNE",
+     "issuer": "CNB FINANCIAL CORP/PA",
+     "n_insiders": 1,
+     "total_value": 296048,
+     "max_pct_holdings_sold": 37.3,
+     "any_ceo_cfo": false,
+     "sellers": [
+      {
+       "owner": "Kassab Leanne D",
+       "role": "SEVP/Chief Experience Officer",
+       "value": 296048
+      }
+     ],
+     "first_date": "2026-11-12",
+     "last_date": "2026-11-12"
+    }
+   },
+   "si": null,
+   "borrow": null,
+   "crowd_points": 0,
+   "crowd_points_raw": 0,
+   "fund_put": null,
+   "congress_sells": null,
+   "on_threshold_list": false,
+   "tech": {
+    "price": 35.6,
+    "sma50": 34.61,
+    "sma50_rising": true,
+    "vs_sma50_pct": 2.9,
+    "vs_sma200_pct": 10.7,
+    "rsi": 53.3,
+    "rsi70_streak": 0,
+    "mom_1m_pct": 5.1,
+    "mom_3m_pct": 2.2,
+    "mom_6m_pct": 21.1,
+    "extended_context": false,
+    "breakdown": false,
+    "breakdown_volume_surge": false,
+    "ttm_squeeze_on": true
+   },
+   "gates": [
+    {
+     "gate": "crowding",
+     "status": "unknown",
+     "detail": "no FINRA short-interest data for this name yet"
+    },
+    {
+     "gate": "borrow",
+     "status": "unknown",
+     "detail": "borrow fee not available yet (IBKR leg pending)"
+    },
+    {
+     "gate": "trend",
+     "status": "block",
+     "detail": "price above a RISING 50-day average \u2014 never short strength"
+    },
+    {
+     "gate": "catalyst",
+     "status": "unknown",
+     "detail": "next earnings date not available from free sources \u2014 verify manually; no naked short within 5 trading days of earnings (report \u00a79)"
+    }
+   ],
+   "status": "blocked",
+   "squeeze_score": 0,
+   "squeeze_detail": [
+    "TTM volatility compression active (coiled \u2014 breakout risk both ways)"
+   ]
+  },
+  {
+   "symbol": "CHD",
+   "issuer": "CHURCH & DWIGHT CO INC /DE/",
+   "score": 3,
+   "insider": {
+    "score": 3,
+    "detail": {
+     "cluster_ge3": false,
+     "opportunistic": null,
+     "big_pct_of_holdings": true,
+     "value_ge_250k": true,
+     "selling_into_strength": false,
+     "ceo_cfo_selling": false
+    },
+    "cluster": {
+     "symbol": "CHD",
+     "issuer": "CHURCH & DWIGHT CO INC /DE/",
+     "n_insiders": 1,
+     "total_value": 1298080,
+     "max_pct_holdings_sold": 35.4,
+     "any_ceo_cfo": false,
+     "sellers": [
+      {
+       "owner": "Vergis Janet S.",
+       "role": "Director",
+       "value": 1298080
+      }
+     ],
+     "first_date": "2026-11-11",
+     "last_date": "2026-11-11"
+    }
+   },
+   "si": null,
+   "borrow": null,
+   "crowd_points": 0,
+   "crowd_points_raw": 0,
+   "fund_put": null,
+   "congress_sells": null,
+   "on_threshold_list": false,
+   "tech": {
+    "price": 113.0,
+    "sma50": 101.4,
+    "sma50_rising": true,
+    "vs_sma50_pct": 11.4,
+    "vs_sma200_pct": 14.5,
+    "rsi": 69.0,
+    "rsi70_streak": 0,
+    "mom_1m_pct": 9.6,
+    "mom_3m_pct": 15.3,
+    "mom_6m_pct": 20.1,
+    "extended_context": false,
+    "breakdown": false,
+    "breakdown_volume_surge": false,
+    "ttm_squeeze_on": false
+   },
+   "gates": [
+    {
+     "gate": "crowding",
+     "status": "unknown",
+     "detail": "no FINRA short-interest data for this name yet"
+    },
+    {
+     "gate": "borrow",
+     "status": "unknown",
+     "detail": "borrow fee not available yet (IBKR leg pending)"
+    },
+    {
+     "gate": "trend",
+     "status": "block",
+     "detail": "price above a RISING 50-day average \u2014 never short strength"
+    },
+    {
+     "gate": "catalyst",
+     "status": "unknown",
+     "detail": "next earnings date not available from free sources \u2014 verify manually; no naked short within 5 trading days of earnings (report \u00a79)"
+    }
+   ],
+   "status": "blocked",
+   "squeeze_score": 0,
+   "squeeze_detail": []
+  },
+  {
+   "symbol": "CPRI",
+   "issuer": "Capri Holdings Ltd",
+   "score": 3,
+   "insider": {
+    "score": 3,
+    "detail": {
+     "cluster_ge3": false,
+     "opportunistic": null,
+     "big_pct_of_holdings": true,
+     "value_ge_250k": true,
+     "selling_into_strength": false,
+     "ceo_cfo_selling": false
+    },
+    "cluster": {
+     "symbol": "CPRI",
+     "issuer": "Capri Holdings Ltd",
+     "n_insiders": 1,
+     "total_value": 1320828,
+     "max_pct_holdings_sold": 62.5,
+     "any_ceo_cfo": false,
+     "sellers": [
+      {
+       "owner": "Hendricks Jenna",
+       "role": "Chief People Officer",
+       "value": 1320828
+      }
+     ],
+     "first_date": "2026-11-12",
+     "last_date": "2026-11-12"
+    }
+   },
+   "si": null,
+   "borrow": null,
+   "crowd_points": 0,
+   "crowd_points_raw": 0,
+   "fund_put": null,
+   "congress_sells": null,
+   "on_threshold_list": false,
+   "tech": {
+    "price": 21.46,
+    "sma50": 16.14,
+    "sma50_rising": true,
+    "vs_sma50_pct": 32.9,
+    "vs_sma200_pct": 21.5,
+    "rsi": 69.6,
+    "rsi70_streak": 0,
+    "mom_1m_pct": 35.4,
+    "mom_3m_pct": 46.3,
+    "mom_6m_pct": 24.3,
+    "extended_context": true,
+    "breakdown": false,
+    "breakdown_volume_surge": false,
+    "ttm_squeeze_on": false
+   },
+   "gates": [
+    {
+     "gate": "crowding",
+     "status": "unknown",
+     "detail": "no FINRA short-interest data for this name yet"
+    },
+    {
+     "gate": "borrow",
+     "status": "unknown",
+     "detail": "borrow fee not available yet (IBKR leg pending)"
+    },
+    {
+     "gate": "trend",
+     "status": "block",
+     "detail": "price above a RISING 50-day average \u2014 never short strength"
+    },
+    {
+     "gate": "catalyst",
+     "status": "unknown",
+     "detail": "next earnings date not available from free sources \u2014 verify manually; no naked short within 5 trading days of earnings (report \u00a79)"
+    }
+   ],
+   "status": "blocked",
+   "squeeze_score": 0,
+   "squeeze_detail": []
+  },
+  {
+   "symbol": "CVX",
+   "issuer": "CHEVRON CORP",
+   "score": 3,
+   "insider": {
+    "score": 3,
+    "detail": {
+     "cluster_ge3": false,
+     "opportunistic": null,
+     "big_pct_of_holdings": true,
+     "value_ge_250k": true,
+     "selling_into_strength": false,
+     "ceo_cfo_selling": false
+    },
+    "cluster": {
+     "symbol": "CVX",
+     "issuer": "CHEVRON CORP",
+     "n_insiders": 1,
+     "total_value": 1272822,
+     "max_pct_holdings_sold": 100.0,
+     "any_ceo_cfo": false,
+     "sellers": [
+      {
+       "owner": "Booth Thomas Ryder",
+       "role": "Chief Technology & Eng Ofr",
+       "value": 1272822
+      }
+     ],
+     "first_date": "2026-11-11",
+     "last_date": "2026-11-11"
+    }
+   },
+   "si": null,
+   "borrow": null,
+   "crowd_points": 0,
+   "crowd_points_raw": 0,
+   "fund_put": null,
+   "congress_sells": null,
+   "on_threshold_list": false,
+   "tech": {
+    "price": 219.89,
+    "sma50": 215.48,
+    "sma50_rising": true,
+    "vs_sma50_pct": 2.0,
+    "vs_sma200_pct": 12.3,
+    "rsi": 52.0,
+    "rsi70_streak": 0,
+    "mom_1m_pct": 0.3,
+    "mom_3m_pct": 8.5,
+    "mom_6m_pct": 15.1,
+    "extended_context": false,
+    "breakdown": false,
+    "breakdown_volume_surge": false,
+    "ttm_squeeze_on": false
+   },
+   "gates": [
+    {
+     "gate": "crowding",
+     "status": "unknown",
+     "detail": "no FINRA short-interest data for this name yet"
+    },
+    {
+     "gate": "borrow",
+     "status": "unknown",
+     "detail": "borrow fee not available yet (IBKR leg pending)"
+    },
+    {
+     "gate": "trend",
+     "status": "block",
+     "detail": "price above a RISING 50-day average \u2014 never short strength"
+    },
+    {
+     "gate": "catalyst",
+     "status": "unknown",
+     "detail": "next earnings date not available from free sources \u2014 verify manually; no naked short within 5 trading days of earnings (report \u00a79)"
+    }
+   ],
+   "status": "blocked",
+   "squeeze_score": 0,
+   "squeeze_detail": []
+  },
+  {
+   "symbol": "EBAY",
+   "issuer": "EBAY INC",
+   "score": 3,
+   "insider": {
+    "score": 3,
+    "detail": {
+     "cluster_ge3": false,
+     "opportunistic": null,
+     "big_pct_of_holdings": true,
+     "value_ge_250k": true,
+     "selling_into_strength": false,
+     "ceo_cfo_selling": false
+    },
+    "cluster": {
+     "symbol": "EBAY",
+     "issuer": "EBAY INC",
+     "n_insiders": 1,
+     "total_value": 7648940,
+     "max_pct_holdings_sold": 45.4,
+     "any_ceo_cfo": false,
+     "sellers": [
+      {
+       "owner": "Boone Cornelius",
+       "role": "SVP, Chief People Officer",
+       "value": 7648940
+      }
+     ],
+     "first_date": "2026-11-11",
+     "last_date": "2026-11-11"
+    }
+   },
+   "si": null,
+   "borrow": null,
+   "crowd_points": 0,
+   "crowd_points_raw": 0,
+   "fund_put": null,
+   "congress_sells": null,
+   "on_threshold_list": false,
+   "tech": {
+    "price": 120.92,
+    "sma50": 114.18,
+    "sma50_rising": true,
+    "vs_sma50_pct": 5.9,
+    "vs_sma200_pct": 14.8,
+    "rsi": 54.2,
+    "rsi70_streak": 0,
+    "mom_1m_pct": -1.6,
+    "mom_3m_pct": 19.8,
+    "mom_6m_pct": 4.1,
+    "extended_context": false,
+    "breakdown": false,
+    "breakdown_volume_surge": false,
+    "ttm_squeeze_on": true
+   },
+   "gates": [
+    {
+     "gate": "crowding",
+     "status": "unknown",
+     "detail": "no FINRA short-interest data for this name yet"
+    },
+    {
+     "gate": "borrow",
+     "status": "unknown",
+     "detail": "borrow fee not available yet (IBKR leg pending)"
+    },
+    {
+     "gate": "trend",
+     "status": "block",
+     "detail": "price above a RISING 50-day average \u2014 never short strength"
+    },
+    {
+     "gate": "catalyst",
+     "status": "unknown",
+     "detail": "next earnings date not available from free sources \u2014 verify manually; no naked short within 5 trading days of earnings (report \u00a79)"
+    }
+   ],
+   "status": "blocked",
+   "squeeze_score": 0,
+   "squeeze_detail": [
+    "TTM volatility compression active (coiled \u2014 breakout risk both ways)"
+   ]
+  },
+  {
+   "symbol": "EGBN",
+   "issuer": "EAGLE BANCORP INC",
+   "score": 3,
+   "insider": {
+    "score": 3,
+    "detail": {
+     "cluster_ge3": false,
+     "opportunistic": null,
+     "big_pct_of_holdings": true,
+     "value_ge_250k": false,
+     "selling_into_strength": true,
+     "ceo_cfo_selling": false
+    },
+    "cluster": {
+     "symbol": "EGBN",
+     "issuer": "EAGLE BANCORP INC",
+     "n_insiders": 1,
+     "total_value": 203860,
+     "max_pct_holdings_sold": 100.0,
+     "any_ceo_cfo": false,
+     "sellers": [
+      {
+       "owner": "Montano Trevor",
+       "role": "Director",
+       "value": 203860
+      }
+     ],
+     "first_date": "2026-11-10",
+     "last_date": "2026-11-10"
+    }
+   },
+   "si": null,
+   "borrow": null,
+   "crowd_points": 0,
+   "crowd_points_raw": 0,
+   "fund_put": null,
+   "congress_sells": null,
+   "on_threshold_list": false,
+   "tech": {
+    "price": 34.44,
+    "sma50": 30.03,
+    "sma50_rising": true,
+    "vs_sma50_pct": 14.7,
+    "vs_sma200_pct": 25.0,
+    "rsi": 69.8,
+    "rsi70_streak": 0,
+    "mom_1m_pct": 22.9,
+    "mom_3m_pct": 20.6,
+    "mom_6m_pct": 40.7,
+    "extended_context": true,
+    "breakdown": false,
+    "breakdown_volume_surge": false,
+    "ttm_squeeze_on": false
+   },
+   "gates": [
+    {
+     "gate": "crowding",
+     "status": "unknown",
+     "detail": "no FINRA short-interest data for this name yet"
+    },
+    {
+     "gate": "borrow",
+     "status": "unknown",
+     "detail": "borrow fee not available yet (IBKR leg pending)"
+    },
+    {
+     "gate": "trend",
+     "status": "block",
+     "detail": "price above a RISING 50-day average \u2014 never short strength"
+    },
+    {
+     "gate": "catalyst",
+     "status": "unknown",
+     "detail": "next earnings date not available from free sources \u2014 verify manually; no naked short within 5 trading days of earnings (report \u00a79)"
+    }
+   ],
+   "status": "blocked",
+   "squeeze_score": 0,
+   "squeeze_detail": []
+  },
+  {
+   "symbol": "ENVA",
+   "issuer": "Enova International, Inc.",
+   "score": 3,
+   "insider": {
+    "score": 3,
+    "detail": {
+     "cluster_ge3": false,
+     "opportunistic": null,
+     "big_pct_of_holdings": true,
+     "value_ge_250k": true,
+     "selling_into_strength": false,
+     "ceo_cfo_selling": false
+    },
+    "cluster": {
+     "symbol": "ENVA",
+     "issuer": "Enova International, Inc.",
+     "n_insiders": 1,
+     "total_value": 408012,
+     "max_pct_holdings_sold": 32.1,
+     "any_ceo_cfo": false,
+     "sellers": [
+      {
+       "owner": "RICE LINDA JOHNSON",
+       "role": "Director",
+       "value": 408012
+      }
+     ],
+     "first_date": "2026-11-11",
+     "last_date": "2026-11-11"
+    }
+   },
+   "si": null,
+   "borrow": null,
+   "crowd_points": 0,
+   "crowd_points_raw": 0,
+   "fund_put": null,
+   "congress_sells": null,
+   "on_threshold_list": false,
+   "tech": {
+    "price": 169.85,
+    "sma50": 180.4,
+    "sma50_rising": false,
+    "vs_sma50_pct": -5.8,
+    "vs_sma200_pct": -7.9,
+    "rsi": 43.5,
+    "rsi70_streak": 0,
+    "mom_1m_pct": -4.3,
+    "mom_3m_pct": -35.6,
+    "mom_6m_pct": 3.6,
+    "extended_context": false,
+    "breakdown": false,
+    "breakdown_volume_surge": false,
+    "ttm_squeeze_on": true
+   },
+   "gates": [
+    {
+     "gate": "crowding",
+     "status": "unknown",
+     "detail": "no FINRA short-interest data for this name yet"
+    },
+    {
+     "gate": "borrow",
+     "status": "unknown",
+     "detail": "borrow fee not available yet (IBKR leg pending)"
+    },
+    {
+     "gate": "trend",
+     "status": "pass",
+     "detail": "not shorting into a rising trend"
+    },
+    {
+     "gate": "catalyst",
+     "status": "unknown",
+     "detail": "next earnings date not available from free sources \u2014 verify manually; no naked short within 5 trading days of earnings (report \u00a79)"
+    }
+   ],
+   "status": "evidence",
+   "squeeze_score": 0,
+   "squeeze_detail": [
+    "TTM volatility compression active (coiled \u2014 breakout risk both ways)"
+   ]
+  },
+  {
+   "symbol": "GATX",
+   "issuer": "GATX CORP",
+   "score": 3,
+   "insider": {
+    "score": 3,
+    "detail": {
+     "cluster_ge3": false,
+     "opportunistic": null,
+     "big_pct_of_holdings": true,
+     "value_ge_250k": true,
+     "selling_into_strength": false,
+     "ceo_cfo_selling": false
+    },
+    "cluster": {
+     "symbol": "GATX",
+     "issuer": "GATX CORP",
+     "n_insiders": 1,
+     "total_value": 563868,
+     "max_pct_holdings_sold": 46.2,
+     "any_ceo_cfo": false,
+     "sellers": [
+      {
+       "owner": "McManus Jennifer",
+       "role": "Sr. VP & Controller",
+       "value": 563868
+      }
+     ],
+     "first_date": "2026-11-12",
+     "last_date": "2026-11-12"
+    }
+   },
+   "si": null,
+   "borrow": null,
+   "crowd_points": 0,
+   "crowd_points_raw": 0,
+   "fund_put": null,
+   "congress_sells": null,
+   "on_threshold_list": false,
+   "tech": {
+    "price": 191.43,
+    "sma50": 175.74,
+    "sma50_rising": true,
+    "vs_sma50_pct": 8.9,
+    "vs_sma200_pct": 6.7,
+    "rsi": 67.1,
+    "rsi70_streak": 0,
+    "mom_1m_pct": 16.0,
+    "mom_3m_pct": 6.0,
+    "mom_6m_pct": 10.9,
+    "extended_context": false,
+    "breakdown": false,
+    "breakdown_volume_surge": false,
+    "ttm_squeeze_on": false
+   },
+   "gates": [
+    {
+     "gate": "crowding",
+     "status": "unknown",
+     "detail": "no FINRA short-interest data for this name yet"
+    },
+    {
+     "gate": "borrow",
+     "status": "unknown",
+     "detail": "borrow fee not available yet (IBKR leg pending)"
+    },
+    {
+     "gate": "trend",
+     "status": "block",
+     "detail": "price above a RISING 50-day average \u2014 never short strength"
+    },
+    {
+     "gate": "catalyst",
+     "status": "unknown",
+     "detail": "next earnings date not available from free sources \u2014 verify manually; no naked short within 5 trading days of earnings (report \u00a79)"
+    }
+   ],
+   "status": "blocked",
+   "squeeze_score": 0,
+   "squeeze_detail": []
+  },
+  {
+   "symbol": "GSAT",
+   "issuer": "Globalstar, Inc.",
+   "score": 3,
+   "insider": {
+    "score": 3,
+    "detail": {
+     "cluster_ge3": false,
+     "opportunistic": null,
+     "big_pct_of_holdings": true,
+     "value_ge_250k": true,
+     "selling_into_strength": false,
+     "ceo_cfo_selling": false
+    },
+    "cluster": {
+     "symbol": "GSAT",
+     "issuer": "Globalstar, Inc.",
+     "n_insiders": 1,
+     "total_value": 22434910,
+     "max_pct_holdings_sold": 76.4,
+     "any_ceo_cfo": false,
+     "sellers": [
+      {
+       "owner": "Taylor Timothy Evan",
+       "role": "VP, Finance & Operations",
+       "value": 22434910
+      }
+     ],
+     "first_date": "2026-11-11",
+     "last_date": "2026-11-12"
+    }
+   },
+   "si": null,
+   "borrow": null,
+   "crowd_points": 0,
+   "crowd_points_raw": 0,
+   "fund_put": null,
+   "congress_sells": null,
+   "on_threshold_list": false,
+   "tech": {
+    "price": 86.29,
+    "sma50": 83.24,
+    "sma50_rising": true,
+    "vs_sma50_pct": 3.7,
+    "vs_sma200_pct": 12.0,
+    "rsi": 64.8,
+    "rsi70_streak": 0,
+    "mom_1m_pct": 4.0,
+    "mom_3m_pct": 3.9,
+    "mom_6m_pct": 5.3,
+    "extended_context": false,
+    "breakdown": false,
+    "breakdown_volume_surge": false,
+    "ttm_squeeze_on": false
+   },
+   "gates": [
+    {
+     "gate": "crowding",
+     "status": "unknown",
+     "detail": "no FINRA short-interest data for this name yet"
+    },
+    {
+     "gate": "borrow",
+     "status": "unknown",
+     "detail": "borrow fee not available yet (IBKR leg pending)"
+    },
+    {
+     "gate": "trend",
+     "status": "block",
+     "detail": "price above a RISING 50-day average \u2014 never short strength"
+    },
+    {
+     "gate": "catalyst",
+     "status": "unknown",
+     "detail": "next earnings date not available from free sources \u2014 verify manually; no naked short within 5 trading days of earnings (report \u00a79)"
+    }
+   ],
+   "status": "blocked",
+   "squeeze_score": 0,
+   "squeeze_detail": []
+  }
+ ],
+ "squeeze_watchlist": [],
+ "fund_puts_evidence": [
+  {
+   "symbol": "PLTR",
+   "name": "PALANTIR TECHNOLOGIES INC",
+   "funds": [
+    {
+     "fund": "Scion Asset Management",
+     "kind": "new put position",
+     "notional_value": 912100000,
+     "pct_of_portfolio": null
+    }
+   ],
+   "points": 1
+  },
+  {
+   "symbol": "NVDA",
+   "name": "NVIDIA CORPORATION",
+   "funds": [
+    {
+     "fund": "Scion Asset Management",
+     "kind": "new put position",
+     "notional_value": 186580000,
+     "pct_of_portfolio": null
+    }
+   ],
+   "points": 1
+  },
+  {
+   "symbol": "HON",
+   "name": "HONEYWELL INTL INC",
+   "funds": [
+    {
+     "fund": "Citadel Advisors",
+     "kind": "new put position",
+     "notional_value": 421586012,
+     "pct_of_portfolio": null
+    }
+   ],
+   "points": 1
+  },
+  {
+   "symbol": "SPY",
+   "name": "STATE STR SPDR S&P 500 ETF T",
+   "funds": [
+    {
+     "fund": "Third Point",
+     "kind": "new put position",
+     "notional_value": 28800000,
+     "pct_of_portfolio": null
+    }
+   ],
+   "points": 1
+  },
+  {
+   "symbol": "AAPL",
+   "name": "APPLE INC",
+   "funds": [
+    {
+     "fund": "Appaloosa",
+     "kind": "new put position",
+     "notional_value": 241615600,
+     "pct_of_portfolio": null
+    }
+   ],
+   "points": 1
+  },
+  {
+   "symbol": "BRK/B",
+   "name": "BERKSHIRE HATHAWAY INC DEL",
+   "funds": [
+    {
+     "fund": "Appaloosa",
+     "kind": "new put position",
+     "notional_value": 12509750,
+     "pct_of_portfolio": null
+    }
+   ],
+   "points": 1
+  },
+  {
+   "symbol": "NDQ",
+   "name": "INVESCO QQQ TR",
+   "funds": [
+    {
+     "fund": "Citadel Advisors",
+     "kind": "existing put position (top holding)",
+     "notional_value": 50079342986,
+     "pct_of_portfolio": 5.72
+    }
+   ],
+   "points": 0
+  },
+  {
+   "symbol": "MU",
+   "name": "MICRON TECHNOLOGY INC",
+   "funds": [
+    {
+     "fund": "Citadel Advisors",
+     "kind": "existing put position (top holding)",
+     "notional_value": 39282246684,
+     "pct_of_portfolio": 4.49
+    }
+   ],
+   "points": 0
+  },
+  {
+   "symbol": "SNDK",
+   "name": "SANDISK CORP",
+   "funds": [
+    {
+     "fund": "Citadel Advisors",
+     "kind": "existing put position (top holding)",
+     "notional_value": 22214071526,
+     "pct_of_portfolio": 2.54
+    }
+   ],
+   "points": 0
+  },
+  {
+   "symbol": "AMD",
+   "name": "ADVANCED MICRO DEVICES INC",
+   "funds": [
+    {
+     "fund": "Citadel Advisors",
+     "kind": "existing put position (top holding)",
+     "notional_value": 19309059190,
+     "pct_of_portfolio": 2.21
+    }
+   ],
+   "points": 0
+  },
+  {
+   "symbol": "SMH",
+   "name": "VANECK ETF TRUST",
+   "funds": [
+    {
+     "fund": "Citadel Advisors",
+     "kind": "existing put position (top holding)",
+     "notional_value": 16506924646,
+     "pct_of_portfolio": 1.89
+    }
+   ],
+   "points": 0
+  }
+ ],
+ "congress_sells_evidence": [
+  {
+   "symbol": "HD",
+   "count": 8,
+   "members": 5,
+   "est_value": 88500
+  },
+  {
+   "symbol": "V",
+   "count": 5,
+   "members": 3,
+   "est_value": 64500
+  },
+  {
+   "symbol": "WBD",
+   "count": 4,
+   "members": 4,
+   "est_value": 99000
+  },
+  {
+   "symbol": "COST",
+   "count": 4,
+   "members": 3,
+   "est_value": 566000
+  },
+  {
+   "symbol": "MSFT",
+   "count": 4,
+   "members": 3,
+   "est_value": 423500
+  },
+  {
+   "symbol": "PG",
+   "count": 4,
+   "members": 3,
+   "est_value": 32000
+  },
+  {
+   "symbol": "SOLS",
+   "count": 4,
+   "members": 3,
+   "est_value": 32000
+  },
+  {
+   "symbol": "TJX",
+   "count": 4,
+   "members": 2,
+   "est_value": 105500
+  }
+ ],
+ "short_calls_tracked": 0,
+ "caveats": [
+  "Short interest is FINRA twice-monthly data \u2014 already ~1-4 weeks old when you see it. Borrow fees are IBKR-inventory snapshots. Insider selling alone predicts almost nothing; it only confirms.",
+  "13F put dollar figures are underlying NOTIONAL, not premium paid \u2014 a $912M put position can cost single-digit millions.",
+  "Crowded names (high SI + high days-to-cover) are gated OUT of the short book and listed on the squeeze watchlist instead: at extremes, high short interest marks squeeze risk, not opportunity.",
+  "Every short call is graded at 30/90 days NET of borrow-fee drag, with its worst adverse excursion published alongside."
+ ]
+}
