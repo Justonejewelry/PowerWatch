@@ -11,6 +11,11 @@ on:
 permissions:
   contents: write
 
+# Never let two runs race each other's commits.
+concurrency:
+  group: powerwatch-daily
+  cancel-in-progress: false
+
 jobs:
   update:
     runs-on: ubuntu-latest
@@ -33,10 +38,16 @@ jobs:
         continue-on-error: true
         run: python scripts/congress_engine.py
 
+      - name: Run funds tracker (13F)
+        continue-on-error: true
+        run: python scripts/funds_engine.py
+
       - name: Commit data updates
         run: |
           git config user.name "powerwatch-bot"
           git config user.email "actions@github.com"
           git add data/
           git diff --cached --quiet || git commit -m "Daily insider signal update"
+          # The scan takes ~20 min; main may have moved meanwhile.
+          git pull --rebase origin main
           git push
