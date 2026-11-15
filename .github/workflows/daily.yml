@@ -42,6 +42,10 @@ jobs:
         continue-on-error: true
         run: python scripts/funds_engine.py
 
+      - name: Run short-side engine (insider sells + FINRA SI + borrow)
+        continue-on-error: true
+        run: python scripts/short_engine.py
+
       - name: Commit data updates
         run: |
           git config user.name "powerwatch-bot"
