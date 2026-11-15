@@ -95,12 +95,19 @@ def parse_info_table(url):
             shares = int(sh_node.findtext(f"{NS}sshPrnamt") or 0)
             stype = (sh_node.findtext(f"{NS}sshPrnamtType") or "").strip()
         h = holds.setdefault(cusip, {"name": g("nameOfIssuer"), "value": 0,
-                                     "shares": 0, "options": False})
-        h["value"] += int(g("value") or 0)
-        if put_call:
-            h["options"] = True
+                                     "shares": 0, "put_v": 0, "call_v": 0})
+        val = int(g("value") or 0)
+        h["value"] += val
+        if put_call == "Put":
+            h["put_v"] += val
+        elif put_call == "Call":
+            h["call_v"] += val
         elif stype == "SH":
             h["shares"] += shares
+    for h in holds.values():
+        if h["put_v"] or h["call_v"]:
+            h["option"] = "put" if h["put_v"] >= h["call_v"] else "call"
+        del h["put_v"], h["call_v"]
     return holds
 
 
@@ -143,8 +150,11 @@ def map_tickers(cusips, cache):
 
 
 def brief(cusip, h, cache):
-    return {"symbol": cache.get(cusip), "name": h["name"], "cusip": cusip,
-            "value": h["value"], "shares": h["shares"]}
+    b = {"symbol": cache.get(cusip), "name": h["name"], "cusip": cusip,
+         "value": h["value"], "shares": h["shares"]}
+    if h.get("option"):
+        b["option"] = h["option"]
+    return b
 
 
 def diff_sets(latest, prior):
@@ -215,7 +225,8 @@ def main():
                 print(f"{name}: no 13F-HR found, skipped", flush=True)
                 continue
             prev = state.get(name)
-            if prev and prev.get("accession") == filings[0]["accession"]:
+            if (prev and prev.get("accession") == filings[0]["accession"]
+                    and state.get("_fmt") == 2):
                 raw[name] = ({"accession": filings[0]["accession"],
                               "period": filings[0]["period"],
                               "filed": filings[0]["filed"]},
@@ -282,6 +293,7 @@ def main():
             "consensus": consensus, "funds": funds_out}
     with open(os.path.join(DATA, "funds.json"), "w") as fh:
         json.dump(data, fh, indent=1)
+    state["_fmt"] = 2
     with open(state_path, "w") as fh:
         json.dump(state, fh)
     with open(os.path.join(DATA, "cusip_cache.json"), "w") as fh:
