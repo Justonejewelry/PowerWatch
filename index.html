@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PowerWatch — Follow the Money in Power</title>
+<meta name="description" content="PowerWatch tracks what corporate insiders and people in power do with their own money — SEC Form 4 insider buying, scored and graded.">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👁️</text></svg>">
+</head>
+<body>
+<header class="hero">
+  <div class="hero-inner">
+    <div class="brand">
+      <div class="logo">👁️</div>
+      <div>
+        <h1>PowerWatch</h1>
+        <p class="tagline">Follow the money in power.</p>
+      </div>
+    </div>
+    <p class="hero-sub">Corporate insiders — CEOs, CFOs, directors — must report every trade to the SEC within 2 business days. PowerWatch reads <strong>every Form 4 filing</strong>, finds insiders buying with their own cash, scores the signals, and grades its own calls in public.</p>
+    <div class="stat-strip" id="statStrip">
+      <div class="stat"><span class="stat-num" id="stFilings">—</span><span class="stat-label">Form 4s scanned</span></div>
+      <div class="stat"><span class="stat-num" id="stBuys">—</span><span class="stat-label">Companies with insider buying</span></div>
+      <div class="stat"><span class="stat-num" id="stCalls">—</span><span class="stat-label">Calls tracked</span></div>
+      <div class="stat"><span class="stat-num" id="stAvg">—</span><span class="stat-label">Avg return on calls</span></div>
+      <div class="stat"><span class="stat-num" id="stWin">—</span><span class="stat-label">Win rate</span></div>
+    </div>
+    <p class="updated" id="updatedLine">Loading latest scan…</p>
+  </div>
+</header>
+
+<main>
+  <section id="clustersSection" class="section" hidden>
+    <h2>🔥 Cluster Buys <span class="h2-sub">multiple insiders buying the same company — the strongest tell</span></h2>
+    <div class="cluster-strip" id="clusterStrip"></div>
+  </section>
+
+  <section class="section">
+    <h2>🟢 Top Insider-Buy Signals <span class="h2-sub" id="signalDate"></span></h2>
+    <div class="cards" id="signalCards"></div>
+    <p class="empty" id="signalsEmpty" hidden>No qualifying insider buying in the latest scan.</p>
+  </section>
+
+  <section class="section">
+    <h2>🎯 Prediction Tracker <span class="h2-sub">every call, logged with its entry price and graded at 30 / 90 days</span></h2>
+    <div class="table-wrap">
+      <table id="predTable">
+        <thead><tr>
+          <th>Signal date</th><th>Ticker</th><th>Score</th><th>Insiders bought</th>
+          <th>Entry</th><th>Now</th><th>Return</th><th>Days</th><th>30-day grade</th><th>90-day grade</th><th></th>
+        </tr></thead>
+        <tbody id="predBody"></tbody>
+      </table>
+      <p class="empty" id="predEmpty" hidden>No calls tracked yet — the first qualifying signals will appear here.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>🔴 Heavy Insider Selling <span class="h2-sub">non-planned sales over $1M — weaker signal, worth a look</span></h2>
+    <div class="table-wrap">
+      <table id="sellTable">
+        <thead><tr><th>Ticker</th><th>Company</th><th>Sold</th><th>Top sellers</th><th></th></tr></thead>
+        <tbody id="sellBody"></tbody>
+      </table>
+      <p class="empty" id="sellEmpty" hidden>None over $1M in the latest scan.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>🧭 How the score works</h2>
+    <div class="explainer">
+      <div class="exp-card"><h3>Who's buying</h3><p>CEO / CFO purchases weigh most, then other officers, directors, and 10% owners. Rank is knowledge — the closer to the top, the more they know.</p></div>
+      <div class="exp-card"><h3>How much</h3><p>Bigger personal checks score higher. A $1M open-market buy is a statement; a $3K buy is a shrug.</p></div>
+      <div class="exp-card"><h3>Clusters</h3><p>Two or more insiders at the same company buying in the same window multiplies the signal. One buyer can be wrong — a crowd rarely buys together by accident.</p></div>
+      <div class="exp-card"><h3>Offsets</h3><p>Heavy non-planned insider selling at the same company cuts the score. Planned 10b5-1 sales are excluded — they're scheduled in advance and say little.</p></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>🚧 On the roadmap</h2>
+    <div class="explainer">
+      <div class="exp-card road"><h3>🏛️ Congress Tracker — Phase 2</h3><p>STOCK Act disclosures from House &amp; Senate members: what the people who write the laws buy and sell. The old free feeds died, so this one is being built from the official disclosure portals.</p></div>
+      <div class="exp-card road"><h3>🐋 Big Fund Tracker — Phase 3</h3><p>Quarterly 13F filings: what the largest institutions hold, add, and dump — the slowest money, but the biggest.</p></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p><strong>PowerWatch</strong> · Data: SEC EDGAR Form 4 filings (public record) · Prices: Yahoo Finance</p>
+  <p class="fine">Signals, not financial advice. Insider buying is one of the best-documented edges in public markets, but no signal guarantees a result — every call here is tracked and graded so you can judge the record yourself. Do your own homework before buying anything, including in the Robinhood app.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
