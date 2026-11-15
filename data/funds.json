@@ -1,0 +1,3347 @@
+{
+ "updated": "2026-11-15",
+ "stats": {
+  "funds_tracked": 11,
+  "fresh_filings": 11
+ },
+ "consensus": [
+  {
+   "symbol": "AMZN",
+   "name": "AMAZON COM INC",
+   "funds": 9,
+   "total_value": 21858970653
+  },
+  {
+   "symbol": "GOOGL",
+   "name": "ALPHABET INC",
+   "funds": 8,
+   "total_value": 46420393646
+  },
+  {
+   "symbol": "GOOG",
+   "name": "ALPHABET INC",
+   "funds": 8,
+   "total_value": 19305037463
+  },
+  {
+   "symbol": "BAC",
+   "name": "BANK OF AMER CORP",
+   "funds": 7,
+   "total_value": 29675054080
+  },
+  {
+   "symbol": "NVDA",
+   "name": "NVIDIA CORPORATION",
+   "funds": 7,
+   "total_value": 28456426982
+  },
+  {
+   "symbol": "META",
+   "name": "META PLATFORMS INC",
+   "funds": 7,
+   "total_value": 19370023898
+  },
+  {
+   "symbol": "TSM",
+   "name": "TAIWAN SEMICONDUCTOR MANUFAC",
+   "funds": 7,
+   "total_value": 16304302776
+  },
+  {
+   "symbol": "SPCX",
+   "name": "SPACE EXPLORATION TECHN CORP",
+   "funds": 7,
+   "total_value": 7192335780
+  },
+  {
+   "symbol": "AMD",
+   "name": "ADVANCED MICRO DEVICES INC",
+   "funds": 6,
+   "total_value": 21389937516
+  },
+  {
+   "symbol": "AVGO",
+   "name": "BROADCOM INC",
+   "funds": 6,
+   "total_value": 11262357929
+  },
+  {
+   "symbol": "LRCX",
+   "name": "LAM RESEARCH CORP",
+   "funds": 6,
+   "total_value": 10103175249
+  },
+  {
+   "symbol": null,
+   "name": "ASML HLDG NV",
+   "funds": 6,
+   "total_value": 6000051555
+  },
+  {
+   "symbol": "AAPL",
+   "name": "APPLE INC",
+   "funds": 5,
+   "total_value": 83689980337
+  },
+  {
+   "symbol": "MU",
+   "name": "MICRON TECHNOLOGY INC",
+   "funds": 5,
+   "total_value": 45789086479
+  },
+  {
+   "symbol": "MSFT",
+   "name": "MICROSOFT CORP",
+   "funds": 5,
+   "total_value": 21727818883
+  }
+ ],
+ "funds": [
+  {
+   "name": "Berkshire Hathaway",
+   "label": "Warren Buffett",
+   "accession": "0001193125-26-352200",
+   "period": "2026-06-30",
+   "filed": "2026-08-14",
+   "total_value": 299253556246,
+   "positions": 29,
+   "top_holdings": [
+    {
+     "symbol": "AAPL",
+     "name": "APPLE INC",
+     "cusip": "037833100",
+     "value": 65950296923,
+     "shares": 227917808,
+     "pct": 22.04
+    },
+    {
+     "symbol": "AXP",
+     "name": "AMERICAN EXPRESS CO",
+     "cusip": "025816109",
+     "value": 51282319275,
+     "shares": 151610700,
+     "pct": 17.14
+    },
+    {
+     "symbol": "KO",
+     "name": "COCA COLA CO",
+     "cusip": "191216100",
+     "value": 32508000000,
+     "shares": 400000000,
+     "pct": 10.86
+    },
+    {
+     "symbol": "GOOGL",
+     "name": "ALPHABET INC",
+     "cusip": "02079K305",
+     "value": 28157599351,
+     "shares": 78791167,
+     "pct": 9.41
+    },
+    {
+     "symbol": "BAC",
+     "name": "BANK OF AMER CORP",
+     "cusip": "060505104",
+     "value": 27543790975,
+     "shares": 483394015,
+     "pct": 9.2
+    },
+    {
+     "symbol": "CHV",
+     "name": "CHEVRON CORPORATION",
+     "cusip": "166764100",
+     "value": 13986141890,
+     "shares": 84375856,
+     "pct": 4.67
+    },
+    {
+     "symbol": "OXY",
+     "name": "OCCIDENTAL PETE CORP",
+     "cusip": "674599105",
+     "value": 12868205304,
+     "shares": 264941431,
+     "pct": 4.3
+    },
+    {
+     "symbol": null,
+     "name": "CHUBB LIMITED",
+     "cusip": "H1467J104",
+     "value": 11670066615,
+     "shares": 34249183,
+     "pct": 3.9
+    },
+    {
+     "symbol": "DUT",
+     "name": "MOODYS CORP",
+     "cusip": "615369105",
+     "value": 11173435852,
+     "shares": 24669778,
+     "pct": 3.73
+    },
+    {
+     "symbol": "GOOG",
+     "name": "ALPHABET INC",
+     "cusip": "02079K107",
+     "value": 9606489032,
+     "shares": 27188433,
+     "pct": 3.21
+    }
+   ],
+   "changes": {
+    "new": [
+     {
+      "symbol": "DHI",
+      "name": "D R HORTON INC",
+      "cusip": "23331A109",
+      "value": 580504,
+      "shares": 3564
+     }
+    ],
+    "exited": [
+     {
+      "symbol": "CB1A",
+      "name": "CONSTELLATION BRANDS INC",
+      "cusip": "21036P108",
+      "value": 94933500,
+      "shares": 632890
+     }
+    ],
+    "increased": [
+     {
+      "symbol": "GOOGL",
+      "name": "ALPHABET INC",
+      "cusip": "02079K305",
+      "value": 28157599351,
+      "shares": 78791167,
+      "pct_change": 45.2,
+      "value_change": 12557527438
+     },
+     {
+      "symbol": "GOOG",
+      "name": "ALPHABET INC",
+      "cusip": "02079K107",
+      "value": 9606489032,
+      "shares": 27188433,
+      "pct_change": 658.3,
+      "value_change": 8578034257
+     },
+     {
+      "symbol": "DAL",
+      "name": "DELTA AIR LINES INC",
+      "cusip": "247361702",
+      "value": 5368591200,
+      "shares": 57320000,
+      "pct_change": 44.0,
+      "value_change": 2722058565
+     },
+     {
+      "symbol": "LEN",
+      "name": "LENNAR CORP",
+      "cusip": "526057104",
+      "value": 1186481443,
+      "shares": 13111741,
+      "pct_change": 29.8,
+      "value_change": 309428532
+     },
+     {
+      "symbol": "M",
+      "name": "MACYS INC",
+      "cusip": "55616P104",
+      "value": 173031882,
+      "shares": 7347426,
+      "pct_change": 141.8,
+      "value_change": 118068040
+     },
+     {
+      "symbol": "LEN/B",
+      "name": "LENNAR CORP",
+      "cusip": "526057302",
+      "value": 26445959,
+      "shares": 298117,
+      "pct_change": 25.4,
+      "value_change": 6450383
+     }
+    ],
+    "decreased": [
+     {
+      "symbol": "BAC",
+      "name": "BANK OF AMER CORP",
+      "cusip": "060505104",
+      "value": 27543790975,
+      "shares": 483394015,
+      "pct_change": -5.9,
+      "value_change": 2504612931
+     },
+     {
+      "symbol": "KR",
+      "name": "KROGER CO",
+      "cusip": "501044101",
+      "value": 2165670000,
+      "shares": 39000000,
+      "pct_change": -22.0,
+      "value_change": -1452330000
+     },
+     {
+      "symbol": "COF",
+      "name": "CAPITAL ONE FINL CORP",
+      "cusip": "14040H105",
+      "value": 601860000,
+      "shares": 3000000,
+      "pct_change": -58.0,
+      "value_change": -702514500
+     },
+     {
+      "symbol": "NUE",
+      "name": "NUCOR CORP",
+      "cusip": "670346105",
+      "value": 413814258,
+      "shares": 1857752,
+      "pct_change": -52.5,
+      "value_change": -246872125
+     },
+     {
+      "symbol": "ALLY",
+      "name": "ALLY FINL INC",
+      "cusip": "02005N100",
+      "value": 1240650000,
+      "shares": 27000000,
+      "pct_change": -6.9,
+      "value_change": 102980000
+     }
+    ]
+   }
+  },
+  {
+   "name": "Pershing Square",
+   "label": "Bill Ackman",
+   "accession": "0001172661-26-002336",
+   "period": "2026-03-31",
+   "filed": "2026-05-15",
+   "total_value": 13714299861,
+   "positions": 11,
+   "top_holdings": [
+    {
+     "symbol": "BN",
+     "name": "BROOKFIELD CORP",
+     "cusip": "11271J107",
+     "value": 2415946008,
+     "shares": 59697208,
+     "pct": 17.62
+    },
+    {
+     "symbol": "AMZN",
+     "name": "AMAZON COM INC",
+     "cusip": "023135106",
+     "value": 2385104083,
+     "shares": 11451981,
+     "pct": 17.39
+    },
+    {
+     "symbol": "UBER",
+     "name": "UBER TECHNOLOGIES INC",
+     "cusip": "90353T100",
+     "value": 2154934398,
+     "shares": 29958771,
+     "pct": 15.71
+    },
+    {
+     "symbol": "MSFT",
+     "name": "MICROSOFT CORP",
+     "cusip": "594918104",
+     "value": 2092970053,
+     "shares": 5654078,
+     "pct": 15.26
+    },
+    {
+     "symbol": "QSR",
+     "name": "RESTAURANT BRANDS INTL INC",
+     "cusip": "76131D103",
+     "value": 1673501194,
+     "shares": 22645483,
+     "pct": 12.2
+    },
+    {
+     "symbol": "META",
+     "name": "META PLATFORMS INC",
+     "cusip": "30303M102",
+     "value": 1522358404,
+     "shares": 2660861,
+     "pct": 11.1
+    },
+    {
+     "symbol": "HHH",
+     "name": "HOWARD HUGHES HOLDINGS INC",
+     "cusip": "44267T102",
+     "value": 1192581569,
+     "shares": 18852064,
+     "pct": 8.7
+    },
+    {
+     "symbol": "SEG",
+     "name": "SEAPORT ENTMT GROUP INC",
+     "cusip": "812215200",
+     "value": 107910794,
+     "shares": 5023780,
+     "pct": 0.79
+    },
+    {
+     "symbol": "GOOG",
+     "name": "ALPHABET INC",
+     "cusip": "02079K107",
+     "value": 89421720,
+     "shares": 311726,
+     "pct": 0.65
+    },
+    {
+     "symbol": "HTZ",
+     "name": "HERTZ GLOBAL HLDGS INC",
+     "cusip": "42806J700",
+     "value": 70261595,
+     "shares": 15241127,
+     "pct": 0.51
+    }
+   ],
+   "changes": {
+    "new": [
+     {
+      "symbol": "MSFT",
+      "name": "MICROSOFT CORP",
+      "cusip": "594918104",
+      "value": 2092970053,
+      "shares": 5654078
+     }
+    ],
+    "exited": [
+     {
+      "symbol": "HLT",
+      "name": "HILTON WORLDWIDE HLDGS INC",
+      "cusip": "43300A203",
+      "value": 869983734,
+      "shares": 3028664
+     }
+    ],
+    "increased": [
+     {
+      "symbol": "AMZN",
+      "name": "AMAZON COM INC",
+      "cusip": "023135106",
+      "value": 2385104083,
+      "shares": 11451981,
+      "pct_change": 19.2,
+      "value_change": 167426147
+     }
+    ],
+    "decreased": [
+     {
+      "symbol": "GOOG",
+      "name": "ALPHABET INC",
+      "cusip": "02079K107",
+      "value": 89421720,
+      "shares": 311726,
+      "pct_change": -94.9,
+      "value_change": -1844801000
+     },
+     {
+      "symbol": "GOOGL",
+      "name": "ALPHABET INC",
+      "cusip": "02079K305",
+      "value": 9310043,
+      "shares": 32376,
+      "pct_change": -95.2,
+      "value_change": -202996918
+     }
+    ]
+   }
+  },
+  {
+   "name": "Scion Asset Management",
+   "label": "Michael Burry",
+   "accession": "0001649339-25-000007",
+   "period": "2025-09-30",
+   "filed": "2025-11-03",
+   "total_value": 1381198076,
+   "positions": 8,
+   "top_holdings": [
+    {
+     "symbol": "PLTR",
+     "name": "PALANTIR TECHNOLOGIES INC",
+     "cusip": "69608A108",
+     "value": 912100000,
+     "shares": 0,
+     "pct": 66.04
+    },
+    {
+     "symbol": "NVDA",
+     "name": "NVIDIA CORPORATION",
+     "cusip": "67066G104",
+     "value": 186580000,
+     "shares": 0,
+     "pct": 13.51
+    },
+    {
+     "symbol": "PFE",
+     "name": "PFIZER INC",
+     "cusip": "717081103",
+     "value": 152880000,
+     "shares": 0,
+     "pct": 11.07
+    },
+    {
+     "symbol": "HAL",
+     "name": "HALLIBURTON CO",
+     "cusip": "406216101",
+     "value": 61500000,
+     "shares": 0,
+     "pct": 4.45
+    },
+    {
+     "symbol": "MOH",
+     "name": "MOLINA HEALTHCARE INC",
+     "cusip": "60855R100",
+     "value": 23920000,
+     "shares": 125000,
+     "pct": 1.73
+    },
+    {
+     "symbol": "LULU",
+     "name": "LULULEMON ATHLETICA INC",
+     "cusip": "550021109",
+     "value": 17793000,
+     "shares": 100000,
+     "pct": 1.29
+    },
+    {
+     "symbol": "SLM",
+     "name": "SLM CORP",
+     "cusip": "78442P106",
+     "value": 13287895,
+     "shares": 480054,
+     "pct": 0.96
+    },
+    {
+     "symbol": "BRKR 6.375 09/01/28",
+     "name": "BRUKER CORP",
+     "cusip": "116794207",
+     "value": 13137181,
+     "shares": 48334,
+     "pct": 0.95
+    }
+   ],
+   "changes": {
+    "new": [
+     {
+      "symbol": "PLTR",
+      "name": "PALANTIR TECHNOLOGIES INC",
+      "cusip": "69608A108",
+      "value": 912100000,
+      "shares": 0
+     },
+     {
+      "symbol": "NVDA",
+      "name": "NVIDIA CORPORATION",
+      "cusip": "67066G104",
+      "value": 186580000,
+      "shares": 0
+     },
+     {
+      "symbol": "PFE",
+      "name": "PFIZER INC",
+      "cusip": "717081103",
+      "value": 152880000,
+      "shares": 0
+     },
+     {
+      "symbol": "HAL",
+      "name": "HALLIBURTON CO",
+      "cusip": "406216101",
+      "value": 61500000,
+      "shares": 0
+     },
+     {
+      "symbol": "MOH",
+      "name": "MOLINA HEALTHCARE INC",
+      "cusip": "60855R100",
+      "value": 23920000,
+      "shares": 125000
+     },
+     {
+      "symbol": "SLM",
+      "name": "SLM CORP",
+      "cusip": "78442P106",
+      "value": 13287895,
+      "shares": 480054
+     },
+     {
+      "symbol": "BRKR 6.375 09/01/28",
+      "name": "BRUKER CORP",
+      "cusip": "116794207",
+      "value": 13137181,
+      "shares": 48334
+     }
+    ],
+    "exited": [
+     {
+      "symbol": "UNH",
+      "name": "UNITEDHEALTH GROUP INC",
+      "cusip": "91324P102",
+      "value": 115428900,
+      "shares": 20000
+     },
+     {
+      "symbol": "REGN",
+      "name": "REGENERON PHARMACEUTICALS",
+      "cusip": "75886F107",
+      "value": 112875000,
+      "shares": 15000
+     },
+     {
+      "symbol": "META",
+      "name": "META PLATFORMS INC",
+      "cusip": "30303M102",
+      "value": 73809000,
+      "shares": 0
+     },
+     {
+      "symbol": "EL",
+      "name": "LAUDER ESTEE COS INC",
+      "cusip": "518439104",
+      "value": 52520000,
+      "shares": 150000
+     },
+     {
+      "symbol": "JD",
+      "name": "JD.COM INC",
+      "cusip": "47215P106",
+      "value": 32640000,
+      "shares": 0
+     },
+     {
+      "symbol": "BABA",
+      "name": "ALIBABA GROUP HLDG LTD",
+      "cusip": "01609W102",
+      "value": 28352500,
+      "shares": 0
+     },
+     {
+      "symbol": null,
+      "name": "ASML HOLDING N V",
+      "cusip": "N07059210",
+      "value": 20034750,
+      "shares": 0
+     },
+     {
+      "symbol": "VFC",
+      "name": "V F CORP",
+      "cusip": "918204108",
+      "value": 17625000,
+      "shares": 0
+     },
+     {
+      "symbol": "BRKR",
+      "name": "BRUKER CORP",
+      "cusip": "116794108",
+      "value": 10300000,
+      "shares": 250000
+     },
+     {
+      "symbol": "MLB1",
+      "name": "MERCADOLIBRE INC",
+      "cusip": "58733R102",
+      "value": 7840890,
+      "shares": 3000
+     }
+    ],
+    "increased": [
+     {
+      "symbol": "LULU",
+      "name": "LULULEMON ATHLETICA INC",
+      "cusip": "550021109",
+      "value": 17793000,
+      "shares": 100000,
+      "pct_change": 100.0,
+      "value_change": -89118000
+     }
+    ],
+    "decreased": []
+   }
+  },
+  {
+   "name": "Renaissance Technologies",
+   "label": "quant giant",
+   "accession": "0001037389-26-000062",
+   "period": "2026-09-30",
+   "filed": "2026-11-12",
+   "total_value": 73424247652,
+   "positions": 3151,
+   "top_holdings": [
+    {
+     "symbol": "MU",
+     "name": "MICRON TECHNOLOGY INC",
+     "cusip": "595112103",
+     "value": 1619650963,
+     "shares": 1520639,
+     "pct": 2.21
+    },
+    {
+     "symbol": "AMD",
+     "name": "ADVANCED MICRO DEVICES INC",
+     "cusip": "007903107",
+     "value": 1205536416,
+     "shares": 1995101,
+     "pct": 1.64
+    },
+    {
+     "symbol": "UTH",
+     "name": "UNITED THERAPEUTICS CORP DEL",
+     "cusip": "91307C102",
+     "value": 908152909,
+     "shares": 1675899,
+     "pct": 1.24
+    },
+    {
+     "symbol": "INTC",
+     "name": "INTEL CORP",
+     "cusip": "458140100",
+     "value": 834545560,
+     "shares": 6941236,
+     "pct": 1.14
+    },
+    {
+     "symbol": "GOOGL",
+     "name": "ALPHABET INC",
+     "cusip": "02079K305",
+     "value": 827731731,
+     "shares": 2405471,
+     "pct": 1.13
+    },
+    {
+     "symbol": "UNH",
+     "name": "UNITEDHEALTH GROUP INC",
+     "cusip": "91324P102",
+     "value": 817384838,
+     "shares": 2226720,
+     "pct": 1.11
+    },
+    {
+     "symbol": "EX9",
+     "name": "EXELIXIS INC",
+     "cusip": "30161Q104",
+     "value": 747221198,
+     "shares": 12792693,
+     "pct": 1.02
+    },
+    {
+     "symbol": "VRSN",
+     "name": "VERISIGN INC",
+     "cusip": "92343E102",
+     "value": 648925033,
+     "shares": 2301071,
+     "pct": 0.88
+    },
+    {
+     "symbol": "SPCX",
+     "name": "SPACE EXPLORATION TECHN CORP",
+     "cusip": "84615Q103",
+     "value": 620517529,
+     "shares": 4113200,
+     "pct": 0.85
+    },
+    {
+     "symbol": "HTD",
+     "name": "CORCEPT THERAPEUTICS INC",
+     "cusip": "218352102",
+     "value": 558875064,
+     "shares": 4850083,
+     "pct": 0.76
+    }
+   ],
+   "changes": {
+    "new": [
+     {
+      "symbol": "SPCX",
+      "name": "SPACE EXPLORATION TECHN CORP",
+      "cusip": "84615Q103",
+      "value": 620517529,
+      "shares": 4113200
+     },
+     {
+      "symbol": "BAC",
+      "name": "BANK OF AMER CORP",
+      "cusip": "060505104",
+      "value": 351255752,
+      "shares": 6453339
+     },
+     {
+      "symbol": "GS",
+      "name": "GOLDMAN SACHS GROUP INC",
+      "cusip": "38141G104",
+      "value": 244837610,
+      "shares": 271932
+     },
+     {
+      "symbol": "SMH",
+      "name": "VANECK ETF TRUST",
+      "cusip": "92189F676",
+      "value": 185947188,
+      "shares": 305332
+     },
+     {
+      "symbol": "BKNG",
+      "name": "BOOKING HOLDINGS INC",
+      "cusip": "09857L108",
+      "value": 182625629,
+      "shares": 1121021
+     },
+     {
+      "symbol": "HD",
+      "name": "HOME DEPOT INC",
+      "cusip": "437076102",
+      "value": 160065454,
+      "shares": 562640
+     },
+     {
+      "symbol": "APP",
+      "name": "APPLOVIN CORP",
+      "cusip": "03831W108",
+      "value": 153086053,
+      "shares": 527101
+     },
+     {
+      "symbol": "DWD",
+      "name": "MORGAN STANLEY",
+      "cusip": "617446448",
+      "value": 142749523,
+      "shares": 758983
+     },
+     {
+      "symbol": "UBER",
+      "name": "UBER TECHNOLOGIES INC",
+      "cusip": "90353T100",
+      "value": 137924332,
+      "shares": 2013200
+     },
+     {
+      "symbol": "ADI",
+      "name": "ANALOG DEVICES INC",
+      "cusip": "032654105",
+      "value": 129246134,
+      "shares": 325795
+     },
+     {
+      "symbol": "CSCO",
+      "name": "CISCO SYS INC",
+      "cusip": "17275R102",
+      "value": 123950114,
+      "shares": 1151634
+     },
+     {
+      "symbol": "CBRS",
+      "name": "CEREBRAS SYSTEMS INC",
+      "cusip": "15675D103",
+      "value": 110693715,
+      "shares": 623100
+     }
+    ],
+    "exited": [
+     {
+      "symbol": "BX",
+      "name": "BLACKSTONE INC",
+      "cusip": "09260D107",
+      "value": 184777201,
+      "shares": 1570300
+     },
+     {
+      "symbol": "SPY",
+      "name": "STATE STR SPDR S&P 500 ETF T",
+      "cusip": "78462F103",
+      "value": 163572501,
+      "shares": 219040
+     },
+     {
+      "symbol": "MRVL",
+      "name": "MARVELL TECHNOLOGY INC",
+      "cusip": "573874104",
+      "value": 150561053,
+      "shares": 505425
+     },
+     {
+      "symbol": "DHR",
+      "name": "DANAHER CORP DEL",
+      "cusip": "235851102",
+      "value": 144885945,
+      "shares": 760636
+     },
+     {
+      "symbol": "AEM",
+      "name": "AGNICO EAGLE MINES LTD",
+      "cusip": "008474108",
+      "value": 77028405,
+      "shares": 496541
+     },
+     {
+      "symbol": "CPRXEUR",
+      "name": "CATALYST PHARMACEUTICALS INC",
+      "cusip": "14888U101",
+      "value": 67136900,
+      "shares": 2136077
+     },
+     {
+      "symbol": "UAL",
+      "name": "UNITED AIRLS HLDGS INC",
+      "cusip": "910047109",
+      "value": 63339110,
+      "shares": 465763
+     },
+     {
+      "symbol": "MXL",
+      "name": "MAXLINEAR INC",
+      "cusip": "57776J100",
+      "value": 55886759,
+      "shares": 436513
+     },
+     {
+      "symbol": null,
+      "name": "ACCENTURE PLC IRELAND",
+      "cusip": "G1151C101",
+      "value": 51832744,
+      "shares": 416528
+     },
+     {
+      "symbol": null,
+      "name": "MARQETA INC",
+      "cusip": "57142B104",
+      "value": 50423300,
+      "shares": 12419532
+     },
+     {
+      "symbol": "ITT",
+      "name": "ITT INC",
+      "cusip": "45073V108",
+      "value": 49281792,
+      "shares": 249200
+     },
+     {
+      "symbol": "DDOG",
+      "name": "DATADOG INC",
+      "cusip": "23804L103",
+      "value": 49232260,
+      "shares": 189093
+     }
+    ],
+    "increased": [
+     {
+      "symbol": "MU",
+      "name": "MICRON TECHNOLOGY INC",
+      "cusip": "595112103",
+      "value": 1619650963,
+      "shares": 1520639,
+      "pct_change": 618.7,
+      "value_change": 1375426285
+     },
+     {
+      "symbol": "AMD",
+      "name": "ADVANCED MICRO DEVICES INC",
+      "cusip": "007903107",
+      "value": 1205536416,
+      "shares": 1995101,
+      "pct_change": 140.5,
+      "value_change": 741718223
+     },
+     {
+      "symbol": "UNH",
+      "name": "UNITEDHEALTH GROUP INC",
+      "cusip": "91324P102",
+      "value": 817384838,
+      "shares": 2226720,
+      "pct_change": 506.7,
+      "value_change": 664842854
+     },
+     {
+      "symbol": "SNDK",
+      "name": "SANDISK CORP",
+      "cusip": "80004C200",
+      "value": 481009989,
+      "shares": 276460,
+      "pct_change": 5451.4,
+      "value_change": 469686814
+     },
+     {
+      "symbol": "SCHW",
+      "name": "CHARLES SCHWAB CORP (THE)",
+      "cusip": "808513105",
+      "value": 418741715,
+      "shares": 4284241,
+      "pct_change": 124.2,
+      "value_change": 242400735
+     },
+     {
+      "symbol": "NKE",
+      "name": "NIKE INC",
+      "cusip": "654106103",
+      "value": 397906985,
+      "shares": 11242321,
+      "pct_change": 176.2,
+      "value_change": 230825275
+     }
+    ],
+    "decreased": [
+     {
+      "symbol": "NVDA",
+      "name": "NVIDIA CORPORATION",
+      "cusip": "67066G104",
+      "value": 5327269,
+      "shares": 23170,
+      "pct_change": -99.7,
+      "value_change": -1413541901
+     },
+     {
+      "symbol": "META",
+      "name": "META PLATFORMS INC",
+      "cusip": "30303M102",
+      "value": 1155153,
+      "shares": 1577,
+      "pct_change": -99.9,
+      "value_change": -1138456592
+     },
+     {
+      "symbol": "AMZN",
+      "name": "AMAZON COM INC",
+      "cusip": "023135106",
+      "value": 2786411,
+      "shares": 11128,
+      "pct_change": -99.5,
+      "value_change": -543188564
+     },
+     {
+      "symbol": "PLTR",
+      "name": "PALANTIR TECHNOLOGIES INC",
+      "cusip": "69608A108",
+      "value": 415619954,
+      "shares": 2221974,
+      "pct_change": -70.6,
+      "value_change": -467381774
+     },
+     {
+      "symbol": "AAPL",
+      "name": "APPLE INC",
+      "cusip": "037833100",
+      "value": 1089870,
+      "shares": 3246,
+      "pct_change": -99.8,
+      "value_change": -457968740
+     },
+     {
+      "symbol": "NFLX",
+      "name": "NETFLIX INC.",
+      "cusip": "64110L106",
+      "value": 62745891,
+      "shares": 901768,
+      "pct_change": -86.7,
+      "value_change": -421909723
+     }
+    ]
+   }
+  },
+  {
+   "name": "Citadel Advisors",
+   "label": "Ken Griffin",
+   "accession": "0001104659-26-104387",
+   "period": "2026-06-30",
+   "filed": "2026-09-02",
+   "total_value": 875011794337,
+   "positions": 7164,
+   "top_holdings": [
+    {
+     "symbol": "SPY",
+     "name": "STATE STR SPDR S&P 500 ETF T",
+     "cusip": "78462F103",
+     "value": 59248649655,
+     "shares": 436890,
+     "pct": 6.77
+    },
+    {
+     "symbol": "NDQ",
+     "name": "INVESCO QQQ TR",
+     "cusip": "46090E103",
+     "value": 50079342986,
+     "shares": 46426,
+     "pct": 5.72
+    },
+    {
+     "symbol": "MU",
+     "name": "MICRON TECHNOLOGY INC",
+     "cusip": "595112103",
+     "value": 39282246684,
+     "shares": 600523,
+     "pct": 4.49
+    },
+    {
+     "symbol": "TSLA",
+     "name": "TESLA INC",
+     "cusip": "88160R101",
+     "value": 23800550243,
+     "shares": 1226238,
+     "pct": 2.72
+    },
+    {
+     "symbol": "NVDA",
+     "name": "NVIDIA CORPORATION",
+     "cusip": "67066G104",
+     "value": 23733448648,
+     "shares": 11815467,
+     "pct": 2.71
+    },
+    {
+     "symbol": "SNDK",
+     "name": "SANDISK CORP",
+     "cusip": "80004C200",
+     "value": 22214071526,
+     "shares": 67432,
+     "pct": 2.54
+    },
+    {
+     "symbol": "AMD",
+     "name": "ADVANCED MICRO DEVICES INC",
+     "cusip": "007903107",
+     "value": 19309059190,
+     "shares": 1599430,
+     "pct": 2.21
+    },
+    {
+     "symbol": "MSFT",
+     "name": "MICROSOFT CORP",
+     "cusip": "594918104",
+     "value": 17428354212,
+     "shares": 3770405,
+     "pct": 1.99
+    },
+    {
+     "symbol": "AAPL",
+     "name": "APPLE INC",
+     "cusip": "037833100",
+     "value": 17391541815,
+     "shares": 7296076,
+     "pct": 1.99
+    },
+    {
+     "symbol": "SMH",
+     "name": "VANECK ETF TRUST",
+     "cusip": "92189F676",
+     "value": 16506924646,
+     "shares": 3315,
+     "pct": 1.89
+    }
+   ],
+   "changes": {
+    "new": [
+     {
+      "symbol": "SPCX",
+      "name": "SPACE EXPLORATION TECHN CORP",
+      "cusip": "84615Q103",
+      "value": 3265029350,
+      "shares": 5129884
+     },
+     {
+      "symbol": "DRAM",
+      "name": "ROUNDHILL ETF TRUST",
+      "cusip": "77926X320",
+      "value": 1736435050,
+      "shares": 60000
+     },
+     {
+      "symbol": "CBRS",
+      "name": "CEREBRAS SYSTEMS INC",
+      "cusip": "15675D103",
+      "value": 688342070,
+      "shares": 1248170
+     },
+     {
+      "symbol": "HON",
+      "name": "HONEYWELL INTL INC",
+      "cusip": "438516205",
+      "value": 421586012,
+      "shares": 679171
+     },
+     {
+      "symbol": null,
+      "name": "CARNIVAL CORP LTD",
+      "cusip": "G2004J103",
+      "value": 309237138,
+      "shares": 2204741
+     },
+     {
+      "symbol": "MAIR",
+      "name": "MADISON AIR SOLUTIONS CORP",
+      "cusip": "55658T105",
+      "value": 251480619,
+      "shares": 6448221
+     },
+     {
+      "symbol": "QNT",
+      "name": "QUANTINUUM INC",
+      "cusip": "74768A104",
+      "value": 199077525,
+      "shares": 2299997
+     },
+     {
+      "symbol": "GOOGL 6.25 05/15/29 B",
+      "name": "ALPHABET INC",
+      "cusip": "02079K602",
+      "value": 177857707,
+      "shares": 3550000
+     },
+     {
+      "symbol": "HONA",
+      "name": "HONEYWELL AEROSPACE INC",
+      "cusip": "43849R105",
+      "value": 155760808,
+      "shares": 704545
+     },
+     {
+      "symbol": null,
+      "name": "INNIO NV",
+      "cusip": "N52A8C105",
+      "value": 149664754,
+      "shares": 3784191
+     },
+     {
+      "symbol": "FMDE",
+      "name": "FIDELITY COVINGTON TRUST",
+      "cusip": "31609A503",
+      "value": 118747996,
+      "shares": 2926269
+     },
+     {
+      "symbol": null,
+      "name": "ASCENDIS PHARMA A/S",
+      "cusip": "K08588103",
+      "value": 108498762,
+      "shares": 137889
+     }
+    ],
+    "exited": [
+     {
+      "symbol": "WDC 3 11/15/28",
+      "name": "WESTERN DIGITAL CORP",
+      "cusip": "958102AT2",
+      "value": 696712587,
+      "shares": 0
+     },
+     {
+      "symbol": null,
+      "name": "HONEYWELL INTL INC",
+      "cusip": "438516106",
+      "value": 423378149,
+      "shares": 521906
+     },
+     {
+      "symbol": null,
+      "name": "CARNIVAL CORP",
+      "cusip": "143658300",
+      "value": 329852453,
+      "shares": 4692458
+     },
+     {
+      "symbol": "CTRA",
+      "name": "COTERRA ENERGY INC",
+      "cusip": "127097103",
+      "value": 243136646,
+      "shares": 6158585
+     },
+     {
+      "symbol": "LYV 3.125 01/15/29",
+      "name": "LIVE NATION ENTERTAINMENT IN",
+      "cusip": "538034BA6",
+      "value": 217297152,
+      "shares": 0
+     },
+     {
+      "symbol": "CWAN",
+      "name": "CLEARWATER ANALYTICS HLDGS I",
+      "cusip": "185123106",
+      "value": 204880329,
+      "shares": 8441416
+     },
+     {
+      "symbol": "430",
+      "name": "TERNS PHARMACEUTICALS INC",
+      "cusip": "880881107",
+      "value": 197558183,
+      "shares": 3218810
+     },
+     {
+      "symbol": "DWDPEUR",
+      "name": "DUPONT DE NEMOURS INC",
+      "cusip": "26614N102",
+      "value": 89485872,
+      "shares": 898340
+     },
+     {
+      "symbol": "HO1",
+      "name": "HOLOGIC INC",
+      "cusip": "436440101",
+      "value": 84340298,
+      "shares": 1090660
+     },
+     {
+      "symbol": "GVA 3.75 05/15/28",
+      "name": "GRANITE CONSTR INC",
+      "cusip": "387328AD9",
+      "value": 60807661,
+      "shares": 0
+     },
+     {
+      "symbol": "MASI*",
+      "name": "MASIMO CORP",
+      "cusip": "574795100",
+      "value": 59189088,
+      "shares": 281366
+     },
+     {
+      "symbol": "WEC 4.375 06/01/29",
+      "name": "WEC ENERGY GROUP INC",
+      "cusip": "92939UAR7",
+      "value": 56779093,
+      "shares": 0
+     }
+    ],
+    "increased": [
+     {
+      "symbol": "SPY",
+      "name": "STATE STR SPDR S&P 500 ETF T",
+      "cusip": "78462F103",
+      "value": 59248649655,
+      "shares": 436890,
+      "pct_change": 25.6,
+      "value_change": 17258813474
+     },
+     {
+      "symbol": "AMD",
+      "name": "ADVANCED MICRO DEVICES INC",
+      "cusip": "007903107",
+      "value": 19309059190,
+      "shares": 1599430,
+      "pct_change": 154.9,
+      "value_change": 13737932330
+     },
+     {
+      "symbol": "IVV",
+      "name": "ISHARES TR",
+      "cusip": "464287200",
+      "value": 13437699477,
+      "shares": 17676489,
+      "pct_change": 335.3,
+      "value_change": 10523827648
+     },
+     {
+      "symbol": "MSFT",
+      "name": "MICROSOFT CORP",
+      "cusip": "594918104",
+      "value": 17428354212,
+      "shares": 3770405,
+      "pct_change": 42.9,
+      "value_change": 5517607340
+     },
+     {
+      "symbol": "WDC",
+      "name": "WESTERN DIGITAL CORP",
+      "cusip": "958102105",
+      "value": 5594726044,
+      "shares": 657878,
+      "pct_change": 147.4,
+      "value_change": 4012909180
+     },
+     {
+      "symbol": null,
+      "name": "SEAGATE TECHNOLOGY HLDNGS PL",
+      "cusip": "G7997R103",
+      "value": 4985957175,
+      "shares": 755495,
+      "pct_change": 582.2,
+      "value_change": 3680320994
+     }
+    ],
+    "decreased": [
+     {
+      "symbol": "MU",
+      "name": "MICRON TECHNOLOGY INC",
+      "cusip": "595112103",
+      "value": 39282246684,
+      "shares": 600523,
+      "pct_change": -86.9,
+      "value_change": 28596444511
+     },
+     {
+      "symbol": "NDQ",
+      "name": "INVESCO QQQ TR",
+      "cusip": "46090E103",
+      "value": 50079342986,
+      "shares": 46426,
+      "pct_change": -45.0,
+      "value_change": 18235188804
+     },
+     {
+      "symbol": "SNDK",
+      "name": "SANDISK CORP",
+      "cusip": "80004C200",
+      "value": 22214071526,
+      "shares": 67432,
+      "pct_change": -88.9,
+      "value_change": 18019740459
+     },
+     {
+      "symbol": "GQ9",
+      "name": "SPDR GOLD TR",
+      "cusip": "78463V107",
+      "value": 7898436317,
+      "shares": 1002,
+      "pct_change": -99.5,
+      "value_change": -6921492242
+     },
+     {
+      "symbol": "INTC",
+      "name": "INTEL CORP",
+      "cusip": "458140100",
+      "value": 8327283402,
+      "shares": 4218311,
+      "pct_change": -33.3,
+      "value_change": 5891945257
+     },
+     {
+      "symbol": "MRVL",
+      "name": "MARVELL TECHNOLOGY INC",
+      "cusip": "573874104",
+      "value": 5428181667,
+      "shares": 378401,
+      "pct_change": -52.3,
+      "value_change": 4513223834
+     }
+    ]
+   }
+  },
+  {
+   "name": "Bridgewater Associates",
+   "label": "world's largest hedge fund",
+   "accession": "0001350694-26-000003",
+   "period": "2026-06-30",
+   "filed": "2026-08-14",
+   "total_value": 24376086530,
+   "positions": 997,
+   "top_holdings": [
+    {
+     "symbol": "SPY",
+     "name": "STATE STR SPDR S&P 500 ETF T",
+     "cusip": "78462F103",
+     "value": 3973046405,
+     "shares": 5320308,
+     "pct": 16.3
+    },
+    {
+     "symbol": "IVV",
+     "name": "ISHARES TR",
+     "cusip": "464287200",
+     "value": 2248381963,
+     "shares": 3002286,
+     "pct": 9.22
+    },
+    {
+     "symbol": "NVDA",
+     "name": "NVIDIA CORPORATION",
+     "cusip": "67066G104",
+     "value": 773586958,
+     "shares": 3866195,
+     "pct": 3.17
+    },
+    {
+     "symbol": "AVGO",
+     "name": "BROADCOM INC",
+     "cusip": "11135F101",
+     "value": 497845413,
+     "shares": 1317923,
+     "pct": 2.04
+    },
+    {
+     "symbol": "AMZN",
+     "name": "AMAZON COM INC",
+     "cusip": "023135106",
+     "value": 482753142,
+     "shares": 2025481,
+     "pct": 1.98
+    },
+    {
+     "symbol": "GOOGL",
+     "name": "ALPHABET INC",
+     "cusip": "02079K305",
+     "value": 472506037,
+     "shares": 1322176,
+     "pct": 1.94
+    },
+    {
+     "symbol": "LRCX",
+     "name": "LAM RESEARCH CORP",
+     "cusip": "512807306",
+     "value": 406560606,
+     "shares": 938224,
+     "pct": 1.67
+    },
+    {
+     "symbol": "VOO",
+     "name": "VANGUARD INDEX FDS",
+     "cusip": "922908363",
+     "value": 314820655,
+     "shares": 458381,
+     "pct": 1.29
+    },
+    {
+     "symbol": "AMD",
+     "name": "ADVANCED MICRO DEVICES INC",
+     "cusip": "007903107",
+     "value": 312896715,
+     "shares": 538632,
+     "pct": 1.28
+    },
+    {
+     "symbol": "EWY",
+     "name": "ISHARES INC",
+     "cusip": "464286772",
+     "value": 279585467,
+     "shares": 1384772,
+     "pct": 1.15
+    }
+   ],
+   "changes": {
+    "new": [
+     {
+      "symbol": "ES",
+      "name": "EVERSOURCE ENERGY",
+      "cusip": "30040W108",
+      "value": 86372768,
+      "shares": 1195140
+     },
+     {
+      "symbol": "APP",
+      "name": "APPLOVIN CORP",
+      "cusip": "03831W108",
+      "value": 75533748,
+      "shares": 146602
+     },
+     {
+      "symbol": "ED",
+      "name": "CONSOLIDATED EDISON INC",
+      "cusip": "209115104",
+      "value": 68993404,
+      "shares": 623641
+     },
+     {
+      "symbol": "NI",
+      "name": "NISOURCE INC",
+      "cusip": "65473P105",
+      "value": 67045548,
+      "shares": 1410001
+     },
+     {
+      "symbol": "NOW",
+      "name": "SERVICENOW INC",
+      "cusip": "81762P102",
+      "value": 63080626,
+      "shares": 635381
+     },
+     {
+      "symbol": "DUK",
+      "name": "DUKE ENERGY CORP NEW",
+      "cusip": "26441C204",
+      "value": 55960765,
+      "shares": 442098
+     },
+     {
+      "symbol": "NTNX",
+      "name": "NUTANIX INC",
+      "cusip": "67059N108",
+      "value": 50896861,
+      "shares": 998761
+     },
+     {
+      "symbol": "APA",
+      "name": "APA CORPORATION",
+      "cusip": "03743Q108",
+      "value": 47036812,
+      "shares": 1444176
+     },
+     {
+      "symbol": "EXE",
+      "name": "EXPAND ENERGY CORPORATION",
+      "cusip": "165167735",
+      "value": 40842724,
+      "shares": 447886
+     },
+     {
+      "symbol": "VMC",
+      "name": "VULCAN MATLS CO",
+      "cusip": "929160109",
+      "value": 32063752,
+      "shares": 108687
+     },
+     {
+      "symbol": "DVN",
+      "name": "DEVON ENERGY CORP NEW",
+      "cusip": "25179M103",
+      "value": 30377390,
+      "shares": 735174
+     },
+     {
+      "symbol": "EXMOC",
+      "name": "EXXON MOBIL CORP",
+      "cusip": "30231G102",
+      "value": 29562282,
+      "shares": 216225
+     }
+    ],
+    "exited": [
+     {
+      "symbol": "CSCO",
+      "name": "CISCO SYS INC",
+      "cusip": "17275R102",
+      "value": 63848190,
+      "shares": 822892
+     },
+     {
+      "symbol": "ASX",
+      "name": "ASE TECHNOLOGY HLDG CO LTD",
+      "cusip": "00215W100",
+      "value": 33557583,
+      "shares": 1547859
+     },
+     {
+      "symbol": "CRWV",
+      "name": "COREWEAVE INC",
+      "cusip": "21873S108",
+      "value": 28201017,
+      "shares": 364025
+     },
+     {
+      "symbol": "PRIM",
+      "name": "PRIMORIS SVCS CORP",
+      "cusip": "74164F103",
+      "value": 19477757,
+      "shares": 136170
+     },
+     {
+      "symbol": "BN",
+      "name": "BROOKFIELD CORP",
+      "cusip": "11271J107",
+      "value": 19286643,
+      "shares": 477453
+     },
+     {
+      "symbol": "AAOI",
+      "name": "APPLIED OPTOELECTRONICS INC",
+      "cusip": "03823U102",
+      "value": 18942662,
+      "shares": 223935
+     },
+     {
+      "symbol": "PLTR",
+      "name": "PALANTIR TECHNOLOGIES INC",
+      "cusip": "69608A108",
+      "value": 18751048,
+      "shares": 128186
+     },
+     {
+      "symbol": null,
+      "name": "NEBIUS GROUP N.V.",
+      "cusip": "N97284108",
+      "value": 16296961,
+      "shares": 157064
+     },
+     {
+      "symbol": "LIE",
+      "name": "SUN LIFE FINANCIAL INC.",
+      "cusip": "866796105",
+      "value": 15651779,
+      "shares": 250635
+     },
+     {
+      "symbol": "BMY",
+      "name": "BRISTOL-MYERS SQUIBB CO",
+      "cusip": "110122108",
+      "value": 14658438,
+      "shares": 241689
+     },
+     {
+      "symbol": null,
+      "name": "THOMSON REUTERS CORP",
+      "cusip": "884903808",
+      "value": 14388612,
+      "shares": 159909
+     },
+     {
+      "symbol": "CFR",
+      "name": "CULLEN FROST BANKERS INC",
+      "cusip": "229899109",
+      "value": 12732676,
+      "shares": 92885
+     }
+    ],
+    "increased": [
+     {
+      "symbol": "SPY",
+      "name": "STATE STR SPDR S&P 500 ETF T",
+      "cusip": "78462F103",
+      "value": 3973046405,
+      "shares": 5320308,
+      "pct_change": 21.9,
+      "value_change": 1134402052
+     },
+     {
+      "symbol": "IVV",
+      "name": "ISHARES TR",
+      "cusip": "464287200",
+      "value": 2248381963,
+      "shares": 3002286,
+      "pct_change": 12.1,
+      "value_change": 498377503
+     },
+     {
+      "symbol": "VOO",
+      "name": "VANGUARD INDEX FDS",
+      "cusip": "922908363",
+      "value": 314820655,
+      "shares": 458381,
+      "pct_change": 189.0,
+      "value_change": 220032494
+     },
+     {
+      "symbol": "PCG",
+      "name": "PG&E CORP",
+      "cusip": "69331C108",
+      "value": 99764701,
+      "shares": 5931314,
+      "pct_change": 24078.9,
+      "value_change": 99333691
+     },
+     {
+      "symbol": "SHEL",
+      "name": "SHELL PLC",
+      "cusip": "780259305",
+      "value": 118338679,
+      "shares": 1526163,
+      "pct_change": 388.9,
+      "value_change": 89308078
+     },
+     {
+      "symbol": null,
+      "name": "EDISON INTL",
+      "cusip": "281020107",
+      "value": 91917012,
+      "shares": 1234614,
+      "pct_change": 777.1,
+      "value_change": 81616122
+     }
+    ],
+    "decreased": [
+     {
+      "symbol": "AMZN",
+      "name": "AMAZON COM INC",
+      "cusip": "023135106",
+      "value": 482753142,
+      "shares": 2025481,
+      "pct_change": -53.8,
+      "value_change": -431283698
+     },
+     {
+      "symbol": "MU",
+      "name": "MICRON TECHNOLOGY INC",
+      "cusip": "595112103",
+      "value": 134666397,
+      "shares": 116666,
+      "pct_change": -92.1,
+      "value_change": -363885442
+     },
+     {
+      "symbol": "TSM",
+      "name": "TAIWAN SEMICONDUCTOR MANUFAC",
+      "cusip": "874039100",
+      "value": 16488104,
+      "shares": 34525,
+      "pct_change": -96.8,
+      "value_change": -347510744
+     },
+     {
+      "symbol": "GEV",
+      "name": "GE VERNOVA INC",
+      "cusip": "36828A101",
+      "value": 144235212,
+      "shares": 122768,
+      "pct_change": -71.8,
+      "value_change": -235386379
+     },
+     {
+      "symbol": "MRVL",
+      "name": "MARVELL TECHNOLOGY INC",
+      "cusip": "573874104",
+      "value": 53970519,
+      "shares": 181176,
+      "pct_change": -90.7,
+      "value_change": -139072681
+     },
+     {
+      "symbol": "MSFT",
+      "name": "MICROSOFT CORP",
+      "cusip": "594918104",
+      "value": 265551446,
+      "shares": 711896,
+      "pct_change": -34.4,
+      "value_change": -136075230
+     }
+    ]
+   }
+  },
+  {
+   "name": "Tiger Global",
+   "label": "",
+   "accession": "0000919574-26-005427",
+   "period": "2026-06-30",
+   "filed": "2026-08-14",
+   "total_value": 23981506027,
+   "positions": 46,
+   "top_holdings": [
+    {
+     "symbol": "TSM",
+     "name": "TAIWAN SEMICONDUCTOR MANUFAC",
+     "cusip": "874039100",
+     "value": 2331022991,
+     "shares": 4881008,
+     "pct": 9.72
+    },
+    {
+     "symbol": "AMZN",
+     "name": "AMAZON COM INC",
+     "cusip": "023135106",
+     "value": 2307979214,
+     "shares": 9683558,
+     "pct": 9.62
+    },
+    {
+     "symbol": "NVDA",
+     "name": "NVIDIA CORPORATION",
+     "cusip": "67066G104",
+     "value": 2240762490,
+     "shares": 11198773,
+     "pct": 9.34
+    },
+    {
+     "symbol": "GOOGL",
+     "name": "ALPHABET INC",
+     "cusip": "02079K305",
+     "value": 2074778363,
+     "shares": 5805687,
+     "pct": 8.65
+    },
+    {
+     "symbol": "META",
+     "name": "META PLATFORMS INC",
+     "cusip": "30303M102",
+     "value": 1590269062,
+     "shares": 2823180,
+     "pct": 6.63
+    },
+    {
+     "symbol": "LRCX",
+     "name": "LAM RESEARCH CORP",
+     "cusip": "512807306",
+     "value": 1370837288,
+     "shares": 3163495,
+     "pct": 5.72
+    },
+    {
+     "symbol": "SE",
+     "name": "SEA LTD",
+     "cusip": "81141R100",
+     "value": 1203543536,
+     "shares": 12559152,
+     "pct": 5.02
+    },
+    {
+     "symbol": "AMAT",
+     "name": "APPLIED MATLS INC",
+     "cusip": "038222105",
+     "value": 1180087830,
+     "shares": 1632210,
+     "pct": 4.92
+    },
+    {
+     "symbol": "GEV",
+     "name": "GE VERNOVA INC",
+     "cusip": "36828A101",
+     "value": 936963773,
+     "shares": 797511,
+     "pct": 3.91
+    },
+    {
+     "symbol": "MSFT",
+     "name": "MICROSOFT CORP",
+     "cusip": "594918104",
+     "value": 845603887,
+     "shares": 2266913,
+     "pct": 3.53
+    }
+   ],
+   "changes": {
+    "new": [
+     {
+      "symbol": "CBRS",
+      "name": "CEREBRAS SYSTEMS INC",
+      "cusip": "15675D103",
+      "value": 662779000,
+      "shares": 2999000
+     },
+     {
+      "symbol": "AMD",
+      "name": "ADVANCED MICRO DEVICES INC",
+      "cusip": "007903107",
+      "value": 391955662,
+      "shares": 674727
+     },
+     {
+      "symbol": null,
+      "name": "SEAGATE TECHNOLOGY HLDNGS PL",
+      "cusip": "G7997R103",
+      "value": 275121500,
+      "shares": 285100
+     },
+     {
+      "symbol": "V",
+      "name": "VISA INC",
+      "cusip": "92826C839",
+      "value": 274024954,
+      "shares": 798697
+     },
+     {
+      "symbol": "DHR",
+      "name": "DANAHER CORP DEL",
+      "cusip": "235851102",
+      "value": 86858880,
+      "shares": 456000
+     },
+     {
+      "symbol": "SPCX",
+      "name": "SPACE EXPLORATION TECHN CORP",
+      "cusip": "84615Q103",
+      "value": 64072500,
+      "shares": 375000
+     },
+     {
+      "symbol": "APLD",
+      "name": "APPLIED DIGITAL CORP",
+      "cusip": "038169207",
+      "value": 33010500,
+      "shares": 885000
+     },
+     {
+      "symbol": "CIFR",
+      "name": "CIPHER DIGITAL INC",
+      "cusip": "17253J106",
+      "value": 22711500,
+      "shares": 927000
+     },
+     {
+      "symbol": "CORZ",
+      "name": "CORE SCIENTIFIC INC NEW",
+      "cusip": "21874A106",
+      "value": 20907030,
+      "shares": 817000
+     }
+    ],
+    "exited": [
+     {
+      "symbol": "APP",
+      "name": "APPLOVIN CORP",
+      "cusip": "03831W108",
+      "value": 398000000,
+      "shares": 1000000
+     },
+     {
+      "symbol": "Z",
+      "name": "ZILLOW GROUP INC",
+      "cusip": "98954M200",
+      "value": 304927441,
+      "shares": 7368957
+     },
+     {
+      "symbol": "NFLX",
+      "name": "NETFLIX INC.",
+      "cusip": "64110L106",
+      "value": 234509850,
+      "shares": 2439000
+     },
+     {
+      "symbol": "ZS",
+      "name": "ZSCALER INC",
+      "cusip": "98980G102",
+      "value": 221625372,
+      "shares": 1579766
+     },
+     {
+      "symbol": "PCOR",
+      "name": "PROCORE TECHNOLOGIES INC",
+      "cusip": "74275K108",
+      "value": 133351500,
+      "shares": 2339500
+     },
+     {
+      "symbol": "LITE",
+      "name": "LUMENTUM HLDGS INC",
+      "cusip": "55024U109",
+      "value": 96137568,
+      "shares": 136800
+     },
+     {
+      "symbol": "CSGP",
+      "name": "COSTAR GROUP INC",
+      "cusip": "22160N109",
+      "value": 60510000,
+      "shares": 1500000
+     },
+     {
+      "symbol": "ZG",
+      "name": "ZILLOW GROUP INC",
+      "cusip": "98954M101",
+      "value": 42372309,
+      "shares": 1023733
+     },
+     {
+      "symbol": "RVI",
+      "name": "ROBINHOOD VENTURES FD I",
+      "cusip": "770701100",
+      "value": 10616000,
+      "shares": 400000
+     },
+     {
+      "symbol": "PAYP",
+      "name": "PAYPAY CORP",
+      "cusip": "70450C101",
+      "value": 8536000,
+      "shares": 400000
+     },
+     {
+      "symbol": "FIGR",
+      "name": "FIGURE TECHNOLOGY SOLUTIO",
+      "cusip": "349381103",
+      "value": 6790000,
+      "shares": 200000
+     },
+     {
+      "symbol": "NTSK",
+      "name": "NETSKOPE INC",
+      "cusip": "64119N608",
+      "value": 4245000,
+      "shares": 500000
+     }
+    ],
+    "increased": [
+     {
+      "symbol": "INTC",
+      "name": "INTEL CORP",
+      "cusip": "458140100",
+      "value": 593803105,
+      "shares": 4252690,
+      "pct_change": 159.5,
+      "value_change": 521487274
+     },
+     {
+      "symbol": "CPAY",
+      "name": "CORPAY INC",
+      "cusip": "219948106",
+      "value": 716489508,
+      "shares": 2149877,
+      "pct_change": 22.7,
+      "value_change": 206632543
+     },
+     {
+      "symbol": "XYZ",
+      "name": "BLOCK INC",
+      "cusip": "852234103",
+      "value": 347776532,
+      "shares": 4576007,
+      "pct_change": 14.4,
+      "value_change": 107056532
+     },
+     {
+      "symbol": "MLB1",
+      "name": "MERCADOLIBRE INC",
+      "cusip": "58733R102",
+      "value": 259914541,
+      "shares": 153126,
+      "pct_change": 13.4,
+      "value_change": 26486467
+     },
+     {
+      "symbol": "CPNG",
+      "name": "COUPANG INC",
+      "cusip": "22266T109",
+      "value": 633448674,
+      "shares": 36467972,
+      "pct_change": 5.4,
+      "value_change": -19712610
+     }
+    ],
+    "decreased": [
+     {
+      "symbol": "GOOGL",
+      "name": "ALPHABET INC",
+      "cusip": "02079K305",
+      "value": 2074778363,
+      "shares": 5805687,
+      "pct_change": -45.4,
+      "value_change": -982387596
+     },
+     {
+      "symbol": "LRCX",
+      "name": "LAM RESEARCH CORP",
+      "cusip": "512807306",
+      "value": 1370837288,
+      "shares": 3163495,
+      "pct_change": -18.9,
+      "value_change": 537469491
+     },
+     {
+      "symbol": "TSM",
+      "name": "TAIWAN SEMICONDUCTOR MANUFAC",
+      "cusip": "874039100",
+      "value": 2331022991,
+      "shares": 4881008,
+      "pct_change": -12.3,
+      "value_change": 450306233
+     },
+     {
+      "symbol": "AVGO",
+      "name": "BROADCOM INC",
+      "cusip": "11135F101",
+      "value": 662596921,
+      "shares": 1754062,
+      "pct_change": -51.1,
+      "value_change": -446938860
+     },
+     {
+      "symbol": null,
+      "name": "SPOTIFY TECHNOLOGY S A",
+      "cusip": "L8681T102",
+      "value": 537837279,
+      "shares": 1171427,
+      "pct_change": -25.9,
+      "value_change": -228689538
+     },
+     {
+      "symbol": "META",
+      "name": "META PLATFORMS INC",
+      "cusip": "30303M102",
+      "value": 1590269062,
+      "shares": 2823180,
+      "pct_change": -8.5,
+      "value_change": -175818438
+     }
+    ]
+   }
+  },
+  {
+   "name": "Coatue Management",
+   "label": "Philippe Laffont",
+   "accession": "0000919574-26-005478",
+   "period": "2026-06-30",
+   "filed": "2026-08-14",
+   "total_value": 48629053706,
+   "positions": 66,
+   "top_holdings": [
+    {
+     "symbol": "TSM",
+     "name": "TAIWAN SEMICONDUCTOR MANUFAC",
+     "cusip": "874039100",
+     "value": 4257534162,
+     "shares": 8914995,
+     "pct": 8.76
+    },
+    {
+     "symbol": "LRCX",
+     "name": "LAM RESEARCH CORP",
+     "cusip": "512807306",
+     "value": 4091329827,
+     "shares": 9441603,
+     "pct": 8.41
+    },
+    {
+     "symbol": "MU",
+     "name": "MICRON TECHNOLOGY INC",
+     "cusip": "595112103",
+     "value": 3627089685,
+     "shares": 3142269,
+     "pct": 7.46
+    },
+    {
+     "symbol": "SPCX",
+     "name": "SPACE EXPLORATION TECHN CORP",
+     "cusip": "84615Q103",
+     "value": 3171465731,
+     "shares": 18561780,
+     "pct": 6.52
+    },
+    {
+     "symbol": "AMAT",
+     "name": "APPLIED MATLS INC",
+     "cusip": "038222105",
+     "value": 3046348209,
+     "shares": 4213483,
+     "pct": 6.26
+    },
+    {
+     "symbol": "GEV",
+     "name": "GE VERNOVA INC",
+     "cusip": "36828A101",
+     "value": 3005484557,
+     "shares": 2558164,
+     "pct": 6.18
+    },
+    {
+     "symbol": "AMZN",
+     "name": "AMAZON COM INC",
+     "cusip": "023135106",
+     "value": 2820705995,
+     "shares": 11834799,
+     "pct": 5.8
+    },
+    {
+     "symbol": "AVGO",
+     "name": "BROADCOM INC",
+     "cusip": "11135F101",
+     "value": 2208640410,
+     "shares": 5846831,
+     "pct": 4.54
+    },
+    {
+     "symbol": null,
+     "name": "EATON CORP PLC",
+     "cusip": "G29183103",
+     "value": 2117140999,
+     "shares": 4968415,
+     "pct": 4.35
+    },
+    {
+     "symbol": "GOOGL",
+     "name": "ALPHABET INC",
+     "cusip": "02079K305",
+     "value": 1735478421,
+     "shares": 4856251,
+     "pct": 3.57
+    }
+   ],
+   "changes": {
+    "new": [
+     {
+      "symbol": "SPCX",
+      "name": "SPACE EXPLORATION TECHN CORP",
+      "cusip": "84615Q103",
+      "value": 3171465731,
+      "shares": 18561780
+     },
+     {
+      "symbol": "INTC",
+      "name": "INTEL CORP",
+      "cusip": "458140100",
+      "value": 1687292689,
+      "shares": 12084027
+     },
+     {
+      "symbol": "CBRS",
+      "name": "CEREBRAS SYSTEMS INC",
+      "cusip": "15675D103",
+      "value": 1549437188,
+      "shares": 7011028
+     },
+     {
+      "symbol": "FPS",
+      "name": "FORGENT POWER SOLUTIONS INC",
+      "cusip": "34631F102",
+      "value": 1145207477,
+      "shares": 20501387
+     },
+     {
+      "symbol": "HUT",
+      "name": "HUT 8 CORP",
+      "cusip": "44812J104",
+      "value": 1121603127,
+      "shares": 9715476
+     },
+     {
+      "symbol": "BAH",
+      "name": "BOOZ ALLEN HAMILTON HLDG COR",
+      "cusip": "099502106",
+      "value": 65730485,
+      "shares": 1083410
+     },
+     {
+      "symbol": "AMD",
+      "name": "ADVANCED MICRO DEVICES INC",
+      "cusip": "007903107",
+      "value": 55759808,
+      "shares": 95987
+     },
+     {
+      "symbol": "FIX",
+      "name": "COMFORT SYS USA INC",
+      "cusip": "199908104",
+      "value": 35264836,
+      "shares": 17793
+     },
+     {
+      "symbol": "AGX",
+      "name": "ARGAN INC",
+      "cusip": "04010E109",
+      "value": 28828454,
+      "shares": 36101
+     }
+    ],
+    "exited": [
+     {
+      "symbol": "V",
+      "name": "VISA INC",
+      "cusip": "92826C839",
+      "value": 217235907,
+      "shares": 718753
+     },
+     {
+      "symbol": "CHYM",
+      "name": "CHIME FINL INC",
+      "cusip": "16935C109",
+      "value": 188648409,
+      "shares": 10071992
+     },
+     {
+      "symbol": "SOLS",
+      "name": "SOLSTICE ADVANCED MATLS INC",
+      "cusip": "83443Q103",
+      "value": 126013498,
+      "shares": 1654589
+     },
+     {
+      "symbol": "CHRW",
+      "name": "C H ROBINSON WORLDWIDE IN",
+      "cusip": "12541W209",
+      "value": 95159771,
+      "shares": 573010
+     },
+     {
+      "symbol": "IBIT",
+      "name": "ISHARES BITCOIN TRUST ETF",
+      "cusip": "46438F101",
+      "value": 2582823,
+      "shares": 67226
+     }
+    ],
+    "increased": [
+     {
+      "symbol": "MU",
+      "name": "MICRON TECHNOLOGY INC",
+      "cusip": "595112103",
+      "value": 3627089685,
+      "shares": 3142269,
+      "pct_change": 1793.7,
+      "value_change": 3571031556
+     },
+     {
+      "symbol": "AMZN",
+      "name": "AMAZON COM INC",
+      "cusip": "023135106",
+      "value": 2820705995,
+      "shares": 11834799,
+      "pct_change": 49.2,
+      "value_change": 1168965361
+     },
+     {
+      "symbol": "AVGO",
+      "name": "BROADCOM INC",
+      "cusip": "11135F101",
+      "value": 2208640410,
+      "shares": 5846831,
+      "pct_change": 6.2,
+      "value_change": 505143177
+     },
+     {
+      "symbol": "GOOGL",
+      "name": "ALPHABET INC",
+      "cusip": "02079K305",
+      "value": 1735478421,
+      "shares": 4856251,
+      "pct_change": 12.6,
+      "value_change": 495109639
+     },
+     {
+      "symbol": "EQIX",
+      "name": "EQUINIX INC",
+      "cusip": "29444U700",
+      "value": 1327501387,
+      "shares": 1273517,
+      "pct_change": 16.7,
+      "value_change": 258171294
+     },
+     {
+      "symbol": "MSFT",
+      "name": "MICROSOFT CORP",
+      "cusip": "594918104",
+      "value": 1095339285,
+      "shares": 2936409,
+      "pct_change": 18.4,
+      "value_change": 177311392
+     }
+    ],
+    "decreased": [
+     {
+      "symbol": "LRCX",
+      "name": "LAM RESEARCH CORP",
+      "cusip": "512807306",
+      "value": 4091329827,
+      "shares": 9441603,
+      "pct_change": -6.0,
+      "value_change": 1945434548
+     },
+     {
+      "symbol": "AMAT",
+      "name": "APPLIED MATLS INC",
+      "cusip": "038222105",
+      "value": 3046348209,
+      "shares": 4213483,
+      "pct_change": -19.7,
+      "value_change": 1252565248
+     },
+     {
+      "symbol": "NFLX",
+      "name": "NETFLIX INC.",
+      "cusip": "64110L106",
+      "value": 336323988,
+      "shares": 4710420,
+      "pct_change": -31.7,
+      "value_change": -326491806
+     },
+     {
+      "symbol": "META",
+      "name": "META PLATFORMS INC",
+      "cusip": "30303M102",
+      "value": 1422897577,
+      "shares": 2526048,
+      "pct_change": -10.2,
+      "value_change": -185964023
+     },
+     {
+      "symbol": "SNPS",
+      "name": "SYNOPSYS INC",
+      "cusip": "871607107",
+      "value": 141611612,
+      "shares": 317465,
+      "pct_change": -58.3,
+      "value_change": -160410993
+     },
+     {
+      "symbol": "APP",
+      "name": "APPLOVIN CORP",
+      "cusip": "03831W108",
+      "value": 603431708,
+      "shares": 1171189,
+      "pct_change": -9.2,
+      "value_change": 90008524
+     }
+    ]
+   }
+  },
+  {
+   "name": "Third Point",
+   "label": "Dan Loeb",
+   "accession": "0001040273-26-000003",
+   "period": "2026-06-30",
+   "filed": "2026-08-14",
+   "total_value": 4679571988,
+   "positions": 43,
+   "top_holdings": [
+    {
+     "symbol": "WBD*",
+     "name": "WARNER BROS DISCOVERY INC",
+     "cusip": "934423104",
+     "value": 533200000,
+     "shares": 20000000,
+     "pct": 11.39
+    },
+    {
+     "symbol": "AMZN",
+     "name": "AMAZON COM INC",
+     "cusip": "023135106",
+     "value": 417095000,
+     "shares": 1750000,
+     "pct": 8.91
+    },
+    {
+     "symbol": "GOOGL",
+     "name": "ALPHABET INC",
+     "cusip": "02079K305",
+     "value": 366304250,
+     "shares": 1025000,
+     "pct": 7.83
+    },
+    {
+     "symbol": null,
+     "name": "CRH PLC",
+     "cusip": "G25508105",
+     "value": 234865000,
+     "shares": 2195000,
+     "pct": 5.02
+    },
+    {
+     "symbol": "TDS",
+     "name": "TELEPHONE & DATA SYS INC",
+     "cusip": "879433829",
+     "value": 232237750,
+     "shares": 6275000,
+     "pct": 4.96
+    },
+    {
+     "symbol": "TSM",
+     "name": "TAIWAN SEMICONDUCTOR MANUFAC",
+     "cusip": "874039100",
+     "value": 219682200,
+     "shares": 460000,
+     "pct": 4.69
+    },
+    {
+     "symbol": "LYV",
+     "name": "LIVE NATION ENTERTAINMENT IN",
+     "cusip": "538034109",
+     "value": 207829850,
+     "shares": 1135000,
+     "pct": 4.44
+    },
+    {
+     "symbol": "KEYS",
+     "name": "KEYSIGHT TECHNOLOGIES INC",
+     "cusip": "49338L103",
+     "value": 204790950,
+     "shares": 585000,
+     "pct": 4.38
+    },
+    {
+     "symbol": "TPD",
+     "name": "SOMNIGROUP INTERNATIONAL INC",
+     "cusip": "88023U101",
+     "value": 201548290,
+     "shares": 2570769,
+     "pct": 4.31
+    },
+    {
+     "symbol": "XYZ",
+     "name": "BLOCK INC",
+     "cusip": "852234103",
+     "value": 194479668,
+     "shares": 2558943,
+     "pct": 4.16
+    }
+   ],
+   "changes": {
+    "new": [
+     {
+      "symbol": "WBD*",
+      "name": "WARNER BROS DISCOVERY INC",
+      "cusip": "934423104",
+      "value": 533200000,
+      "shares": 20000000
+     },
+     {
+      "symbol": "KEYS",
+      "name": "KEYSIGHT TECHNOLOGIES INC",
+      "cusip": "49338L103",
+      "value": 204790950,
+      "shares": 585000
+     },
+     {
+      "symbol": "XYZ",
+      "name": "BLOCK INC",
+      "cusip": "852234103",
+      "value": 194479668,
+      "shares": 2558943
+     },
+     {
+      "symbol": null,
+      "name": "FLEX LTD",
+      "cusip": "Y2573F102",
+      "value": 166932100,
+      "shares": 1030000
+     },
+     {
+      "symbol": "TTMI",
+      "name": "TTM TECHNOLOGIES INC",
+      "cusip": "87305R109",
+      "value": 94445100,
+      "shares": 505000
+     },
+     {
+      "symbol": "PFGC",
+      "name": "PERFORMANCE FOOD GROUP CO",
+      "cusip": "71377A103",
+      "value": 75458250,
+      "shares": 675000
+     },
+     {
+      "symbol": "GOOGL 6.25 05/15/29 A",
+      "name": "ALPHABET INC",
+      "cusip": "02079K404",
+      "value": 66157000,
+      "shares": 1300000
+     },
+     {
+      "symbol": "SYY",
+      "name": "SYSCO CORP",
+      "cusip": "871829107",
+      "value": 48157226,
+      "shares": 580000
+     },
+     {
+      "symbol": "ARES",
+      "name": "ARES MANAGEMENT CORPORATION",
+      "cusip": "03990B101",
+      "value": 41741250,
+      "shares": 375000
+     },
+     {
+      "symbol": "SPCX",
+      "name": "SPACE EXPLORATION TECHN CORP",
+      "cusip": "84615Q103",
+      "value": 30825707,
+      "shares": 180415
+     },
+     {
+      "symbol": "SPY",
+      "name": "STATE STR SPDR S&P 500 ETF T",
+      "cusip": "78462F103",
+      "value": 28800000,
+      "shares": 0
+     },
+     {
+      "symbol": "GOOGL 6.25 05/15/29 B",
+      "name": "ALPHABET INC",
+      "cusip": "02079K602",
+      "value": 10060000,
+      "shares": 200000
+     }
+    ],
+    "exited": [
+     {
+      "symbol": "META",
+      "name": "META PLATFORMS INC",
+      "cusip": "30303M102",
+      "value": 51491700,
+      "shares": 90000
+     },
+     {
+      "symbol": "GQ9",
+      "name": "SPDR GOLD TR",
+      "cusip": "78463V107",
+      "value": 40877550,
+      "shares": 95000
+     },
+     {
+      "symbol": "NVDA",
+      "name": "NVIDIA CORPORATION",
+      "cusip": "67066G104",
+      "value": 33136000,
+      "shares": 190000
+     },
+     {
+      "symbol": "KLAC",
+      "name": "KLA CORP",
+      "cusip": "482480100",
+      "value": 16196510,
+      "shares": 11000
+     },
+     {
+      "symbol": "LRCX",
+      "name": "LAM RESEARCH CORP",
+      "cusip": "512807306",
+      "value": 16024500,
+      "shares": 75000
+     },
+     {
+      "symbol": "AVGO",
+      "name": "BROADCOM INC",
+      "cusip": "11135F101",
+      "value": 15475500,
+      "shares": 50000
+     },
+     {
+      "symbol": "SMH",
+      "name": "VANECK ETF TRUST",
+      "cusip": "92189F676",
+      "value": 15336000,
+      "shares": 40000
+     },
+     {
+      "symbol": null,
+      "name": "SHARKNINJA INC",
+      "cusip": "G8068L108",
+      "value": 13820903,
+      "shares": 130509
+     },
+     {
+      "symbol": "CTEV",
+      "name": "CLARITEV CORPORATION",
+      "cusip": "62548M209",
+      "value": 718960,
+      "shares": 44000
+     }
+    ],
+    "increased": [
+     {
+      "symbol": "GOOGL",
+      "name": "ALPHABET INC",
+      "cusip": "02079K305",
+      "value": 366304250,
+      "shares": 1025000,
+      "pct_change": 485.7,
+      "value_change": 315981250
+     },
+     {
+      "symbol": "NSC",
+      "name": "NORFOLK SOUTHN CORP",
+      "cusip": "655844108",
+      "value": 188754000,
+      "shares": 600000,
+      "pct_change": 500.0,
+      "value_change": 160054000
+     },
+     {
+      "symbol": "COF",
+      "name": "CAPITAL ONE FINL CORP",
+      "cusip": "14040H105",
+      "value": 165511500,
+      "shares": 825000,
+      "pct_change": 489.3,
+      "value_change": 139971300
+     },
+     {
+      "symbol": "LYV",
+      "name": "LIVE NATION ENTERTAINMENT IN",
+      "cusip": "538034109",
+      "value": 207829850,
+      "shares": 1135000,
+      "pct_change": 144.1,
+      "value_change": 136912700
+     },
+     {
+      "symbol": "TSM",
+      "name": "TAIWAN SEMICONDUCTOR MANUFAC",
+      "cusip": "874039100",
+      "value": 219682200,
+      "shares": 460000,
+      "pct_change": 67.3,
+      "value_change": 126745950
+     },
+     {
+      "symbol": "HUT",
+      "name": "HUT 8 CORP",
+      "cusip": "44812J104",
+      "value": 151810175,
+      "shares": 1315000,
+      "pct_change": 51.2,
+      "value_change": 111018975
+     }
+    ],
+    "decreased": [
+     {
+      "symbol": "MTZ",
+      "name": "MASTEC INC",
+      "cusip": "576323109",
+      "value": 120657400,
+      "shares": 290000,
+      "pct_change": -9.4,
+      "value_change": 17700600
+     },
+     {
+      "symbol": "AMZN",
+      "name": "AMAZON COM INC",
+      "cusip": "023135106",
+      "value": 417095000,
+      "shares": 1750000,
+      "pct_change": -9.8,
+      "value_change": 13051200
+     },
+     {
+      "symbol": "CRS",
+      "name": "CARPENTER TECHNOLOGY CORP",
+      "cusip": "144285103",
+      "value": 132620600,
+      "shares": 215000,
+      "pct_change": -30.6,
+      "value_change": 10434100
+     }
+    ]
+   }
+  },
+  {
+   "name": "Baupost Group",
+   "label": "Seth Klarman",
+   "accession": "0001061768-26-000015",
+   "period": "2026-09-30",
+   "filed": "2026-11-13",
+   "total_value": 5045853,
+   "positions": 21,
+   "top_holdings": [
+    {
+     "symbol": "AMZN",
+     "name": "AMAZON COM INC",
+     "cusip": "023135106",
+     "value": 932781,
+     "shares": 3743854,
+     "pct": 18.49
+    },
+    {
+     "symbol": "ELV",
+     "name": "ELEVANCE HEALTH INC FORMERLY",
+     "cusip": "036752103",
+     "value": 495805,
+     "shares": 1275154,
+     "pct": 9.83
+    },
+    {
+     "symbol": "QSR",
+     "name": "RESTAURANT BRANDS INTL INC",
+     "cusip": "76131D103",
+     "value": 480104,
+     "shares": 6753112,
+     "pct": 9.51
+    },
+    {
+     "symbol": "GPC",
+     "name": "GENUINE PARTS CO",
+     "cusip": "372460105",
+     "value": 389540,
+     "shares": 3097978,
+     "pct": 7.72
+    },
+    {
+     "symbol": "FERG",
+     "name": "FERGUSON ENTERPRISES INC",
+     "cusip": "31488V107",
+     "value": 349868,
+     "shares": 1571594,
+     "pct": 6.93
+    },
+    {
+     "symbol": "GOOG",
+     "name": "ALPHABET INC",
+     "cusip": "02079K107",
+     "value": 323679,
+     "shares": 949931,
+     "pct": 6.41
+    },
+    {
+     "symbol": "WCC",
+     "name": "WESCO INTL INC",
+     "cusip": "95082P105",
+     "value": 258374,
+     "shares": 718523,
+     "pct": 5.12
+    },
+    {
+     "symbol": "V",
+     "name": "VISA INC",
+     "cusip": "92826C839",
+     "value": 252018,
+     "shares": 701355,
+     "pct": 4.99
+    },
+    {
+     "symbol": "UNP",
+     "name": "UNION PAC CORP",
+     "cusip": "907818108",
+     "value": 216451,
+     "shares": 795395,
+     "pct": 4.29
+    },
+    {
+     "symbol": null,
+     "name": "AON PLC",
+     "cusip": "G0403H108",
+     "value": 186759,
+     "shares": 674779,
+     "pct": 3.7
+    }
+   ],
+   "changes": {
+    "new": [
+     {
+      "symbol": "HONA",
+      "name": "HONEYWELL AEROSPACE INC",
+      "cusip": "43849R105",
+      "value": 175426,
+      "shares": 1132000
+     },
+     {
+      "symbol": "SITE",
+      "name": "SITEONE LANDSCAPE SUPPLY INC",
+      "cusip": "82982L103",
+      "value": 112436,
+      "shares": 1245000
+     }
+    ],
+    "exited": [
+     {
+      "symbol": "TFX",
+      "name": "TELEFLEX INCORPORATED",
+      "cusip": "879369106",
+      "value": 178605,
+      "shares": 1409000
+     },
+     {
+      "symbol": null,
+      "name": "NORWEGIAN CRUISE LINE HLDGS",
+      "cusip": "G66721104",
+      "value": 163180,
+      "shares": 7730000
+     },
+     {
+      "symbol": null,
+      "name": "LIBERTY GLOBAL LTD",
+      "cusip": "G61188127",
+      "value": 93975,
+      "shares": 8543161
+     },
+     {
+      "symbol": "DNOW",
+      "name": "DNOW INC",
+      "cusip": "67011P100",
+      "value": 36160,
+      "shares": 2788000
+     }
+    ],
+    "increased": [
+     {
+      "symbol": "GPC",
+      "name": "GENUINE PARTS CO",
+      "cusip": "372460105",
+      "value": 389540,
+      "shares": 3097978,
+      "pct_change": 10.0,
+      "value_change": 57287
+     },
+     {
+      "symbol": "CME",
+      "name": "CME GROUP INC",
+      "cusip": "12572Q105",
+      "value": 179570,
+      "shares": 685435,
+      "pct_change": 10.7,
+      "value_change": 42876
+     },
+     {
+      "symbol": null,
+      "name": "AXALTA COATING SYS LTD",
+      "cusip": "G0750C108",
+      "value": 80594,
+      "shares": 2506031,
+      "pct_change": 96.7,
+      "value_change": 36986
+     },
+     {
+      "symbol": "WCC",
+      "name": "WESCO INTL INC",
+      "cusip": "95082P105",
+      "value": 258374,
+      "shares": 718523,
+      "pct_change": 8.4,
+      "value_change": 29395
+     },
+     {
+      "symbol": "FERG",
+      "name": "FERGUSON ENTERPRISES INC",
+      "cusip": "31488V107",
+      "value": 349868,
+      "shares": 1571594,
+      "pct_change": 8.3,
+      "value_change": 5599
+     },
+     {
+      "symbol": null,
+      "name": "HERBALIFE LTD",
+      "cusip": "G4412G101",
+      "value": 124452,
+      "shares": 10259844,
+      "pct_change": 10.8,
+      "value_change": 2685
+     }
+    ],
+    "decreased": [
+     {
+      "symbol": "GOOG",
+      "name": "ALPHABET INC",
+      "cusip": "02079K107",
+      "value": 323679,
+      "shares": 949931,
+      "pct_change": -30.8,
+      "value_change": -161065
+     },
+     {
+      "symbol": "UNP",
+      "name": "UNION PAC CORP",
+      "cusip": "907818108",
+      "value": 216451,
+      "shares": 795395,
+      "pct_change": -32.9,
+      "value_change": -105976
+     },
+     {
+      "symbol": "MOH",
+      "name": "MOLINA HEALTHCARE INC",
+      "cusip": "60855R100",
+      "value": 85021,
+      "shares": 449609,
+      "pct_change": -29.0,
+      "value_change": -59885
+     }
+    ]
+   }
+  },
+  {
+   "name": "Appaloosa",
+   "label": "David Tepper",
+   "accession": "0001656456-26-000003",
+   "period": "2026-06-30",
+   "filed": "2026-08-14",
+   "total_value": 7725383349,
+   "positions": 27,
+   "top_holdings": [
+    {
+     "symbol": "AMZN",
+     "name": "AMAZON COM INC",
+     "cusip": "023135106",
+     "value": 1191700000,
+     "shares": 5000000,
+     "pct": 15.43
+    },
+    {
+     "symbol": "MU",
+     "name": "MICRON TECHNOLOGY INC",
+     "cusip": "595112103",
+     "value": 1125432750,
+     "shares": 975000,
+     "pct": 14.57
+    },
+    {
+     "symbol": "TSM",
+     "name": "TAIWAN SEMICONDUCTOR MANUFAC",
+     "cusip": "874039100",
+     "value": 787990500,
+     "shares": 1650000,
+     "pct": 10.2
+    },
+    {
+     "symbol": "GOOG",
+     "name": "ALPHABET INC",
+     "cusip": "02079K107",
+     "value": 653660500,
+     "shares": 1850000,
+     "pct": 8.46
+    },
+    {
+     "symbol": "UBER",
+     "name": "UBER TECHNOLOGIES INC",
+     "cusip": "90353T100",
+     "value": 555204163,
+     "shares": 7694071,
+     "pct": 7.19
+    },
+    {
+     "symbol": "EWY",
+     "name": "ISHARES INC",
+     "cusip": "464286772",
+     "value": 489607500,
+     "shares": 2425000,
+     "pct": 6.34
+    },
+    {
+     "symbol": "META",
+     "name": "META PLATFORMS INC",
+     "cusip": "30303M102",
+     "value": 380220750,
+     "shares": 675000,
+     "pct": 4.92
+    },
+    {
+     "symbol": "VST",
+     "name": "VISTRA CORP",
+     "cusip": "92840M102",
+     "value": 351408597,
+     "shares": 2215272,
+     "pct": 4.55
+    },
+    {
+     "symbol": "NVDA",
+     "name": "NVIDIA CORPORATION",
+     "cusip": "67066G104",
+     "value": 305137250,
+     "shares": 1525000,
+     "pct": 3.95
+    },
+    {
+     "symbol": "NRA",
+     "name": "NRG ENERGY INC",
+     "cusip": "629377508",
+     "value": 257065600,
+     "shares": 1760000,
+     "pct": 3.33
+    }
+   ],
+   "changes": {
+    "new": [
+     {
+      "symbol": "AAPL",
+      "name": "APPLE INC",
+      "cusip": "037833100",
+      "value": 241615600,
+      "shares": 0
+     },
+     {
+      "symbol": "BA",
+      "name": "BOEING CO",
+      "cusip": "097023105",
+      "value": 173176000,
+      "shares": 800000
+     },
+     {
+      "symbol": "AAL",
+      "name": "AMERICAN AIRLINES GROUP INC",
+      "cusip": "02376R102",
+      "value": 135525000,
+      "shares": 7500000
+     },
+     {
+      "symbol": "CRWV",
+      "name": "COREWEAVE INC",
+      "cusip": "21873S108",
+      "value": 107328806,
+      "shares": 1078248
+     },
+     {
+      "symbol": "AVGO",
+      "name": "BROADCOM INC",
+      "cusip": "11135F101",
+      "value": 56662500,
+      "shares": 150000
+     },
+     {
+      "symbol": "SPCX",
+      "name": "SPACE EXPLORATION TECHN CORP",
+      "cusip": "84615Q103",
+      "value": 38443500,
+      "shares": 225000
+     },
+     {
+      "symbol": "BRK/B",
+      "name": "BERKSHIRE HATHAWAY INC DEL",
+      "cusip": "084670702",
+      "value": 12509750,
+      "shares": 0
+     },
+     {
+      "symbol": "GT",
+      "name": "GOODYEAR TIRE & RUBR CO",
+      "cusip": "382550101",
+      "value": 9956701,
+      "shares": 1508591
+     }
+    ],
+    "exited": [
+     {
+      "symbol": "SNDK",
+      "name": "SANDISK CORP",
+      "cusip": "80004C200",
+      "value": 178689375,
+      "shares": 281250
+     },
+     {
+      "symbol": "GLW",
+      "name": "CORNING INC",
+      "cusip": "219350105",
+      "value": 153578115,
+      "shares": 1129500
+     },
+     {
+      "symbol": "PDD",
+      "name": "PDD HOLDINGS INC",
+      "cusip": "722304102",
+      "value": 91962000,
+      "shares": 900000
+     },
+     {
+      "symbol": "LHX",
+      "name": "L3HARRIS TECHNOLOGIES INC",
+      "cusip": "502431109",
+      "value": 68339700,
+      "shares": 198000
+     },
+     {
+      "symbol": "RTX",
+      "name": "RTX CORPORATION",
+      "cusip": "75513E101",
+      "value": 65971800,
+      "shares": 342000
+     },
+     {
+      "symbol": "BALL",
+      "name": "BALL CORP",
+      "cusip": "058498106",
+      "value": 49475070,
+      "shares": 837000
+     },
+     {
+      "symbol": "JD",
+      "name": "JD.COM INC",
+      "cusip": "47215P106",
+      "value": 38588850,
+      "shares": 1305000
+     },
+     {
+      "symbol": "LYFT",
+      "name": "LYFT INC",
+      "cusip": "55087P104",
+      "value": 35910000,
+      "shares": 2700000
+     },
+     {
+      "symbol": "MSFT",
+      "name": "MICROSOFT CORP",
+      "cusip": "594918104",
+      "value": 33315300,
+      "shares": 90000
+     },
+     {
+      "symbol": "KWEB",
+      "name": "KRANESHARES TRUST",
+      "cusip": "500767306",
+      "value": 30704400,
+      "shares": 1080000
+     },
+     {
+      "symbol": "UNH",
+      "name": "UNITEDHEALTH GROUP INC",
+      "cusip": "91324P102",
+      "value": 24353100,
+      "shares": 90000
+     },
+     {
+      "symbol": null,
+      "name": "DEUTSCHE BK AG",
+      "cusip": "D18190898",
+      "value": 7671804,
+      "shares": 257616
+     }
+    ],
+    "increased": [
+     {
+      "symbol": "TSM",
+      "name": "TAIWAN SEMICONDUCTOR MANUFAC",
+      "cusip": "874039100",
+      "value": 787990500,
+      "shares": 1650000,
+      "pct_change": 24.3,
+      "value_change": 339361875
+     },
+     {
+      "symbol": "AMZN",
+      "name": "AMAZON COM INC",
+      "cusip": "023135106",
+      "value": 1191700000,
+      "shares": 5000000,
+      "pct_change": 15.7,
+      "value_change": 291973600
+     },
+     {
+      "symbol": "GOOG",
+      "name": "ALPHABET INC",
+      "cusip": "02079K107",
+      "value": 653660500,
+      "shares": 1850000,
+      "pct_change": 6.8,
+      "value_change": 156618178
+     },
+     {
+      "symbol": "META",
+      "name": "META PLATFORMS INC",
+      "cusip": "30303M102",
+      "value": 380220750,
+      "shares": 675000,
+      "pct_change": 54.6,
+      "value_change": 130486005
+     },
+     {
+      "symbol": "UBER",
+      "name": "UBER TECHNOLOGIES INC",
+      "cusip": "90353T100",
+      "value": 555204163,
+      "shares": 7694071,
+      "pct_change": 21.5,
+      "value_change": 99691613
+     },
+     {
+      "symbol": "BIDUN",
+      "name": "BAIDU INC",
+      "cusip": "056752108",
+      "value": 148005550,
+      "shares": 1295000,
+      "pct_change": 87.1,
+      "value_change": 70891768
+     }
+    ],
+    "decreased": [
+     {
+      "symbol": "MU",
+      "name": "MICRON TECHNOLOGY INC",
+      "cusip": "595112103",
+      "value": 1125432750,
+      "shares": 975000,
+      "pct_change": -41.4,
+      "value_change": 562929150
+     },
+     {
+      "symbol": "BABA",
+      "name": "ALIBABA GROUP HLDG LTD",
+      "cusip": "01609W102",
+      "value": 191960000,
+      "shares": 2000000,
+      "pct_change": -42.3,
+      "value_change": -242758900
+     },
+     {
+      "symbol": "WHR",
+      "name": "WHIRLPOOL CORP",
+      "cusip": "963320106",
+      "value": 28185300,
+      "shares": 715000,
+      "pct_change": -63.3,
+      "value_change": -76958700
+     },
+     {
+      "symbol": "AMD",
+      "name": "ADVANCED MICRO DEVICES INC",
+      "cusip": "007903107",
+      "value": 114729725,
+      "shares": 197500,
+      "pct_change": -10.8,
+      "value_change": 69690323
+     },
+     {
+      "symbol": "QCOM",
+      "name": "QUALCOMM INC",
+      "cusip": "747525103",
+      "value": 46197500,
+      "shares": 250000,
+      "pct_change": -49.9,
+      "value_change": -18013882
+     }
+    ]
+   }
+  }
+ ]
+}
