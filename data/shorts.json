@@ -8,8 +8,8 @@
     "2026-11-13"
    ],
    "filings_scanned": 1197,
-   "sell_txns_in_window": 781,
-   "clusters_found": 101,
+   "sell_txns_in_window": 796,
+   "clusters_found": 103,
    "note": "SEC Form 4 code-S sales, 10b5-1 excluded, rolling 30-day cluster window. Confirmation only \u2014 never a standalone trigger (report \u00a71)."
   },
   "finra_short_interest": {
@@ -21,7 +21,7 @@
   },
   "borrow_ibkr": {
    "status": "unavailable",
-   "note": "IBKR FTP fetch failed (error_proto). Port 21 is blocked from this network; the leg runs from GitHub Actions. IBKR's file is a snapshot of IBKR's own inventory, updated ~15 min, no history \u2014 PowerWatch archives daily snapshots itself.",
+   "note": "IBKR FTP fetch failed (TimeoutError). Port 21 is blocked from this network; the leg runs from GitHub Actions. IBKR's file is a snapshot of IBKR's own inventory, updated ~15 min, no history \u2014 PowerWatch archives daily snapshots itself.",
    "snapshot_date": null
   },
   "threshold_list": {
@@ -1376,8 +1376,8 @@
     "cluster": {
      "symbol": "CCNE",
      "issuer": "CNB FINANCIAL CORP/PA",
-     "n_insiders": 1,
-     "total_value": 296048,
+     "n_insiders": 2,
+     "total_value": 402668,
      "max_pct_holdings_sold": 37.3,
      "any_ceo_cfo": false,
      "sellers": [
@@ -1385,6 +1385,11 @@
        "owner": "Kassab Leanne D",
        "role": "SEVP/Chief Experience Officer",
        "value": 296048
+      },
+      {
+       "owner": "Seager Richard B.",
+       "role": "Director",
+       "value": 106620
       }
      ],
      "first_date": "2026-11-12",
@@ -2244,9 +2249,15 @@
  "congress_sells_evidence": [
   {
    "symbol": "HD",
-   "count": 8,
+   "count": 7,
    "members": 5,
-   "est_value": 88500
+   "est_value": 80500
+  },
+  {
+   "symbol": "PG",
+   "count": 6,
+   "members": 4,
+   "est_value": 115000
   },
   {
    "symbol": "V",
@@ -2273,22 +2284,16 @@
    "est_value": 423500
   },
   {
-   "symbol": "PG",
-   "count": 4,
-   "members": 3,
-   "est_value": 32000
-  },
-  {
    "symbol": "SOLS",
    "count": 4,
    "members": 3,
    "est_value": 32000
   },
   {
-   "symbol": "TJX",
-   "count": 4,
-   "members": 2,
-   "est_value": 105500
+   "symbol": "WMT",
+   "count": 3,
+   "members": 3,
+   "est_value": 158000
   }
  ],
  "short_calls_tracked": 0,
