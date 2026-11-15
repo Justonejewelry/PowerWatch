@@ -41,6 +41,9 @@ Outputs:
   data/shorts.json            candidates + squeeze watchlist + leg status
   data/short_predictions.json graded short-call tracker (net of fees)
   data/short_state.json       rolling sell window + borrow history
+  data/short_book.json        $100 PAPER short book — max 3 open shorts,
+                              daily picks from the board, rule-based exits
+                              (see the paper-book section below)
 """
 import argparse, ftplib, io, json, math, os, re, sys, threading, time
 import xml.etree.ElementTree as ET
@@ -894,6 +897,299 @@ def update_short_tracker(candidates, borrow_now):
     save_json(path, preds)
     return preds
 
+# ------------------------------------------------------------- paper book ----
+# The $100 Short Book (Jay, 2026-11-15): "pick 3 stocks to short sell every
+# day and also determine when to sell. Start with $100. Keep track on
+# display." PAPER trading only — no real money, no broker. The point of the
+# tiny stake is that every dollar of P&L stays visible.
+#
+# Accounting model (kept internally consistent, all fields stored in
+# data/short_book.json):
+#   - Start: cash = equity = $100.00, no positions.
+#   - Entry RESERVES the notional: cash -= notional. A position's market
+#     value while open is notional + unrealized net P&L, so equity is
+#     unchanged by the act of entering.
+#   - Notional per new position = current equity / 3 (the book holds at
+#     most 3 positions), capped by available cash; fractional shares.
+#   - Cover: cash += notional + net P&L, realized_pnl += net P&L, where
+#     net P&L = (entry - exit) / entry * notional - accrued fee drag.
+#   - Fee drag accrues daily at the ENTRY fee when a fee is known:
+#     notional * (fee_pct/100) * days_held / 365. When the borrow leg is
+#     unavailable the entry fee is null, fee_known is false and drag is 0 —
+#     a fee is never fabricated.
+#   - Equity = cash + sum(open positions' market values), recomputed
+#     every run.
+#
+# Entry eligibility — ONLY the absolute safety bars (the book exists to
+# make picks every day, so the trend/breakdown gate is NOT an entry rule;
+# instead each pick is labeled tier "confirmed" when it has a breakdown,
+# "aggressive" when it does not, and the tier is shown on the dashboard):
+#   not on the Reg SHO threshold list, not on the squeeze watchlist,
+#   float >= 20M shares where known, SI < 30% of float where known,
+#   days-to-cover < 10 where known, borrow fee <= 50%/yr where known,
+#   >= 10K shares available where known, price >= $2, price known.
+#
+# Exit rules — evaluated every run, in this priority order, full cover:
+#   1. hard stop:      price >= entry * 1.20          "hard stop +20%"
+#   2. fee spike:      current fee > 25%/yr or >= 2x entry fee
+#                                                     "borrow fee spike"
+#   3. trend reclaim:  price closes back above its 50-day SMA after having
+#                      been below it                  "reclaimed 50-day — thesis dead"
+#   4. take profit:    price <= entry * 0.75          "take profit −25%"
+#   5. time stop:      held >= 90 days                "90-day time stop"
+# Rule 3 needs the position to have actually been below the 50-day at some
+# mark (tracked as below_sma50_seen, seeded from the entry mark): an
+# "aggressive" pick entered above its 50-day is not instantly covered for
+# sitting where it was knowingly entered — it must first fall below the
+# average (thesis engages) and then reclaim it (thesis dead).
+BOOK_PATH = os.path.join(DATA, "short_book.json")
+BOOK_START_CAPITAL = 100.0
+BOOK_MAX_POSITIONS = 3
+BOOK_STOP_MULT = 1.20        # rule 1: +20% adverse
+BOOK_TARGET_MULT = 0.75      # rule 4: -25% price move
+BOOK_TIME_STOP_DAYS = 90     # rule 5
+BOOK_FEE_SPIKE_PCT = 25.0    # rule 2
+
+def _fmt_usd(v):
+    if v >= 1_000_000:
+        return f"${v / 1e6:.1f}M"
+    if v >= 1_000:
+        return f"${v / 1e3:.0f}K"
+    return f"${v:.0f}"
+
+def book_eligible(c, squeeze_syms):
+    """Absolute safety bars only. Returns (ok, why_not). Unknown data
+    (FINRA/borrow legs down) never blocks — the bars bite where known."""
+    if c["symbol"] in squeeze_syms:
+        return False, "on the squeeze watchlist"
+    if c.get("on_threshold_list"):
+        return False, "on the Reg SHO threshold list"
+    si = c.get("si") or {}
+    flt = si.get("float_shares")
+    if flt is not None and flt < 20_000_000:
+        return False, "float under 20M shares"
+    if si.get("pct_of_float") is not None and si["pct_of_float"] >= 30:
+        return False, "short interest >= 30% of float"
+    if si.get("days_to_cover") is not None and si["days_to_cover"] >= 10:
+        return False, "days-to-cover >= 10"
+    bo = c.get("borrow") or {}
+    if bo.get("fee_pct") is not None and bo["fee_pct"] > 50:
+        return False, "borrow fee over 50%/yr"
+    if bo.get("available") is not None and bo["available"] < 10_000:
+        return False, "under 10K shares available to borrow"
+    price = (c.get("tech") or {}).get("price")
+    if price is None:
+        return False, "no current price"
+    if price < 2:
+        return False, "price under $2"
+    return True, ""
+
+def pick_reason(c):
+    """One line of the strongest evidence, for the dashboard pick cards."""
+    bits = []
+    cl = (c.get("insider") or {}).get("cluster")
+    if cl:
+        who = (f"{cl['n_insiders']} insider{'s' if cl['n_insiders'] != 1 else ''} "
+               f"sold {_fmt_usd(cl['total_value'])}")
+        if cl.get("max_pct_holdings_sold"):
+            who += f" (up to {cl['max_pct_holdings_sold']}% of a holding)"
+        bits.append(who)
+    si = c.get("si") or {}
+    if si.get("pct_of_float") is not None:
+        bits.append(f"SI {si['pct_of_float']}% of float")
+    elif si.get("shares_short"):
+        bits.append(f"{si['shares_short'] / 1e6:.1f}M shares short")
+    if si.get("days_to_cover"):
+        bits.append(f"DTC {si['days_to_cover']}")
+    if (c.get("tech") or {}).get("breakdown"):
+        bits.append("broke the 50-day")
+    bo = c.get("borrow") or {}
+    if bo.get("fee_pct") is not None:
+        bits.append(f"borrow {bo['fee_pct']}%/yr")
+    if c.get("fund_put"):
+        bits.append("a tracked fund opened puts")
+    cong = c.get("congress_sells")
+    if cong:
+        bits.append(f"Congress selling ({cong.get('count', '?')} sales)")
+    if not bits:
+        bits.append(f"short-board score {c['score']}")
+    return " · ".join(bits[:3])
+
+def book_marks(sym):
+    """Latest close, 50-day SMA and close series for one held symbol."""
+    hist = yahoo_history(sym)
+    if not hist:
+        return {}
+    closes = [r[4] for r in hist]
+    return {"price": hist[-1][4], "date": hist[-1][0],
+            "sma50": sma(closes, 50),
+            "closes": [(r[0], r[4]) for r in hist]}
+
+def book_equity(book):
+    return round(book["cash"] + sum(
+        p.get("market_value", p["notional"]) for p in book["positions"]), 2)
+
+def update_short_book(candidates, ctx):
+    today = str(date.today())
+    book = load_json(BOOK_PATH, None)
+    if not isinstance(book, dict) or "positions" not in book:
+        book = {"version": 1, "paper": True,
+                "starting_capital": BOOK_START_CAPITAL, "created": today,
+                "cash": BOOK_START_CAPITAL, "realized_pnl": 0.0,
+                "equity": BOOK_START_CAPITAL, "unrealized_pnl": 0.0,
+                "total_return_pct": 0.0, "win_rate_pct": None,
+                "positions": [], "closed": [], "picks_history": []}
+    by_sym = {c["symbol"]: c for c in candidates}
+    squeeze_syms = {c["symbol"] for c in candidates
+                    if c.get("squeeze_score", 0) >= 4}
+    exits_today = []
+
+    # ---- 1) exits first, in rule-priority order ----
+    still_open = []
+    for pos in book["positions"]:
+        m = book_marks(pos["symbol"])
+        if not m:
+            still_open.append(pos)  # no price today — cannot judge; hold
+            continue
+        price, entry = m["price"], pos["entry_price"]
+        days = (date.today() - date.fromisoformat(pos["entry_date"])).days
+        since = [cl for d, cl in m["closes"] if d >= pos["entry_date"]]
+        if since:
+            pos["max_adverse_pct"] = round(max(
+                pos.get("max_adverse_pct") or 0.0,
+                (max(since) / entry - 1) * 100), 2)
+        if m.get("sma50") is not None and price < m["sma50"]:
+            pos["below_sma50_seen"] = True
+        fee_now = (by_sym.get(pos["symbol"], {}).get("borrow") or {}).get("fee_pct")
+        if fee_now is None:
+            fee_now = (ctx["borrow"].get(pos["symbol"]) or {}).get("fee_pct")
+        entry_fee = pos.get("entry_fee_pct")
+        reason = None
+        if price >= entry * BOOK_STOP_MULT:
+            reason = "hard stop +20%"
+        elif fee_now is not None and (fee_now > BOOK_FEE_SPIKE_PCT
+                                      or (entry_fee and fee_now >= 2 * entry_fee)):
+            reason = "borrow fee spike"
+        elif (m.get("sma50") is not None and price > m["sma50"]
+              and pos.get("below_sma50_seen")):
+            reason = "reclaimed 50-day — thesis dead"
+        elif price <= entry * BOOK_TARGET_MULT:
+            reason = "take profit −25%"
+        elif days >= BOOK_TIME_STOP_DAYS:
+            reason = "90-day time stop"
+        drag = (pos["notional"] * entry_fee / 100 * days / 365) if entry_fee else 0.0
+        if reason is None:
+            gross = (entry - price) / entry * pos["notional"]
+            pos.update({
+                "current_price": price, "current_date": m["date"],
+                "days_held": days, "accrued_fee_drag": round(drag, 2),
+                "unrealized_pnl": round(gross - drag, 2),
+                "unrealized_pct": round((gross - drag) / pos["notional"] * 100, 2)
+                if pos["notional"] else 0.0})
+            pos["market_value"] = round(pos["notional"] + pos["unrealized_pnl"], 2)
+            still_open.append(pos)
+            continue
+        gross = (entry - price) / entry * pos["notional"]
+        net = gross - drag
+        book["cash"] = round(book["cash"] + pos["notional"] + net, 2)
+        book["realized_pnl"] = round(book["realized_pnl"] + net, 2)
+        rec = {k: pos.get(k) for k in (
+            "symbol", "issuer", "entry_date", "entry_price", "shares",
+            "notional", "tier", "score", "reason", "entry_fee_pct",
+            "fee_known", "max_adverse_pct")}
+        rec.update({"exit_date": m["date"], "exit_price": price,
+                    "exit_reason": reason, "days_held": days,
+                    "gross_pnl": round(gross, 2), "fee_drag": round(drag, 2),
+                    "net_pnl": round(net, 2),
+                    "return_pct": round(net / pos["notional"] * 100, 2)
+                    if pos["notional"] else 0.0})
+        book["closed"].append(rec)
+        exits_today.append({"symbol": pos["symbol"], "reason": reason,
+                            "net_pnl": rec["net_pnl"]})
+    book["positions"] = still_open
+
+    # ---- 2) fill free slots from today's ranked eligible candidates ----
+    held = {p["symbol"] for p in book["positions"]}
+    ranked = sorted(candidates, key=lambda x: (-x["score"], x["symbol"]))
+    entered = []
+    eligible_seen = 0
+    cash_blocked = False
+    for c in ranked:
+        if len(book["positions"]) >= BOOK_MAX_POSITIONS:
+            break
+        if c["symbol"] in held:
+            continue
+        ok, _why = book_eligible(c, squeeze_syms)
+        if not ok:
+            continue
+        eligible_seen += 1
+        notional = round(min(book_equity(book) / BOOK_MAX_POSITIONS,
+                             book["cash"]), 2)
+        if notional <= 0:
+            cash_blocked = True
+            break
+        tech = c.get("tech") or {}
+        price = tech["price"]
+        fee = (c.get("borrow") or {}).get("fee_pct")
+        pos = {"symbol": c["symbol"], "issuer": c.get("issuer") or "",
+               "entry_date": today, "entry_price": price,
+               "shares": round(notional / price, 4), "notional": notional,
+               "tier": "confirmed" if tech.get("breakdown") else "aggressive",
+               "score": c["score"], "reason": pick_reason(c),
+               "entry_fee_pct": fee, "fee_known": fee is not None,
+               "accrued_fee_drag": 0.0,
+               "current_price": price, "current_date": today,
+               "unrealized_pnl": 0.0, "unrealized_pct": 0.0,
+               "market_value": notional, "days_held": 0,
+               "max_adverse_pct": 0.0,
+               "below_sma50_seen": bool(tech.get("sma50")
+                                        and price < tech["sma50"]),
+               "stop_price": round(price * BOOK_STOP_MULT, 4),
+               "target_price": round(price * BOOK_TARGET_MULT, 4)}
+        book["cash"] = round(book["cash"] - notional, 2)
+        book["positions"].append(pos)
+        held.add(c["symbol"])
+        entered.append(pos)
+
+    # ---- 3) the day's record (one entry per date, rebuilt each run) ----
+    todays_picks = [
+        {"symbol": p["symbol"], "issuer": p.get("issuer") or "",
+         "tier": p["tier"], "score": p["score"],
+         "entry_price": p["entry_price"], "notional": p["notional"],
+         "reason": p["reason"]}
+        for p in book["positions"] + book["closed"]
+        if p["entry_date"] == today]
+    if entered:
+        note = ""
+    elif len(book["positions"]) >= BOOK_MAX_POSITIONS:
+        note = "Book full — no free slots today."
+    elif cash_blocked:
+        note = "Free slots exist but the book is out of cash to reserve."
+    elif eligible_seen == 0:
+        note = ("No candidate passed the book's absolute safety bars today "
+                "— no picks invented.")
+    else:
+        note = ""
+    day_entry = {"date": today, "picks": todays_picks,
+                 "exits": exits_today, "note": note}
+    book["picks_history"] = [e for e in book["picks_history"]
+                             if e["date"] != today] + [day_entry]
+    book["picks_history"] = book["picks_history"][-120:]
+
+    # ---- 4) account snapshot ----
+    closed = book["closed"]
+    wins = sum(1 for r in closed if r["net_pnl"] > 0)
+    book["equity"] = book_equity(book)
+    book["unrealized_pnl"] = round(sum(
+        p.get("unrealized_pnl", 0.0) for p in book["positions"]), 2)
+    book["total_return_pct"] = round(
+        (book["equity"] / BOOK_START_CAPITAL - 1) * 100, 2)
+    book["win_rate_pct"] = (round(wins / len(closed) * 100, 1)
+                            if closed else None)
+    book["updated"] = today
+    save_json(BOOK_PATH, book)
+    return book
+
 # --------------------------------------------------------------------- main --
 def main():
     ap = argparse.ArgumentParser()
@@ -934,6 +1230,13 @@ def main():
                             key=lambda kv: -(kv[1].get("days_to_cover") or 0))
         universe |= {s for s, _ in ranked_dtc[:25]}
     universe = sorted(universe)[:80]
+    # Symbols the paper book already holds always get priced/borrow data,
+    # even after they fall off the candidate board — exits depend on it.
+    _held_book = load_json(BOOK_PATH, {})
+    _held_syms = [p["symbol"] for p in _held_book.get("positions", [])
+                  if p.get("symbol")]
+    if _held_syms:
+        universe = sorted(set(universe) | set(_held_syms))
 
     # ---- borrow (needs the universe first) ----
     borrow, borrow_status = borrow_leg(universe, state["borrow_history"])
@@ -955,6 +1258,7 @@ def main():
     watchlist = sorted((c for c in candidates if c["squeeze_score"] >= 4),
                        key=lambda x: -x["squeeze_score"])[:20]
     preds = update_short_tracker(candidates, borrow)
+    book = update_short_book(candidates, ctx)
 
     state["updated"] = str(date.today())
     save_json(state_path, state)
@@ -1004,6 +1308,9 @@ def main():
           f"{len(watchlist)} on squeeze watchlist), "
           f"FINRA={finra_status['status']}, borrow={borrow_status['status']}, "
           f"insider clusters={len(clusters)}, tracked short calls={len(preds)}")
+    print(f"$100 Short Book: equity ${book['equity']:.2f} "
+          f"({book['total_return_pct']:+.2f}%), cash ${book['cash']:.2f}, "
+          f"{len(book['positions'])} open, {len(book['closed'])} closed")
 
 if __name__ == "__main__":
     main()
