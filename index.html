@@ -12,236 +12,314 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👁️</text></svg>">
 </head>
 <body>
-<header class="hero">
-  <div class="hero-inner">
-    <div class="brand">
-      <div class="logo">👁️</div>
-      <div>
-        <h1>PowerWatch</h1>
-        <p class="tagline">Follow the money in power.</p>
+<div class="bg-glows" aria-hidden="true"><div class="glow g1"></div><div class="glow g2"></div><div class="glow g3"></div></div>
+
+<div class="app">
+  <!-- ================= HEADER (Microsoft Acrylic) ================= -->
+  <header class="hero acrylic">
+    <div class="hero-inner">
+      <div class="brand">
+        <div class="logo">👁️</div>
+        <div>
+          <h1>PowerWatch</h1>
+          <p class="tagline">Follow the money in power.</p>
+        </div>
+      </div>
+      <div class="header-meta">
+        <p class="updated" id="updatedLine">Loading latest scan…</p>
+        <p class="autopilot" id="autopilotLine"></p>
+      </div>
+      <div class="header-right">
+        <label class="search-wrap" title="Filter by ticker — press / to focus">
+          <span class="search-ico" aria-hidden="true">⌕</span>
+          <input id="globalSearch" type="search" placeholder="Filter ticker…  ( / )" autocomplete="off" spellcheck="false" aria-label="Filter by ticker">
+          <button id="searchClear" class="search-clear" type="button" aria-label="Clear filter" hidden>×</button>
+        </label>
+        <div class="stat-strip" id="statStrip" aria-label="Key stats">
+          <div class="stat"><span class="stat-label">Form 4s scanned</span><span class="stat-num" id="stFilings">—</span></div>
+          <div class="stat"><span class="stat-label">Companies buying</span><span class="stat-num" id="stBuys">—</span></div>
+          <div class="stat"><span class="stat-label">Calls tracked</span><span class="stat-num" id="stCalls">—</span><div class="kpi-spark" id="sparkCalls"></div></div>
+          <div class="stat"><span class="stat-label">Avg return</span><span class="stat-num" id="stAvg">—</span><div class="kpi-foot" id="footAvg"></div><div class="kpi-spark" id="sparkAvg"></div></div>
+          <div class="stat"><span class="stat-label">Win rate</span><span class="stat-num" id="stWin">—</span><div class="kpi-foot" id="footWin"></div><div class="kpi-spark" id="sparkWin"></div></div>
+        </div>
       </div>
     </div>
-    <p class="hero-sub">PowerWatch follows the money in power — <strong>corporate insiders</strong> buying with their own cash (SEC Form 4, reported within 2 days), <strong>members of Congress</strong> trading (STOCK Act disclosures), and the <strong>biggest funds on earth</strong> (quarterly 13F filings). It scores the signals, flags where the three circles overlap, and grades its own calls in public.</p>
-    <div class="stat-strip" id="statStrip">
-      <div class="stat"><span class="stat-label">Form 4s scanned</span><span class="stat-num" id="stFilings">—</span></div>
-      <div class="stat"><span class="stat-label">Companies with insider buying</span><span class="stat-num" id="stBuys">—</span></div>
-      <div class="stat"><span class="stat-label">Calls tracked</span><span class="stat-num" id="stCalls">—</span><div class="kpi-spark" id="sparkCalls"></div></div>
-      <div class="stat"><span class="stat-label">Avg return on calls</span><span class="stat-num" id="stAvg">—</span><div class="kpi-foot" id="footAvg"></div><div class="kpi-spark" id="sparkAvg"></div></div>
-      <div class="stat"><span class="stat-label">Win rate</span><span class="stat-num" id="stWin">—</span><div class="kpi-foot" id="footWin"></div><div class="kpi-spark" id="sparkWin"></div></div>
+    <p class="hero-sub" id="heroSub">PowerWatch follows the money in power — <strong>corporate insiders</strong> buying with their own cash (SEC Form 4), <strong>members of Congress</strong> trading (STOCK Act), and the <strong>biggest funds</strong> (13F). It scores the signals, flags overlap, and grades its own calls in public. Pick a shade below — everything lives on one screen, no scrolling the page.</p>
+  </header>
+
+  <!-- ================= TICKER TAPE ================= -->
+  <div class="ticker-bar glass" aria-label="Live ticker tape">
+    <span class="ticker-tag">TAPE</span>
+    <div class="ticker-viewport" id="tickerViewport">
+      <div class="ticker-track" id="tickerTrack"><span class="ticker-item muted">Loading tape from the latest feeds…</span></div>
     </div>
-    <p class="updated" id="updatedLine">Loading latest scan…</p>
-    <p class="autopilot" id="autopilotLine"></p>
   </div>
-</header>
 
-<main>
-  <section class="section" id="smartSection" hidden>
-    <h2>🤝 Smart Money Overlap <span class="h2-sub">the same stock showing up in two or more power circles at once</span></h2>
-    <div class="smart-grid" id="smartGrid"></div>
-    <p class="congress-note">When insiders, Congress, and the big funds point at the same ticker independently, that's the loudest signal this board can produce. Treat it as a starting point for your own research — never as advice.</p>
-  </section>
+  <!-- ================= WORKSPACE: SHADE RAIL + STAGE ================= -->
+  <div class="workspace">
+    <nav class="shade-rail glass" id="shadeRail" aria-label="Sections">
+      <div class="pivot-indicator" id="pivotIndicator" aria-hidden="true"></div>
+      <button class="shade-tab" type="button" data-shade="overview" role="tab"><span class="tab-ico">🤝</span><span class="tab-label">Overview</span><kbd>1</kbd></button>
+      <button class="shade-tab" type="button" data-shade="signals" role="tab"><span class="tab-ico">🟢</span><span class="tab-label">Signals</span><kbd>2</kbd></button>
+      <button class="shade-tab" type="button" data-shade="tracker" role="tab"><span class="tab-ico">🎯</span><span class="tab-label">Tracker</span><kbd>3</kbd></button>
+      <button class="shade-tab" type="button" data-shade="congress" role="tab"><span class="tab-ico">🏛️</span><span class="tab-label">Congress</span><kbd>4</kbd></button>
+      <button class="shade-tab" type="button" data-shade="funds" role="tab"><span class="tab-ico">🐋</span><span class="tab-label">Funds</span><kbd>5</kbd></button>
+      <button class="shade-tab" type="button" data-shade="shorts" role="tab"><span class="tab-ico">📉</span><span class="tab-label">Short Side</span><kbd>6</kbd></button>
+      <button class="shade-tab" type="button" data-shade="selling" role="tab"><span class="tab-ico">🔴</span><span class="tab-label">Selling</span><kbd>7</kbd></button>
+      <button class="shade-tab" type="button" data-shade="guide" role="tab"><span class="tab-ico">🧭</span><span class="tab-label">Guide</span><kbd>8</kbd></button>
+    </nav>
 
-  <section id="clustersSection" class="section" hidden>
-    <h2>🔥 Cluster Buys <span class="h2-sub">multiple insiders buying the same company — the strongest tell</span></h2>
-    <div class="cluster-strip" id="clusterStrip"></div>
-  </section>
+    <main class="stage" id="stage">
 
-  <section class="section">
-    <h2>🟢 Top Insider-Buy Signals <span class="h2-sub" id="signalDate"></span></h2>
-    <div class="cards" id="signalCards"></div>
-    <p class="empty" id="signalsEmpty" hidden>No qualifying insider buying in the latest scan.</p>
-  </section>
-
-  <section class="section">
-    <h2>🎯 Prediction Tracker <span class="h2-sub">every call, logged with its entry price and graded at 30 / 90 days</span></h2>
-    <div class="table-wrap">
-      <table id="predTable">
-        <thead><tr>
-          <th>Signal date</th><th>Ticker</th><th>Score</th><th>Insiders bought</th>
-          <th>Entry</th><th>Now</th><th>Return</th><th>Days</th><th>30-day grade</th><th>90-day grade</th><th></th>
-        </tr></thead>
-        <tbody id="predBody"></tbody>
-      </table>
-      <p class="empty" id="predEmpty" hidden>No calls tracked yet — the first qualifying signals will appear here.</p>
-    </div>
-  </section>
-
-  <section class="section" id="congressSection">
-    <h2>🏛️ Congress Tracker <span class="h2-sub">what House members are trading — STOCK Act disclosures</span></h2>
-    <p class="congress-note" id="congressStats">Loading disclosures…</p>
-    <div class="congress-grid">
-      <div>
-        <h3 class="mini-h">Most bought by members <span class="h2-sub">(last 120 days)</span></h3>
-        <div class="table-wrap">
-          <table class="mini-table">
-            <thead><tr><th>Ticker</th><th>Buys</th><th>Members</th><th>Est. value</th><th></th></tr></thead>
-            <tbody id="congBuyBody"></tbody>
-          </table>
-        </div>
-        <h3 class="mini-h">Most sold by members</h3>
-        <div class="table-wrap">
-          <table class="mini-table">
-            <thead><tr><th>Ticker</th><th>Sales</th><th>Members</th><th>Est. value</th><th></th></tr></thead>
-            <tbody id="congSellBody"></tbody>
-          </table>
-        </div>
+      <!-- ===== SHADE: OVERVIEW ===== -->
+      <div class="shade" data-shade-panel="overview" role="tabpanel">
+        <section class="section" id="smartSection" hidden>
+          <h2>🤝 Smart Money Overlap <span class="h2-sub">the same stock showing up in two or more power circles at once</span></h2>
+          <div class="smart-grid" id="smartGrid"></div>
+          <p class="congress-note">When insiders, Congress, and the big funds point at the same ticker independently, that's the loudest signal this board can produce. Treat it as a starting point for your own research — never as advice.</p>
+        </section>
+        <section id="clustersSection" class="section" hidden>
+          <h2>🔥 Cluster Buys <span class="h2-sub">multiple insiders buying the same company — the strongest tell</span></h2>
+          <div class="cluster-strip" id="clusterStrip"></div>
+        </section>
+        <section class="section shade-empty-note" id="overviewHint">
+          <h2>👁️ Start here</h2>
+          <p class="congress-note">Smart-money overlaps and cluster buys appear above when the feeds find them. Use the pill rail to raise another shade: <b>Signals</b> for today's insider buys, <b>Short Side</b> for the $100 Short Book, <b>Tracker</b> for the graded record. Tap any ticker — on a card, a row, or the tape — and a detail shade slides in from the right. Keys <b>1–8</b> switch shades, <b>/</b> filters, <b>Esc</b> closes.</p>
+        </section>
       </div>
-      <div>
-        <h3 class="mini-h">Latest disclosed trades</h3>
-        <div class="table-wrap">
-          <table class="mini-table">
-            <thead><tr><th>Date</th><th>Member</th><th>Ticker</th><th>Type</th><th>Amount</th><th></th></tr></thead>
-            <tbody id="congRecentBody"></tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-    <p class="congress-note">House data from the Clerk's official disclosure archive. Two honest caveats: members have up to <strong>45 days</strong> to disclose, so these trades are older than insider Form 4s — and amounts are disclosed as <strong>ranges</strong>, so values are estimates. Paper-filed reports are scanned images and can't be read yet; Senate disclosures are next.</p>
-  </section>
 
-  <section class="section" id="fundsSection">
-    <h2>🐋 Big Funds Tracker <span class="h2-sub">13F filings — what the famous money managers hold, and what changed last quarter</span></h2>
-    <p class="congress-note" id="fundsStats">Loading 13F filings…</p>
-    <h3 class="mini-h">Most-held across the tracked funds</h3>
-    <div class="table-wrap">
-      <table class="mini-table">
-        <thead><tr><th>Ticker</th><th>Company</th><th>Funds holding</th><th>Combined value</th><th></th></tr></thead>
-        <tbody id="consensusBody"></tbody>
-      </table>
-    </div>
-    <div class="fund-grid" id="fundGrid"></div>
-    <p class="congress-note">13F filings are <strong>quarterly</strong> and can lag the quarter-end by up to 45 days. They show <strong>long positions only</strong> — no shorts, no cash, limited options detail — and a "new" position means new since the previous quarter, not new this week.</p>
-  </section>
+      <!-- ===== SHADE: SIGNALS ===== -->
+      <div class="shade" data-shade-panel="signals" role="tabpanel">
+        <section class="section">
+          <h2>🟢 Top Insider-Buy Signals <span class="h2-sub" id="signalDate"></span></h2>
+          <div class="cards" id="signalCards"></div>
+          <p class="empty" id="signalsEmpty" hidden>No qualifying insider buying in the latest scan.</p>
+        </section>
+      </div>
 
-  <section class="section">
-    <h2>🔴 Heavy Insider Selling <span class="h2-sub">non-planned sales over $1M — weaker signal, worth a look</span></h2>
-    <div class="table-wrap">
-      <table id="sellTable">
-        <thead><tr><th>Ticker</th><th>Company</th><th>Sold</th><th>Top sellers</th><th></th></tr></thead>
-        <tbody id="sellBody"></tbody>
-      </table>
-      <p class="empty" id="sellEmpty" hidden>None over $1M in the latest scan.</p>
-    </div>
-  </section>
+      <!-- ===== SHADE: TRACKER ===== -->
+      <div class="shade" data-shade-panel="tracker" role="tabpanel">
+        <section class="section">
+          <h2>🎯 Prediction Tracker <span class="h2-sub">every call, logged with its entry price and graded at 30 / 90 days</span></h2>
+          <div class="table-wrap">
+            <table id="predTable">
+              <thead><tr>
+                <th>Signal date</th><th>Ticker</th><th>Score</th><th>Insiders bought</th>
+                <th>Entry</th><th>Now</th><th>Return</th><th>Days</th><th>30-day grade</th><th>90-day grade</th><th></th>
+              </tr></thead>
+              <tbody id="predBody"></tbody>
+            </table>
+            <p class="empty" id="predEmpty" hidden>No calls tracked yet — the first qualifying signals will appear here.</p>
+          </div>
+        </section>
+      </div>
 
-  <section class="section" id="shortSection">
-    <h2>📉 Short Side <span class="h2-sub">the mirror image — crowded, breaking down, and confirmed</span></h2>
-    <div id="shortBookPanel">
-      <h3 class="mini-h">💵 $100 Short Book <span class="h2-sub">paper trading — the engine picks up to 3 shorts a day and decides when to cover</span></h3>
-      <div class="stat-strip book-stats">
-        <div class="stat"><span class="stat-label">Equity</span><span class="stat-num" id="bkEquity">—</span></div>
-        <div class="stat"><span class="stat-label">Total return</span><span class="stat-num" id="bkReturn">—</span></div>
-        <div class="stat"><span class="stat-label">Cash</span><span class="stat-num" id="bkCash">—</span></div>
-        <div class="stat"><span class="stat-label">Open positions</span><span class="stat-num" id="bkOpen">—</span></div>
-        <div class="stat"><span class="stat-label">Win rate (closed)</span><span class="stat-num" id="bkWin">—</span></div>
+      <!-- ===== SHADE: CONGRESS ===== -->
+      <div class="shade" data-shade-panel="congress" role="tabpanel">
+        <section class="section" id="congressSection">
+          <h2>🏛️ Congress Tracker <span class="h2-sub">what House members are trading — STOCK Act disclosures</span></h2>
+          <p class="congress-note" id="congressStats">Loading disclosures…</p>
+          <div class="congress-grid">
+            <div>
+              <h3 class="mini-h">Most bought by members <span class="h2-sub">(last 120 days)</span></h3>
+              <div class="table-wrap">
+                <table class="mini-table">
+                  <thead><tr><th>Ticker</th><th>Buys</th><th>Members</th><th>Est. value</th><th></th></tr></thead>
+                  <tbody id="congBuyBody"></tbody>
+                </table>
+              </div>
+              <h3 class="mini-h">Most sold by members</h3>
+              <div class="table-wrap">
+                <table class="mini-table">
+                  <thead><tr><th>Ticker</th><th>Sales</th><th>Members</th><th>Est. value</th><th></th></tr></thead>
+                  <tbody id="congSellBody"></tbody>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3 class="mini-h">Latest disclosed trades</h3>
+              <div class="table-wrap">
+                <table class="mini-table">
+                  <thead><tr><th>Date</th><th>Member</th><th>Ticker</th><th>Type</th><th>Amount</th><th></th></tr></thead>
+                  <tbody id="congRecentBody"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <p class="congress-note">House data from the Clerk's official disclosure archive. Two honest caveats: members have up to <strong>45 days</strong> to disclose, so these trades are older than insider Form 4s — and amounts are disclosed as <strong>ranges</strong>, so values are estimates. Paper-filed reports are scanned images and can't be read yet; Senate disclosures are next.</p>
+        </section>
       </div>
-      <h3 class="mini-h">Today's 3 picks <span class="h2-sub" id="bookPicksDate"></span></h3>
-      <div class="cards" id="bookPicks"></div>
-      <p class="empty" id="bookPicksEmpty" hidden></p>
-      <p class="congress-note" id="bookPicksNote" hidden></p>
-      <h3 class="mini-h">Open positions</h3>
-      <div class="table-wrap">
-        <table id="bookPosTable">
-          <thead><tr>
-            <th>Ticker</th><th>Entered</th><th>Entry</th><th>Now</th><th>Notional</th>
-            <th>Unrealized P&amp;L</th><th>Days</th><th>Room to stop / target</th><th></th>
-          </tr></thead>
-          <tbody id="bookPosBody"></tbody>
-        </table>
-        <p class="empty" id="bookPosEmpty" hidden>No open positions right now.</p>
-      </div>
-      <h3 class="mini-h">Closed trades <span class="h2-sub">the ledger — every cover, with its reason</span></h3>
-      <div class="table-wrap">
-        <table class="mini-table" id="bookClosedTable">
-          <thead><tr>
-            <th>Ticker</th><th>Entry → Exit</th><th>Prices</th><th>Net P&amp;L</th><th>Return</th><th>Exit reason</th>
-          </tr></thead>
-          <tbody id="bookClosedBody"></tbody>
-        </table>
-        <p class="empty" id="bookClosedEmpty" hidden>No closed trades yet — covers land here with the reason the engine sold.</p>
-      </div>
-      <div class="explainer book-rules">
-        <div class="exp-card"><h3>When it sells (covers)</h3>
-          <p>1. <b>Hard stop</b> — the price rises +20% against the short.<br>
-          2. <b>Borrow fee spike</b> — the fee jumps over 25%/yr or doubles.<br>
-          3. <b>Trend reclaim</b> — the price closes back above its 50-day average; the thesis is dead.<br>
-          4. <b>Take profit</b> — the price falls −25%; bank the win.<br>
-          5. <b>Time stop</b> — held 90 days, out regardless.</p>
-        </div>
-        <div class="exp-card"><h3>How it picks</h3>
-          <p>At most 3 open shorts, each sized at equity ÷ 3, filled from the short board's top scores that pass the absolute safety bars — never a squeeze-watchlist or threshold-list name, no tiny floats, no borrow over 50%/yr, nothing under $2. A <b>confirmed</b> pick has a 50-day breakdown behind it; an <b>aggressive</b> pick doesn't yet — the tier is shown, not hidden.</p>
-        </div>
-      </div>
-      <p class="congress-note">📄 <strong>Paper book — no real money.</strong> Starts at $100 so every dollar of P&amp;L is visible. Prices and borrow fees come from the same free feeds as the rest of the short side; when the borrow leg is unreachable the fee is unknown and no fee drag is charged — never invented.</p>
-    </div>
-    <p class="congress-note" id="shortLegs">Loading short-side data…</p>
-    <h3 class="mini-h">Short candidates <span class="h2-sub">a CALL needs a confirmed 50-day breakdown plus independent confirmation — insider selling alone never triggers one</span></h3>
-    <div class="table-wrap">
-      <table id="shortTable">
-        <thead><tr>
-          <th>Ticker</th><th>Status</th><th>Score</th><th>Insider selling</th>
-          <th>Short interest</th><th>Borrow</th><th>Trend</th><th>Risk gates</th><th></th>
-        </tr></thead>
-        <tbody id="shortBody"></tbody>
-      </table>
-      <p class="empty" id="shortEmpty" hidden>No candidates in the latest run.</p>
-    </div>
-    <h3 class="mini-h">🚨 Squeeze watchlist <span class="h2-sub">crowded names to AVOID shorting — at extremes, high short interest is squeeze fuel, not opportunity</span></h3>
-    <div class="table-wrap">
-      <table class="mini-table" id="squeezeTable">
-        <thead><tr><th>Ticker</th><th>Squeeze risk</th><th>Why</th><th>Short interest</th><th>Last month</th><th></th></tr></thead>
-        <tbody id="squeezeBody"></tbody>
-      </table>
-      <p class="empty" id="squeezeEmpty" hidden>Nothing crowded enough to flag in the latest run.</p>
-    </div>
-    <h3 class="mini-h">🎯 Short Tracker <span class="h2-sub">every short call graded at 30 / 90 days, NET of borrow-fee drag, with its worst adverse move published</span></h3>
-    <div class="table-wrap">
-      <table id="shortPredTable">
-        <thead><tr>
-          <th>Signal date</th><th>Ticker</th><th>Score</th><th>Entry</th><th>Now</th>
-          <th>Gross</th><th>Fee drag</th><th>Net</th><th>Worst adverse</th><th>Days</th>
-          <th>30-day grade</th><th>90-day grade</th><th>Status</th><th></th>
-        </tr></thead>
-        <tbody id="shortPredBody"></tbody>
-      </table>
-      <p class="empty" id="shortPredEmpty" hidden>No short calls yet — a name only becomes a call after a confirmed breakdown with confirmation and clear gates. The tracker fills in from there, and every call stays on the record.</p>
-    </div>
-    <div class="congress-grid">
-      <div>
-        <h3 class="mini-h">🐋 Fund puts — 13F evidence <span class="h2-sub">worth at most +1 confirmation point</span></h3>
-        <div id="putEvidence"></div>
-      </div>
-      <div>
-        <h3 class="mini-h">🏛️ Congress sells — evidence <span class="h2-sub">context only, never scored</span></h3>
-        <div class="chips" id="congSellEvidence"></div>
-      </div>
-    </div>
-    <div id="shortCaveats"></div>
-  </section>
 
-  <section class="section">
-    <h2>🧭 How the score works</h2>
-    <div class="explainer">
-      <div class="exp-card"><h3>Who's buying</h3><p>CEO / CFO purchases weigh most, then other officers, directors, and 10% owners. Rank is knowledge — the closer to the top, the more they know.</p></div>
-      <div class="exp-card"><h3>How much</h3><p>Bigger personal checks score higher. A $1M open-market buy is a statement; a $3K buy is a shrug.</p></div>
-      <div class="exp-card"><h3>Clusters</h3><p>Two or more insiders at the same company buying in the same window multiplies the signal. One buyer can be wrong — a crowd rarely buys together by accident.</p></div>
-      <div class="exp-card"><h3>Offsets</h3><p>Heavy non-planned insider selling at the same company cuts the score. Planned 10b5-1 sales are excluded — they're scheduled in advance and say little.</p></div>
-    </div>
-  </section>
+      <!-- ===== SHADE: FUNDS ===== -->
+      <div class="shade" data-shade-panel="funds" role="tabpanel">
+        <section class="section" id="fundsSection">
+          <h2>🐋 Big Funds Tracker <span class="h2-sub">13F filings — what the famous money managers hold, and what changed last quarter</span></h2>
+          <p class="congress-note" id="fundsStats">Loading 13F filings…</p>
+          <h3 class="mini-h">Most-held across the tracked funds</h3>
+          <div class="table-wrap">
+            <table class="mini-table">
+              <thead><tr><th>Ticker</th><th>Company</th><th>Funds holding</th><th>Combined value</th><th></th></tr></thead>
+              <tbody id="consensusBody"></tbody>
+            </table>
+          </div>
+          <div class="fund-grid" id="fundGrid"></div>
+          <p class="congress-note">13F filings are <strong>quarterly</strong> and can lag the quarter-end by up to 45 days. They show <strong>long positions only</strong> — no shorts, no cash, limited options detail — and a "new" position means new since the previous quarter, not new this week.</p>
+        </section>
+      </div>
 
-  <section class="section">
-    <h2>🚧 On the roadmap</h2>
-    <div class="explainer">
-      <div class="exp-card road"><h3>🏛️ Congress Tracker — House live ✅</h3><p>The House side is built and running (above) from the Clerk's official archive. Still to come: Senate disclosures from the Senate eFD portal.</p></div>
-      <div class="exp-card road"><h3>🐋 Big Fund Tracker — live ✅</h3><p>Running above: 11 marquee funds, diffed quarter over quarter. Still on the roadmap: Senate disclosures, and options-flow watching.</p></div>
-    </div>
-  </section>
-</main>
+      <!-- ===== SHADE: SHORT SIDE ===== -->
+      <div class="shade" data-shade-panel="shorts" role="tabpanel">
+        <section class="section" id="shortSection">
+          <h2>📉 Short Side <span class="h2-sub">the mirror image — crowded, breaking down, and confirmed</span></h2>
+          <div id="shortBookPanel">
+            <h3 class="mini-h">💵 $100 Short Book <span class="h2-sub">paper trading — the engine picks up to 3 shorts a day and decides when to cover</span></h3>
+            <div class="stat-strip book-stats">
+              <div class="stat"><span class="stat-label">Equity</span><span class="stat-num" id="bkEquity">—</span></div>
+              <div class="stat"><span class="stat-label">Total return</span><span class="stat-num" id="bkReturn">—</span></div>
+              <div class="stat"><span class="stat-label">Cash</span><span class="stat-num" id="bkCash">—</span></div>
+              <div class="stat"><span class="stat-label">Open positions</span><span class="stat-num" id="bkOpen">—</span></div>
+              <div class="stat"><span class="stat-label">Win rate (closed)</span><span class="stat-num" id="bkWin">—</span></div>
+            </div>
+            <h3 class="mini-h">Today's 3 picks <span class="h2-sub" id="bookPicksDate"></span></h3>
+            <div class="cards" id="bookPicks"></div>
+            <p class="empty" id="bookPicksEmpty" hidden></p>
+            <p class="congress-note" id="bookPicksNote" hidden></p>
+            <h3 class="mini-h">Open positions</h3>
+            <div class="table-wrap">
+              <table id="bookPosTable">
+                <thead><tr>
+                  <th>Ticker</th><th>Entered</th><th>Entry</th><th>Now</th><th>Notional</th>
+                  <th>Unrealized P&amp;L</th><th>Days</th><th>Room to stop / target</th><th></th>
+                </tr></thead>
+                <tbody id="bookPosBody"></tbody>
+              </table>
+              <p class="empty" id="bookPosEmpty" hidden>No open positions right now.</p>
+            </div>
+            <h3 class="mini-h">Closed trades <span class="h2-sub">the ledger — every cover, with its reason</span></h3>
+            <div class="table-wrap">
+              <table class="mini-table" id="bookClosedTable">
+                <thead><tr>
+                  <th>Ticker</th><th>Entry → Exit</th><th>Prices</th><th>Net P&amp;L</th><th>Return</th><th>Exit reason</th>
+                </tr></thead>
+                <tbody id="bookClosedBody"></tbody>
+              </table>
+              <p class="empty" id="bookClosedEmpty" hidden>No closed trades yet — covers land here with the reason the engine sold.</p>
+            </div>
+            <div class="explainer book-rules">
+              <div class="exp-card"><h3>When it sells (covers)</h3>
+                <p>1. <b>Hard stop</b> — the price rises +20% against the short.<br>
+                2. <b>Borrow fee spike</b> — the fee jumps over 25%/yr or doubles.<br>
+                3. <b>Trend reclaim</b> — the price closes back above its 50-day average; the thesis is dead.<br>
+                4. <b>Take profit</b> — the price falls −25%; bank the win.<br>
+                5. <b>Time stop</b> — held 90 days, out regardless.</p>
+              </div>
+              <div class="exp-card"><h3>How it picks</h3>
+                <p>At most 3 open shorts, each sized at equity ÷ 3, filled from the short board's top scores that pass the absolute safety bars — never a squeeze-watchlist or threshold-list name, no tiny floats, no borrow over 50%/yr, nothing under $2. A <b>confirmed</b> pick has a 50-day breakdown behind it; an <b>aggressive</b> pick doesn't yet — the tier is shown, not hidden.</p>
+              </div>
+            </div>
+            <p class="congress-note">📄 <strong>Paper book — no real money.</strong> Starts at $100 so every dollar of P&amp;L is visible. Prices and borrow fees come from the same free feeds as the rest of the short side; when the borrow leg is unreachable the fee is unknown and no fee drag is charged — never invented.</p>
+          </div>
+          <p class="congress-note" id="shortLegs">Loading short-side data…</p>
+          <h3 class="mini-h">Short candidates <span class="h2-sub">a CALL needs a confirmed 50-day breakdown plus independent confirmation — insider selling alone never triggers one</span></h3>
+          <div class="table-wrap">
+            <table id="shortTable">
+              <thead><tr>
+                <th>Ticker</th><th>Status</th><th>Score</th><th>Insider selling</th>
+                <th>Short interest</th><th>Borrow</th><th>Trend</th><th>Risk gates</th><th></th>
+              </tr></thead>
+              <tbody id="shortBody"></tbody>
+            </table>
+            <p class="empty" id="shortEmpty" hidden>No candidates in the latest run.</p>
+          </div>
+          <h3 class="mini-h">🚨 Squeeze watchlist <span class="h2-sub">crowded names to AVOID shorting — at extremes, high short interest is squeeze fuel, not opportunity</span></h3>
+          <div class="table-wrap">
+            <table class="mini-table" id="squeezeTable">
+              <thead><tr><th>Ticker</th><th>Squeeze risk</th><th>Why</th><th>Short interest</th><th>Last month</th><th></th></tr></thead>
+              <tbody id="squeezeBody"></tbody>
+            </table>
+            <p class="empty" id="squeezeEmpty" hidden>Nothing crowded enough to flag in the latest run.</p>
+          </div>
+          <h3 class="mini-h">🎯 Short Tracker <span class="h2-sub">every short call graded at 30 / 90 days, NET of borrow-fee drag, with its worst adverse move published</span></h3>
+          <div class="table-wrap">
+            <table id="shortPredTable">
+              <thead><tr>
+                <th>Signal date</th><th>Ticker</th><th>Score</th><th>Entry</th><th>Now</th>
+                <th>Gross</th><th>Fee drag</th><th>Net</th><th>Worst adverse</th><th>Days</th>
+                <th>30-day grade</th><th>90-day grade</th><th>Status</th><th></th>
+              </tr></thead>
+              <tbody id="shortPredBody"></tbody>
+            </table>
+            <p class="empty" id="shortPredEmpty" hidden>No short calls yet — a name only becomes a call after a confirmed breakdown with confirmation and clear gates. The tracker fills in from there, and every call stays on the record.</p>
+          </div>
+          <div class="congress-grid">
+            <div>
+              <h3 class="mini-h">🐋 Fund puts — 13F evidence <span class="h2-sub">worth at most +1 confirmation point</span></h3>
+              <div id="putEvidence"></div>
+            </div>
+            <div>
+              <h3 class="mini-h">🏛️ Congress sells — evidence <span class="h2-sub">context only, never scored</span></h3>
+              <div class="chips" id="congSellEvidence"></div>
+            </div>
+          </div>
+          <div id="shortCaveats"></div>
+        </section>
+      </div>
 
-<footer>
-  <p><strong>PowerWatch</strong> · Data: SEC EDGAR Form 4 + Form 13F filings · U.S. House Clerk disclosures (public record) · FINRA short interest · IBKR short-stock file · Reg SHO threshold lists · Prices: Yahoo Finance · Charts: <a href="https://www.tradingview.com/" target="_blank" rel="noopener" style="color:var(--dim)">TradingView Lightweight Charts</a></p>
-  <p class="fine">Signals, not financial advice. Insider buying is one of the best-documented edges in public markets, but no signal guarantees a result — every call here is tracked and graded so you can judge the record yourself. Do your own homework before buying anything, including in the Robinhood app.</p>
-</footer>
+      <!-- ===== SHADE: SELLING ===== -->
+      <div class="shade" data-shade-panel="selling" role="tabpanel">
+        <section class="section">
+          <h2>🔴 Heavy Insider Selling <span class="h2-sub">non-planned sales over $1M — weaker signal, worth a look</span></h2>
+          <div class="table-wrap">
+            <table id="sellTable">
+              <thead><tr><th>Ticker</th><th>Company</th><th>Sold</th><th>Top sellers</th><th></th></tr></thead>
+              <tbody id="sellBody"></tbody>
+            </table>
+            <p class="empty" id="sellEmpty" hidden>None over $1M in the latest scan.</p>
+          </div>
+        </section>
+      </div>
+
+      <!-- ===== SHADE: GUIDE ===== -->
+      <div class="shade" data-shade-panel="guide" role="tabpanel">
+        <section class="section">
+          <h2>🧭 How the score works</h2>
+          <div class="explainer">
+            <div class="exp-card"><h3>Who's buying</h3><p>CEO / CFO purchases weigh most, then other officers, directors, and 10% owners. Rank is knowledge — the closer to the top, the more they know.</p></div>
+            <div class="exp-card"><h3>How much</h3><p>Bigger personal checks score higher. A $1M open-market buy is a statement; a $3K buy is a shrug.</p></div>
+            <div class="exp-card"><h3>Clusters</h3><p>Two or more insiders at the same company buying in the same window multiplies the signal. One buyer can be wrong — a crowd rarely buys together by accident.</p></div>
+            <div class="exp-card"><h3>Offsets</h3><p>Heavy non-planned insider selling at the same company cuts the score. Planned 10b5-1 sales are excluded — they're scheduled in advance and say little.</p></div>
+          </div>
+        </section>
+        <section class="section">
+          <h2>🚧 On the roadmap</h2>
+          <div class="explainer">
+            <div class="exp-card road"><h3>🏛️ Congress Tracker — House live ✅</h3><p>The House side is built and running (above) from the Clerk's official archive. Still to come: Senate disclosures from the Senate eFD portal.</p></div>
+            <div class="exp-card road"><h3>🐋 Big Fund Tracker — live ✅</h3><p>Running above: 11 marquee funds, diffed quarter over quarter. Still on the roadmap: Senate disclosures, and options-flow watching.</p></div>
+          </div>
+        </section>
+        <footer>
+          <p><strong>PowerWatch</strong> · Data: SEC EDGAR Form 4 + Form 13F filings · U.S. House Clerk disclosures (public record) · FINRA short interest · IBKR short-stock file · Reg SHO threshold lists · Prices: Yahoo Finance · Charts: <a href="https://www.tradingview.com/" target="_blank" rel="noopener" style="color:var(--dim)">TradingView Lightweight Charts</a></p>
+          <p class="fine">Signals, not financial advice. Insider buying is one of the best-documented edges in public markets, but no signal guarantees a result — every call here is tracked and graded so you can judge the record yourself. Do your own homework before buying anything, including in the Robinhood app.</p>
+        </footer>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<!-- ================= SIDEWAYS SHADE: DETAIL DRAWER ================= -->
+<div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
+<aside class="drawer acrylic" id="detailDrawer" aria-hidden="true" aria-label="Ticker details">
+  <div class="drawer-head">
+    <div>
+      <div class="drawer-ticker" id="drawerTicker">—</div>
+      <div class="drawer-issuer" id="drawerIssuer"></div>
+    </div>
+    <button class="drawer-close" id="drawerClose" type="button" aria-label="Close details">×</button>
+  </div>
+  <div class="drawer-body" id="drawerBody"></div>
+  <div class="drawer-foot" id="drawerFoot"></div>
+</aside>
 
 <script src="https://unpkg.com/lightweight-charts@4.2.0/dist/lightweight-charts.standalone.production.js"></script>
 <script src="app.js"></script>
