@@ -114,6 +114,17 @@ td.tk{font-weight:800}
 .badge.buy{background:rgba(0,200,5,.15);color:var(--green)}
 .badge.sell{background:rgba(255,80,0,.14);color:var(--red)}
 .badge.exch{background:#2a2f38;color:var(--dim)}
+.badge.call{background:rgba(255,80,0,.2);color:#ff7a33}
+.badge.watch{background:rgba(240,185,11,.16);color:var(--gold)}
+.badge.blocked{background:#2a2f38;color:var(--dim)}
+.badge.evidence{background:#22262e;color:var(--dim)}
+
+/* ---------- short side ---------- */
+.gate{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11.5px;margin:1px 2px 1px 0;background:var(--panel2);border:1px solid var(--line);color:var(--dim);white-space:nowrap}
+.gate.block{color:#ff7a33;border-color:rgba(255,80,0,.5)}
+.gate.pass{color:var(--green)}
+td.gates{white-space:normal;min-width:170px}
+.pill.risk{background:rgba(255,80,0,.18);color:#ff7a33}
 
 /* ---------- explainer ---------- */
 .explainer{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}

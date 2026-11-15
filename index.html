@@ -121,6 +121,53 @@
     </div>
   </section>
 
+  <section class="section" id="shortSection">
+    <h2>📉 Short Side <span class="h2-sub">the mirror image — crowded, breaking down, and confirmed</span></h2>
+    <p class="congress-note" id="shortLegs">Loading short-side data…</p>
+    <h3 class="mini-h">Short candidates <span class="h2-sub">a CALL needs a confirmed 50-day breakdown plus independent confirmation — insider selling alone never triggers one</span></h3>
+    <div class="table-wrap">
+      <table id="shortTable">
+        <thead><tr>
+          <th>Ticker</th><th>Status</th><th>Score</th><th>Insider selling</th>
+          <th>Short interest</th><th>Borrow</th><th>Trend</th><th>Risk gates</th><th></th>
+        </tr></thead>
+        <tbody id="shortBody"></tbody>
+      </table>
+      <p class="empty" id="shortEmpty" hidden>No candidates in the latest run.</p>
+    </div>
+    <h3 class="mini-h">🚨 Squeeze watchlist <span class="h2-sub">crowded names to AVOID shorting — at extremes, high short interest is squeeze fuel, not opportunity</span></h3>
+    <div class="table-wrap">
+      <table class="mini-table" id="squeezeTable">
+        <thead><tr><th>Ticker</th><th>Squeeze risk</th><th>Why</th><th>Short interest</th><th>Last month</th><th></th></tr></thead>
+        <tbody id="squeezeBody"></tbody>
+      </table>
+      <p class="empty" id="squeezeEmpty" hidden>Nothing crowded enough to flag in the latest run.</p>
+    </div>
+    <h3 class="mini-h">🎯 Short Tracker <span class="h2-sub">every short call graded at 30 / 90 days, NET of borrow-fee drag, with its worst adverse move published</span></h3>
+    <div class="table-wrap">
+      <table id="shortPredTable">
+        <thead><tr>
+          <th>Signal date</th><th>Ticker</th><th>Score</th><th>Entry</th><th>Now</th>
+          <th>Gross</th><th>Fee drag</th><th>Net</th><th>Worst adverse</th><th>Days</th>
+          <th>30-day grade</th><th>90-day grade</th><th>Status</th><th></th>
+        </tr></thead>
+        <tbody id="shortPredBody"></tbody>
+      </table>
+      <p class="empty" id="shortPredEmpty" hidden>No short calls yet — a name only becomes a call after a confirmed breakdown with confirmation and clear gates. The tracker fills in from there, and every call stays on the record.</p>
+    </div>
+    <div class="congress-grid">
+      <div>
+        <h3 class="mini-h">🐋 Fund puts — 13F evidence <span class="h2-sub">worth at most +1 confirmation point</span></h3>
+        <div id="putEvidence"></div>
+      </div>
+      <div>
+        <h3 class="mini-h">🏛️ Congress sells — evidence <span class="h2-sub">context only, never scored</span></h3>
+        <div class="chips" id="congSellEvidence"></div>
+      </div>
+    </div>
+    <div id="shortCaveats"></div>
+  </section>
+
   <section class="section">
     <h2>🧭 How the score works</h2>
     <div class="explainer">
@@ -141,7 +188,7 @@
 </main>
 
 <footer>
-  <p><strong>PowerWatch</strong> · Data: SEC EDGAR Form 4 + Form 13F filings · U.S. House Clerk disclosures (public record) · Prices: Yahoo Finance · Charts: <a href="https://www.tradingview.com/" target="_blank" rel="noopener" style="color:var(--dim)">TradingView Lightweight Charts</a></p>
+  <p><strong>PowerWatch</strong> · Data: SEC EDGAR Form 4 + Form 13F filings · U.S. House Clerk disclosures (public record) · FINRA short interest · IBKR short-stock file · Reg SHO threshold lists · Prices: Yahoo Finance · Charts: <a href="https://www.tradingview.com/" target="_blank" rel="noopener" style="color:var(--dim)">TradingView Lightweight Charts</a></p>
   <p class="fine">Signals, not financial advice. Insider buying is one of the best-documented edges in public markets, but no signal guarantees a result — every call here is tracked and graded so you can judge the record yourself. Do your own homework before buying anything, including in the Robinhood app.</p>
 </footer>
 

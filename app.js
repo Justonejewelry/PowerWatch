@@ -207,6 +207,96 @@ function renderFunds(f) {
   }).join("");
 }
 
+function renderShorts(s, spreds) {
+  const legs = s.legs || {};
+  const legTxt = [];
+  const ins = legs.insider_sells || {};
+  legTxt.push(`Insider sells: <b>${ins.status || "—"}</b>${ins.clusters_found != null ? ` · ${ins.clusters_found} clusters in the 30-day window` : ""}`);
+  const fi = legs.finra_short_interest || {};
+  legTxt.push(`FINRA short interest: <b>${fi.status || "—"}</b>${fi.settlement_latest ? ` · settlement ${fi.settlement_latest}` : ""}`);
+  const bo = legs.borrow_ibkr || {};
+  legTxt.push(`Borrow (IBKR): <b>${bo.status || "—"}</b>${bo.snapshot_date ? ` · ${bo.snapshot_date}` : ""}`);
+  const th = legs.threshold_list || {};
+  legTxt.push(`Threshold list: <b>${th.status || "—"}</b>${th.date ? ` · ${th.date}` : ""}`);
+  $("shortLegs").innerHTML =
+    `Data legs — ${legTxt.join(" · ")}. ` +
+    `<span title="${(fi.note || "").replace(/"/g, "&quot;")}">${fi.status === "live" || fi.status === "stale" ? "" : "FINRA files are unreachable from some networks; the leg retries every run."}</span>` +
+    (bo.status !== "live" ? ` Borrow fees populate when the IBKR file is reachable (it runs from the daily pipeline).` : "");
+
+  const cands = s.candidates || [];
+  $("shortEmpty").hidden = cands.length > 0;
+  $("shortBody").innerHTML = cands.map(c => {
+    const insCell = c.insider && c.insider.cluster
+      ? `${c.insider.cluster.n_insiders} insider${c.insider.cluster.n_insiders === 1 ? "" : "s"} · ${money(c.insider.cluster.total_value)} · score ${c.insider.score}`
+      : "—";
+    const siCell = c.si
+      ? `${(c.si.shares_short / 1e6).toFixed(1)}M sh · DTC ${c.si.days_to_cover ?? "—"}${c.si.pct_of_float != null ? ` · ${c.si.pct_of_float}% of float` : ""}${c.si.pct_change != null ? ` · ${c.si.pct_change > 0 ? "▲" : "▼"} ${Math.abs(c.si.pct_change)}%` : ""}`
+      : "no data yet";
+    const boCell = c.borrow
+      ? `${c.borrow.fee_pct}%/yr${c.borrow.available != null ? ` · ${(c.borrow.available / 1e3).toFixed(0)}K avail` : ""}${c.borrow.rising ? " · ⚠️ fee doubling" : ""}`
+      : "pending";
+    const trCell = c.tech
+      ? (c.tech.breakdown ? "💥 breakdown" : c.tech.extended_context ? "extended (watching)" : "—") +
+        (c.tech.vs_sma50_pct != null ? ` · ${c.tech.vs_sma50_pct}% vs 50d` : "")
+      : "—";
+    const gates = (c.gates || []).map(g =>
+      `<span class="gate ${g.status}" title="${(g.gate + ": " + g.detail).replace(/"/g, "&quot;")}">${g.status === "block" ? "⛔" : g.status === "pass" ? "✅" : "❔"} ${g.gate}</span>`).join("");
+    return `<tr>
+      <td class="tk">${c.symbol}</td>
+      <td><span class="badge ${c.status}">${c.status.toUpperCase()}</span></td>
+      <td><span class="pill gold">${c.score}</span></td>
+      <td>${insCell}</td><td>${siCell}</td><td>${boCell}</td><td>${trCell}</td>
+      <td class="gates">${gates}</td>
+      <td><a class="mini-link" href="${rh(c.symbol)}" target="_blank" rel="noopener">Robinhood ↗</a></td></tr>`;
+  }).join("");
+
+  const watch = s.squeeze_watchlist || [];
+  $("squeezeEmpty").hidden = watch.length > 0;
+  $("squeezeBody").innerHTML = watch.map(w => {
+    const siCell = w.si
+      ? `${(w.si.shares_short / 1e6).toFixed(1)}M sh · DTC ${w.si.days_to_cover ?? "—"}${w.si.pct_of_float != null ? ` · ${w.si.pct_of_float}% float` : ""}`
+      : "—";
+    return `<tr>
+      <td class="tk">${w.symbol}</td>
+      <td><span class="pill risk">${w.squeeze_score}</span></td>
+      <td style="white-space:normal;min-width:220px">${(w.detail || []).join("; ")}</td>
+      <td>${siCell}</td>
+      <td class="${(w.tech && w.tech.mom_1m_pct || 0) >= 0 ? "pos" : "neg"}">${w.tech ? pct(w.tech.mom_1m_pct) : "—"}</td>
+      <td><a class="mini-link" href="${rh(w.symbol)}" target="_blank" rel="noopener">↗</a></td></tr>`;
+  }).join("");
+
+  const preds = Array.isArray(spreds) ? spreds : [];
+  $("shortPredEmpty").hidden = preds.length > 0;
+  $("shortPredBody").innerHTML = preds.map(p => {
+    const net = p.net_return_pct || 0;
+    return `<tr>
+      <td>${p.signal_date}</td>
+      <td class="tk">${p.symbol}</td>
+      <td><span class="pill gold">${p.score}</span></td>
+      <td>${p.entry_price ? "$" + p.entry_price.toFixed(2) : "—"}</td>
+      <td>${p.current_price ? "$" + p.current_price.toFixed(2) : "—"}</td>
+      <td class="${(p.gross_return_pct || 0) >= 0 ? "pos" : "neg"}">${pct(p.gross_return_pct)}</td>
+      <td class="neg">−${(p.fee_drag_pct || 0).toFixed(2)}%</td>
+      <td class="${net >= 0 ? "pos" : "neg"}">${pct(net)}</td>
+      <td class="neg">${pct(p.max_adverse_pct)}</td>
+      <td>${p.days_held ?? 0}d</td>
+      <td class="${(p.grade_30d_pct ?? 0) >= 0 ? "pos" : "neg"}">${pct(p.grade_30d_pct)}</td>
+      <td class="${(p.grade_90d_pct ?? 0) >= 0 ? "pos" : "neg"}">${pct(p.grade_90d_pct)}</td>
+      <td><span class="badge ${p.status === "open" ? "watch" : "blocked"}">${(p.status || "open").replace("_", " ")}</span></td>
+      <td><a class="mini-link" href="${rh(p.symbol)}" target="_blank" rel="noopener">Robinhood ↗</a></td>
+    </tr>`;
+  }).join("");
+
+  $("putEvidence").innerHTML = (s.fund_puts_evidence || []).map(e => `
+    <p class="chg"><b>${e.symbol}</b>${e.points ? ` <span class="pill gold">+1 confirmation</span>` : ""} — ` +
+    e.funds.map(f => `${f.fund}: ${f.kind}${f.notional_value ? ` (${money(f.notional_value)} <b>notional</b> underlying value — not premium paid)` : ""}`).join("; ") +
+    `</p>`).join("") || `<p class="chg">No fund put positions in the latest 13F data.</p>`;
+  $("congSellEvidence").innerHTML = (s.congress_sells_evidence || []).slice(0, 10).map(t =>
+    `<span class="chip"><b>${t.symbol}</b> ${t.count} sales · ${t.members} members</span>`).join("");
+  $("shortCaveats").innerHTML = (s.caveats || []).map(cv =>
+    `<p class="congress-note">${cv}</p>`).join("");
+}
+
 function renderSmart(latest, congress, funds) {
   const bySym = {};
   const entry = (sym) => bySym[sym] = bySym[sym] || {symbol: sym, name: "", ins: null, cong: null, fund: null};
@@ -275,11 +365,21 @@ async function load() {
     funds = await fetch("data/funds.json?v=" + Date.now()).then(r => r.json());
     renderFunds(funds);
   } catch (e) { $("fundsStats").textContent = "Funds data is on its way."; }
+  let shorts = null;
+  try {
+    const [sh, sp] = await Promise.all([
+      fetch("data/shorts.json?v=" + Date.now()).then(r => r.json()),
+      fetch("data/short_predictions.json?v=" + Date.now()).then(r => r.json()).catch(() => []),
+    ]);
+    shorts = sh;
+    renderShorts(shorts, Array.isArray(sp) ? sp : []);
+  } catch (e) { $("shortLegs").textContent = "Short-side data is on its way."; }
   if (latest) renderSmart(latest, congress, funds);
   const feeds = [];
   if (latest) feeds.push(`Insiders ${latest.date}`);
   if (congress) feeds.push(`Congress ${congress.updated}`);
   if (funds) feeds.push(`Funds ${funds.updated}`);
+  if (shorts) feeds.push(`Shorts ${shorts.updated}`);
   $("autopilotLine").innerHTML =
     `🤖 <b>Autopilot ON</b> — every scan refreshes itself each weekday after the market close` +
     (feeds.length ? ` · ${feeds.join(" · ")}` : "");
