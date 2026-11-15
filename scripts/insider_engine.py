@@ -213,7 +213,7 @@ def yahoo_close_on(symbol, target):
 
 # ---------------------------------------------------------------- site data ----
 def yahoo_history(symbol):
-    """Daily closes, last ~6 months: [[YYYY-MM-DD, close], ...]"""
+    """Daily OHLC, last ~6 months: [[YYYY-MM-DD, open, high, low, close], ...]"""
     try:
         r = requests.get(
             f"https://query2.finance.yahoo.com/v8/finance/chart/{symbol}",
@@ -221,17 +221,50 @@ def yahoo_history(symbol):
             headers={"User-Agent": "Mozilla/5.0"}, timeout=20)
         res = r.json()["chart"]["result"][0]
         ts = res["timestamp"]
-        closes = res["indicators"]["quote"][0]["close"]
-        return [[date.fromtimestamp(t).isoformat(), round(c, 4)]
-                for t, c in zip(ts, closes) if c]
+        q = res["indicators"]["quote"][0]
+        out = []
+        for t, o, h, l, c in zip(ts, q["open"], q["high"], q["low"], q["close"]):
+            if c:
+                out.append([date.fromtimestamp(t).isoformat(),
+                            round(o or c, 4), round(h or c, 4),
+                            round(l or c, 4), round(c, 4)])
+        return out
     except Exception:
         return []
 
 def close_on_or_after(hist, target):
-    for d, c in hist:
-        if d >= target:
-            return c
+    for row in hist:
+        if row[0] >= target:
+            return row[-1]
     return None
+
+def rsi14(closes, period=14):
+    """Wilder's RSI. None when there isn't enough history."""
+    if len(closes) < period + 1:
+        return None
+    gains = [max(closes[i] - closes[i - 1], 0) for i in range(1, len(closes))]
+    losses = [max(closes[i - 1] - closes[i], 0) for i in range(1, len(closes))]
+    ag = sum(gains[:period]) / period
+    al = sum(losses[:period]) / period
+    for g, l in zip(gains[period:], losses[period:]):
+        ag = (ag * (period - 1) + g) / period
+        al = (al * (period - 1) + l) / period
+    if al == 0:
+        return 100.0
+    return round(100 - 100 / (1 + ag / al), 1)
+
+def indicators(hist):
+    """RSI(14), distance from the 50-day average, 1-month momentum."""
+    closes = [row[-1] for row in hist]
+    if len(closes) < 15:
+        return {}
+    out = {"rsi": rsi14(closes)}
+    if len(closes) >= 50:
+        sma50 = sum(closes[-50:]) / 50
+        out["vs_sma50_pct"] = round((closes[-1] / sma50 - 1) * 100, 1)
+    if len(closes) >= 22:
+        out["mom_1m_pct"] = round((closes[-1] / closes[-22] - 1) * 100, 1)
+    return out
 
 def update_site_data(day, signals, sellers, stats, data_dir):
     os.makedirs(data_dir, exist_ok=True)
@@ -246,7 +279,9 @@ def update_site_data(day, signals, sellers, stats, data_dir):
                             for b in sorted(s["buyers"], key=lambda x: -x["value"])],
                  "sell_value": round(s["sell_value"])}
         if i < 15:
-            entry["history"] = yahoo_history(s["symbol"])[-60:]
+            hist = yahoo_history(s["symbol"])
+            entry["history"] = hist[-60:]
+            entry["indicators"] = indicators(hist)
         top.append(entry)
     latest = {"date": day_s, "stats": stats, "signals": top,
               "heavy_sellers": [
@@ -275,7 +310,7 @@ def update_site_data(day, signals, sellers, stats, data_dir):
             if hist:
                 latest_txn = max((t["date"] for t in s["buy_txns"]), default=day_s)
                 elig = [h for h in hist if h[0] <= latest_txn] or hist
-                entry_date, entry_price = elig[-1]
+                entry_date, entry_price = elig[-1][0], elig[-1][-1]
             preds.append({
                 "signal_date": day_s, "symbol": s["symbol"],
                 "issuer": s["issuer"], "score": s["score"],
@@ -292,7 +327,7 @@ def update_site_data(day, signals, sellers, stats, data_dir):
         if not hist:
             continue
         p["history"] = hist[-120:]
-        p["current_date"], p["current_price"] = hist[-1]
+        p["current_date"], p["current_price"] = hist[-1][0], hist[-1][-1]
         if p["entry_price"]:
             p["return_pct"] = round(
                 (p["current_price"] / p["entry_price"] - 1) * 100, 2)
