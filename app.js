@@ -12,8 +12,9 @@ function sparkline(hist, w = 300, h = 52) {
   const pts = closes.map((c, i) =>
     `${(i / (closes.length - 1) * w).toFixed(1)},${(h - 5 - (c - min) / span * (h - 10)).toFixed(1)}`).join(" ");
   const up = closes[closes.length - 1] >= closes[0];
-  const color = up ? "#00c805" : "#ff5000";
+  const color = up ? "#3dff7a" : "#ff6b5e";
   return `<svg class="spark" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none">
+    <polygon points="0,${h} ${pts} ${w},${h}" fill="${color}" opacity="0.13" stroke="none"/>
     <polyline points="${pts}" fill="none" stroke="${color}" stroke-width="2"/></svg>`;
 }
 
@@ -26,21 +27,21 @@ function drawChart(idx, hist) {
   try {
     const chart = LightweightCharts.createChart(el, {
       width: el.clientWidth || 300, height: 120,
-      layout: {background: {color: "transparent"}, textColor: "#9aa4b2", fontSize: 10},
-      grid: {vertLines: {color: "rgba(255,255,255,.04)"},
-             horzLines: {color: "rgba(255,255,255,.04)"}},
+      layout: {background: {color: "transparent"}, textColor: "#8fa38c", fontSize: 10},
+      grid: {vertLines: {color: "rgba(61,255,122,.05)"},
+             horzLines: {color: "rgba(61,255,122,.05)"}},
       timeScale: {visible: false}, rightPriceScale: {borderVisible: false},
       leftPriceScale: {visible: false}, crosshair: {mode: 0},
       handleScroll: false, handleScale: false});
     if (hist[0].length >= 5) {
       const ser = chart.addCandlestickSeries({
-        upColor: "#00c805", downColor: "#ff5000",
-        wickUpColor: "#00c805", wickDownColor: "#ff5000", borderVisible: false});
+        upColor: "#3dff7a", downColor: "#ff6b5e",
+        wickUpColor: "#3dff7a", wickDownColor: "#ff6b5e", borderVisible: false});
       ser.setData(hist.map(r => ({time: r[0], open: r[1], high: r[2], low: r[3], close: r[4]})));
     } else {
       const ser = chart.addAreaSeries({
-        lineColor: "#00c805", lineWidth: 2,
-        topColor: "rgba(0,200,5,.25)", bottomColor: "rgba(0,200,5,0)"});
+        lineColor: "#3dff7a", lineWidth: 2,
+        topColor: "rgba(61,255,122,.30)", bottomColor: "rgba(61,255,122,0)"});
       ser.setData(hist.map(r => ({time: r[0], value: r[r.length - 1]})));
     }
     chart.timeScale().fitContent();
@@ -123,6 +124,20 @@ function renderSignals(latest) {
   }).join("");
 }
 
+function kpiSpark(el, values) {
+  if (!el) return;
+  if (!values || values.length < 2) { el.innerHTML = ""; return; }
+  const w = 86, h = 32;
+  const min = Math.min(...values), max = Math.max(...values), span = (max - min) || 1;
+  const pts = values.map((v, i) =>
+    `${(i / (values.length - 1) * w).toFixed(1)},${(h - 4 - (v - min) / span * (h - 8)).toFixed(1)}`).join(" ");
+  const up = values[values.length - 1] >= values[0];
+  const c = up ? "#3dff7a" : "#ff6b5e";
+  el.innerHTML = `<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none">
+    <polygon points="0,${h} ${pts} ${w},${h}" fill="${c}" opacity="0.14" stroke="none"/>
+    <polyline points="${pts}" fill="none" stroke="${c}" stroke-width="2"/></svg>`;
+}
+
 function renderPredictions(preds) {
   $("stCalls").textContent = preds.length.toLocaleString();
   if (preds.length) {
@@ -133,6 +148,29 @@ function renderPredictions(preds) {
     avgEl.textContent = pct(avg);
     avgEl.style.color = avg >= 0 ? "var(--green)" : "var(--red)";
     $("stWin").textContent = Math.round(wins / rets.length * 100) + "%";
+    // KPI card extras — every value below is derived from the tracked calls
+    // themselves (ordered by signal date); nothing is invented or fetched.
+    const byDate = [...preds].sort((a, b) => String(a.signal_date).localeCompare(String(b.signal_date)));
+    const runAvg = [], runWin = [], runCount = [];
+    let sum = 0, w = 0;
+    byDate.forEach((p, i) => {
+      const r = p.return_pct || 0;
+      sum += r; if (r > 0) w++;
+      runAvg.push(sum / (i + 1));
+      runWin.push(w / (i + 1) * 100);
+      runCount.push(i + 1);
+    });
+    kpiSpark($("sparkCalls"), runCount);
+    kpiSpark($("sparkAvg"), runAvg);
+    kpiSpark($("sparkWin"), runWin);
+    const best = Math.max(...rets), worst = Math.min(...rets);
+    const losses = rets.filter(r => r < 0).length;
+    $("footAvg").innerHTML =
+      `<span class="kpi-chip ${best >= 0 ? "" : "neg"}">${best >= 0 ? "▲" : "▼"} best ${pct(best)}</span>` +
+      `<span class="kpi-note">worst ${pct(worst)}</span>`;
+    $("footWin").innerHTML =
+      `<span class="kpi-chip">▲ ${wins} winning</span>` +
+      `<span class="kpi-note">${losses} down</span>`;
   } else {
     $("stAvg").textContent = "—";
     $("stWin").textContent = "—";

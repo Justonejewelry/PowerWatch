@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PowerWatch — Follow the Money in Power</title>
 <meta name="description" content="PowerWatch tracks what corporate insiders and people in power do with their own money — SEC Form 4 insider buying, scored and graded.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👁️</text></svg>">
 </head>
@@ -20,11 +23,11 @@
     </div>
     <p class="hero-sub">PowerWatch follows the money in power — <strong>corporate insiders</strong> buying with their own cash (SEC Form 4, reported within 2 days), <strong>members of Congress</strong> trading (STOCK Act disclosures), and the <strong>biggest funds on earth</strong> (quarterly 13F filings). It scores the signals, flags where the three circles overlap, and grades its own calls in public.</p>
     <div class="stat-strip" id="statStrip">
-      <div class="stat"><span class="stat-num" id="stFilings">—</span><span class="stat-label">Form 4s scanned</span></div>
-      <div class="stat"><span class="stat-num" id="stBuys">—</span><span class="stat-label">Companies with insider buying</span></div>
-      <div class="stat"><span class="stat-num" id="stCalls">—</span><span class="stat-label">Calls tracked</span></div>
-      <div class="stat"><span class="stat-num" id="stAvg">—</span><span class="stat-label">Avg return on calls</span></div>
-      <div class="stat"><span class="stat-num" id="stWin">—</span><span class="stat-label">Win rate</span></div>
+      <div class="stat"><span class="stat-label">Form 4s scanned</span><span class="stat-num" id="stFilings">—</span></div>
+      <div class="stat"><span class="stat-label">Companies with insider buying</span><span class="stat-num" id="stBuys">—</span></div>
+      <div class="stat"><span class="stat-label">Calls tracked</span><span class="stat-num" id="stCalls">—</span><div class="kpi-spark" id="sparkCalls"></div></div>
+      <div class="stat"><span class="stat-label">Avg return on calls</span><span class="stat-num" id="stAvg">—</span><div class="kpi-foot" id="footAvg"></div><div class="kpi-spark" id="sparkAvg"></div></div>
+      <div class="stat"><span class="stat-label">Win rate</span><span class="stat-num" id="stWin">—</span><div class="kpi-foot" id="footWin"></div><div class="kpi-spark" id="sparkWin"></div></div>
     </div>
     <p class="updated" id="updatedLine">Loading latest scan…</p>
     <p class="autopilot" id="autopilotLine"></p>
