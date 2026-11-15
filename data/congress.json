@@ -1,0 +1,798 @@
+{
+ "updated": "2026-11-15",
+ "source": "U.S. House Clerk \u2014 Periodic Transaction Reports (STOCK Act)",
+ "stats": {
+  "ptrs_processed": 150,
+  "ptrs_with_trades": 74,
+  "ptrs_unreadable": 23,
+  "ptrs_no_stock": 53,
+  "trades_found": 752,
+  "window_days": 120
+ },
+ "top_buys": [
+  {
+   "symbol": "MSFT",
+   "count": 9,
+   "members": 5,
+   "est_value": 121000
+  },
+  {
+   "symbol": "AVGO",
+   "count": 6,
+   "members": 3,
+   "est_value": 415000
+  },
+  {
+   "symbol": "NVDA",
+   "count": 6,
+   "members": 3,
+   "est_value": 48000
+  },
+  {
+   "symbol": "PG",
+   "count": 4,
+   "members": 3,
+   "est_value": 32000
+  },
+  {
+   "symbol": "TSM",
+   "count": 3,
+   "members": 3,
+   "est_value": 24000
+  },
+  {
+   "symbol": "HD",
+   "count": 4,
+   "members": 2,
+   "est_value": 32000
+  },
+  {
+   "symbol": "ETN",
+   "count": 3,
+   "members": 2,
+   "est_value": 48500
+  },
+  {
+   "symbol": "SNOW",
+   "count": 3,
+   "members": 2,
+   "est_value": 48500
+  },
+  {
+   "symbol": "KO",
+   "count": 3,
+   "members": 2,
+   "est_value": 24000
+  },
+  {
+   "symbol": "META",
+   "count": 3,
+   "members": 2,
+   "est_value": 24000
+  },
+  {
+   "symbol": "IBM",
+   "count": 3,
+   "members": 2,
+   "est_value": 24000
+  },
+  {
+   "symbol": "CARR",
+   "count": 2,
+   "members": 2,
+   "est_value": 207500
+  }
+ ],
+ "top_sells": [
+  {
+   "symbol": "HD",
+   "count": 8,
+   "members": 5,
+   "est_value": 88500
+  },
+  {
+   "symbol": "WBD",
+   "count": 4,
+   "members": 4,
+   "est_value": 99000
+  },
+  {
+   "symbol": "V",
+   "count": 5,
+   "members": 3,
+   "est_value": 64500
+  },
+  {
+   "symbol": "COST",
+   "count": 4,
+   "members": 3,
+   "est_value": 566000
+  },
+  {
+   "symbol": "MSFT",
+   "count": 4,
+   "members": 3,
+   "est_value": 423500
+  },
+  {
+   "symbol": "PG",
+   "count": 4,
+   "members": 3,
+   "est_value": 32000
+  },
+  {
+   "symbol": "SOLS",
+   "count": 4,
+   "members": 3,
+   "est_value": 32000
+  },
+  {
+   "symbol": "TJX",
+   "count": 4,
+   "members": 2,
+   "est_value": 105500
+  }
+ ],
+ "recent_trades": [
+  {
+   "member": "David J. Taylor",
+   "state_dst": "OH02",
+   "symbol": "AVGO",
+   "type": "Purchase",
+   "date": "2026-11-05",
+   "filed": "2026-11-12",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035831"
+  },
+  {
+   "member": "David J. Taylor",
+   "state_dst": "OH02",
+   "symbol": "HD",
+   "type": "Sale",
+   "date": "2026-11-05",
+   "filed": "2026-11-12",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035831"
+  },
+  {
+   "member": "David J. Taylor",
+   "state_dst": "OH02",
+   "symbol": "LRCX",
+   "type": "Purchase",
+   "date": "2026-11-05",
+   "filed": "2026-11-12",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035831"
+  },
+  {
+   "member": "David J. Taylor",
+   "state_dst": "OH02",
+   "symbol": "PG",
+   "type": "Sale",
+   "date": "2026-11-05",
+   "filed": "2026-11-12",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035831"
+  },
+  {
+   "member": "Gilbert Cisneros",
+   "state_dst": "CA31",
+   "symbol": "NOW",
+   "type": "Purchase",
+   "date": "2026-11-04",
+   "filed": "2026-11-10",
+   "amount_range": "$250,001 - $500,000",
+   "est_value": 375000,
+   "doc_id": "20035788"
+  },
+  {
+   "member": "David J. Taylor",
+   "state_dst": "OH02",
+   "symbol": "GOOGL",
+   "type": "Purchase",
+   "date": "2026-11-03",
+   "filed": "2026-11-12",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035831"
+  },
+  {
+   "member": "David J. Taylor",
+   "state_dst": "OH02",
+   "symbol": "GOOGL",
+   "type": "Purchase",
+   "date": "2026-11-03",
+   "filed": "2026-11-12",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035831"
+  },
+  {
+   "member": "David J. Taylor",
+   "state_dst": "OH02",
+   "symbol": "GOOGL",
+   "type": "Sale",
+   "date": "2026-11-03",
+   "filed": "2026-11-12",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035831"
+  },
+  {
+   "member": "David J. Taylor",
+   "state_dst": "OH02",
+   "symbol": "T",
+   "type": "Sale",
+   "date": "2026-11-03",
+   "filed": "2026-11-12",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035831"
+  },
+  {
+   "member": "David J. Taylor",
+   "state_dst": "OH02",
+   "symbol": "T",
+   "type": "Purchase",
+   "date": "2026-11-03",
+   "filed": "2026-11-12",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035831"
+  },
+  {
+   "member": "David J. Taylor",
+   "state_dst": "OH02",
+   "symbol": "T",
+   "type": "Purchase",
+   "date": "2026-11-03",
+   "filed": "2026-11-12",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035831"
+  },
+  {
+   "member": "David J. Taylor",
+   "state_dst": "OH02",
+   "symbol": "ETN",
+   "type": "Purchase",
+   "date": "2026-11-03",
+   "filed": "2026-11-12",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035831"
+  },
+  {
+   "member": "David J. Taylor",
+   "state_dst": "OH02",
+   "symbol": "ETN",
+   "type": "Purchase",
+   "date": "2026-11-03",
+   "filed": "2026-11-12",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035831"
+  },
+  {
+   "member": "David J. Taylor",
+   "state_dst": "OH02",
+   "symbol": "LLY",
+   "type": "Sale",
+   "date": "2026-11-03",
+   "filed": "2026-11-12",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035831"
+  },
+  {
+   "member": "David J. Taylor",
+   "state_dst": "OH02",
+   "symbol": "LLY",
+   "type": "Sale",
+   "date": "2026-11-03",
+   "filed": "2026-11-12",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035831"
+  },
+  {
+   "member": "David J. Taylor",
+   "state_dst": "OH02",
+   "symbol": "IBP",
+   "type": "Purchase",
+   "date": "2026-11-03",
+   "filed": "2026-11-12",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035831"
+  },
+  {
+   "member": "David J. Taylor",
+   "state_dst": "OH02",
+   "symbol": "KR",
+   "type": "Sale",
+   "date": "2026-11-03",
+   "filed": "2026-11-12",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035831"
+  },
+  {
+   "member": "David J. Taylor",
+   "state_dst": "OH02",
+   "symbol": "KR",
+   "type": "Sale",
+   "date": "2026-11-03",
+   "filed": "2026-11-12",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035831"
+  },
+  {
+   "member": "David J. Taylor",
+   "state_dst": "OH02",
+   "symbol": "V",
+   "type": "Sale",
+   "date": "2026-11-03",
+   "filed": "2026-11-12",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035831"
+  },
+  {
+   "member": "David J. Taylor",
+   "state_dst": "OH02",
+   "symbol": "V",
+   "type": "Sale",
+   "date": "2026-11-03",
+   "filed": "2026-11-12",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035831"
+  },
+  {
+   "member": "Gilbert Cisneros",
+   "state_dst": "CA31",
+   "symbol": "BBIO",
+   "type": "Purchase",
+   "date": "2026-11-02",
+   "filed": "2026-11-10",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035788"
+  },
+  {
+   "member": "Gilbert Cisneros",
+   "state_dst": "CA31",
+   "symbol": "TOELF",
+   "type": "Sale",
+   "date": "2026-10-30",
+   "filed": "2026-11-10",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035788"
+  },
+  {
+   "member": "Pete Sessions",
+   "state_dst": "TX17",
+   "symbol": "DIS",
+   "type": "Sale",
+   "date": "2026-10-28",
+   "filed": "2026-10-27",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035563"
+  },
+  {
+   "member": "Gilbert Cisneros",
+   "state_dst": "CA31",
+   "symbol": "ARGX",
+   "type": "Purchase",
+   "date": "2026-10-27",
+   "filed": "2026-11-10",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035788"
+  },
+  {
+   "member": "Gilbert Cisneros",
+   "state_dst": "CA31",
+   "symbol": "BBIO",
+   "type": "Purchase",
+   "date": "2026-10-27",
+   "filed": "2026-11-10",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035788"
+  },
+  {
+   "member": "Gilbert Cisneros",
+   "state_dst": "CA31",
+   "symbol": "MTSI",
+   "type": "Purchase",
+   "date": "2026-10-27",
+   "filed": "2026-11-10",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035788"
+  },
+  {
+   "member": "Gilbert Cisneros",
+   "state_dst": "CA31",
+   "symbol": "RVTY",
+   "type": "Sale",
+   "date": "2026-10-27",
+   "filed": "2026-11-10",
+   "amount_range": "$100,001 - $250,000",
+   "est_value": 175000,
+   "doc_id": "20035788"
+  },
+  {
+   "member": "Pete Sessions",
+   "state_dst": "TX17",
+   "symbol": "AMZN",
+   "type": "Sale",
+   "date": "2026-10-27",
+   "filed": "2026-10-27",
+   "amount_range": "$15,001 - $50,000",
+   "est_value": 32500,
+   "doc_id": "20035563"
+  },
+  {
+   "member": "Pete Sessions",
+   "state_dst": "TX17",
+   "symbol": "MCD",
+   "type": "Sale",
+   "date": "2026-10-27",
+   "filed": "2026-10-27",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035563"
+  },
+  {
+   "member": "Josh Gottheimer",
+   "state_dst": "NJ05",
+   "symbol": "AMAT",
+   "type": "Purchase",
+   "date": "2026-10-26",
+   "filed": "2026-11-05",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035770"
+  },
+  {
+   "member": "Gilbert Cisneros",
+   "state_dst": "CA31",
+   "symbol": "CF",
+   "type": "Purchase",
+   "date": "2026-10-23",
+   "filed": "2026-11-10",
+   "amount_range": "$250,001 - $500,000",
+   "est_value": 375000,
+   "doc_id": "20035788"
+  },
+  {
+   "member": "Maria Elvira Salazar",
+   "state_dst": "FL27",
+   "symbol": "CSCO",
+   "type": "Sale",
+   "date": "2026-10-23",
+   "filed": "2026-11-05",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035778"
+  },
+  {
+   "member": "Maria Elvira Salazar",
+   "state_dst": "FL27",
+   "symbol": "NVDA",
+   "type": "Purchase",
+   "date": "2026-10-23",
+   "filed": "2026-11-05",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035778"
+  },
+  {
+   "member": "Maria Elvira Salazar",
+   "state_dst": "FL27",
+   "symbol": "NVDA",
+   "type": "Purchase",
+   "date": "2026-10-23",
+   "filed": "2026-11-05",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035778"
+  },
+  {
+   "member": "Maria Elvira Salazar",
+   "state_dst": "FL27",
+   "symbol": "PG",
+   "type": "Purchase",
+   "date": "2026-10-23",
+   "filed": "2026-11-05",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035778"
+  },
+  {
+   "member": "Maria Elvira Salazar",
+   "state_dst": "FL27",
+   "symbol": "PG",
+   "type": "Purchase",
+   "date": "2026-10-23",
+   "filed": "2026-11-05",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035778"
+  },
+  {
+   "member": "Pete Sessions",
+   "state_dst": "TX17",
+   "symbol": "HD",
+   "type": "Sale",
+   "date": "2026-10-22",
+   "filed": "2026-10-27",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035563"
+  },
+  {
+   "member": "Pete Sessions",
+   "state_dst": "TX17",
+   "symbol": "LOW",
+   "type": "Sale",
+   "date": "2026-10-22",
+   "filed": "2026-10-27",
+   "amount_range": "$15,001 - $50,000",
+   "est_value": 32500,
+   "doc_id": "20035563"
+  },
+  {
+   "member": "Gilbert Cisneros",
+   "state_dst": "CA31",
+   "symbol": "CIEN",
+   "type": "Sale",
+   "date": "2026-10-21",
+   "filed": "2026-11-10",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035788"
+  },
+  {
+   "member": "Gilbert Cisneros",
+   "state_dst": "CA31",
+   "symbol": "NOW",
+   "type": "Purchase",
+   "date": "2026-10-21",
+   "filed": "2026-11-10",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035788"
+  },
+  {
+   "member": "Pete Sessions",
+   "state_dst": "TX17",
+   "symbol": "PEP",
+   "type": "Sale",
+   "date": "2026-10-21",
+   "filed": "2026-10-27",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035563"
+  },
+  {
+   "member": "Pete Sessions",
+   "state_dst": "TX17",
+   "symbol": "SOLS",
+   "type": "Sale",
+   "date": "2026-10-21",
+   "filed": "2026-10-27",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035563"
+  },
+  {
+   "member": "Gilbert Cisneros",
+   "state_dst": "CA31",
+   "symbol": "ARE",
+   "type": "Purchase",
+   "date": "2026-10-20",
+   "filed": "2026-11-10",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035788"
+  },
+  {
+   "member": "Gilbert Cisneros",
+   "state_dst": "CA31",
+   "symbol": "ARE",
+   "type": "Purchase",
+   "date": "2026-10-20",
+   "filed": "2026-11-10",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035788"
+  },
+  {
+   "member": "Gilbert Cisneros",
+   "state_dst": "CA31",
+   "symbol": "APP",
+   "type": "Sale",
+   "date": "2026-10-20",
+   "filed": "2026-11-10",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035788"
+  },
+  {
+   "member": "Gilbert Cisneros",
+   "state_dst": "CA31",
+   "symbol": "CF",
+   "type": "Purchase",
+   "date": "2026-10-20",
+   "filed": "2026-11-10",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035788"
+  },
+  {
+   "member": "Gilbert Cisneros",
+   "state_dst": "CA31",
+   "symbol": "CMG",
+   "type": "Sale",
+   "date": "2026-10-20",
+   "filed": "2026-11-10",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035788"
+  },
+  {
+   "member": "Gilbert Cisneros",
+   "state_dst": "CA31",
+   "symbol": "CINF",
+   "type": "Sale",
+   "date": "2026-10-20",
+   "filed": "2026-11-10",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035788"
+  },
+  {
+   "member": "Gilbert Cisneros",
+   "state_dst": "CA31",
+   "symbol": "CSCO",
+   "type": "Purchase",
+   "date": "2026-10-20",
+   "filed": "2026-11-10",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035788"
+  },
+  {
+   "member": "Gilbert Cisneros",
+   "state_dst": "CA31",
+   "symbol": "CMS",
+   "type": "Purchase",
+   "date": "2026-10-20",
+   "filed": "2026-11-10",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035788"
+  },
+  {
+   "member": "Gilbert Cisneros",
+   "state_dst": "CA31",
+   "symbol": "CMCSA",
+   "type": "Purchase",
+   "date": "2026-10-20",
+   "filed": "2026-11-10",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035788"
+  },
+  {
+   "member": "Gilbert Cisneros",
+   "state_dst": "CA31",
+   "symbol": "EIX",
+   "type": "Purchase",
+   "date": "2026-10-20",
+   "filed": "2026-11-10",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035788"
+  },
+  {
+   "member": "Gilbert Cisneros",
+   "state_dst": "CA31",
+   "symbol": "LLY",
+   "type": "Purchase",
+   "date": "2026-10-20",
+   "filed": "2026-11-10",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035788"
+  },
+  {
+   "member": "Gilbert Cisneros",
+   "state_dst": "CA31",
+   "symbol": "FIS",
+   "type": "Purchase",
+   "date": "2026-10-20",
+   "filed": "2026-11-10",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035788"
+  },
+  {
+   "member": "Gilbert Cisneros",
+   "state_dst": "CA31",
+   "symbol": "FOXA",
+   "type": "Purchase",
+   "date": "2026-10-20",
+   "filed": "2026-11-10",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035788"
+  },
+  {
+   "member": "Gilbert Cisneros",
+   "state_dst": "CA31",
+   "symbol": "GIS",
+   "type": "Sale",
+   "date": "2026-10-20",
+   "filed": "2026-11-10",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035788"
+  },
+  {
+   "member": "Gilbert Cisneros",
+   "state_dst": "CA31",
+   "symbol": "PODD",
+   "type": "Purchase",
+   "date": "2026-10-20",
+   "filed": "2026-11-10",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035788"
+  },
+  {
+   "member": "Gilbert Cisneros",
+   "state_dst": "CA31",
+   "symbol": "LITE",
+   "type": "Purchase",
+   "date": "2026-10-20",
+   "filed": "2026-11-10",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035788"
+  },
+  {
+   "member": "Gilbert Cisneros",
+   "state_dst": "CA31",
+   "symbol": "MRNA",
+   "type": "Purchase",
+   "date": "2026-10-20",
+   "filed": "2026-11-10",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035788"
+  },
+  {
+   "member": "Gilbert Cisneros",
+   "state_dst": "CA31",
+   "symbol": "NCLH",
+   "type": "Purchase",
+   "date": "2026-10-20",
+   "filed": "2026-11-10",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035788"
+  }
+ ]
+}
