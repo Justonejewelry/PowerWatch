@@ -24,10 +24,14 @@ jobs:
           python-version: "3.12"
 
       - name: Install dependencies
-        run: pip install requests
+        run: pip install requests pypdf
 
       - name: Run insider signal engine
         run: python scripts/insider_engine.py --site
+
+      - name: Run Congress tracker (House PTRs)
+        continue-on-error: true
+        run: python scripts/congress_engine.py
 
       - name: Commit data updates
         run: |
