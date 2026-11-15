@@ -107,6 +107,30 @@ function renderPredictions(preds) {
   }).join("");
 }
 
+function renderCongress(c) {
+  const st = c.stats || {};
+  $("congressStats").textContent =
+    `Read ${st.ptrs_processed ?? 0} recent House PTR filings → ${st.trades_found ?? 0} stock trades found` +
+    (st.ptrs_unreadable ? ` · ${st.ptrs_unreadable} paper filings couldn't be read` : "") +
+    (c.updated ? ` · updated ${c.updated}` : "");
+  const aggRow = (t, kind) => `<tr>
+      <td class="tk">${t.symbol}</td><td>${t.count}</td><td>${t.members}</td>
+      <td>${money(t.est_value)}</td>
+      <td><a class="mini-link" href="${rh(t.symbol)}" target="_blank" rel="noopener">Robinhood ↗</a></td></tr>`;
+  $("congBuyBody").innerHTML = (c.top_buys || []).map(t => aggRow(t, "buy")).join("");
+  $("congSellBody").innerHTML = (c.top_sells || []).map(t => aggRow(t, "sell")).join("");
+  $("congRecentBody").innerHTML = (c.recent_trades || []).slice(0, 25).map(t => {
+    const cls = t.type === "Purchase" ? "buy" : t.type === "Sale" ? "sell" : "exch";
+    return `<tr>
+      <td>${t.date}</td>
+      <td>${t.member} <span style="color:var(--dim)">${t.state_dst || ""}</span></td>
+      <td class="tk">${t.symbol}</td>
+      <td><span class="badge ${cls}">${t.type}</span></td>
+      <td>${t.amount_range}</td>
+      <td><a class="mini-link" href="${rh(t.symbol)}" target="_blank" rel="noopener">↗</a></td></tr>`;
+  }).join("");
+}
+
 async function load() {
   try {
     const [latest, preds] = await Promise.all([
@@ -118,5 +142,8 @@ async function load() {
   } catch (e) {
     $("updatedLine").textContent = "Could not load the latest scan data.";
   }
+  fetch("data/congress.json?v=" + Date.now()).then(r => r.json())
+    .then(renderCongress)
+    .catch(() => { $("congressStats").textContent = "Congress data is on its way."; });
 }
 load();

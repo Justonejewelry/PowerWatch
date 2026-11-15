@@ -75,6 +75,20 @@ td.tk{font-weight:800}
 .pill.gold{background:rgba(240,185,11,.16);color:var(--gold)}
 .mini-link{color:var(--green);text-decoration:none;font-weight:700;font-size:13px}
 
+/* ---------- congress ---------- */
+.congress-note{color:var(--dim);font-size:13.5px;margin-bottom:16px;max-width:860px}
+.congress-note strong{color:var(--text)}
+.congress-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:18px;align-items:start}
+@media (max-width:860px){.congress-grid{grid-template-columns:1fr}}
+.mini-h{font-size:16px;margin:4px 0 10px}
+.mini-h:not(:first-child){margin-top:22px}
+.mini-table{min-width:0;font-size:13.5px}
+.mini-table th,.mini-table td{padding:8px 11px}
+.badge{display:inline-block;padding:2px 9px;border-radius:999px;font-size:12px;font-weight:700}
+.badge.buy{background:rgba(0,200,5,.15);color:var(--green)}
+.badge.sell{background:rgba(255,80,0,.14);color:var(--red)}
+.badge.exch{background:#2a2f38;color:var(--dim)}
+
 /* ---------- explainer ---------- */
 .explainer{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
 .exp-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px}
