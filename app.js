@@ -3,6 +3,7 @@ const $ = (id) => document.getElementById(id);
 const money = (v) => v >= 1e6 ? "$" + (v / 1e6).toFixed(2) + "M"
   : v >= 1e3 ? "$" + Math.round(v / 1e3) + "K" : "$" + Math.round(v);
 const pct = (v) => (v == null ? "—" : (v > 0 ? "+" : "") + v.toFixed(2) + "%");
+const money2 = (v) => v == null ? "—" : (v < 0 ? "-$" : "$") + Math.abs(v).toFixed(2);
 const rh = (sym) => `https://robinhood.com/stocks/${encodeURIComponent(sym)}`;
 
 function sparkline(hist, w = 300, h = 52) {
@@ -335,6 +336,78 @@ function renderShorts(s, spreds) {
     `<p class="congress-note">${cv}</p>`).join("");
 }
 
+function renderShortBook(b) {
+  if (!b) { $("shortBookPanel").hidden = true; return; }
+  $("bkEquity").textContent = money2(b.equity);
+  const retEl = $("bkReturn");
+  retEl.textContent = pct(b.total_return_pct);
+  retEl.style.color = (b.total_return_pct || 0) >= 0 ? "var(--green)" : "var(--red)";
+  $("bkCash").textContent = money2(b.cash);
+  const poss = b.positions || [];
+  $("bkOpen").textContent = poss.length + " / 3";
+  $("bkWin").textContent = b.win_rate_pct == null ? "—" : b.win_rate_pct + "%";
+
+  const hist = b.picks_history || [];
+  const lastDay = hist.length ? hist[hist.length - 1] : null;
+  const picks = lastDay ? (lastDay.picks || []) : [];
+  $("bookPicksDate").textContent = lastDay ? `— ${lastDay.date}` : "";
+  $("bookPicksEmpty").hidden = picks.length > 0;
+  if (!picks.length) {
+    $("bookPicksEmpty").textContent = lastDay && lastDay.note
+      ? lastDay.note : "No picks recorded yet.";
+  }
+  const noteEl = $("bookPicksNote");
+  if (lastDay && lastDay.note && picks.length) {
+    noteEl.hidden = false;
+    noteEl.textContent = lastDay.note;
+  } else {
+    noteEl.hidden = true;
+  }
+  $("bookPicks").innerHTML = picks.map(p => `
+    <article class="card book-pick">
+      <div class="card-top">
+        <div><div class="ticker">${p.symbol}</div><div class="issuer">${p.issuer || ""}</div></div>
+        <span class="badge ${p.tier === "confirmed" ? "confirmed" : "aggressive"}">${(p.tier || "").toUpperCase()}</span>
+      </div>
+      <div class="buy-total">Shorted <b>${money2(p.notional)}</b> at $${Number(p.entry_price).toFixed(2)} · score ${p.score}</div>
+      <p class="pick-reason">${p.reason || ""}</p>
+      <div class="card-actions">
+        <a class="btn rh" href="${rh(p.symbol)}" target="_blank" rel="noopener">Open in Robinhood ↗</a>
+      </div>
+    </article>`).join("");
+
+  $("bookPosEmpty").hidden = poss.length > 0;
+  $("bookPosBody").innerHTML = poss.map(p => {
+    const up = p.unrealized_pnl || 0;
+    const cur = p.current_price;
+    const stopMove = cur ? (p.stop_price / cur - 1) * 100 : null;
+    const tgtMove = cur ? (p.target_price / cur - 1) * 100 : null;
+    return `<tr>
+      <td class="tk">${p.symbol}</td>
+      <td>${p.entry_date}</td>
+      <td>$${Number(p.entry_price).toFixed(2)}</td>
+      <td>${cur ? "$" + Number(cur).toFixed(2) : "—"}</td>
+      <td>${money2(p.notional)}</td>
+      <td class="${up >= 0 ? "pos" : "neg"}">${money2(up)} (${pct(p.unrealized_pct)})</td>
+      <td>${p.days_held ?? 0}d</td>
+      <td><span class="dist stop">${stopMove == null ? "stop —" : "+" + stopMove.toFixed(1) + "% to stop"}</span>
+          <span class="dist tgt">${tgtMove == null ? "target —" : tgtMove.toFixed(1) + "% to target"}</span></td>
+      <td><a class="mini-link" href="${rh(p.symbol)}" target="_blank" rel="noopener">Robinhood ↗</a></td>
+    </tr>`;
+  }).join("");
+
+  const closed = [...(b.closed || [])].reverse();
+  $("bookClosedEmpty").hidden = closed.length > 0;
+  $("bookClosedBody").innerHTML = closed.map(r => `<tr>
+      <td class="tk">${r.symbol}</td>
+      <td>${r.entry_date} → ${r.exit_date}</td>
+      <td>$${Number(r.entry_price).toFixed(2)} → $${Number(r.exit_price).toFixed(2)}</td>
+      <td class="${r.net_pnl >= 0 ? "pos" : "neg"}">${money2(r.net_pnl)}</td>
+      <td class="${r.return_pct >= 0 ? "pos" : "neg"}">${pct(r.return_pct)}</td>
+      <td><span class="badge exit">${r.exit_reason}</span></td>
+    </tr>`).join("");
+}
+
 function renderSmart(latest, congress, funds) {
   const bySym = {};
   const entry = (sym) => bySym[sym] = bySym[sym] || {symbol: sym, name: "", ins: null, cong: null, fund: null};
@@ -412,6 +485,11 @@ async function load() {
     shorts = sh;
     renderShorts(shorts, Array.isArray(sp) ? sp : []);
   } catch (e) { $("shortLegs").textContent = "Short-side data is on its way."; }
+  try {
+    const bk = await fetch("data/short_book.json?v=" + Date.now())
+      .then(r => { if (!r.ok) throw new Error("no book"); return r.json(); });
+    renderShortBook(bk);
+  } catch (e) { const p = $("shortBookPanel"); if (p) p.hidden = true; }
   if (latest) renderSmart(latest, congress, funds);
   const feeds = [];
   if (latest) feeds.push(`Insiders ${latest.date}`);

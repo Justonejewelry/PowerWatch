@@ -126,6 +126,54 @@
 
   <section class="section" id="shortSection">
     <h2>📉 Short Side <span class="h2-sub">the mirror image — crowded, breaking down, and confirmed</span></h2>
+    <div id="shortBookPanel">
+      <h3 class="mini-h">💵 $100 Short Book <span class="h2-sub">paper trading — the engine picks up to 3 shorts a day and decides when to cover</span></h3>
+      <div class="stat-strip book-stats">
+        <div class="stat"><span class="stat-label">Equity</span><span class="stat-num" id="bkEquity">—</span></div>
+        <div class="stat"><span class="stat-label">Total return</span><span class="stat-num" id="bkReturn">—</span></div>
+        <div class="stat"><span class="stat-label">Cash</span><span class="stat-num" id="bkCash">—</span></div>
+        <div class="stat"><span class="stat-label">Open positions</span><span class="stat-num" id="bkOpen">—</span></div>
+        <div class="stat"><span class="stat-label">Win rate (closed)</span><span class="stat-num" id="bkWin">—</span></div>
+      </div>
+      <h3 class="mini-h">Today's 3 picks <span class="h2-sub" id="bookPicksDate"></span></h3>
+      <div class="cards" id="bookPicks"></div>
+      <p class="empty" id="bookPicksEmpty" hidden></p>
+      <p class="congress-note" id="bookPicksNote" hidden></p>
+      <h3 class="mini-h">Open positions</h3>
+      <div class="table-wrap">
+        <table id="bookPosTable">
+          <thead><tr>
+            <th>Ticker</th><th>Entered</th><th>Entry</th><th>Now</th><th>Notional</th>
+            <th>Unrealized P&amp;L</th><th>Days</th><th>Room to stop / target</th><th></th>
+          </tr></thead>
+          <tbody id="bookPosBody"></tbody>
+        </table>
+        <p class="empty" id="bookPosEmpty" hidden>No open positions right now.</p>
+      </div>
+      <h3 class="mini-h">Closed trades <span class="h2-sub">the ledger — every cover, with its reason</span></h3>
+      <div class="table-wrap">
+        <table class="mini-table" id="bookClosedTable">
+          <thead><tr>
+            <th>Ticker</th><th>Entry → Exit</th><th>Prices</th><th>Net P&amp;L</th><th>Return</th><th>Exit reason</th>
+          </tr></thead>
+          <tbody id="bookClosedBody"></tbody>
+        </table>
+        <p class="empty" id="bookClosedEmpty" hidden>No closed trades yet — covers land here with the reason the engine sold.</p>
+      </div>
+      <div class="explainer book-rules">
+        <div class="exp-card"><h3>When it sells (covers)</h3>
+          <p>1. <b>Hard stop</b> — the price rises +20% against the short.<br>
+          2. <b>Borrow fee spike</b> — the fee jumps over 25%/yr or doubles.<br>
+          3. <b>Trend reclaim</b> — the price closes back above its 50-day average; the thesis is dead.<br>
+          4. <b>Take profit</b> — the price falls −25%; bank the win.<br>
+          5. <b>Time stop</b> — held 90 days, out regardless.</p>
+        </div>
+        <div class="exp-card"><h3>How it picks</h3>
+          <p>At most 3 open shorts, each sized at equity ÷ 3, filled from the short board's top scores that pass the absolute safety bars — never a squeeze-watchlist or threshold-list name, no tiny floats, no borrow over 50%/yr, nothing under $2. A <b>confirmed</b> pick has a 50-day breakdown behind it; an <b>aggressive</b> pick doesn't yet — the tier is shown, not hidden.</p>
+        </div>
+      </div>
+      <p class="congress-note">📄 <strong>Paper book — no real money.</strong> Starts at $100 so every dollar of P&amp;L is visible. Prices and borrow fees come from the same free feeds as the rest of the short side; when the borrow leg is unreachable the fee is unknown and no fee drag is charged — never invented.</p>
+    </div>
     <p class="congress-note" id="shortLegs">Loading short-side data…</p>
     <h3 class="mini-h">Short candidates <span class="h2-sub">a CALL needs a confirmed 50-day breakdown plus independent confirmation — insider selling alone never triggers one</span></h3>
     <div class="table-wrap">
