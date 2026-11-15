@@ -3,18 +3,18 @@
  "source": "U.S. House Clerk \u2014 Periodic Transaction Reports (STOCK Act)",
  "stats": {
   "ptrs_processed": 150,
-  "ptrs_with_trades": 74,
+  "ptrs_with_trades": 78,
   "ptrs_unreadable": 23,
-  "ptrs_no_stock": 53,
-  "trades_found": 752,
+  "ptrs_no_stock": 49,
+  "trades_found": 782,
   "window_days": 120
  },
  "top_buys": [
   {
    "symbol": "MSFT",
-   "count": 9,
-   "members": 5,
-   "est_value": 121000
+   "count": 6,
+   "members": 4,
+   "est_value": 72500
   },
   {
    "symbol": "AVGO",
@@ -30,9 +30,15 @@
   },
   {
    "symbol": "PG",
+   "count": 5,
+   "members": 3,
+   "est_value": 40000
+  },
+  {
+   "symbol": "HD",
    "count": 4,
    "members": 3,
-   "est_value": 32000
+   "est_value": 56500
   },
   {
    "symbol": "TSM",
@@ -41,10 +47,22 @@
    "est_value": 24000
   },
   {
-   "symbol": "HD",
-   "count": 4,
+   "symbol": "CARR",
+   "count": 3,
    "members": 2,
-   "est_value": 32000
+   "est_value": 215500
+  },
+  {
+   "symbol": "NVO",
+   "count": 3,
+   "members": 2,
+   "est_value": 115500
+  },
+  {
+   "symbol": "LIN",
+   "count": 3,
+   "members": 2,
+   "est_value": 73000
   },
   {
    "symbol": "ETN",
@@ -59,36 +77,24 @@
    "est_value": 48500
   },
   {
-   "symbol": "KO",
-   "count": 3,
-   "members": 2,
-   "est_value": 24000
-  },
-  {
    "symbol": "META",
    "count": 3,
    "members": 2,
    "est_value": 24000
-  },
-  {
-   "symbol": "IBM",
-   "count": 3,
-   "members": 2,
-   "est_value": 24000
-  },
-  {
-   "symbol": "CARR",
-   "count": 2,
-   "members": 2,
-   "est_value": 207500
   }
  ],
  "top_sells": [
   {
    "symbol": "HD",
-   "count": 8,
+   "count": 7,
    "members": 5,
-   "est_value": 88500
+   "est_value": 80500
+  },
+  {
+   "symbol": "PG",
+   "count": 6,
+   "members": 4,
+   "est_value": 115000
   },
   {
    "symbol": "WBD",
@@ -115,22 +121,16 @@
    "est_value": 423500
   },
   {
-   "symbol": "PG",
-   "count": 4,
-   "members": 3,
-   "est_value": 32000
-  },
-  {
    "symbol": "SOLS",
    "count": 4,
    "members": 3,
    "est_value": 32000
   },
   {
-   "symbol": "TJX",
-   "count": 4,
-   "members": 2,
-   "est_value": 105500
+   "symbol": "WMT",
+   "count": 3,
+   "members": 3,
+   "est_value": 158000
   }
  ],
  "recent_trades": [
@@ -214,7 +214,7 @@
   {
    "member": "David J. Taylor",
    "state_dst": "OH02",
-   "symbol": "GOOGL",
+   "symbol": "AMGN",
    "type": "Sale",
    "date": "2026-11-03",
    "filed": "2026-11-12",
@@ -225,7 +225,7 @@
   {
    "member": "David J. Taylor",
    "state_dst": "OH02",
-   "symbol": "T",
+   "symbol": "AMGN",
    "type": "Sale",
    "date": "2026-11-03",
    "filed": "2026-11-12",
@@ -610,7 +610,7 @@
   {
    "member": "Gilbert Cisneros",
    "state_dst": "CA31",
-   "symbol": "ARE",
+   "symbol": "LNT",
    "type": "Purchase",
    "date": "2026-10-20",
    "filed": "2026-11-10",
