@@ -18,7 +18,7 @@
         <p class="tagline">Follow the money in power.</p>
       </div>
     </div>
-    <p class="hero-sub">Corporate insiders — CEOs, CFOs, directors — must report every trade to the SEC within 2 business days. PowerWatch reads <strong>every Form 4 filing</strong>, finds insiders buying with their own cash, scores the signals, and grades its own calls in public.</p>
+    <p class="hero-sub">PowerWatch follows the money in power — <strong>corporate insiders</strong> buying with their own cash (SEC Form 4, reported within 2 days), <strong>members of Congress</strong> trading (STOCK Act disclosures), and the <strong>biggest funds on earth</strong> (quarterly 13F filings). It scores the signals, flags where the three circles overlap, and grades its own calls in public.</p>
     <div class="stat-strip" id="statStrip">
       <div class="stat"><span class="stat-num" id="stFilings">—</span><span class="stat-label">Form 4s scanned</span></div>
       <div class="stat"><span class="stat-num" id="stBuys">—</span><span class="stat-label">Companies with insider buying</span></div>
@@ -27,10 +27,17 @@
       <div class="stat"><span class="stat-num" id="stWin">—</span><span class="stat-label">Win rate</span></div>
     </div>
     <p class="updated" id="updatedLine">Loading latest scan…</p>
+    <p class="autopilot" id="autopilotLine"></p>
   </div>
 </header>
 
 <main>
+  <section class="section" id="smartSection" hidden>
+    <h2>🤝 Smart Money Overlap <span class="h2-sub">the same stock showing up in two or more power circles at once</span></h2>
+    <div class="smart-grid" id="smartGrid"></div>
+    <p class="congress-note">When insiders, Congress, and the big funds point at the same ticker independently, that's the loudest signal this board can produce. Treat it as a starting point for your own research — never as advice.</p>
+  </section>
+
   <section id="clustersSection" class="section" hidden>
     <h2>🔥 Cluster Buys <span class="h2-sub">multiple insiders buying the same company — the strongest tell</span></h2>
     <div class="cluster-strip" id="clusterStrip"></div>
@@ -89,6 +96,20 @@
     <p class="congress-note">House data from the Clerk's official disclosure archive. Two honest caveats: members have up to <strong>45 days</strong> to disclose, so these trades are older than insider Form 4s — and amounts are disclosed as <strong>ranges</strong>, so values are estimates. Paper-filed reports are scanned images and can't be read yet; Senate disclosures are next.</p>
   </section>
 
+  <section class="section" id="fundsSection">
+    <h2>🐋 Big Funds Tracker <span class="h2-sub">13F filings — what the famous money managers hold, and what changed last quarter</span></h2>
+    <p class="congress-note" id="fundsStats">Loading 13F filings…</p>
+    <h3 class="mini-h">Most-held across the tracked funds</h3>
+    <div class="table-wrap">
+      <table class="mini-table">
+        <thead><tr><th>Ticker</th><th>Company</th><th>Funds holding</th><th>Combined value</th><th></th></tr></thead>
+        <tbody id="consensusBody"></tbody>
+      </table>
+    </div>
+    <div class="fund-grid" id="fundGrid"></div>
+    <p class="congress-note">13F filings are <strong>quarterly</strong> and can lag the quarter-end by up to 45 days. They show <strong>long positions only</strong> — no shorts, no cash, limited options detail — and a "new" position means new since the previous quarter, not new this week.</p>
+  </section>
+
   <section class="section">
     <h2>🔴 Heavy Insider Selling <span class="h2-sub">non-planned sales over $1M — weaker signal, worth a look</span></h2>
     <div class="table-wrap">
@@ -114,16 +135,17 @@
     <h2>🚧 On the roadmap</h2>
     <div class="explainer">
       <div class="exp-card road"><h3>🏛️ Congress Tracker — House live ✅</h3><p>The House side is built and running (above) from the Clerk's official archive. Still to come: Senate disclosures from the Senate eFD portal.</p></div>
-      <div class="exp-card road"><h3>🐋 Big Fund Tracker — Phase 3</h3><p>Quarterly 13F filings: what the largest institutions hold, add, and dump — the slowest money, but the biggest.</p></div>
+      <div class="exp-card road"><h3>🐋 Big Fund Tracker — live ✅</h3><p>Running above: 11 marquee funds, diffed quarter over quarter. Still on the roadmap: Senate disclosures, and options-flow watching.</p></div>
     </div>
   </section>
 </main>
 
 <footer>
-  <p><strong>PowerWatch</strong> · Data: SEC EDGAR Form 4 filings (public record) · Prices: Yahoo Finance</p>
+  <p><strong>PowerWatch</strong> · Data: SEC EDGAR Form 4 + Form 13F filings · U.S. House Clerk disclosures (public record) · Prices: Yahoo Finance · Charts: <a href="https://www.tradingview.com/" target="_blank" rel="noopener" style="color:var(--dim)">TradingView Lightweight Charts</a></p>
   <p class="fine">Signals, not financial advice. Insider buying is one of the best-documented edges in public markets, but no signal guarantees a result — every call here is tracked and graded so you can judge the record yourself. Do your own homework before buying anything, including in the Robinhood app.</p>
 </footer>
 
+<script src="https://unpkg.com/lightweight-charts@4.2.0/dist/lightweight-charts.standalone.production.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
