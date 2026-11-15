@@ -85,7 +85,7 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 }
 
 /* M2 Reveal: pointer-tracking highlight (JS sets --mx/--my) */
-.card,.fund-card,.smart-card,.cluster,.exp-card,.shade-tab,.stat,.ticker-item{
+.card,.fund-card,.smart-card,.cluster,.exp-card,.shade-tab,.stat,.ticker-item,.hero-toggle{
   --mx:50%;--my:50%;
 }
 .card::after,.fund-card::after,.smart-card::after,.cluster::after,.exp-card::after{
@@ -97,6 +97,73 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 
 /* ---------- header ---------- */
 .hero{flex:none;border-bottom:1px solid var(--glass-edge);border-radius:0 0 var(--radius-lg) var(--radius-lg);z-index:5}
+
+/* slim bar — always pinned at the top, in both header states */
+.slim-bar{
+  position:relative;z-index:1;display:flex;align-items:center;gap:12px;
+  min-height:46px;padding:5px 14px;max-width:1500px;margin:0 auto;width:100%;
+  transition:box-shadow .25s ease;
+}
+/* rolled up: hovering/focusing the slim bar glows along its bottom edge —
+   it reads as a shade waiting to be pulled back down */
+.hero.rolled .slim-bar:hover,.hero.rolled .slim-bar:focus-within{
+  box-shadow:inset 0 -18px 22px -16px rgba(61,255,122,.45), inset 0 -1px 0 rgba(61,255,122,.5);
+}
+.slim-brand{display:flex;align-items:center;gap:7px;font-weight:800;font-size:15px;letter-spacing:-.3px;white-space:nowrap}
+.slim-logo{font-size:19px;line-height:1;filter:drop-shadow(0 0 10px rgba(61,255,122,.35))}
+.slim-book{
+  flex:none;display:flex;align-items:center;gap:6px;min-height:32px;padding:5px 12px;
+  border-radius:999px;border:1px solid var(--glass-border);background:rgba(7,11,7,.5);
+  font-size:12.5px;color:var(--dim);box-shadow:var(--e2);
+  transition:border-color .2s ease,color .2s ease,transform .12s var(--spring);
+}
+.slim-book[hidden]{display:none}
+.slim-book:hover{border-color:rgba(61,255,122,.5);color:var(--text)}
+.slim-book:active{transform:scale(.96)}
+.slim-book b{color:var(--text);font-variant-numeric:tabular-nums}
+.slim-book-ret{font-weight:700;font-variant-numeric:tabular-nums}
+.slim-search{flex:0 1 400px;min-width:0;margin-left:auto;padding:5px 13px}
+.slim-search #globalSearch{font-size:13.5px}
+
+/* roll toggle — big tap target, labeled both ways */
+.hero-toggle{
+  flex:none;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;gap:7px;
+  min-height:40px;min-width:40px;padding:8px 15px;border-radius:999px;
+  border:1px solid var(--glass-border);background:rgba(7,11,7,.5);
+  font-size:13px;font-weight:700;color:var(--text);box-shadow:var(--e2);
+  transition:transform .12s var(--spring),border-color .2s ease,box-shadow .2s ease;
+}
+.hero-toggle::after{ /* M2 Reveal, same as cards */
+  content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background:radial-gradient(120px circle at var(--mx) var(--my),rgba(61,255,122,.16),transparent 65%);
+  opacity:0;transition:opacity .18s ease;
+}
+.hero-toggle:hover{border-color:rgba(61,255,122,.55)}
+.hero-toggle:hover::after{opacity:1}
+.hero-toggle:active{transform:scale(.96)} /* A2 press feedback */
+.hero-toggle-chev{color:var(--green);font-size:11px;line-height:1}
+/* one-time hint ring — pulses until the toggle is first used, then never again */
+.hero-toggle.hint{animation:hintPulse 1.7s ease-out infinite}
+@keyframes hintPulse{
+  0%{box-shadow:0 0 0 0 rgba(61,255,122,.45),var(--e2)}
+  70%{box-shadow:0 0 0 10px rgba(61,255,122,0),var(--e2)}
+  100%{box-shadow:0 0 0 0 rgba(61,255,122,0),var(--e2)}
+}
+@media (prefers-reduced-motion:reduce){
+  .hero-toggle.hint{animation:none;box-shadow:0 0 0 2px rgba(61,255,122,.5),var(--e2)}
+}
+
+/* the big block rolls up: grid-rows 1fr → 0fr with the shades' spring */
+.hero-roll{
+  position:relative;z-index:1;display:grid;grid-template-rows:1fr;
+  opacity:1;visibility:visible;
+  transition:grid-template-rows .38s var(--spring),opacity .3s ease,visibility 0s;
+}
+.hero-roll-inner{overflow:hidden;min-height:0}
+.hero.rolled .hero-roll{
+  grid-template-rows:0fr;opacity:0;visibility:hidden;
+  transition:grid-template-rows .38s var(--spring),opacity .3s ease,visibility 0s linear .38s;
+}
 .hero-inner{max-width:1500px;margin:0 auto;padding:14px 20px 8px;display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap}
 .brand{display:flex;align-items:center;gap:12px;flex:none}
 .logo{font-size:34px;line-height:1;filter:drop-shadow(0 0 14px rgba(61,255,122,.35))}
@@ -416,6 +483,19 @@ footer .fine{margin-top:8px;font-size:12px}
   table{min-width:640px}
   .drawer{width:100vw;border-radius:0}
 }
+@media (max-width:640px){
+  .slim-bar{gap:8px;padding:5px 10px}
+  .slim-book-label{display:none}
+  .slim-book-ret{display:none} /* equity alone fits the narrow bar */
+  .slim-book{padding:5px 10px}
+  .slim-brand{font-size:14px}
+  .slim-logo{font-size:17px}
+}
+@media (max-width:420px){
+  .hero-toggle-label{display:none}
+  .hero-toggle{padding:8px 12px}
+}
 @media (prefers-reduced-motion:reduce){
   .shade,.drawer,.pivot-indicator{transition-duration:.15s}
+  .hero-roll,.hero.rolled .hero-roll{transition-duration:.15s}
 }

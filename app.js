@@ -56,7 +56,7 @@ window.addEventListener("resize", moveIndicator);
 
 /* M2 Reveal — pointer-tracking highlight */
 document.addEventListener("pointermove", (e) => {
-  const t = e.target.closest && e.target.closest(".card,.fund-card,.smart-card,.cluster,.exp-card,.shade-tab,.stat");
+  const t = e.target.closest && e.target.closest(".card,.fund-card,.smart-card,.cluster,.exp-card,.shade-tab,.stat,.hero-toggle");
   if (!t) return;
   const r = t.getBoundingClientRect();
   if (!r.width || !r.height) return;
@@ -64,12 +64,39 @@ document.addEventListener("pointermove", (e) => {
   t.style.setProperty("--my", ((e.clientY - r.top) / r.height * 100).toFixed(1) + "%");
 }, {passive: true});
 
-/* keyboard: 1–8 shades, "/" search, Esc drawer */
+/* ================= roll-up header (big top block → slim bar) ================= */
+let headerRolled = false;
+function applyHeader(rolled, save = true) {
+  headerRolled = rolled;
+  const hdr = $("siteHeader"), btn = $("heroToggle");
+  if (!hdr || !btn) return;
+  hdr.classList.toggle("rolled", rolled);
+  btn.setAttribute("aria-expanded", rolled ? "false" : "true");
+  btn.setAttribute("aria-label", rolled ? "Show the header" : "Roll up the header");
+  btn.title = rolled ? "Show the full header — key: H" : "Roll the header up for more board room — key: H";
+  $("heroToggleLabel").textContent = rolled ? "Show header" : "Roll up";
+  $("heroToggleChev").textContent = rolled ? "▼" : "▲";
+  if (save) { try { localStorage.setItem("pw-header", rolled ? "rolled" : "open"); } catch (e) {} }
+  /* once the roll settles, run the same window-resize path the shade
+     switch uses (indicator + any visible chart containers re-measure) */
+  setTimeout(() => window.dispatchEvent(new Event("resize")), 420);
+}
+function toggleHeader() {
+  const btn = $("heroToggle");
+  if (btn) btn.classList.remove("hint");
+  try { localStorage.setItem("pw-header-toggled", "1"); } catch (e) {}
+  applyHeader(!headerRolled);
+}
+$("heroToggle").addEventListener("click", toggleHeader);
+$("slimBookChip").addEventListener("click", () => activateShade("shorts"));
+
+/* keyboard: 1–8 shades, "/" search, "h" header, Esc drawer */
 document.addEventListener("keydown", (e) => {
   const typing = /INPUT|TEXTAREA|SELECT/.test(document.activeElement && document.activeElement.tagName || "");
   if (e.key === "Escape") { closeDrawer(); if (typing) document.activeElement.blur(); return; }
   if (typing) return;
   if (e.key === "/") { e.preventDefault(); $("globalSearch").focus(); return; }
+  if ((e.key === "h" || e.key === "H") && !e.ctrlKey && !e.metaKey && !e.altKey) { toggleHeader(); return; }
   const n = parseInt(e.key, 10);
   if (n >= 1 && n <= SHADES.length) activateShade(SHADES[n - 1]);
 });
@@ -615,6 +642,15 @@ function renderShorts(s, spreds) {
 
 function renderShortBook(b) {
   if (!b) { $("shortBookPanel").hidden = true; return; }
+  /* slim-bar chip (visible even with the header rolled up) */
+  const slimChip = $("slimBookChip");
+  if (slimChip) {
+    slimChip.hidden = false;
+    $("slimBookEquity").textContent = money2(b.equity);
+    const sr = $("slimBookRet");
+    sr.textContent = pct(b.total_return_pct);
+    sr.style.color = (b.total_return_pct || 0) >= 0 ? "var(--green)" : "var(--red)";
+  }
   $("bkEquity").textContent = money2(b.equity);
   const retEl = $("bkReturn");
   retEl.textContent = pct(b.total_return_pct);
@@ -788,12 +824,22 @@ async function load() {
     (feeds.length ? ` · ${feeds.join(" · ")}` : "");
 }
 
-/* init shade from saved state (before data arrives so layout is stable) */
+/* init shade + header roll from saved state (before data arrives so layout is stable) */
 (function initShade() {
   let saved = "overview";
   try { saved = localStorage.getItem("pw-shade") || "overview"; } catch (e) {}
   activateShade(saved, false);
   setTimeout(moveIndicator, 60);
   setTimeout(moveIndicator, 400);
+})();
+(function initHeader() {
+  let saved = null, hinted = "1";
+  try {
+    saved = localStorage.getItem("pw-header");
+    hinted = localStorage.getItem("pw-header-toggled");
+  } catch (e) {}
+  /* default: open on desktop, rolled up on narrow screens */
+  applyHeader(saved ? saved === "rolled" : window.innerWidth <= 640, false);
+  if (!hinted) $("heroToggle").classList.add("hint");
 })();
 load();

@@ -15,36 +15,51 @@
 <div class="bg-glows" aria-hidden="true"><div class="glow g1"></div><div class="glow g2"></div><div class="glow g3"></div></div>
 
 <div class="app">
-  <!-- ================= HEADER (Microsoft Acrylic) ================= -->
-  <header class="hero acrylic">
-    <div class="hero-inner">
-      <div class="brand">
-        <div class="logo">👁️</div>
-        <div>
-          <h1>PowerWatch</h1>
-          <p class="tagline">Follow the money in power.</p>
+  <!-- ================= HEADER (Microsoft Acrylic) — rolls up to the slim bar ================= -->
+  <header class="hero acrylic" id="siteHeader">
+    <div class="slim-bar" id="slimBar">
+      <span class="slim-brand"><span class="slim-logo" aria-hidden="true">👁️</span>PowerWatch</span>
+      <button class="slim-book" id="slimBookChip" type="button" hidden title="Open the $100 Short Book (Short Side shade)">
+        <span aria-hidden="true">💵</span><span class="slim-book-label">$100 Book</span>
+        <b id="slimBookEquity">—</b><span class="slim-book-ret" id="slimBookRet"></span>
+      </button>
+      <label class="search-wrap slim-search" title="Filter by ticker — press / to focus">
+        <span class="search-ico" aria-hidden="true">⌕</span>
+        <input id="globalSearch" type="search" placeholder="Filter ticker…  ( / )" autocomplete="off" spellcheck="false" aria-label="Filter by ticker">
+        <button id="searchClear" class="search-clear" type="button" aria-label="Clear filter" hidden>×</button>
+      </label>
+      <button class="hero-toggle" id="heroToggle" type="button" aria-expanded="true" aria-controls="heroRoll" aria-label="Roll up the header" title="Roll the header up for more board room — key: H">
+        <span class="hero-toggle-chev" id="heroToggleChev" aria-hidden="true">▲</span>
+        <span class="hero-toggle-label" id="heroToggleLabel">Roll up</span>
+      </button>
+    </div>
+    <div class="hero-roll" id="heroRoll">
+      <div class="hero-roll-inner">
+        <div class="hero-inner">
+          <div class="brand">
+            <div class="logo">👁️</div>
+            <div>
+              <h1>PowerWatch</h1>
+              <p class="tagline">Follow the money in power.</p>
+            </div>
+          </div>
+          <div class="header-meta">
+            <p class="updated" id="updatedLine">Loading latest scan…</p>
+            <p class="autopilot" id="autopilotLine"></p>
+          </div>
+          <div class="header-right">
+            <div class="stat-strip" id="statStrip" aria-label="Key stats">
+              <div class="stat"><span class="stat-label">Form 4s scanned</span><span class="stat-num" id="stFilings">—</span></div>
+              <div class="stat"><span class="stat-label">Companies buying</span><span class="stat-num" id="stBuys">—</span></div>
+              <div class="stat"><span class="stat-label">Calls tracked</span><span class="stat-num" id="stCalls">—</span><div class="kpi-spark" id="sparkCalls"></div></div>
+              <div class="stat"><span class="stat-label">Avg return</span><span class="stat-num" id="stAvg">—</span><div class="kpi-foot" id="footAvg"></div><div class="kpi-spark" id="sparkAvg"></div></div>
+              <div class="stat"><span class="stat-label">Win rate</span><span class="stat-num" id="stWin">—</span><div class="kpi-foot" id="footWin"></div><div class="kpi-spark" id="sparkWin"></div></div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="header-meta">
-        <p class="updated" id="updatedLine">Loading latest scan…</p>
-        <p class="autopilot" id="autopilotLine"></p>
-      </div>
-      <div class="header-right">
-        <label class="search-wrap" title="Filter by ticker — press / to focus">
-          <span class="search-ico" aria-hidden="true">⌕</span>
-          <input id="globalSearch" type="search" placeholder="Filter ticker…  ( / )" autocomplete="off" spellcheck="false" aria-label="Filter by ticker">
-          <button id="searchClear" class="search-clear" type="button" aria-label="Clear filter" hidden>×</button>
-        </label>
-        <div class="stat-strip" id="statStrip" aria-label="Key stats">
-          <div class="stat"><span class="stat-label">Form 4s scanned</span><span class="stat-num" id="stFilings">—</span></div>
-          <div class="stat"><span class="stat-label">Companies buying</span><span class="stat-num" id="stBuys">—</span></div>
-          <div class="stat"><span class="stat-label">Calls tracked</span><span class="stat-num" id="stCalls">—</span><div class="kpi-spark" id="sparkCalls"></div></div>
-          <div class="stat"><span class="stat-label">Avg return</span><span class="stat-num" id="stAvg">—</span><div class="kpi-foot" id="footAvg"></div><div class="kpi-spark" id="sparkAvg"></div></div>
-          <div class="stat"><span class="stat-label">Win rate</span><span class="stat-num" id="stWin">—</span><div class="kpi-foot" id="footWin"></div><div class="kpi-spark" id="sparkWin"></div></div>
-        </div>
+        <p class="hero-sub" id="heroSub">PowerWatch follows the money in power — <strong>corporate insiders</strong> buying with their own cash (SEC Form 4), <strong>members of Congress</strong> trading (STOCK Act), and the <strong>biggest funds</strong> (13F). It scores the signals, flags overlap, and grades its own calls in public. Pick a shade below — everything lives on one screen, no scrolling the page.</p>
       </div>
     </div>
-    <p class="hero-sub" id="heroSub">PowerWatch follows the money in power — <strong>corporate insiders</strong> buying with their own cash (SEC Form 4), <strong>members of Congress</strong> trading (STOCK Act), and the <strong>biggest funds</strong> (13F). It scores the signals, flags overlap, and grades its own calls in public. Pick a shade below — everything lives on one screen, no scrolling the page.</p>
   </header>
 
   <!-- ================= TICKER TAPE ================= -->
@@ -84,7 +99,7 @@
         </section>
         <section class="section shade-empty-note" id="overviewHint">
           <h2>👁️ Start here</h2>
-          <p class="congress-note">Smart-money overlaps and cluster buys appear above when the feeds find them. Use the pill rail to raise another shade: <b>Signals</b> for today's insider buys, <b>Short Side</b> for the $100 Short Book, <b>Tracker</b> for the graded record. Tap any ticker — on a card, a row, or the tape — and a detail shade slides in from the right. Keys <b>1–8</b> switch shades, <b>/</b> filters, <b>Esc</b> closes.</p>
+          <p class="congress-note">Smart-money overlaps and cluster buys appear above when the feeds find them. Use the pill rail to raise another shade: <b>Signals</b> for today's insider buys, <b>Short Side</b> for the $100 Short Book, <b>Tracker</b> for the graded record. Tap any ticker — on a card, a row, or the tape — and a detail shade slides in from the right. Keys <b>1–8</b> switch shades, <b>/</b> filters, <b>H</b> rolls the header up for more room, <b>Esc</b> closes.</p>
         </section>
       </div>
 
