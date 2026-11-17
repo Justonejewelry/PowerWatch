@@ -1,12 +1,12 @@
 {
- "updated": "2026-11-15",
+ "updated": "2026-11-17",
  "source": "U.S. House Clerk \u2014 Periodic Transaction Reports (STOCK Act)",
  "stats": {
   "ptrs_processed": 150,
-  "ptrs_with_trades": 78,
+  "ptrs_with_trades": 80,
   "ptrs_unreadable": 23,
-  "ptrs_no_stock": 49,
-  "trades_found": 782,
+  "ptrs_no_stock": 47,
+  "trades_found": 786,
   "window_days": 120
  },
  "top_buys": [
@@ -53,6 +53,12 @@
    "est_value": 215500
   },
   {
+   "symbol": "EL",
+   "count": 3,
+   "members": 2,
+   "est_value": 115500
+  },
+  {
    "symbol": "NVO",
    "count": 3,
    "members": 2,
@@ -75,12 +81,6 @@
    "count": 3,
    "members": 2,
    "est_value": 48500
-  },
-  {
-   "symbol": "META",
-   "count": 3,
-   "members": 2,
-   "est_value": 24000
   }
  ],
  "top_sells": [
@@ -134,6 +134,17 @@
   }
  ],
  "recent_trades": [
+  {
+   "member": "James French Hill",
+   "state_dst": "AR02",
+   "symbol": "JBGS",
+   "type": "Sale",
+   "date": "2026-11-09",
+   "filed": "2026-11-13",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035807"
+  },
   {
    "member": "David J. Taylor",
    "state_dst": "OH02",
@@ -531,6 +542,17 @@
    "doc_id": "20035778"
   },
   {
+   "member": "Jonathan Jackson",
+   "state_dst": "IL01",
+   "symbol": "DDOG",
+   "type": "Purchase",
+   "date": "2026-10-22",
+   "filed": "2026-11-13",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035757"
+  },
+  {
    "member": "Pete Sessions",
    "state_dst": "TX17",
    "symbol": "HD",
@@ -765,28 +787,6 @@
    "member": "Gilbert Cisneros",
    "state_dst": "CA31",
    "symbol": "LITE",
-   "type": "Purchase",
-   "date": "2026-10-20",
-   "filed": "2026-11-10",
-   "amount_range": "$1,001 - $15,000",
-   "est_value": 8000,
-   "doc_id": "20035788"
-  },
-  {
-   "member": "Gilbert Cisneros",
-   "state_dst": "CA31",
-   "symbol": "MRNA",
-   "type": "Purchase",
-   "date": "2026-10-20",
-   "filed": "2026-11-10",
-   "amount_range": "$1,001 - $15,000",
-   "est_value": 8000,
-   "doc_id": "20035788"
-  },
-  {
-   "member": "Gilbert Cisneros",
-   "state_dst": "CA31",
-   "symbol": "NCLH",
    "type": "Purchase",
    "date": "2026-10-20",
    "filed": "2026-11-10",
