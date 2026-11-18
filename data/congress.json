@@ -1,12 +1,12 @@
 {
- "updated": "2026-11-17",
+ "updated": "2026-11-18",
  "source": "U.S. House Clerk \u2014 Periodic Transaction Reports (STOCK Act)",
  "stats": {
   "ptrs_processed": 150,
   "ptrs_with_trades": 80,
   "ptrs_unreadable": 23,
   "ptrs_no_stock": 47,
-  "trades_found": 786,
+  "trades_found": 793,
   "window_days": 120
  },
  "top_buys": [
@@ -53,12 +53,6 @@
    "est_value": 215500
   },
   {
-   "symbol": "EL",
-   "count": 3,
-   "members": 2,
-   "est_value": 115500
-  },
-  {
    "symbol": "NVO",
    "count": 3,
    "members": 2,
@@ -81,6 +75,12 @@
    "count": 3,
    "members": 2,
    "est_value": 48500
+  },
+  {
+   "symbol": "META",
+   "count": 3,
+   "members": 2,
+   "est_value": 24000
   }
  ],
  "top_sells": [
