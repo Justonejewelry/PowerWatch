@@ -1,20 +1,20 @@
 {
- "updated": "2026-11-19",
+ "updated": "2026-11-20",
  "source": "U.S. House Clerk \u2014 Periodic Transaction Reports (STOCK Act)",
  "stats": {
   "ptrs_processed": 150,
-  "ptrs_with_trades": 80,
-  "ptrs_unreadable": 23,
-  "ptrs_no_stock": 47,
-  "trades_found": 793,
+  "ptrs_with_trades": 83,
+  "ptrs_unreadable": 21,
+  "ptrs_no_stock": 46,
+  "trades_found": 798,
   "window_days": 120
  },
  "top_buys": [
   {
    "symbol": "MSFT",
-   "count": 6,
-   "members": 4,
-   "est_value": 72500
+   "count": 7,
+   "members": 5,
+   "est_value": 80500
   },
   {
    "symbol": "AVGO",
@@ -85,6 +85,12 @@
  ],
  "top_sells": [
   {
+   "symbol": "WBD",
+   "count": 7,
+   "members": 6,
+   "est_value": 123000
+  },
+  {
    "symbol": "HD",
    "count": 7,
    "members": 5,
@@ -95,12 +101,6 @@
    "count": 6,
    "members": 4,
    "est_value": 115000
-  },
-  {
-   "symbol": "WBD",
-   "count": 4,
-   "members": 4,
-   "est_value": 99000
   },
   {
    "symbol": "V",
@@ -146,6 +146,17 @@
    "doc_id": "20035807"
   },
   {
+   "member": "Terri A. Sewell",
+   "state_dst": "AL07",
+   "symbol": "TPR",
+   "type": "Sale",
+   "date": "2026-11-05",
+   "filed": "2026-11-18",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20036864"
+  },
+  {
    "member": "David J. Taylor",
    "state_dst": "OH02",
    "symbol": "AVGO",
@@ -188,6 +199,17 @@
    "amount_range": "$1,001 - $15,000",
    "est_value": 8000,
    "doc_id": "20035831"
+  },
+  {
+   "member": "Michael Rulli",
+   "state_dst": "OH06",
+   "symbol": "MSFT",
+   "type": "Purchase",
+   "date": "2026-11-04",
+   "filed": "2026-11-18",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20036855"
   },
   {
    "member": "Gilbert Cisneros",
@@ -619,6 +641,17 @@
    "doc_id": "20035563"
   },
   {
+   "member": "Thomas H. Kean",
+   "state_dst": "NJ07",
+   "symbol": "SYK",
+   "type": "Purchase",
+   "date": "2026-10-20",
+   "filed": "2026-11-19",
+   "amount_range": "$50,001 - $100,000",
+   "est_value": 75000,
+   "doc_id": "20036844"
+  },
+  {
    "member": "Gilbert Cisneros",
    "state_dst": "CA31",
    "symbol": "ARE",
@@ -754,39 +787,6 @@
    "member": "Gilbert Cisneros",
    "state_dst": "CA31",
    "symbol": "FOXA",
-   "type": "Purchase",
-   "date": "2026-10-20",
-   "filed": "2026-11-10",
-   "amount_range": "$1,001 - $15,000",
-   "est_value": 8000,
-   "doc_id": "20035788"
-  },
-  {
-   "member": "Gilbert Cisneros",
-   "state_dst": "CA31",
-   "symbol": "GIS",
-   "type": "Sale",
-   "date": "2026-10-20",
-   "filed": "2026-11-10",
-   "amount_range": "$1,001 - $15,000",
-   "est_value": 8000,
-   "doc_id": "20035788"
-  },
-  {
-   "member": "Gilbert Cisneros",
-   "state_dst": "CA31",
-   "symbol": "PODD",
-   "type": "Purchase",
-   "date": "2026-10-20",
-   "filed": "2026-11-10",
-   "amount_range": "$1,001 - $15,000",
-   "est_value": 8000,
-   "doc_id": "20035788"
-  },
-  {
-   "member": "Gilbert Cisneros",
-   "state_dst": "CA31",
-   "symbol": "LITE",
    "type": "Purchase",
    "date": "2026-10-20",
    "filed": "2026-11-10",
