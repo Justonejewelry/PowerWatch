@@ -1,15 +1,15 @@
 {
- "updated": "2026-11-21",
+ "updated": "2026-11-24",
  "version": 2,
  "legs": {
   "insider_sells": {
    "status": "live",
    "filing_days": [
-    "2026-11-20"
+    "2026-11-23"
    ],
-   "filings_scanned": 1012,
-   "sell_txns_in_window": 4682,
-   "clusters_found": 368,
+   "filings_scanned": 1108,
+   "sell_txns_in_window": 5225,
+   "clusters_found": 395,
    "note": "SEC Form 4 code-S sales, 10b5-1 excluded, rolling 30-day cluster window. Confirmation only \u2014 never a standalone trigger (report \u00a71)."
   },
   "finra_short_interest": {
@@ -26,8 +26,8 @@
   },
   "threshold_list": {
    "status": "live",
-   "date": "2026-11-19",
-   "count": 74,
+   "date": "2026-11-23",
+   "count": 79,
    "note": "Reg SHO threshold list: >=10k shares failed AND >=0.5% of shares outstanding for 5 consecutive settlement days. Risk flag only \u2014 persistent fails historically precede POSITIVE returns (report \u00a72)."
   },
   "prices": {
@@ -40,7 +40,7 @@
   {
    "symbol": "ACHR",
    "issuer": "Archer Aviation Inc.",
-   "score": 8,
+   "score": 6,
    "insider": {
     "score": 6,
     "detail": {
@@ -92,18 +92,18 @@
    "congress_sells": null,
    "on_threshold_list": false,
    "tech": {
-    "price": 2.91,
-    "sma50": 4.52,
+    "price": 3.07,
+    "sma50": 4.47,
     "sma50_rising": false,
-    "vs_sma50_pct": -35.7,
-    "vs_sma200_pct": -47.3,
-    "rsi": 28.3,
+    "vs_sma50_pct": -31.4,
+    "vs_sma200_pct": -44.1,
+    "rsi": 32.4,
     "rsi70_streak": 0,
-    "mom_1m_pct": -23.4,
-    "mom_3m_pct": -52.1,
-    "mom_6m_pct": -54.2,
+    "mom_1m_pct": -21.5,
+    "mom_3m_pct": -48.5,
+    "mom_6m_pct": -52.8,
     "extended_context": false,
-    "breakdown": true,
+    "breakdown": false,
     "breakdown_volume_surge": false,
     "ttm_squeeze_on": false
    },
@@ -121,7 +121,7 @@
     {
      "gate": "tradability",
      "status": "block",
-     "detail": "price $2.91 < $5 \u2014 outside the tradable short book"
+     "detail": "price $3.07 < $5 \u2014 outside the tradable short book"
     },
     {
      "gate": "catalyst",
@@ -130,168 +130,6 @@
     }
    ],
    "status": "blocked",
-   "squeeze_score": 0,
-   "squeeze_detail": []
-  },
-  {
-   "symbol": "ALMR",
-   "issuer": "Alamar Biosciences, Inc.",
-   "score": 6,
-   "insider": {
-    "score": 4,
-    "detail": {
-     "cluster_ge3": false,
-     "opportunistic": null,
-     "big_pct_of_holdings": true,
-     "value_ge_250k": true,
-     "selling_into_strength": true,
-     "ceo_cfo_selling": false
-    },
-    "cluster": {
-     "symbol": "ALMR",
-     "issuer": "Alamar Biosciences, Inc.",
-     "n_insiders": 1,
-     "total_value": 20591004,
-     "max_pct_holdings_sold": 30.0,
-     "any_ceo_cfo": false,
-     "sellers": [
-      {
-       "owner": "Qiming Corporate GP VI, Ltd.",
-       "role": "10% owner",
-       "value": 20591004
-      }
-     ],
-     "first_date": "2026-11-11",
-     "last_date": "2026-11-11"
-    }
-   },
-   "si": null,
-   "borrow": null,
-   "crowd_points": 0,
-   "crowd_points_raw": 0,
-   "fund_put": null,
-   "congress_sells": null,
-   "on_threshold_list": false,
-   "tech": {
-    "price": 26.48,
-    "sma50": 30.28,
-    "sma50_rising": true,
-    "vs_sma50_pct": -12.6,
-    "vs_sma200_pct": null,
-    "rsi": 39.8,
-    "rsi70_streak": 0,
-    "mom_1m_pct": -10.9,
-    "mom_3m_pct": -19.0,
-    "mom_6m_pct": 32.0,
-    "extended_context": false,
-    "breakdown": true,
-    "breakdown_volume_surge": false,
-    "ttm_squeeze_on": false
-   },
-   "gates": [
-    {
-     "gate": "crowding",
-     "status": "unknown",
-     "detail": "no FINRA short-interest data for this name yet"
-    },
-    {
-     "gate": "borrow",
-     "status": "unknown",
-     "detail": "borrow fee not available yet (IBKR leg pending)"
-    },
-    {
-     "gate": "trend",
-     "status": "pass",
-     "detail": "not shorting into a rising trend"
-    },
-    {
-     "gate": "catalyst",
-     "status": "unknown",
-     "detail": "next earnings date not available from free sources \u2014 verify manually; no naked short within 5 trading days of earnings (report \u00a79)"
-    }
-   ],
-   "status": "watch",
-   "squeeze_score": 0,
-   "squeeze_detail": []
-  },
-  {
-   "symbol": "ARM",
-   "issuer": "ARM HOLDINGS PLC /UK",
-   "score": 6,
-   "insider": {
-    "score": 3,
-    "detail": {
-     "cluster_ge3": false,
-     "opportunistic": null,
-     "big_pct_of_holdings": true,
-     "value_ge_250k": true,
-     "selling_into_strength": false,
-     "ceo_cfo_selling": false
-    },
-    "cluster": {
-     "symbol": "ARM",
-     "issuer": "ARM HOLDINGS PLC /UK",
-     "n_insiders": 1,
-     "total_value": 2078930,
-     "max_pct_holdings_sold": 100.0,
-     "any_ceo_cfo": false,
-     "sellers": [
-      {
-       "owner": "Grisenthwaite Richard Roy",
-       "role": "Chief Architect",
-       "value": 2078930
-      }
-     ],
-     "first_date": "2026-11-17",
-     "last_date": "2026-11-17"
-    }
-   },
-   "si": null,
-   "borrow": null,
-   "crowd_points": 0,
-   "crowd_points_raw": 0,
-   "fund_put": null,
-   "congress_sells": null,
-   "on_threshold_list": false,
-   "tech": {
-    "price": 152.2,
-    "sma50": 239.62,
-    "sma50_rising": false,
-    "vs_sma50_pct": -36.5,
-    "vs_sma200_pct": -35.1,
-    "rsi": 31.8,
-    "rsi70_streak": 0,
-    "mom_1m_pct": -27.6,
-    "mom_3m_pct": -36.3,
-    "mom_6m_pct": -50.3,
-    "extended_context": false,
-    "breakdown": true,
-    "breakdown_volume_surge": true,
-    "ttm_squeeze_on": false
-   },
-   "gates": [
-    {
-     "gate": "crowding",
-     "status": "unknown",
-     "detail": "no FINRA short-interest data for this name yet"
-    },
-    {
-     "gate": "borrow",
-     "status": "unknown",
-     "detail": "borrow fee not available yet (IBKR leg pending)"
-    },
-    {
-     "gate": "trend",
-     "status": "pass",
-     "detail": "not shorting into a rising trend"
-    },
-    {
-     "gate": "catalyst",
-     "status": "unknown",
-     "detail": "next earnings date not available from free sources \u2014 verify manually; no naked short within 5 trading days of earnings (report \u00a79)"
-    }
-   ],
-   "status": "watch",
    "squeeze_score": 0,
    "squeeze_detail": []
   },
@@ -312,8 +150,8 @@
     "cluster": {
      "symbol": "CRVL",
      "issuer": "CORVEL CORP",
-     "n_insiders": 3,
-     "total_value": 1617696,
+     "n_insiders": 4,
+     "total_value": 2231004,
      "max_pct_holdings_sold": 66.7,
      "any_ceo_cfo": false,
      "sellers": [
@@ -321,6 +159,11 @@
        "owner": "HAMERSLAG STEVEN J",
        "role": "Director",
        "value": 924471
+      },
+      {
+       "owner": "Shishin Maxim",
+       "role": "Chief Information Officer",
+       "value": 613308
       },
       {
        "owner": "Bertels Mark E.",
@@ -334,7 +177,7 @@
       }
      ],
      "first_date": "2026-11-11",
-     "last_date": "2026-11-16"
+     "last_date": "2026-11-19"
     }
    },
    "si": null,
@@ -345,16 +188,16 @@
    "congress_sells": null,
    "on_threshold_list": false,
    "tech": {
-    "price": 88.28,
-    "sma50": 79.63,
+    "price": 86.23,
+    "sma50": 79.92,
     "sma50_rising": true,
-    "vs_sma50_pct": 10.9,
-    "vs_sma200_pct": 38.0,
-    "rsi": 64.6,
+    "vs_sma50_pct": 7.9,
+    "vs_sma200_pct": 34.4,
+    "rsi": 57.1,
     "rsi70_streak": 0,
-    "mom_1m_pct": 5.2,
-    "mom_3m_pct": 23.9,
-    "mom_6m_pct": 40.7,
+    "mom_1m_pct": 2.8,
+    "mom_3m_pct": 22.9,
+    "mom_6m_pct": 41.2,
     "extended_context": true,
     "breakdown": false,
     "breakdown_volume_surge": false,
@@ -383,87 +226,6 @@
     }
    ],
    "status": "blocked",
-   "squeeze_score": 0,
-   "squeeze_detail": []
-  },
-  {
-   "symbol": "CWBC",
-   "issuer": "Community West Bancshares",
-   "score": 6,
-   "insider": {
-    "score": 3,
-    "detail": {
-     "cluster_ge3": false,
-     "opportunistic": null,
-     "big_pct_of_holdings": true,
-     "value_ge_250k": true,
-     "selling_into_strength": false,
-     "ceo_cfo_selling": false
-    },
-    "cluster": {
-     "symbol": "CWBC",
-     "issuer": "Community West Bancshares",
-     "n_insiders": 1,
-     "total_value": 1962712,
-     "max_pct_holdings_sold": 45.1,
-     "any_ceo_cfo": false,
-     "sellers": [
-      {
-       "owner": "Plourd Martin E",
-       "role": "Director",
-       "value": 1962712
-      }
-     ],
-     "first_date": "2026-11-17",
-     "last_date": "2026-11-17"
-    }
-   },
-   "si": null,
-   "borrow": null,
-   "crowd_points": 0,
-   "crowd_points_raw": 0,
-   "fund_put": null,
-   "congress_sells": null,
-   "on_threshold_list": false,
-   "tech": {
-    "price": 23.92,
-    "sma50": 25.86,
-    "sma50_rising": false,
-    "vs_sma50_pct": -7.5,
-    "vs_sma200_pct": -4.4,
-    "rsi": 29.4,
-    "rsi70_streak": 0,
-    "mom_1m_pct": -9.0,
-    "mom_3m_pct": -8.0,
-    "mom_6m_pct": 0.5,
-    "extended_context": false,
-    "breakdown": true,
-    "breakdown_volume_surge": true,
-    "ttm_squeeze_on": false
-   },
-   "gates": [
-    {
-     "gate": "crowding",
-     "status": "unknown",
-     "detail": "no FINRA short-interest data for this name yet"
-    },
-    {
-     "gate": "borrow",
-     "status": "unknown",
-     "detail": "borrow fee not available yet (IBKR leg pending)"
-    },
-    {
-     "gate": "trend",
-     "status": "pass",
-     "detail": "not shorting into a rising trend"
-    },
-    {
-     "gate": "catalyst",
-     "status": "unknown",
-     "detail": "next earnings date not available from free sources \u2014 verify manually; no naked short within 5 trading days of earnings (report \u00a79)"
-    }
-   ],
-   "status": "watch",
    "squeeze_score": 0,
    "squeeze_detail": []
   },
@@ -527,16 +289,16 @@
    "congress_sells": null,
    "on_threshold_list": false,
    "tech": {
-    "price": 1.15,
-    "sma50": 1.76,
+    "price": 1.1,
+    "sma50": 1.75,
     "sma50_rising": false,
-    "vs_sma50_pct": -34.8,
-    "vs_sma200_pct": -33.9,
-    "rsi": 27.3,
+    "vs_sma50_pct": -37.1,
+    "vs_sma200_pct": -36.7,
+    "rsi": 25.9,
     "rsi70_streak": 0,
-    "mom_1m_pct": -34.7,
-    "mom_3m_pct": -47.7,
-    "mom_6m_pct": -34.3,
+    "mom_1m_pct": -36.4,
+    "mom_3m_pct": -49.5,
+    "mom_6m_pct": -34.1,
     "extended_context": false,
     "breakdown": true,
     "breakdown_volume_surge": true,
@@ -556,7 +318,7 @@
     {
      "gate": "tradability",
      "status": "block",
-     "detail": "price $1.15 < $5 \u2014 outside the tradable short book"
+     "detail": "price $1.1 < $5 \u2014 outside the tradable short book"
     },
     {
      "gate": "catalyst",
@@ -565,87 +327,6 @@
     }
    ],
    "status": "blocked",
-   "squeeze_score": 0,
-   "squeeze_detail": []
-  },
-  {
-   "symbol": "C",
-   "issuer": "CITIGROUP INC",
-   "score": 5,
-   "insider": {
-    "score": 2,
-    "detail": {
-     "cluster_ge3": false,
-     "opportunistic": null,
-     "big_pct_of_holdings": true,
-     "value_ge_250k": false,
-     "selling_into_strength": false,
-     "ceo_cfo_selling": false
-    },
-    "cluster": {
-     "symbol": "C",
-     "issuer": "CITIGROUP INC",
-     "n_insiders": 1,
-     "total_value": 200252,
-     "max_pct_holdings_sold": 50.0,
-     "any_ceo_cfo": false,
-     "sellers": [
-      {
-       "owner": "Henry Peter B.",
-       "role": "Director",
-       "value": 200252
-      }
-     ],
-     "first_date": "2026-11-18",
-     "last_date": "2026-11-18"
-    }
-   },
-   "si": null,
-   "borrow": null,
-   "crowd_points": 0,
-   "crowd_points_raw": 0,
-   "fund_put": null,
-   "congress_sells": null,
-   "on_threshold_list": false,
-   "tech": {
-    "price": 110.62,
-    "sma50": 125.75,
-    "sma50_rising": false,
-    "vs_sma50_pct": -12.0,
-    "vs_sma200_pct": -12.9,
-    "rsi": 27.6,
-    "rsi70_streak": 0,
-    "mom_1m_pct": -9.7,
-    "mom_3m_pct": -16.0,
-    "mom_6m_pct": -11.6,
-    "extended_context": false,
-    "breakdown": true,
-    "breakdown_volume_surge": true,
-    "ttm_squeeze_on": false
-   },
-   "gates": [
-    {
-     "gate": "crowding",
-     "status": "unknown",
-     "detail": "no FINRA short-interest data for this name yet"
-    },
-    {
-     "gate": "borrow",
-     "status": "unknown",
-     "detail": "borrow fee not available yet (IBKR leg pending)"
-    },
-    {
-     "gate": "trend",
-     "status": "pass",
-     "detail": "not shorting into a rising trend"
-    },
-    {
-     "gate": "catalyst",
-     "status": "unknown",
-     "detail": "next earnings date not available from free sources \u2014 verify manually; no naked short within 5 trading days of earnings (report \u00a79)"
-    }
-   ],
-   "status": "watch",
    "squeeze_score": 0,
    "squeeze_detail": []
   },
@@ -704,104 +385,18 @@
    "congress_sells": null,
    "on_threshold_list": false,
    "tech": {
-    "price": 82.67,
-    "sma50": 140.61,
+    "price": 98.51,
+    "sma50": 138.96,
     "sma50_rising": false,
-    "vs_sma50_pct": -41.2,
+    "vs_sma50_pct": -29.1,
     "vs_sma200_pct": null,
-    "rsi": 33.8,
+    "rsi": 44.2,
     "rsi70_streak": 0,
-    "mom_1m_pct": -24.1,
-    "mom_3m_pct": -55.4,
-    "mom_6m_pct": -67.8,
+    "mom_1m_pct": -11.1,
+    "mom_3m_pct": -46.4,
+    "mom_6m_pct": -59.2,
     "extended_context": false,
     "breakdown": false,
-    "breakdown_volume_surge": true,
-    "ttm_squeeze_on": false
-   },
-   "gates": [
-    {
-     "gate": "crowding",
-     "status": "unknown",
-     "detail": "no FINRA short-interest data for this name yet"
-    },
-    {
-     "gate": "borrow",
-     "status": "unknown",
-     "detail": "borrow fee not available yet (IBKR leg pending)"
-    },
-    {
-     "gate": "trend",
-     "status": "pass",
-     "detail": "not shorting into a rising trend"
-    },
-    {
-     "gate": "catalyst",
-     "status": "unknown",
-     "detail": "next earnings date not available from free sources \u2014 verify manually; no naked short within 5 trading days of earnings (report \u00a79)"
-    }
-   ],
-   "status": "watch",
-   "squeeze_score": 0,
-   "squeeze_detail": []
-  },
-  {
-   "symbol": "CCNE",
-   "issuer": "CNB FINANCIAL CORP/PA",
-   "score": 5,
-   "insider": {
-    "score": 3,
-    "detail": {
-     "cluster_ge3": false,
-     "opportunistic": null,
-     "big_pct_of_holdings": true,
-     "value_ge_250k": true,
-     "selling_into_strength": false,
-     "ceo_cfo_selling": false
-    },
-    "cluster": {
-     "symbol": "CCNE",
-     "issuer": "CNB FINANCIAL CORP/PA",
-     "n_insiders": 2,
-     "total_value": 447322,
-     "max_pct_holdings_sold": 43.0,
-     "any_ceo_cfo": false,
-     "sellers": [
-      {
-       "owner": "Kassab Leanne D",
-       "role": "SEVP/Chief Experience Officer",
-       "value": 340702
-      },
-      {
-       "owner": "Seager Richard B.",
-       "role": "Director",
-       "value": 106620
-      }
-     ],
-     "first_date": "2026-11-12",
-     "last_date": "2026-11-18"
-    }
-   },
-   "si": null,
-   "borrow": null,
-   "crowd_points": 0,
-   "crowd_points_raw": 0,
-   "fund_put": null,
-   "congress_sells": null,
-   "on_threshold_list": false,
-   "tech": {
-    "price": 33.66,
-    "sma50": 34.6,
-    "sma50_rising": false,
-    "vs_sma50_pct": -2.7,
-    "vs_sma200_pct": 4.2,
-    "rsi": 35.0,
-    "rsi70_streak": 0,
-    "mom_1m_pct": -4.5,
-    "mom_3m_pct": -1.1,
-    "mom_6m_pct": 9.8,
-    "extended_context": false,
-    "breakdown": true,
     "breakdown_volume_surge": false,
     "ttm_squeeze_on": false
    },
@@ -881,16 +476,16 @@
    "congress_sells": null,
    "on_threshold_list": false,
    "tech": {
-    "price": 110.84,
-    "sma50": 103.02,
+    "price": 110.87,
+    "sma50": 103.35,
     "sma50_rising": true,
-    "vs_sma50_pct": 7.6,
+    "vs_sma50_pct": 7.3,
     "vs_sma200_pct": 11.9,
-    "rsi": 56.8,
+    "rsi": 56.9,
     "rsi70_streak": 0,
-    "mom_1m_pct": 1.8,
+    "mom_1m_pct": 5.4,
     "mom_3m_pct": 8.1,
-    "mom_6m_pct": 15.2,
+    "mom_6m_pct": 14.7,
     "extended_context": false,
     "breakdown": false,
     "breakdown_volume_surge": false,
@@ -919,6 +514,87 @@
     }
    ],
    "status": "blocked",
+   "squeeze_score": 0,
+   "squeeze_detail": []
+  },
+  {
+   "symbol": "CLMT",
+   "issuer": "Calumet, Inc. /DE",
+   "score": 5,
+   "insider": {
+    "score": 3,
+    "detail": {
+     "cluster_ge3": false,
+     "opportunistic": null,
+     "big_pct_of_holdings": true,
+     "value_ge_250k": true,
+     "selling_into_strength": false,
+     "ceo_cfo_selling": false
+    },
+    "cluster": {
+     "symbol": "CLMT",
+     "issuer": "Calumet, Inc. /DE",
+     "n_insiders": 1,
+     "total_value": 606200,
+     "max_pct_holdings_sold": 51.3,
+     "any_ceo_cfo": false,
+     "sellers": [
+      {
+       "owner": "Raymond Paul C",
+       "role": "Director",
+       "value": 606200
+      }
+     ],
+     "first_date": "2026-11-18",
+     "last_date": "2026-11-18"
+    }
+   },
+   "si": null,
+   "borrow": null,
+   "crowd_points": 0,
+   "crowd_points_raw": 0,
+   "fund_put": null,
+   "congress_sells": null,
+   "on_threshold_list": false,
+   "tech": {
+    "price": 28.98,
+    "sma50": 48.9,
+    "sma50_rising": false,
+    "vs_sma50_pct": -40.7,
+    "vs_sma200_pct": -26.9,
+    "rsi": 19.7,
+    "rsi70_streak": 0,
+    "mom_1m_pct": -41.2,
+    "mom_3m_pct": -38.4,
+    "mom_6m_pct": -14.7,
+    "extended_context": false,
+    "breakdown": true,
+    "breakdown_volume_surge": false,
+    "ttm_squeeze_on": false
+   },
+   "gates": [
+    {
+     "gate": "crowding",
+     "status": "unknown",
+     "detail": "no FINRA short-interest data for this name yet"
+    },
+    {
+     "gate": "borrow",
+     "status": "unknown",
+     "detail": "borrow fee not available yet (IBKR leg pending)"
+    },
+    {
+     "gate": "trend",
+     "status": "pass",
+     "detail": "not shorting into a rising trend"
+    },
+    {
+     "gate": "catalyst",
+     "status": "unknown",
+     "detail": "next earnings date not available from free sources \u2014 verify manually; no naked short within 5 trading days of earnings (report \u00a79)"
+    }
+   ],
+   "status": "watch",
    "squeeze_score": 0,
    "squeeze_detail": []
   },
@@ -982,16 +658,97 @@
    "congress_sells": null,
    "on_threshold_list": false,
    "tech": {
-    "price": 41.84,
-    "sma50": 38.66,
+    "price": 43.17,
+    "sma50": 38.8,
     "sma50_rising": true,
-    "vs_sma50_pct": 8.2,
-    "vs_sma200_pct": 39.4,
-    "rsi": 55.7,
+    "vs_sma50_pct": 11.2,
+    "vs_sma200_pct": 43.4,
+    "rsi": 62.0,
     "rsi70_streak": 0,
-    "mom_1m_pct": 4.7,
-    "mom_3m_pct": 19.6,
-    "mom_6m_pct": 65.2,
+    "mom_1m_pct": 10.0,
+    "mom_3m_pct": 24.1,
+    "mom_6m_pct": 69.1,
+    "extended_context": true,
+    "breakdown": false,
+    "breakdown_volume_surge": false,
+    "ttm_squeeze_on": false
+   },
+   "gates": [
+    {
+     "gate": "crowding",
+     "status": "unknown",
+     "detail": "no FINRA short-interest data for this name yet"
+    },
+    {
+     "gate": "borrow",
+     "status": "unknown",
+     "detail": "borrow fee not available yet (IBKR leg pending)"
+    },
+    {
+     "gate": "trend",
+     "status": "block",
+     "detail": "price above a RISING 50-day average \u2014 never short strength"
+    },
+    {
+     "gate": "catalyst",
+     "status": "unknown",
+     "detail": "next earnings date not available from free sources \u2014 verify manually; no naked short within 5 trading days of earnings (report \u00a79)"
+    }
+   ],
+   "status": "blocked",
+   "squeeze_score": 0,
+   "squeeze_detail": []
+  },
+  {
+   "symbol": "ADP",
+   "issuer": "AUTOMATIC DATA PROCESSING INC",
+   "score": 4,
+   "insider": {
+    "score": 4,
+    "detail": {
+     "cluster_ge3": false,
+     "opportunistic": null,
+     "big_pct_of_holdings": true,
+     "value_ge_250k": true,
+     "selling_into_strength": true,
+     "ceo_cfo_selling": false
+    },
+    "cluster": {
+     "symbol": "ADP",
+     "issuer": "AUTOMATIC DATA PROCESSING INC",
+     "n_insiders": 1,
+     "total_value": 622327,
+     "max_pct_holdings_sold": 87.3,
+     "any_ceo_cfo": false,
+     "sellers": [
+      {
+       "owner": "Orihuela Samantha D",
+       "role": "Chief Marketing Officer",
+       "value": 622327
+      }
+     ],
+     "first_date": "2026-11-20",
+     "last_date": "2026-11-20"
+    }
+   },
+   "si": null,
+   "borrow": null,
+   "crowd_points": 0,
+   "crowd_points_raw": 0,
+   "fund_put": null,
+   "congress_sells": null,
+   "on_threshold_list": false,
+   "tech": {
+    "price": 302.11,
+    "sma50": 285.56,
+    "sma50_rising": true,
+    "vs_sma50_pct": 5.8,
+    "vs_sma200_pct": 23.4,
+    "rsi": 54.5,
+    "rsi70_streak": 0,
+    "mom_1m_pct": -0.7,
+    "mom_3m_pct": 6.8,
+    "mom_6m_pct": 38.4,
     "extended_context": true,
     "breakdown": false,
     "breakdown_volume_surge": false,
@@ -1078,19 +835,100 @@
    "congress_sells": null,
    "on_threshold_list": false,
    "tech": {
-    "price": 180.35,
-    "sma50": 285.21,
+    "price": 222.12,
+    "sma50": 284.51,
     "sma50_rising": false,
-    "vs_sma50_pct": -36.8,
-    "vs_sma200_pct": -30.3,
-    "rsi": 33.0,
+    "vs_sma50_pct": -21.9,
+    "vs_sma200_pct": -14.3,
+    "rsi": 45.8,
     "rsi70_streak": 0,
-    "mom_1m_pct": -30.0,
-    "mom_3m_pct": -35.0,
-    "mom_6m_pct": -41.2,
+    "mom_1m_pct": -13.6,
+    "mom_3m_pct": -21.4,
+    "mom_6m_pct": -30.3,
     "extended_context": false,
     "breakdown": false,
     "breakdown_volume_surge": true,
+    "ttm_squeeze_on": false
+   },
+   "gates": [
+    {
+     "gate": "crowding",
+     "status": "unknown",
+     "detail": "no FINRA short-interest data for this name yet"
+    },
+    {
+     "gate": "borrow",
+     "status": "unknown",
+     "detail": "borrow fee not available yet (IBKR leg pending)"
+    },
+    {
+     "gate": "trend",
+     "status": "pass",
+     "detail": "not shorting into a rising trend"
+    },
+    {
+     "gate": "catalyst",
+     "status": "unknown",
+     "detail": "next earnings date not available from free sources \u2014 verify manually; no naked short within 5 trading days of earnings (report \u00a79)"
+    }
+   ],
+   "status": "watch",
+   "squeeze_score": 0,
+   "squeeze_detail": []
+  },
+  {
+   "symbol": "ALMR",
+   "issuer": "Alamar Biosciences, Inc.",
+   "score": 4,
+   "insider": {
+    "score": 4,
+    "detail": {
+     "cluster_ge3": false,
+     "opportunistic": null,
+     "big_pct_of_holdings": true,
+     "value_ge_250k": true,
+     "selling_into_strength": true,
+     "ceo_cfo_selling": false
+    },
+    "cluster": {
+     "symbol": "ALMR",
+     "issuer": "Alamar Biosciences, Inc.",
+     "n_insiders": 1,
+     "total_value": 20591004,
+     "max_pct_holdings_sold": 30.0,
+     "any_ceo_cfo": false,
+     "sellers": [
+      {
+       "owner": "Qiming Corporate GP VI, Ltd.",
+       "role": "10% owner",
+       "value": 20591004
+      }
+     ],
+     "first_date": "2026-11-11",
+     "last_date": "2026-11-11"
+    }
+   },
+   "si": null,
+   "borrow": null,
+   "crowd_points": 0,
+   "crowd_points_raw": 0,
+   "fund_put": null,
+   "congress_sells": null,
+   "on_threshold_list": false,
+   "tech": {
+    "price": 27.95,
+    "sma50": 30.28,
+    "sma50_rising": true,
+    "vs_sma50_pct": -7.7,
+    "vs_sma200_pct": null,
+    "rsi": 44.7,
+    "rsi70_streak": 0,
+    "mom_1m_pct": -8.9,
+    "mom_3m_pct": -15.4,
+    "mom_6m_pct": 46.4,
+    "extended_context": false,
+    "breakdown": false,
+    "breakdown_volume_surge": false,
     "ttm_squeeze_on": false
    },
    "gates": [
@@ -1159,16 +997,16 @@
    "congress_sells": null,
    "on_threshold_list": false,
    "tech": {
-    "price": 51.79,
-    "sma50": 44.54,
+    "price": 54.69,
+    "sma50": 44.87,
     "sma50_rising": true,
-    "vs_sma50_pct": 16.3,
-    "vs_sma200_pct": 68.5,
-    "rsi": 55.0,
+    "vs_sma50_pct": 21.9,
+    "vs_sma200_pct": 77.1,
+    "rsi": 60.9,
     "rsi70_streak": 0,
-    "mom_1m_pct": 1.3,
-    "mom_3m_pct": 32.2,
-    "mom_6m_pct": 142.3,
+    "mom_1m_pct": 4.5,
+    "mom_3m_pct": 38.2,
+    "mom_6m_pct": 152.4,
     "extended_context": true,
     "breakdown": false,
     "breakdown_volume_surge": false,
@@ -1201,6 +1039,87 @@
    "squeeze_detail": [
     "TTM volatility compression active (coiled \u2014 breakout risk both ways)"
    ]
+  },
+  {
+   "symbol": "ARDT",
+   "issuer": "Ardent Health, Inc.",
+   "score": 4,
+   "insider": {
+    "score": 4,
+    "detail": {
+     "cluster_ge3": false,
+     "opportunistic": null,
+     "big_pct_of_holdings": true,
+     "value_ge_250k": true,
+     "selling_into_strength": true,
+     "ceo_cfo_selling": false
+    },
+    "cluster": {
+     "symbol": "ARDT",
+     "issuer": "Ardent Health, Inc.",
+     "n_insiders": 1,
+     "total_value": 391163568,
+     "max_pct_holdings_sold": 28.9,
+     "any_ceo_cfo": false,
+     "sellers": [
+      {
+       "owner": "CHAI TRUST CO LLC",
+       "role": "10% owner",
+       "value": 391163568
+      }
+     ],
+     "first_date": "2026-11-19",
+     "last_date": "2026-11-19"
+    }
+   },
+   "si": null,
+   "borrow": null,
+   "crowd_points": 0,
+   "crowd_points_raw": 0,
+   "fund_put": null,
+   "congress_sells": null,
+   "on_threshold_list": false,
+   "tech": {
+    "price": 15.59,
+    "sma50": 12.74,
+    "sma50_rising": true,
+    "vs_sma50_pct": 22.4,
+    "vs_sma200_pct": 47.4,
+    "rsi": 55.6,
+    "rsi70_streak": 0,
+    "mom_1m_pct": 27.1,
+    "mom_3m_pct": 38.0,
+    "mom_6m_pct": 67.8,
+    "extended_context": true,
+    "breakdown": false,
+    "breakdown_volume_surge": false,
+    "ttm_squeeze_on": false
+   },
+   "gates": [
+    {
+     "gate": "crowding",
+     "status": "unknown",
+     "detail": "no FINRA short-interest data for this name yet"
+    },
+    {
+     "gate": "borrow",
+     "status": "unknown",
+     "detail": "borrow fee not available yet (IBKR leg pending)"
+    },
+    {
+     "gate": "trend",
+     "status": "block",
+     "detail": "price above a RISING 50-day average \u2014 never short strength"
+    },
+    {
+     "gate": "catalyst",
+     "status": "unknown",
+     "detail": "next earnings date not available from free sources \u2014 verify manually; no naked short within 5 trading days of earnings (report \u00a79)"
+    }
+   ],
+   "status": "blocked",
+   "squeeze_score": 0,
+   "squeeze_detail": []
   },
   {
    "symbol": "ARTV",
@@ -1263,15 +1182,15 @@
    "on_threshold_list": false,
    "tech": {
     "price": 3.78,
-    "sma50": 5.97,
+    "sma50": 5.84,
     "sma50_rising": false,
-    "vs_sma50_pct": -36.7,
+    "vs_sma50_pct": -35.3,
     "vs_sma200_pct": -52.7,
     "rsi": 22.2,
     "rsi70_streak": 0,
-    "mom_1m_pct": -39.0,
-    "mom_3m_pct": -67.2,
-    "mom_6m_pct": -52.0,
+    "mom_1m_pct": -38.5,
+    "mom_3m_pct": -67.9,
+    "mom_6m_pct": -50.7,
     "extended_context": false,
     "breakdown": false,
     "breakdown_volume_surge": false,
@@ -1302,89 +1221,6 @@
    "status": "blocked",
    "squeeze_score": 0,
    "squeeze_detail": []
-  },
-  {
-   "symbol": "ARXS",
-   "issuer": "Arxis, Inc.",
-   "score": 4,
-   "insider": {
-    "score": 2,
-    "detail": {
-     "cluster_ge3": false,
-     "opportunistic": null,
-     "big_pct_of_holdings": false,
-     "value_ge_250k": true,
-     "selling_into_strength": true,
-     "ceo_cfo_selling": false
-    },
-    "cluster": {
-     "symbol": "ARXS",
-     "issuer": "Arxis, Inc.",
-     "n_insiders": 1,
-     "total_value": 1566790,
-     "max_pct_holdings_sold": 2.7,
-     "any_ceo_cfo": false,
-     "sellers": [
-      {
-       "owner": "Sealfon Ross Bradley",
-       "role": "See Remarks",
-       "value": 1566790
-      }
-     ],
-     "first_date": "2026-11-11",
-     "last_date": "2026-11-11"
-    }
-   },
-   "si": null,
-   "borrow": null,
-   "crowd_points": 0,
-   "crowd_points_raw": 0,
-   "fund_put": null,
-   "congress_sells": null,
-   "on_threshold_list": false,
-   "tech": {
-    "price": 48.46,
-    "sma50": 50.88,
-    "sma50_rising": false,
-    "vs_sma50_pct": -4.8,
-    "vs_sma200_pct": null,
-    "rsi": 41.0,
-    "rsi70_streak": 0,
-    "mom_1m_pct": -2.5,
-    "mom_3m_pct": -8.7,
-    "mom_6m_pct": 39.3,
-    "extended_context": false,
-    "breakdown": true,
-    "breakdown_volume_surge": false,
-    "ttm_squeeze_on": true
-   },
-   "gates": [
-    {
-     "gate": "crowding",
-     "status": "unknown",
-     "detail": "no FINRA short-interest data for this name yet"
-    },
-    {
-     "gate": "borrow",
-     "status": "unknown",
-     "detail": "borrow fee not available yet (IBKR leg pending)"
-    },
-    {
-     "gate": "trend",
-     "status": "pass",
-     "detail": "not shorting into a rising trend"
-    },
-    {
-     "gate": "catalyst",
-     "status": "unknown",
-     "detail": "next earnings date not available from free sources \u2014 verify manually; no naked short within 5 trading days of earnings (report \u00a79)"
-    }
-   ],
-   "status": "watch",
-   "squeeze_score": 0,
-   "squeeze_detail": [
-    "TTM volatility compression active (coiled \u2014 breakout risk both ways)"
-   ]
   },
   {
    "symbol": "ATAT",
@@ -1431,16 +1267,16 @@
    "congress_sells": null,
    "on_threshold_list": false,
    "tech": {
-    "price": 38.05,
-    "sma50": 33.74,
+    "price": 37.96,
+    "sma50": 33.85,
     "sma50_rising": true,
-    "vs_sma50_pct": 12.8,
-    "vs_sma200_pct": 8.5,
-    "rsi": 62.9,
+    "vs_sma50_pct": 12.1,
+    "vs_sma200_pct": 8.3,
+    "rsi": 62.3,
     "rsi70_streak": 0,
-    "mom_1m_pct": 16.8,
-    "mom_3m_pct": 9.5,
-    "mom_6m_pct": 12.4,
+    "mom_1m_pct": 20.5,
+    "mom_3m_pct": 6.5,
+    "mom_6m_pct": 15.3,
     "extended_context": false,
     "breakdown": false,
     "breakdown_volume_surge": false,
@@ -1471,170 +1307,6 @@
    "status": "blocked",
    "squeeze_score": 0,
    "squeeze_detail": []
-  },
-  {
-   "symbol": "BE",
-   "issuer": "Bloom Energy Corp",
-   "score": 4,
-   "insider": {
-    "score": 1,
-    "detail": {
-     "cluster_ge3": false,
-     "opportunistic": null,
-     "big_pct_of_holdings": false,
-     "value_ge_250k": true,
-     "selling_into_strength": false,
-     "ceo_cfo_selling": false
-    },
-    "cluster": {
-     "symbol": "BE",
-     "issuer": "Bloom Energy Corp",
-     "n_insiders": 1,
-     "total_value": 1838144,
-     "max_pct_holdings_sold": 6.8,
-     "any_ceo_cfo": false,
-     "sellers": [
-      {
-       "owner": "Joshi Aman",
-       "role": "Chief Commercial Officer",
-       "value": 1838144
-      }
-     ],
-     "first_date": "2026-11-16",
-     "last_date": "2026-11-16"
-    }
-   },
-   "si": null,
-   "borrow": null,
-   "crowd_points": 0,
-   "crowd_points_raw": 0,
-   "fund_put": null,
-   "congress_sells": null,
-   "on_threshold_list": false,
-   "tech": {
-    "price": 142.39,
-    "sma50": 234.02,
-    "sma50_rising": false,
-    "vs_sma50_pct": -39.2,
-    "vs_sma200_pct": -36.4,
-    "rsi": 32.4,
-    "rsi70_streak": 0,
-    "mom_1m_pct": -34.6,
-    "mom_3m_pct": -30.2,
-    "mom_6m_pct": -52.9,
-    "extended_context": false,
-    "breakdown": true,
-    "breakdown_volume_surge": true,
-    "ttm_squeeze_on": false
-   },
-   "gates": [
-    {
-     "gate": "crowding",
-     "status": "unknown",
-     "detail": "no FINRA short-interest data for this name yet"
-    },
-    {
-     "gate": "borrow",
-     "status": "unknown",
-     "detail": "borrow fee not available yet (IBKR leg pending)"
-    },
-    {
-     "gate": "trend",
-     "status": "pass",
-     "detail": "not shorting into a rising trend"
-    },
-    {
-     "gate": "catalyst",
-     "status": "unknown",
-     "detail": "next earnings date not available from free sources \u2014 verify manually; no naked short within 5 trading days of earnings (report \u00a79)"
-    }
-   ],
-   "status": "watch",
-   "squeeze_score": 0,
-   "squeeze_detail": []
-  },
-  {
-   "symbol": "BWB",
-   "issuer": "Bridgewater Bancshares Inc",
-   "score": 4,
-   "insider": {
-    "score": 1,
-    "detail": {
-     "cluster_ge3": false,
-     "opportunistic": null,
-     "big_pct_of_holdings": false,
-     "value_ge_250k": true,
-     "selling_into_strength": false,
-     "ceo_cfo_selling": false
-    },
-    "cluster": {
-     "symbol": "BWB",
-     "issuer": "Bridgewater Bancshares Inc",
-     "n_insiders": 1,
-     "total_value": 1229628,
-     "max_pct_holdings_sold": 6.9,
-     "any_ceo_cfo": false,
-     "sellers": [
-      {
-       "owner": "Urness Todd B.",
-       "role": "Director",
-       "value": 1229628
-      }
-     ],
-     "first_date": "2026-11-19",
-     "last_date": "2026-11-19"
-    }
-   },
-   "si": null,
-   "borrow": null,
-   "crowd_points": 0,
-   "crowd_points_raw": 0,
-   "fund_put": null,
-   "congress_sells": null,
-   "on_threshold_list": false,
-   "tech": {
-    "price": 20.2,
-    "sma50": 20.54,
-    "sma50_rising": false,
-    "vs_sma50_pct": -1.7,
-    "vs_sma200_pct": 1.8,
-    "rsi": 42.1,
-    "rsi70_streak": 0,
-    "mom_1m_pct": -2.3,
-    "mom_3m_pct": -6.8,
-    "mom_6m_pct": 7.9,
-    "extended_context": false,
-    "breakdown": true,
-    "breakdown_volume_surge": true,
-    "ttm_squeeze_on": true
-   },
-   "gates": [
-    {
-     "gate": "crowding",
-     "status": "unknown",
-     "detail": "no FINRA short-interest data for this name yet"
-    },
-    {
-     "gate": "borrow",
-     "status": "unknown",
-     "detail": "borrow fee not available yet (IBKR leg pending)"
-    },
-    {
-     "gate": "trend",
-     "status": "pass",
-     "detail": "not shorting into a rising trend"
-    },
-    {
-     "gate": "catalyst",
-     "status": "unknown",
-     "detail": "next earnings date not available from free sources \u2014 verify manually; no naked short within 5 trading days of earnings (report \u00a79)"
-    }
-   ],
-   "status": "watch",
-   "squeeze_score": 0,
-   "squeeze_detail": [
-    "TTM volatility compression active (coiled \u2014 breakout risk both ways)"
-   ]
   },
   {
    "symbol": "CHEF",
@@ -1676,16 +1348,16 @@
    "congress_sells": null,
    "on_threshold_list": false,
    "tech": {
-    "price": 102.67,
-    "sma50": 108.51,
+    "price": 105.82,
+    "sma50": 108.37,
     "sma50_rising": false,
-    "vs_sma50_pct": -5.4,
-    "vs_sma200_pct": 14.0,
-    "rsi": 42.4,
+    "vs_sma50_pct": -2.4,
+    "vs_sma200_pct": 17.3,
+    "rsi": 49.5,
     "rsi70_streak": 0,
-    "mom_1m_pct": -4.3,
-    "mom_3m_pct": -9.5,
-    "mom_6m_pct": 34.3,
+    "mom_1m_pct": -0.1,
+    "mom_3m_pct": -5.3,
+    "mom_6m_pct": 37.6,
     "extended_context": false,
     "breakdown": false,
     "breakdown_volume_surge": false,
@@ -1720,35 +1392,40 @@
    ]
   },
   {
-   "symbol": "CRCL",
-   "issuer": "Circle Internet Group, Inc.",
-   "score": 4,
+   "symbol": "ACGL",
+   "issuer": "ARCH CAPITAL GROUP LTD.",
+   "score": 3,
    "insider": {
-    "score": 2,
+    "score": 3,
     "detail": {
      "cluster_ge3": false,
      "opportunistic": null,
      "big_pct_of_holdings": true,
-     "value_ge_250k": false,
+     "value_ge_250k": true,
      "selling_into_strength": false,
      "ceo_cfo_selling": false
     },
     "cluster": {
-     "symbol": "CRCL",
-     "issuer": "Circle Internet Group, Inc.",
-     "n_insiders": 1,
-     "total_value": 194220,
-     "max_pct_holdings_sold": 49.1,
+     "symbol": "ACGL",
+     "issuer": "ARCH CAPITAL GROUP LTD.",
+     "n_insiders": 2,
+     "total_value": 24786259,
+     "max_pct_holdings_sold": 82.7,
      "any_ceo_cfo": false,
      "sellers": [
       {
-       "owner": "Ostling Danita K",
+       "owner": "PASQUESI JOHN M",
        "role": "Director",
-       "value": 194220
+       "value": 19504361
+      },
+      {
+       "owner": "Rajeh Maamoun",
+       "role": "President, Arch Capital Group",
+       "value": 5281898
       }
      ],
-     "first_date": "2026-11-12",
-     "last_date": "2026-11-12"
+     "first_date": "2026-11-10",
+     "last_date": "2026-11-20"
     }
    },
    "si": null,
@@ -1759,18 +1436,18 @@
    "congress_sells": null,
    "on_threshold_list": false,
    "tech": {
-    "price": 47.51,
-    "sma50": 78.53,
-    "sma50_rising": false,
-    "vs_sma50_pct": -39.5,
-    "vs_sma200_pct": -44.6,
-    "rsi": 21.2,
+    "price": 108.63,
+    "sma50": 101.36,
+    "sma50_rising": true,
+    "vs_sma50_pct": 7.2,
+    "vs_sma200_pct": 10.9,
+    "rsi": 59.0,
     "rsi70_streak": 0,
-    "mom_1m_pct": -45.2,
-    "mom_3m_pct": -45.8,
-    "mom_6m_pct": -58.0,
+    "mom_1m_pct": 6.8,
+    "mom_3m_pct": 8.0,
+    "mom_6m_pct": 13.9,
     "extended_context": false,
-    "breakdown": true,
+    "breakdown": false,
     "breakdown_volume_surge": false,
     "ttm_squeeze_on": false
    },
@@ -1787,8 +1464,8 @@
     },
     {
      "gate": "trend",
-     "status": "pass",
-     "detail": "not shorting into a rising trend"
+     "status": "block",
+     "detail": "price above a RISING 50-day average \u2014 never short strength"
     },
     {
      "gate": "catalyst",
@@ -1796,7 +1473,7 @@
      "detail": "next earnings date not available from free sources \u2014 verify manually; no naked short within 5 trading days of earnings (report \u00a79)"
     }
    ],
-   "status": "watch",
+   "status": "blocked",
    "squeeze_score": 0,
    "squeeze_detail": []
   },
@@ -1840,16 +1517,16 @@
    "congress_sells": null,
    "on_threshold_list": false,
    "tech": {
-    "price": 190.18,
-    "sma50": 247.79,
+    "price": 214.07,
+    "sma50": 246.98,
     "sma50_rising": false,
-    "vs_sma50_pct": -23.2,
-    "vs_sma200_pct": -37.7,
-    "rsi": 36.3,
+    "vs_sma50_pct": -13.3,
+    "vs_sma200_pct": -29.8,
+    "rsi": 46.1,
     "rsi70_streak": 0,
-    "mom_1m_pct": -12.2,
-    "mom_3m_pct": -30.8,
-    "mom_6m_pct": -41.5,
+    "mom_1m_pct": -1.2,
+    "mom_3m_pct": -22.3,
+    "mom_6m_pct": -37.0,
     "extended_context": false,
     "breakdown": false,
     "breakdown_volume_surge": false,
@@ -1926,16 +1603,16 @@
    "congress_sells": null,
    "on_threshold_list": false,
    "tech": {
-    "price": 279.26,
-    "sma50": 254.98,
+    "price": 275.07,
+    "sma50": 255.42,
     "sma50_rising": true,
-    "vs_sma50_pct": 9.5,
-    "vs_sma200_pct": 19.1,
-    "rsi": 57.0,
+    "vs_sma50_pct": 7.7,
+    "vs_sma200_pct": 17.2,
+    "rsi": 52.8,
     "rsi70_streak": 0,
-    "mom_1m_pct": 3.1,
-    "mom_3m_pct": 2.7,
-    "mom_6m_pct": 36.4,
+    "mom_1m_pct": 2.6,
+    "mom_3m_pct": 2.4,
+    "mom_6m_pct": 34.9,
     "extended_context": false,
     "breakdown": false,
     "breakdown_volume_surge": false,
@@ -2007,16 +1684,16 @@
    "congress_sells": null,
    "on_threshold_list": false,
    "tech": {
-    "price": 35.67,
-    "sma50": 37.17,
+    "price": 34.72,
+    "sma50": 37.11,
     "sma50_rising": false,
-    "vs_sma50_pct": -4.0,
-    "vs_sma200_pct": -3.8,
-    "rsi": 38.5,
+    "vs_sma50_pct": -6.4,
+    "vs_sma200_pct": -6.4,
+    "rsi": 34.8,
     "rsi70_streak": 0,
-    "mom_1m_pct": -8.6,
-    "mom_3m_pct": -5.9,
-    "mom_6m_pct": -2.9,
+    "mom_1m_pct": -13.5,
+    "mom_3m_pct": -8.5,
+    "mom_6m_pct": -3.0,
     "extended_context": false,
     "breakdown": true,
     "breakdown_volume_surge": false,
@@ -2045,6 +1722,87 @@
     }
    ],
    "status": "watch",
+   "squeeze_score": 0,
+   "squeeze_detail": []
+  },
+  {
+   "symbol": "ARM",
+   "issuer": "ARM HOLDINGS PLC /UK",
+   "score": 3,
+   "insider": {
+    "score": 3,
+    "detail": {
+     "cluster_ge3": false,
+     "opportunistic": null,
+     "big_pct_of_holdings": true,
+     "value_ge_250k": true,
+     "selling_into_strength": false,
+     "ceo_cfo_selling": false
+    },
+    "cluster": {
+     "symbol": "ARM",
+     "issuer": "ARM HOLDINGS PLC /UK",
+     "n_insiders": 1,
+     "total_value": 2078930,
+     "max_pct_holdings_sold": 100.0,
+     "any_ceo_cfo": false,
+     "sellers": [
+      {
+       "owner": "Grisenthwaite Richard Roy",
+       "role": "Chief Architect",
+       "value": 2078930
+      }
+     ],
+     "first_date": "2026-11-17",
+     "last_date": "2026-11-17"
+    }
+   },
+   "si": null,
+   "borrow": null,
+   "crowd_points": 0,
+   "crowd_points_raw": 0,
+   "fund_put": null,
+   "congress_sells": null,
+   "on_threshold_list": false,
+   "tech": {
+    "price": 176.67,
+    "sma50": 238.37,
+    "sma50_rising": false,
+    "vs_sma50_pct": -25.9,
+    "vs_sma200_pct": -24.7,
+    "rsi": 42.0,
+    "rsi70_streak": 0,
+    "mom_1m_pct": -16.0,
+    "mom_3m_pct": -26.9,
+    "mom_6m_pct": -45.0,
+    "extended_context": false,
+    "breakdown": false,
+    "breakdown_volume_surge": false,
+    "ttm_squeeze_on": false
+   },
+   "gates": [
+    {
+     "gate": "crowding",
+     "status": "unknown",
+     "detail": "no FINRA short-interest data for this name yet"
+    },
+    {
+     "gate": "borrow",
+     "status": "unknown",
+     "detail": "borrow fee not available yet (IBKR leg pending)"
+    },
+    {
+     "gate": "trend",
+     "status": "pass",
+     "detail": "not shorting into a rising trend"
+    },
+    {
+     "gate": "catalyst",
+     "status": "unknown",
+     "detail": "next earnings date not available from free sources \u2014 verify manually; no naked short within 5 trading days of earnings (report \u00a79)"
+    }
+   ],
+   "status": "evidence",
    "squeeze_score": 0,
    "squeeze_detail": []
   },
@@ -2088,19 +1846,19 @@
    "congress_sells": null,
    "on_threshold_list": false,
    "tech": {
-    "price": 19.88,
+    "price": 19.91,
     "sma50": 19.8,
     "sma50_rising": true,
-    "vs_sma50_pct": 0.4,
-    "vs_sma200_pct": 28.7,
-    "rsi": 60.2,
+    "vs_sma50_pct": 0.6,
+    "vs_sma200_pct": 28.6,
+    "rsi": 63.1,
     "rsi70_streak": 0,
-    "mom_1m_pct": 0.6,
-    "mom_3m_pct": 1.1,
-    "mom_6m_pct": 15.2,
+    "mom_1m_pct": 0.7,
+    "mom_3m_pct": 1.2,
+    "mom_6m_pct": 17.6,
     "extended_context": true,
     "breakdown": false,
-    "breakdown_volume_surge": true,
+    "breakdown_volume_surge": false,
     "ttm_squeeze_on": false
    },
    "gates": [
@@ -2169,16 +1927,16 @@
    "congress_sells": null,
    "on_threshold_list": false,
    "tech": {
-    "price": 17.09,
-    "sma50": 18.89,
+    "price": 17.69,
+    "sma50": 18.86,
     "sma50_rising": false,
-    "vs_sma50_pct": -9.5,
-    "vs_sma200_pct": 0.2,
-    "rsi": 38.7,
+    "vs_sma50_pct": -6.2,
+    "vs_sma200_pct": 3.6,
+    "rsi": 43.8,
     "rsi70_streak": 0,
-    "mom_1m_pct": -11.6,
-    "mom_3m_pct": -6.4,
-    "mom_6m_pct": -9.2,
+    "mom_1m_pct": -11.7,
+    "mom_3m_pct": -1.7,
+    "mom_6m_pct": -4.0,
     "extended_context": false,
     "breakdown": false,
     "breakdown_volume_surge": false,
@@ -2209,6 +1967,258 @@
    "status": "evidence",
    "squeeze_score": 0,
    "squeeze_detail": []
+  },
+  {
+   "symbol": "ASND",
+   "issuer": "Ascendis Pharma A/S",
+   "score": 3,
+   "insider": {
+    "score": 3,
+    "detail": {
+     "cluster_ge3": false,
+     "opportunistic": null,
+     "big_pct_of_holdings": true,
+     "value_ge_250k": true,
+     "selling_into_strength": false,
+     "ceo_cfo_selling": false
+    },
+    "cluster": {
+     "symbol": "ASND",
+     "issuer": "Ascendis Pharma A/S",
+     "n_insiders": 1,
+     "total_value": 10555440,
+     "max_pct_holdings_sold": 67.3,
+     "any_ceo_cfo": false,
+     "sellers": [
+      {
+       "owner": "PEDERSEN ANNI LOTTE KIRSTINE SONDERBJERG",
+       "role": "EVP & Chief Admin Officer",
+       "value": 10555440
+      }
+     ],
+     "first_date": "2026-11-17",
+     "last_date": "2026-11-17"
+    }
+   },
+   "si": null,
+   "borrow": null,
+   "crowd_points": 0,
+   "crowd_points_raw": 0,
+   "fund_put": null,
+   "congress_sells": null,
+   "on_threshold_list": false,
+   "tech": {
+    "price": 265.72,
+    "sma50": 242.6,
+    "sma50_rising": false,
+    "vs_sma50_pct": 9.5,
+    "vs_sma200_pct": 10.2,
+    "rsi": 58.5,
+    "rsi70_streak": 0,
+    "mom_1m_pct": 9.2,
+    "mom_3m_pct": 5.0,
+    "mom_6m_pct": 10.9,
+    "extended_context": false,
+    "breakdown": false,
+    "breakdown_volume_surge": false,
+    "ttm_squeeze_on": false
+   },
+   "gates": [
+    {
+     "gate": "crowding",
+     "status": "unknown",
+     "detail": "no FINRA short-interest data for this name yet"
+    },
+    {
+     "gate": "borrow",
+     "status": "unknown",
+     "detail": "borrow fee not available yet (IBKR leg pending)"
+    },
+    {
+     "gate": "trend",
+     "status": "pass",
+     "detail": "not shorting into a rising trend"
+    },
+    {
+     "gate": "catalyst",
+     "status": "unknown",
+     "detail": "next earnings date not available from free sources \u2014 verify manually; no naked short within 5 trading days of earnings (report \u00a79)"
+    }
+   ],
+   "status": "evidence",
+   "squeeze_score": 0,
+   "squeeze_detail": []
+  },
+  {
+   "symbol": "AVIR",
+   "issuer": "Atea Pharmaceuticals, Inc.",
+   "score": 3,
+   "insider": {
+    "score": 3,
+    "detail": {
+     "cluster_ge3": false,
+     "opportunistic": null,
+     "big_pct_of_holdings": true,
+     "value_ge_250k": true,
+     "selling_into_strength": false,
+     "ceo_cfo_selling": false
+    },
+    "cluster": {
+     "symbol": "AVIR",
+     "issuer": "Atea Pharmaceuticals, Inc.",
+     "n_insiders": 2,
+     "total_value": 639608,
+     "max_pct_holdings_sold": 40.0,
+     "any_ceo_cfo": false,
+     "sellers": [
+      {
+       "owner": "Polsky Bruce",
+       "role": "Director",
+       "value": 406786
+      },
+      {
+       "owner": "Lucidi Bruno",
+       "role": "Director",
+       "value": 232822
+      }
+     ],
+     "first_date": "2026-11-16",
+     "last_date": "2026-11-19"
+    }
+   },
+   "si": null,
+   "borrow": null,
+   "crowd_points": 0,
+   "crowd_points_raw": 0,
+   "fund_put": null,
+   "congress_sells": null,
+   "on_threshold_list": false,
+   "tech": {
+    "price": 4.07,
+    "sma50": 4.62,
+    "sma50_rising": false,
+    "vs_sma50_pct": -12.0,
+    "vs_sma200_pct": -17.8,
+    "rsi": 42.3,
+    "rsi70_streak": 0,
+    "mom_1m_pct": 0.7,
+    "mom_3m_pct": -25.0,
+    "mom_6m_pct": -10.2,
+    "extended_context": false,
+    "breakdown": false,
+    "breakdown_volume_surge": false,
+    "ttm_squeeze_on": true
+   },
+   "gates": [
+    {
+     "gate": "crowding",
+     "status": "unknown",
+     "detail": "no FINRA short-interest data for this name yet"
+    },
+    {
+     "gate": "borrow",
+     "status": "unknown",
+     "detail": "borrow fee not available yet (IBKR leg pending)"
+    },
+    {
+     "gate": "tradability",
+     "status": "block",
+     "detail": "price $4.07 < $5 \u2014 outside the tradable short book"
+    },
+    {
+     "gate": "catalyst",
+     "status": "unknown",
+     "detail": "next earnings date not available from free sources \u2014 verify manually; no naked short within 5 trading days of earnings (report \u00a79)"
+    }
+   ],
+   "status": "blocked",
+   "squeeze_score": 0,
+   "squeeze_detail": [
+    "TTM volatility compression active (coiled \u2014 breakout risk both ways)"
+   ]
+  },
+  {
+   "symbol": "BAH",
+   "issuer": "Booz Allen Hamilton Holding Corp",
+   "score": 3,
+   "insider": {
+    "score": 3,
+    "detail": {
+     "cluster_ge3": false,
+     "opportunistic": null,
+     "big_pct_of_holdings": true,
+     "value_ge_250k": true,
+     "selling_into_strength": false,
+     "ceo_cfo_selling": false
+    },
+    "cluster": {
+     "symbol": "BAH",
+     "issuer": "Booz Allen Hamilton Holding Corp",
+     "n_insiders": 1,
+     "total_value": 611660,
+     "max_pct_holdings_sold": 38.7,
+     "any_ceo_cfo": false,
+     "sellers": [
+      {
+       "owner": "READ RORY P",
+       "role": "Director",
+       "value": 611660
+      }
+     ],
+     "first_date": "2026-11-17",
+     "last_date": "2026-11-17"
+    }
+   },
+   "si": null,
+   "borrow": null,
+   "crowd_points": 0,
+   "crowd_points_raw": 0,
+   "fund_put": null,
+   "congress_sells": null,
+   "on_threshold_list": false,
+   "tech": {
+    "price": 82.35,
+    "sma50": 78.69,
+    "sma50_rising": true,
+    "vs_sma50_pct": 4.7,
+    "vs_sma200_pct": 8.2,
+    "rsi": 48.6,
+    "rsi70_streak": 0,
+    "mom_1m_pct": 5.1,
+    "mom_3m_pct": 11.5,
+    "mom_6m_pct": 3.1,
+    "extended_context": false,
+    "breakdown": false,
+    "breakdown_volume_surge": false,
+    "ttm_squeeze_on": true
+   },
+   "gates": [
+    {
+     "gate": "crowding",
+     "status": "unknown",
+     "detail": "no FINRA short-interest data for this name yet"
+    },
+    {
+     "gate": "borrow",
+     "status": "unknown",
+     "detail": "borrow fee not available yet (IBKR leg pending)"
+    },
+    {
+     "gate": "trend",
+     "status": "block",
+     "detail": "price above a RISING 50-day average \u2014 never short strength"
+    },
+    {
+     "gate": "catalyst",
+     "status": "unknown",
+     "detail": "next earnings date not available from free sources \u2014 verify manually; no naked short within 5 trading days of earnings (report \u00a79)"
+    }
+   ],
+   "status": "blocked",
+   "squeeze_score": 0,
+   "squeeze_detail": [
+    "TTM volatility compression active (coiled \u2014 breakout risk both ways)"
+   ]
   }
  ],
  "squeeze_watchlist": [],
