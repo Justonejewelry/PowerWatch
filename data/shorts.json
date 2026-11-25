@@ -1,15 +1,15 @@
 {
- "updated": "2026-11-24",
+ "updated": "2026-11-25",
  "version": 2,
  "legs": {
   "insider_sells": {
    "status": "live",
    "filing_days": [
-    "2026-11-23"
+    "2026-11-24"
    ],
-   "filings_scanned": 1108,
-   "sell_txns_in_window": 5225,
-   "clusters_found": 395,
+   "filings_scanned": 1175,
+   "sell_txns_in_window": 6059,
+   "clusters_found": 439,
    "note": "SEC Form 4 code-S sales, 10b5-1 excluded, rolling 30-day cluster window. Confirmation only \u2014 never a standalone trigger (report \u00a71)."
   },
   "finra_short_interest": {
@@ -26,8 +26,8 @@
   },
   "threshold_list": {
    "status": "live",
-   "date": "2026-11-23",
-   "count": 79,
+   "date": "2026-11-24",
+   "count": 78,
    "note": "Reg SHO threshold list: >=10k shares failed AND >=0.5% of shares outstanding for 5 consecutive settlement days. Risk flag only \u2014 persistent fails historically precede POSITIVE returns (report \u00a72)."
   },
   "prices": {
@@ -40,7 +40,7 @@
   {
    "symbol": "ACHR",
    "issuer": "Archer Aviation Inc.",
-   "score": 6,
+   "score": 8,
    "insider": {
     "score": 6,
     "detail": {
@@ -92,216 +92,19 @@
    "congress_sells": null,
    "on_threshold_list": false,
    "tech": {
-    "price": 3.07,
-    "sma50": 4.47,
+    "price": 2.88,
+    "sma50": 4.42,
     "sma50_rising": false,
-    "vs_sma50_pct": -31.4,
-    "vs_sma200_pct": -44.1,
-    "rsi": 32.4,
+    "vs_sma50_pct": -34.9,
+    "vs_sma200_pct": -47.4,
+    "rsi": 30.2,
     "rsi70_streak": 0,
-    "mom_1m_pct": -21.5,
-    "mom_3m_pct": -48.5,
-    "mom_6m_pct": -52.8,
-    "extended_context": false,
-    "breakdown": false,
-    "breakdown_volume_surge": false,
-    "ttm_squeeze_on": false
-   },
-   "gates": [
-    {
-     "gate": "crowding",
-     "status": "unknown",
-     "detail": "no FINRA short-interest data for this name yet"
-    },
-    {
-     "gate": "borrow",
-     "status": "unknown",
-     "detail": "borrow fee not available yet (IBKR leg pending)"
-    },
-    {
-     "gate": "tradability",
-     "status": "block",
-     "detail": "price $3.07 < $5 \u2014 outside the tradable short book"
-    },
-    {
-     "gate": "catalyst",
-     "status": "unknown",
-     "detail": "next earnings date not available from free sources \u2014 verify manually; no naked short within 5 trading days of earnings (report \u00a79)"
-    }
-   ],
-   "status": "blocked",
-   "squeeze_score": 0,
-   "squeeze_detail": []
-  },
-  {
-   "symbol": "CRVL",
-   "issuer": "CORVEL CORP",
-   "score": 6,
-   "insider": {
-    "score": 6,
-    "detail": {
-     "cluster_ge3": true,
-     "opportunistic": null,
-     "big_pct_of_holdings": true,
-     "value_ge_250k": true,
-     "selling_into_strength": true,
-     "ceo_cfo_selling": false
-    },
-    "cluster": {
-     "symbol": "CRVL",
-     "issuer": "CORVEL CORP",
-     "n_insiders": 4,
-     "total_value": 2231004,
-     "max_pct_holdings_sold": 66.7,
-     "any_ceo_cfo": false,
-     "sellers": [
-      {
-       "owner": "HAMERSLAG STEVEN J",
-       "role": "Director",
-       "value": 924471
-      },
-      {
-       "owner": "Shishin Maxim",
-       "role": "Chief Information Officer",
-       "value": 613308
-      },
-      {
-       "owner": "Bertels Mark E.",
-       "role": "EVP - Risk Management Services",
-       "value": 511612
-      },
-      {
-       "owner": "Yoss Jennifer",
-       "role": "Vice President of Accounting",
-       "value": 181613
-      }
-     ],
-     "first_date": "2026-11-11",
-     "last_date": "2026-11-19"
-    }
-   },
-   "si": null,
-   "borrow": null,
-   "crowd_points": 0,
-   "crowd_points_raw": 0,
-   "fund_put": null,
-   "congress_sells": null,
-   "on_threshold_list": false,
-   "tech": {
-    "price": 86.23,
-    "sma50": 79.92,
-    "sma50_rising": true,
-    "vs_sma50_pct": 7.9,
-    "vs_sma200_pct": 34.4,
-    "rsi": 57.1,
-    "rsi70_streak": 0,
-    "mom_1m_pct": 2.8,
-    "mom_3m_pct": 22.9,
-    "mom_6m_pct": 41.2,
-    "extended_context": true,
-    "breakdown": false,
-    "breakdown_volume_surge": false,
-    "ttm_squeeze_on": false
-   },
-   "gates": [
-    {
-     "gate": "crowding",
-     "status": "unknown",
-     "detail": "no FINRA short-interest data for this name yet"
-    },
-    {
-     "gate": "borrow",
-     "status": "unknown",
-     "detail": "borrow fee not available yet (IBKR leg pending)"
-    },
-    {
-     "gate": "trend",
-     "status": "block",
-     "detail": "price above a RISING 50-day average \u2014 never short strength"
-    },
-    {
-     "gate": "catalyst",
-     "status": "unknown",
-     "detail": "next earnings date not available from free sources \u2014 verify manually; no naked short within 5 trading days of earnings (report \u00a79)"
-    }
-   ],
-   "status": "blocked",
-   "squeeze_score": 0,
-   "squeeze_detail": []
-  },
-  {
-   "symbol": "ACRV",
-   "issuer": "Acrivon Therapeutics, Inc.",
-   "score": 5,
-   "insider": {
-    "score": 2,
-    "detail": {
-     "cluster_ge3": true,
-     "opportunistic": null,
-     "big_pct_of_holdings": false,
-     "value_ge_250k": false,
-     "selling_into_strength": false,
-     "ceo_cfo_selling": false
-    },
-    "cluster": {
-     "symbol": "ACRV",
-     "issuer": "Acrivon Therapeutics, Inc.",
-     "n_insiders": 5,
-     "total_value": 11641,
-     "max_pct_holdings_sold": 1.6,
-     "any_ceo_cfo": false,
-     "sellers": [
-      {
-       "owner": "Blume-Jensen Peter",
-       "role": "President and CEO",
-       "value": 7743
-      },
-      {
-       "owner": "Devroe Eric",
-       "role": "Chief Operating Officer",
-       "value": 1822
-      },
-      {
-       "owner": "Gamelin Erick",
-       "role": "Chief Development Officer",
-       "value": 1206
-      },
-      {
-       "owner": "Miller Mary",
-       "role": "Chief Legal Officer",
-       "value": 560
-      },
-      {
-       "owner": "Peterson Katharine",
-       "role": "Chief Accounting Officer",
-       "value": 310
-      }
-     ],
-     "first_date": "2026-11-17",
-     "last_date": "2026-11-17"
-    }
-   },
-   "si": null,
-   "borrow": null,
-   "crowd_points": 0,
-   "crowd_points_raw": 0,
-   "fund_put": null,
-   "congress_sells": null,
-   "on_threshold_list": false,
-   "tech": {
-    "price": 1.1,
-    "sma50": 1.75,
-    "sma50_rising": false,
-    "vs_sma50_pct": -37.1,
-    "vs_sma200_pct": -36.7,
-    "rsi": 25.9,
-    "rsi70_streak": 0,
-    "mom_1m_pct": -36.4,
-    "mom_3m_pct": -49.5,
-    "mom_6m_pct": -34.1,
+    "mom_1m_pct": -26.9,
+    "mom_3m_pct": -51.2,
+    "mom_6m_pct": -56.0,
     "extended_context": false,
     "breakdown": true,
-    "breakdown_volume_surge": true,
+    "breakdown_volume_surge": false,
     "ttm_squeeze_on": false
    },
    "gates": [
@@ -318,7 +121,7 @@
     {
      "gate": "tradability",
      "status": "block",
-     "detail": "price $1.1 < $5 \u2014 outside the tradable short book"
+     "detail": "price $2.88 < $5 \u2014 outside the tradable short book"
     },
     {
      "gate": "catalyst",
@@ -385,16 +188,16 @@
    "congress_sells": null,
    "on_threshold_list": false,
    "tech": {
-    "price": 98.51,
-    "sma50": 138.96,
+    "price": 88.78,
+    "sma50": 137.05,
     "sma50_rising": false,
-    "vs_sma50_pct": -29.1,
+    "vs_sma50_pct": -35.2,
     "vs_sma200_pct": null,
-    "rsi": 44.2,
+    "rsi": 40.0,
     "rsi70_streak": 0,
-    "mom_1m_pct": -11.1,
-    "mom_3m_pct": -46.4,
-    "mom_6m_pct": -59.2,
+    "mom_1m_pct": -18.1,
+    "mom_3m_pct": -51.3,
+    "mom_6m_pct": -66.7,
     "extended_context": false,
     "breakdown": false,
     "breakdown_volume_surge": false,
@@ -476,16 +279,16 @@
    "congress_sells": null,
    "on_threshold_list": false,
    "tech": {
-    "price": 110.87,
-    "sma50": 103.35,
+    "price": 112.32,
+    "sma50": 103.71,
     "sma50_rising": true,
-    "vs_sma50_pct": 7.3,
-    "vs_sma200_pct": 11.9,
-    "rsi": 56.9,
+    "vs_sma50_pct": 8.3,
+    "vs_sma200_pct": 13.3,
+    "rsi": 60.5,
     "rsi70_streak": 0,
-    "mom_1m_pct": 5.4,
-    "mom_3m_pct": 8.1,
-    "mom_6m_pct": 14.7,
+    "mom_1m_pct": 6.6,
+    "mom_3m_pct": 9.2,
+    "mom_6m_pct": 14.6,
     "extended_context": false,
     "breakdown": false,
     "breakdown_volume_surge": false,
@@ -557,16 +360,16 @@
    "congress_sells": null,
    "on_threshold_list": false,
    "tech": {
-    "price": 28.98,
-    "sma50": 48.9,
+    "price": 28.34,
+    "sma50": 48.32,
     "sma50_rising": false,
-    "vs_sma50_pct": -40.7,
-    "vs_sma200_pct": -26.9,
-    "rsi": 19.7,
+    "vs_sma50_pct": -41.3,
+    "vs_sma200_pct": -28.6,
+    "rsi": 19.0,
     "rsi70_streak": 0,
-    "mom_1m_pct": -41.2,
-    "mom_3m_pct": -38.4,
-    "mom_6m_pct": -14.7,
+    "mom_1m_pct": -45.7,
+    "mom_3m_pct": -40.7,
+    "mom_6m_pct": -16.8,
     "extended_context": false,
     "breakdown": true,
     "breakdown_volume_surge": false,
@@ -599,55 +402,50 @@
    "squeeze_detail": []
   },
   {
-   "symbol": "CON",
-   "issuer": "Concentra Group Holdings Parent, Inc.",
+   "symbol": "CME",
+   "issuer": "CME GROUP INC.",
    "score": 5,
    "insider": {
     "score": 5,
     "detail": {
      "cluster_ge3": true,
      "opportunistic": null,
-     "big_pct_of_holdings": false,
+     "big_pct_of_holdings": true,
      "value_ge_250k": true,
-     "selling_into_strength": true,
-     "ceo_cfo_selling": true
+     "selling_into_strength": false,
+     "ceo_cfo_selling": false
     },
     "cluster": {
-     "symbol": "CON",
-     "issuer": "Concentra Group Holdings Parent, Inc.",
-     "n_insiders": 6,
-     "total_value": 12312450,
-     "max_pct_holdings_sold": 24.5,
-     "any_ceo_cfo": true,
+     "symbol": "CME",
+     "issuer": "CME GROUP INC.",
+     "n_insiders": 4,
+     "total_value": 20978906,
+     "max_pct_holdings_sold": 60.4,
+     "any_ceo_cfo": false,
      "sellers": [
       {
-       "owner": "Newton William Keith",
+       "owner": "DUFFY TERRENCE A",
+       "role": "Chairman and CEO",
+       "value": 16716920
+      },
+      {
+       "owner": "Sammann Derek",
+       "role": "Sr MD Gl Hd Commodities Mkts",
+       "value": 3244904
+      },
+      {
+       "owner": "Suskind Dennis",
        "role": "Director",
-       "value": 5885556
+       "value": 610000
       },
       {
-       "owner": "Conser Jonathan P.",
-       "role": "See Remarks",
-       "value": 1564320
-      },
-      {
-       "owner": "Devasia Thomas A.",
-       "role": "See Remarks",
-       "value": 1561954
-      },
-      {
-       "owner": "Gilbert Greg M.",
-       "role": "See Remarks",
-       "value": 1561046
-      },
-      {
-       "owner": "deLorimier John A.",
-       "role": "See Remarks",
-       "value": 1495474
+       "owner": "Marchese John Clifford",
+       "role": "Sr MD, General Counsel",
+       "value": 407082
       }
      ],
-     "first_date": "2026-11-12",
-     "last_date": "2026-11-17"
+     "first_date": "2026-11-18",
+     "last_date": "2026-11-24"
     }
    },
    "si": null,
@@ -658,17 +456,17 @@
    "congress_sells": null,
    "on_threshold_list": false,
    "tech": {
-    "price": 43.17,
-    "sma50": 38.8,
+    "price": 309.25,
+    "sma50": 290.59,
     "sma50_rising": true,
-    "vs_sma50_pct": 11.2,
-    "vs_sma200_pct": 43.4,
-    "rsi": 62.0,
+    "vs_sma50_pct": 6.4,
+    "vs_sma200_pct": 9.6,
+    "rsi": 56.6,
     "rsi70_streak": 0,
-    "mom_1m_pct": 10.0,
-    "mom_3m_pct": 24.1,
-    "mom_6m_pct": 69.1,
-    "extended_context": true,
+    "mom_1m_pct": 0.4,
+    "mom_3m_pct": 10.1,
+    "mom_6m_pct": 10.8,
+    "extended_context": false,
     "breakdown": false,
     "breakdown_volume_surge": false,
     "ttm_squeeze_on": false
@@ -739,16 +537,16 @@
    "congress_sells": null,
    "on_threshold_list": false,
    "tech": {
-    "price": 302.11,
-    "sma50": 285.56,
+    "price": 310.79,
+    "sma50": 286.25,
     "sma50_rising": true,
-    "vs_sma50_pct": 5.8,
-    "vs_sma200_pct": 23.4,
-    "rsi": 54.5,
+    "vs_sma50_pct": 8.6,
+    "vs_sma200_pct": 26.7,
+    "rsi": 62.3,
     "rsi70_streak": 0,
-    "mom_1m_pct": -0.7,
-    "mom_3m_pct": 6.8,
-    "mom_6m_pct": 38.4,
+    "mom_1m_pct": 3.2,
+    "mom_3m_pct": 10.4,
+    "mom_6m_pct": 42.8,
     "extended_context": true,
     "breakdown": false,
     "breakdown_volume_surge": false,
@@ -779,6 +577,94 @@
    "status": "blocked",
    "squeeze_score": 0,
    "squeeze_detail": []
+  },
+  {
+   "symbol": "ADUS",
+   "issuer": "Addus HomeCare Corp",
+   "score": 4,
+   "insider": {
+    "score": 4,
+    "detail": {
+     "cluster_ge3": false,
+     "opportunistic": null,
+     "big_pct_of_holdings": true,
+     "value_ge_250k": true,
+     "selling_into_strength": true,
+     "ceo_cfo_selling": false
+    },
+    "cluster": {
+     "symbol": "ADUS",
+     "issuer": "Addus HomeCare Corp",
+     "n_insiders": 2,
+     "total_value": 1192574,
+     "max_pct_holdings_sold": 37.7,
+     "any_ceo_cfo": false,
+     "sellers": [
+      {
+       "owner": "GAFFNEY SEAN",
+       "role": "EVP, Chief Legal Officer",
+       "value": 1143274
+      },
+      {
+       "owner": "Lopez Esteban",
+       "role": "Director",
+       "value": 49300
+      }
+     ],
+     "first_date": "2026-11-23",
+     "last_date": "2026-11-23"
+    }
+   },
+   "si": null,
+   "borrow": null,
+   "crowd_points": 0,
+   "crowd_points_raw": 0,
+   "fund_put": null,
+   "congress_sells": null,
+   "on_threshold_list": false,
+   "tech": {
+    "price": 123.05,
+    "sma50": 118.99,
+    "sma50_rising": true,
+    "vs_sma50_pct": 3.4,
+    "vs_sma200_pct": 14.1,
+    "rsi": 53.2,
+    "rsi70_streak": 0,
+    "mom_1m_pct": 1.6,
+    "mom_3m_pct": 1.9,
+    "mom_6m_pct": 30.9,
+    "extended_context": false,
+    "breakdown": false,
+    "breakdown_volume_surge": false,
+    "ttm_squeeze_on": true
+   },
+   "gates": [
+    {
+     "gate": "crowding",
+     "status": "unknown",
+     "detail": "no FINRA short-interest data for this name yet"
+    },
+    {
+     "gate": "borrow",
+     "status": "unknown",
+     "detail": "borrow fee not available yet (IBKR leg pending)"
+    },
+    {
+     "gate": "trend",
+     "status": "block",
+     "detail": "price above a RISING 50-day average \u2014 never short strength"
+    },
+    {
+     "gate": "catalyst",
+     "status": "unknown",
+     "detail": "next earnings date not available from free sources \u2014 verify manually; no naked short within 5 trading days of earnings (report \u00a79)"
+    }
+   ],
+   "status": "blocked",
+   "squeeze_score": 0,
+   "squeeze_detail": [
+    "TTM volatility compression active (coiled \u2014 breakout risk both ways)"
+   ]
   },
   {
    "symbol": "ALAB",
@@ -835,19 +721,19 @@
    "congress_sells": null,
    "on_threshold_list": false,
    "tech": {
-    "price": 222.12,
-    "sma50": 284.51,
+    "price": 191.3,
+    "sma50": 283.28,
     "sma50_rising": false,
-    "vs_sma50_pct": -21.9,
-    "vs_sma200_pct": -14.3,
-    "rsi": 45.8,
+    "vs_sma50_pct": -32.5,
+    "vs_sma200_pct": -26.2,
+    "rsi": 39.8,
     "rsi70_streak": 0,
-    "mom_1m_pct": -13.6,
-    "mom_3m_pct": -21.4,
-    "mom_6m_pct": -30.3,
+    "mom_1m_pct": -26.3,
+    "mom_3m_pct": -34.1,
+    "mom_6m_pct": -41.2,
     "extended_context": false,
     "breakdown": false,
-    "breakdown_volume_surge": true,
+    "breakdown_volume_surge": false,
     "ttm_squeeze_on": false
    },
    "gates": [
@@ -916,16 +802,16 @@
    "congress_sells": null,
    "on_threshold_list": false,
    "tech": {
-    "price": 27.95,
-    "sma50": 30.28,
+    "price": 29.58,
+    "sma50": 30.3,
     "sma50_rising": true,
-    "vs_sma50_pct": -7.7,
+    "vs_sma50_pct": -2.4,
     "vs_sma200_pct": null,
-    "rsi": 44.7,
+    "rsi": 49.5,
     "rsi70_streak": 0,
-    "mom_1m_pct": -8.9,
-    "mom_3m_pct": -15.4,
-    "mom_6m_pct": 46.4,
+    "mom_1m_pct": -2.7,
+    "mom_3m_pct": -13.2,
+    "mom_6m_pct": 54.7,
     "extended_context": false,
     "breakdown": false,
     "breakdown_volume_surge": false,
@@ -997,16 +883,16 @@
    "congress_sells": null,
    "on_threshold_list": false,
    "tech": {
-    "price": 54.69,
-    "sma50": 44.87,
+    "price": 54.8,
+    "sma50": 45.21,
     "sma50_rising": true,
-    "vs_sma50_pct": 21.9,
-    "vs_sma200_pct": 77.1,
-    "rsi": 60.9,
+    "vs_sma50_pct": 21.2,
+    "vs_sma200_pct": 76.6,
+    "rsi": 61.1,
     "rsi70_streak": 0,
-    "mom_1m_pct": 4.5,
-    "mom_3m_pct": 38.2,
-    "mom_6m_pct": 152.4,
+    "mom_1m_pct": 6.3,
+    "mom_3m_pct": 42.5,
+    "mom_6m_pct": 153.2,
     "extended_context": true,
     "breakdown": false,
     "breakdown_volume_surge": false,
@@ -1080,16 +966,16 @@
    "congress_sells": null,
    "on_threshold_list": false,
    "tech": {
-    "price": 15.59,
-    "sma50": 12.74,
+    "price": 15.72,
+    "sma50": 12.84,
     "sma50_rising": true,
     "vs_sma50_pct": 22.4,
-    "vs_sma200_pct": 47.4,
-    "rsi": 55.6,
+    "vs_sma200_pct": 48.2,
+    "rsi": 56.3,
     "rsi70_streak": 0,
-    "mom_1m_pct": 27.1,
-    "mom_3m_pct": 38.0,
-    "mom_6m_pct": 67.8,
+    "mom_1m_pct": 29.1,
+    "mom_3m_pct": 40.0,
+    "mom_6m_pct": 67.2,
     "extended_context": true,
     "breakdown": false,
     "breakdown_volume_surge": false,
@@ -1181,16 +1067,16 @@
    "congress_sells": null,
    "on_threshold_list": false,
    "tech": {
-    "price": 3.78,
-    "sma50": 5.84,
+    "price": 3.93,
+    "sma50": 5.74,
     "sma50_rising": false,
-    "vs_sma50_pct": -35.3,
-    "vs_sma200_pct": -52.7,
-    "rsi": 22.2,
+    "vs_sma50_pct": -31.6,
+    "vs_sma200_pct": -50.9,
+    "rsi": 28.7,
     "rsi70_streak": 0,
-    "mom_1m_pct": -38.5,
-    "mom_3m_pct": -67.9,
-    "mom_6m_pct": -50.7,
+    "mom_1m_pct": -36.2,
+    "mom_3m_pct": -66.6,
+    "mom_6m_pct": -48.5,
     "extended_context": false,
     "breakdown": false,
     "breakdown_volume_surge": false,
@@ -1210,7 +1096,7 @@
     {
      "gate": "tradability",
      "status": "block",
-     "detail": "price $3.78 < $5 \u2014 outside the tradable short book"
+     "detail": "price $3.93 < $5 \u2014 outside the tradable short book"
     },
     {
      "gate": "catalyst",
@@ -1267,16 +1153,16 @@
    "congress_sells": null,
    "on_threshold_list": false,
    "tech": {
-    "price": 37.96,
-    "sma50": 33.85,
+    "price": 39.2,
+    "sma50": 34.01,
     "sma50_rising": true,
-    "vs_sma50_pct": 12.1,
-    "vs_sma200_pct": 8.3,
-    "rsi": 62.3,
+    "vs_sma50_pct": 15.3,
+    "vs_sma200_pct": 11.8,
+    "rsi": 67.0,
     "rsi70_streak": 0,
-    "mom_1m_pct": 20.5,
-    "mom_3m_pct": 6.5,
-    "mom_6m_pct": 15.3,
+    "mom_1m_pct": 20.1,
+    "mom_3m_pct": 11.1,
+    "mom_6m_pct": 15.8,
     "extended_context": false,
     "breakdown": false,
     "breakdown_volume_surge": false,
@@ -1348,16 +1234,16 @@
    "congress_sells": null,
    "on_threshold_list": false,
    "tech": {
-    "price": 105.82,
-    "sma50": 108.37,
+    "price": 103.95,
+    "sma50": 108.32,
     "sma50_rising": false,
-    "vs_sma50_pct": -2.4,
-    "vs_sma200_pct": 17.3,
-    "rsi": 49.5,
+    "vs_sma50_pct": -4.0,
+    "vs_sma200_pct": 15.0,
+    "rsi": 45.9,
     "rsi70_streak": 0,
-    "mom_1m_pct": -0.1,
-    "mom_3m_pct": -5.3,
-    "mom_6m_pct": 37.6,
+    "mom_1m_pct": -2.2,
+    "mom_3m_pct": -7.2,
+    "mom_6m_pct": 35.3,
     "extended_context": false,
     "breakdown": false,
     "breakdown_volume_surge": false,
@@ -1436,16 +1322,16 @@
    "congress_sells": null,
    "on_threshold_list": false,
    "tech": {
-    "price": 108.63,
-    "sma50": 101.36,
+    "price": 109.69,
+    "sma50": 101.61,
     "sma50_rising": true,
-    "vs_sma50_pct": 7.2,
-    "vs_sma200_pct": 10.9,
-    "rsi": 59.0,
+    "vs_sma50_pct": 8.0,
+    "vs_sma200_pct": 11.9,
+    "rsi": 62.0,
     "rsi70_streak": 0,
-    "mom_1m_pct": 6.8,
-    "mom_3m_pct": 8.0,
-    "mom_6m_pct": 13.9,
+    "mom_1m_pct": 7.2,
+    "mom_3m_pct": 8.9,
+    "mom_6m_pct": 20.0,
     "extended_context": false,
     "breakdown": false,
     "breakdown_volume_surge": false,
@@ -1517,16 +1403,16 @@
    "congress_sells": null,
    "on_threshold_list": false,
    "tech": {
-    "price": 214.07,
-    "sma50": 246.98,
+    "price": 199.23,
+    "sma50": 245.95,
     "sma50_rising": false,
-    "vs_sma50_pct": -13.3,
-    "vs_sma200_pct": -29.8,
-    "rsi": 46.1,
+    "vs_sma50_pct": -19.0,
+    "vs_sma200_pct": -34.6,
+    "rsi": 41.8,
     "rsi70_streak": 0,
-    "mom_1m_pct": -1.2,
-    "mom_3m_pct": -22.3,
-    "mom_6m_pct": -37.0,
+    "mom_1m_pct": -9.9,
+    "mom_3m_pct": -29.6,
+    "mom_6m_pct": -39.3,
     "extended_context": false,
     "breakdown": false,
     "breakdown_volume_surge": false,
@@ -1576,23 +1462,23 @@
      "symbol": "AJG",
      "issuer": "Arthur J. Gallagher & Co.",
      "n_insiders": 2,
-     "total_value": 3560247,
-     "max_pct_holdings_sold": 14.3,
+     "total_value": 6392095,
+     "max_pct_holdings_sold": 16.1,
      "any_ceo_cfo": true,
      "sellers": [
+      {
+       "owner": "HOWELL DOUGLAS K",
+       "role": "VP & Chief Financial Officer",
+       "value": 4269198
+      },
       {
        "owner": "Pesch Michael Robert",
        "role": "Vice President",
        "value": 2122897
-      },
-      {
-       "owner": "HOWELL DOUGLAS K",
-       "role": "VP & Chief Financial Officer",
-       "value": 1437350
       }
      ],
      "first_date": "2026-11-13",
-     "last_date": "2026-11-16"
+     "last_date": "2026-11-24"
     }
    },
    "si": null,
@@ -1603,17 +1489,17 @@
    "congress_sells": null,
    "on_threshold_list": false,
    "tech": {
-    "price": 275.07,
-    "sma50": 255.42,
+    "price": 286.82,
+    "sma50": 256.19,
     "sma50_rising": true,
-    "vs_sma50_pct": 7.7,
-    "vs_sma200_pct": 17.2,
-    "rsi": 52.8,
+    "vs_sma50_pct": 12.0,
+    "vs_sma200_pct": 22.1,
+    "rsi": 61.5,
     "rsi70_streak": 0,
-    "mom_1m_pct": 2.6,
-    "mom_3m_pct": 2.4,
-    "mom_6m_pct": 34.9,
-    "extended_context": false,
+    "mom_1m_pct": 7.5,
+    "mom_3m_pct": 8.2,
+    "mom_6m_pct": 41.4,
+    "extended_context": true,
     "breakdown": false,
     "breakdown_volume_surge": false,
     "ttm_squeeze_on": false
@@ -1645,8 +1531,8 @@
    "squeeze_detail": []
   },
   {
-   "symbol": "AR",
-   "issuer": "ANTERO RESOURCES Corp",
+   "symbol": "AMPX",
+   "issuer": "Amprius Technologies, Inc.",
    "score": 3,
    "insider": {
     "score": 1,
@@ -1659,21 +1545,26 @@
      "ceo_cfo_selling": false
     },
     "cluster": {
-     "symbol": "AR",
-     "issuer": "ANTERO RESOURCES Corp",
-     "n_insiders": 1,
-     "total_value": 2221800,
-     "max_pct_holdings_sold": 19.5,
+     "symbol": "AMPX",
+     "issuer": "Amprius Technologies, Inc.",
+     "n_insiders": 2,
+     "total_value": 1073830,
+     "max_pct_holdings_sold": 11.6,
      "any_ceo_cfo": false,
      "sellers": [
       {
-       "owner": "Schultz Yvette K",
-       "role": "See Remarks",
-       "value": 2221800
+       "owner": "Sun Kang",
+       "role": "Director",
+       "value": 726564
+      },
+      {
+       "owner": "Stefan Constantin Ionel",
+       "role": "Chief Technology Officer",
+       "value": 347266
       }
      ],
-     "first_date": "2026-11-18",
-     "last_date": "2026-11-18"
+     "first_date": "2026-11-23",
+     "last_date": "2026-11-23"
     }
    },
    "si": null,
@@ -1684,16 +1575,16 @@
    "congress_sells": null,
    "on_threshold_list": false,
    "tech": {
-    "price": 34.72,
-    "sma50": 37.11,
+    "price": 5.72,
+    "sma50": 8.55,
     "sma50_rising": false,
-    "vs_sma50_pct": -6.4,
-    "vs_sma200_pct": -6.4,
-    "rsi": 34.8,
+    "vs_sma50_pct": -33.1,
+    "vs_sma200_pct": -56.1,
+    "rsi": 31.9,
     "rsi70_streak": 0,
-    "mom_1m_pct": -13.5,
-    "mom_3m_pct": -8.5,
-    "mom_6m_pct": -3.0,
+    "mom_1m_pct": -31.5,
+    "mom_3m_pct": -43.9,
+    "mom_6m_pct": -66.7,
     "extended_context": false,
     "breakdown": true,
     "breakdown_volume_surge": false,
@@ -1765,16 +1656,16 @@
    "congress_sells": null,
    "on_threshold_list": false,
    "tech": {
-    "price": 176.67,
-    "sma50": 238.37,
+    "price": 161.56,
+    "sma50": 236.77,
     "sma50_rising": false,
-    "vs_sma50_pct": -25.9,
-    "vs_sma200_pct": -24.7,
-    "rsi": 42.0,
+    "vs_sma50_pct": -31.8,
+    "vs_sma200_pct": -31.2,
+    "rsi": 38.2,
     "rsi70_streak": 0,
-    "mom_1m_pct": -16.0,
-    "mom_3m_pct": -26.9,
-    "mom_6m_pct": -45.0,
+    "mom_1m_pct": -27.7,
+    "mom_3m_pct": -35.6,
+    "mom_6m_pct": -46.6,
     "extended_context": false,
     "breakdown": false,
     "breakdown_volume_surge": false,
@@ -1803,6 +1694,87 @@
     }
    ],
    "status": "evidence",
+   "squeeze_score": 0,
+   "squeeze_detail": []
+  },
+  {
+   "symbol": "ARW",
+   "issuer": "ARROW ELECTRONICS, INC.",
+   "score": 3,
+   "insider": {
+    "score": 1,
+    "detail": {
+     "cluster_ge3": false,
+     "opportunistic": null,
+     "big_pct_of_holdings": false,
+     "value_ge_250k": true,
+     "selling_into_strength": false,
+     "ceo_cfo_selling": false
+    },
+    "cluster": {
+     "symbol": "ARW",
+     "issuer": "ARROW ELECTRONICS, INC.",
+     "n_insiders": 1,
+     "total_value": 704479,
+     "max_pct_holdings_sold": 8.0,
+     "any_ceo_cfo": false,
+     "sellers": [
+      {
+       "owner": "Nowak Eric",
+       "role": "President, Global ECS",
+       "value": 704479
+      }
+     ],
+     "first_date": "2026-11-23",
+     "last_date": "2026-11-23"
+    }
+   },
+   "si": null,
+   "borrow": null,
+   "crowd_points": 0,
+   "crowd_points_raw": 0,
+   "fund_put": null,
+   "congress_sells": null,
+   "on_threshold_list": false,
+   "tech": {
+    "price": 170.91,
+    "sma50": 211.8,
+    "sma50_rising": false,
+    "vs_sma50_pct": -19.3,
+    "vs_sma200_pct": -12.9,
+    "rsi": 33.9,
+    "rsi70_streak": 0,
+    "mom_1m_pct": -20.3,
+    "mom_3m_pct": -17.5,
+    "mom_6m_pct": -21.4,
+    "extended_context": false,
+    "breakdown": true,
+    "breakdown_volume_surge": false,
+    "ttm_squeeze_on": false
+   },
+   "gates": [
+    {
+     "gate": "crowding",
+     "status": "unknown",
+     "detail": "no FINRA short-interest data for this name yet"
+    },
+    {
+     "gate": "borrow",
+     "status": "unknown",
+     "detail": "borrow fee not available yet (IBKR leg pending)"
+    },
+    {
+     "gate": "trend",
+     "status": "pass",
+     "detail": "not shorting into a rising trend"
+    },
+    {
+     "gate": "catalyst",
+     "status": "unknown",
+     "detail": "next earnings date not available from free sources \u2014 verify manually; no naked short within 5 trading days of earnings (report \u00a79)"
+    }
+   ],
+   "status": "watch",
    "squeeze_score": 0,
    "squeeze_detail": []
   },
@@ -1846,16 +1818,16 @@
    "congress_sells": null,
    "on_threshold_list": false,
    "tech": {
-    "price": 19.91,
+    "price": 19.92,
     "sma50": 19.8,
     "sma50_rising": true,
     "vs_sma50_pct": 0.6,
-    "vs_sma200_pct": 28.6,
-    "rsi": 63.1,
+    "vs_sma200_pct": 28.3,
+    "rsi": 64.1,
     "rsi70_streak": 0,
-    "mom_1m_pct": 0.7,
-    "mom_3m_pct": 1.2,
-    "mom_6m_pct": 17.6,
+    "mom_1m_pct": 0.5,
+    "mom_3m_pct": 1.3,
+    "mom_6m_pct": 21.8,
     "extended_context": true,
     "breakdown": false,
     "breakdown_volume_surge": false,
@@ -1928,15 +1900,15 @@
    "on_threshold_list": false,
    "tech": {
     "price": 17.69,
-    "sma50": 18.86,
+    "sma50": 18.84,
     "sma50_rising": false,
-    "vs_sma50_pct": -6.2,
-    "vs_sma200_pct": 3.6,
+    "vs_sma50_pct": -6.1,
+    "vs_sma200_pct": 3.5,
     "rsi": 43.8,
     "rsi70_streak": 0,
-    "mom_1m_pct": -11.7,
-    "mom_3m_pct": -1.7,
-    "mom_6m_pct": -4.0,
+    "mom_1m_pct": -14.5,
+    "mom_3m_pct": 4.2,
+    "mom_6m_pct": 0.0,
     "extended_context": false,
     "breakdown": false,
     "breakdown_volume_surge": false,
@@ -2008,19 +1980,19 @@
    "congress_sells": null,
    "on_threshold_list": false,
    "tech": {
-    "price": 265.72,
-    "sma50": 242.6,
-    "sma50_rising": false,
-    "vs_sma50_pct": 9.5,
-    "vs_sma200_pct": 10.2,
-    "rsi": 58.5,
+    "price": 274.59,
+    "sma50": 243.3,
+    "sma50_rising": true,
+    "vs_sma50_pct": 12.9,
+    "vs_sma200_pct": 13.8,
+    "rsi": 63.6,
     "rsi70_streak": 0,
-    "mom_1m_pct": 9.2,
-    "mom_3m_pct": 5.0,
-    "mom_6m_pct": 10.9,
+    "mom_1m_pct": 12.0,
+    "mom_3m_pct": 9.7,
+    "mom_6m_pct": 16.7,
     "extended_context": false,
     "breakdown": false,
-    "breakdown_volume_surge": false,
+    "breakdown_volume_surge": true,
     "ttm_squeeze_on": false
    },
    "gates": [
@@ -2036,8 +2008,8 @@
     },
     {
      "gate": "trend",
-     "status": "pass",
-     "detail": "not shorting into a rising trend"
+     "status": "block",
+     "detail": "price above a RISING 50-day average \u2014 never short strength"
     },
     {
      "gate": "catalyst",
@@ -2045,7 +2017,7 @@
      "detail": "next earnings date not available from free sources \u2014 verify manually; no naked short within 5 trading days of earnings (report \u00a79)"
     }
    ],
-   "status": "evidence",
+   "status": "blocked",
    "squeeze_score": 0,
    "squeeze_detail": []
   },
@@ -2094,19 +2066,19 @@
    "congress_sells": null,
    "on_threshold_list": false,
    "tech": {
-    "price": 4.07,
-    "sma50": 4.62,
+    "price": 4.1,
+    "sma50": 4.6,
     "sma50_rising": false,
-    "vs_sma50_pct": -12.0,
-    "vs_sma200_pct": -17.8,
-    "rsi": 42.3,
+    "vs_sma50_pct": -10.9,
+    "vs_sma200_pct": -17.2,
+    "rsi": 43.6,
     "rsi70_streak": 0,
-    "mom_1m_pct": 0.7,
-    "mom_3m_pct": -25.0,
-    "mom_6m_pct": -10.2,
+    "mom_1m_pct": -1.4,
+    "mom_3m_pct": -25.6,
+    "mom_6m_pct": -9.9,
     "extended_context": false,
     "breakdown": false,
-    "breakdown_volume_surge": false,
+    "breakdown_volume_surge": true,
     "ttm_squeeze_on": true
    },
    "gates": [
@@ -2123,7 +2095,7 @@
     {
      "gate": "tradability",
      "status": "block",
-     "detail": "price $4.07 < $5 \u2014 outside the tradable short book"
+     "detail": "price $4.1 < $5 \u2014 outside the tradable short book"
     },
     {
      "gate": "catalyst",
@@ -2177,16 +2149,16 @@
    "congress_sells": null,
    "on_threshold_list": false,
    "tech": {
-    "price": 82.35,
-    "sma50": 78.69,
+    "price": 84.42,
+    "sma50": 78.78,
     "sma50_rising": true,
-    "vs_sma50_pct": 4.7,
-    "vs_sma200_pct": 8.2,
-    "rsi": 48.6,
+    "vs_sma50_pct": 7.2,
+    "vs_sma200_pct": 11.0,
+    "rsi": 54.5,
     "rsi70_streak": 0,
-    "mom_1m_pct": 5.1,
-    "mom_3m_pct": 11.5,
-    "mom_6m_pct": 3.1,
+    "mom_1m_pct": 1.3,
+    "mom_3m_pct": 13.7,
+    "mom_6m_pct": 4.2,
     "extended_context": false,
     "breakdown": false,
     "breakdown_volume_surge": false,

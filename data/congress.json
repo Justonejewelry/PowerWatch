@@ -1,12 +1,12 @@
 {
- "updated": "2026-11-24",
+ "updated": "2026-11-25",
  "source": "U.S. House Clerk \u2014 Periodic Transaction Reports (STOCK Act)",
  "stats": {
   "ptrs_processed": 150,
   "ptrs_with_trades": 83,
-  "ptrs_unreadable": 20,
-  "ptrs_no_stock": 47,
-  "trades_found": 766,
+  "ptrs_unreadable": 21,
+  "ptrs_no_stock": 46,
+  "trades_found": 778,
   "window_days": 120
  },
  "top_buys": [
@@ -47,10 +47,28 @@
    "est_value": 24000
   },
   {
+   "symbol": "PLD",
+   "count": 6,
+   "members": 2,
+   "est_value": 97000
+  },
+  {
+   "symbol": "MCD",
+   "count": 4,
+   "members": 2,
+   "est_value": 32000
+  },
+  {
    "symbol": "AAPL",
    "count": 4,
    "members": 2,
    "est_value": 32000
+  },
+  {
+   "symbol": "NOW",
+   "count": 3,
+   "members": 2,
+   "est_value": 391000
   },
   {
    "symbol": "CARR",
@@ -63,24 +81,6 @@
    "count": 3,
    "members": 2,
    "est_value": 115500
-  },
-  {
-   "symbol": "LIN",
-   "count": 3,
-   "members": 2,
-   "est_value": 73000
-  },
-  {
-   "symbol": "ETN",
-   "count": 3,
-   "members": 2,
-   "est_value": 48500
-  },
-  {
-   "symbol": "SNOW",
-   "count": 3,
-   "members": 2,
-   "est_value": 48500
   }
  ],
  "top_sells": [
@@ -652,6 +652,28 @@
    "doc_id": "20035563"
   },
   {
+   "member": "Harriet Hageman",
+   "state_dst": "WY00",
+   "symbol": "FLEX",
+   "type": "Sale",
+   "date": "2026-10-20",
+   "filed": "2026-11-23",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035776"
+  },
+  {
+   "member": "Harriet Hageman",
+   "state_dst": "WY00",
+   "symbol": "NOW",
+   "type": "Purchase",
+   "date": "2026-10-20",
+   "filed": "2026-11-23",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20035776"
+  },
+  {
    "member": "Thomas H. Kean",
    "state_dst": "NJ07",
    "symbol": "SYK",
@@ -765,28 +787,6 @@
    "member": "Gilbert Cisneros",
    "state_dst": "CA31",
    "symbol": "EIX",
-   "type": "Purchase",
-   "date": "2026-10-20",
-   "filed": "2026-11-10",
-   "amount_range": "$1,001 - $15,000",
-   "est_value": 8000,
-   "doc_id": "20035788"
-  },
-  {
-   "member": "Gilbert Cisneros",
-   "state_dst": "CA31",
-   "symbol": "LLY",
-   "type": "Purchase",
-   "date": "2026-10-20",
-   "filed": "2026-11-10",
-   "amount_range": "$1,001 - $15,000",
-   "est_value": 8000,
-   "doc_id": "20035788"
-  },
-  {
-   "member": "Gilbert Cisneros",
-   "state_dst": "CA31",
-   "symbol": "FIS",
    "type": "Purchase",
    "date": "2026-10-20",
    "filed": "2026-11-10",
