@@ -1,12 +1,12 @@
 {
- "updated": "2026-11-25",
+ "updated": "2026-11-26",
  "source": "U.S. House Clerk \u2014 Periodic Transaction Reports (STOCK Act)",
  "stats": {
   "ptrs_processed": 150,
   "ptrs_with_trades": 83,
-  "ptrs_unreadable": 21,
-  "ptrs_no_stock": 46,
-  "trades_found": 778,
+  "ptrs_unreadable": 20,
+  "ptrs_no_stock": 47,
+  "trades_found": 782,
   "window_days": 120
  },
  "top_buys": [
@@ -71,16 +71,16 @@
    "est_value": 391000
   },
   {
-   "symbol": "CARR",
-   "count": 3,
-   "members": 2,
-   "est_value": 215500
-  },
-  {
    "symbol": "NVO",
    "count": 3,
    "members": 2,
    "est_value": 115500
+  },
+  {
+   "symbol": "LIN",
+   "count": 3,
+   "members": 2,
+   "est_value": 73000
   }
  ],
  "top_sells": [
@@ -91,16 +91,16 @@
    "est_value": 123000
   },
   {
+   "symbol": "PG",
+   "count": 7,
+   "members": 5,
+   "est_value": 147500
+  },
+  {
    "symbol": "HD",
    "count": 7,
    "members": 5,
    "est_value": 80500
-  },
-  {
-   "symbol": "PG",
-   "count": 6,
-   "members": 4,
-   "est_value": 115000
   },
   {
    "symbol": "V",
@@ -146,6 +146,17 @@
    "doc_id": "20036891"
   },
   {
+   "member": "Kevin Hern",
+   "state_dst": "OK01",
+   "symbol": "ACLLY",
+   "type": "Sale",
+   "date": "2026-11-10",
+   "filed": "2026-11-24",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20036875"
+  },
+  {
    "member": "James French Hill",
    "state_dst": "AR02",
    "symbol": "JBGS",
@@ -155,6 +166,17 @@
    "amount_range": "$1,001 - $15,000",
    "est_value": 8000,
    "doc_id": "20035807"
+  },
+  {
+   "member": "Kevin Hern",
+   "state_dst": "OK01",
+   "symbol": "INTC",
+   "type": "Purchase",
+   "date": "2026-11-06",
+   "filed": "2026-11-24",
+   "amount_range": "$15,001 - $50,000",
+   "est_value": 32500,
+   "doc_id": "20036875"
   },
   {
    "member": "Terri A. Sewell",
@@ -421,6 +443,138 @@
    "doc_id": "20035788"
   },
   {
+   "member": "Robert For Onder",
+   "state_dst": "MO03",
+   "symbol": "AMP",
+   "type": "Sale",
+   "date": "2026-10-29",
+   "filed": "2026-11-24",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20036908"
+  },
+  {
+   "member": "Robert For Onder",
+   "state_dst": "MO03",
+   "symbol": "CMCSA",
+   "type": "Sale",
+   "date": "2026-10-29",
+   "filed": "2026-11-24",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20036908"
+  },
+  {
+   "member": "Robert For Onder",
+   "state_dst": "MO03",
+   "symbol": "DUK",
+   "type": "Sale",
+   "date": "2026-10-29",
+   "filed": "2026-11-24",
+   "amount_range": "$15,001 - $50,000",
+   "est_value": 32500,
+   "doc_id": "20036908"
+  },
+  {
+   "member": "Robert For Onder",
+   "state_dst": "MO03",
+   "symbol": "GEHCV",
+   "type": "Sale",
+   "date": "2026-10-29",
+   "filed": "2026-11-24",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20036908"
+  },
+  {
+   "member": "Robert For Onder",
+   "state_dst": "MO03",
+   "symbol": "HPQ",
+   "type": "Sale",
+   "date": "2026-10-29",
+   "filed": "2026-11-24",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20036908"
+  },
+  {
+   "member": "Robert For Onder",
+   "state_dst": "MO03",
+   "symbol": "MDT",
+   "type": "Sale",
+   "date": "2026-10-29",
+   "filed": "2026-11-24",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20036908"
+  },
+  {
+   "member": "Robert For Onder",
+   "state_dst": "MO03",
+   "symbol": "MDLZ",
+   "type": "Sale",
+   "date": "2026-10-29",
+   "filed": "2026-11-24",
+   "amount_range": "$15,001 - $50,000",
+   "est_value": 32500,
+   "doc_id": "20036908"
+  },
+  {
+   "member": "Robert For Onder",
+   "state_dst": "MO03",
+   "symbol": "PEP",
+   "type": "Sale",
+   "date": "2026-10-29",
+   "filed": "2026-11-24",
+   "amount_range": "$15,001 - $50,000",
+   "est_value": 32500,
+   "doc_id": "20036908"
+  },
+  {
+   "member": "Robert For Onder",
+   "state_dst": "MO03",
+   "symbol": "PG",
+   "type": "Sale",
+   "date": "2026-10-29",
+   "filed": "2026-11-24",
+   "amount_range": "$15,001 - $50,000",
+   "est_value": 32500,
+   "doc_id": "20036908"
+  },
+  {
+   "member": "Robert For Onder",
+   "state_dst": "MO03",
+   "symbol": "VZ",
+   "type": "Sale",
+   "date": "2026-10-29",
+   "filed": "2026-11-24",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20036908"
+  },
+  {
+   "member": "Robert For Onder",
+   "state_dst": "MO03",
+   "symbol": "VZ",
+   "type": "Sale",
+   "date": "2026-10-29",
+   "filed": "2026-11-24",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20036908"
+  },
+  {
+   "member": "Robert For Onder",
+   "state_dst": "MO03",
+   "symbol": "DIS",
+   "type": "Sale",
+   "date": "2026-10-29",
+   "filed": "2026-11-24",
+   "amount_range": "$1,001 - $15,000",
+   "est_value": 8000,
+   "doc_id": "20036908"
+  },
+  {
    "member": "Pete Sessions",
    "state_dst": "TX17",
    "symbol": "DIS",
@@ -430,6 +584,17 @@
    "amount_range": "$1,001 - $15,000",
    "est_value": 8000,
    "doc_id": "20035563"
+  },
+  {
+   "member": "Kevin Hern",
+   "state_dst": "OK01",
+   "symbol": "ROK",
+   "type": "Sale",
+   "date": "2026-10-27",
+   "filed": "2026-11-24",
+   "amount_range": "$250,001 - $500,000",
+   "est_value": 375000,
+   "doc_id": "20036875"
   },
   {
    "member": "Gilbert Cisneros",
@@ -624,171 +789,6 @@
    "symbol": "NOW",
    "type": "Purchase",
    "date": "2026-10-21",
-   "filed": "2026-11-10",
-   "amount_range": "$1,001 - $15,000",
-   "est_value": 8000,
-   "doc_id": "20035788"
-  },
-  {
-   "member": "Pete Sessions",
-   "state_dst": "TX17",
-   "symbol": "PEP",
-   "type": "Sale",
-   "date": "2026-10-21",
-   "filed": "2026-10-27",
-   "amount_range": "$1,001 - $15,000",
-   "est_value": 8000,
-   "doc_id": "20035563"
-  },
-  {
-   "member": "Pete Sessions",
-   "state_dst": "TX17",
-   "symbol": "SOLS",
-   "type": "Sale",
-   "date": "2026-10-21",
-   "filed": "2026-10-27",
-   "amount_range": "$1,001 - $15,000",
-   "est_value": 8000,
-   "doc_id": "20035563"
-  },
-  {
-   "member": "Harriet Hageman",
-   "state_dst": "WY00",
-   "symbol": "FLEX",
-   "type": "Sale",
-   "date": "2026-10-20",
-   "filed": "2026-11-23",
-   "amount_range": "$1,001 - $15,000",
-   "est_value": 8000,
-   "doc_id": "20035776"
-  },
-  {
-   "member": "Harriet Hageman",
-   "state_dst": "WY00",
-   "symbol": "NOW",
-   "type": "Purchase",
-   "date": "2026-10-20",
-   "filed": "2026-11-23",
-   "amount_range": "$1,001 - $15,000",
-   "est_value": 8000,
-   "doc_id": "20035776"
-  },
-  {
-   "member": "Thomas H. Kean",
-   "state_dst": "NJ07",
-   "symbol": "SYK",
-   "type": "Purchase",
-   "date": "2026-10-20",
-   "filed": "2026-11-19",
-   "amount_range": "$50,001 - $100,000",
-   "est_value": 75000,
-   "doc_id": "20036844"
-  },
-  {
-   "member": "Gilbert Cisneros",
-   "state_dst": "CA31",
-   "symbol": "ARE",
-   "type": "Purchase",
-   "date": "2026-10-20",
-   "filed": "2026-11-10",
-   "amount_range": "$1,001 - $15,000",
-   "est_value": 8000,
-   "doc_id": "20035788"
-  },
-  {
-   "member": "Gilbert Cisneros",
-   "state_dst": "CA31",
-   "symbol": "LNT",
-   "type": "Purchase",
-   "date": "2026-10-20",
-   "filed": "2026-11-10",
-   "amount_range": "$1,001 - $15,000",
-   "est_value": 8000,
-   "doc_id": "20035788"
-  },
-  {
-   "member": "Gilbert Cisneros",
-   "state_dst": "CA31",
-   "symbol": "APP",
-   "type": "Sale",
-   "date": "2026-10-20",
-   "filed": "2026-11-10",
-   "amount_range": "$1,001 - $15,000",
-   "est_value": 8000,
-   "doc_id": "20035788"
-  },
-  {
-   "member": "Gilbert Cisneros",
-   "state_dst": "CA31",
-   "symbol": "CF",
-   "type": "Purchase",
-   "date": "2026-10-20",
-   "filed": "2026-11-10",
-   "amount_range": "$1,001 - $15,000",
-   "est_value": 8000,
-   "doc_id": "20035788"
-  },
-  {
-   "member": "Gilbert Cisneros",
-   "state_dst": "CA31",
-   "symbol": "CMG",
-   "type": "Sale",
-   "date": "2026-10-20",
-   "filed": "2026-11-10",
-   "amount_range": "$1,001 - $15,000",
-   "est_value": 8000,
-   "doc_id": "20035788"
-  },
-  {
-   "member": "Gilbert Cisneros",
-   "state_dst": "CA31",
-   "symbol": "CINF",
-   "type": "Sale",
-   "date": "2026-10-20",
-   "filed": "2026-11-10",
-   "amount_range": "$1,001 - $15,000",
-   "est_value": 8000,
-   "doc_id": "20035788"
-  },
-  {
-   "member": "Gilbert Cisneros",
-   "state_dst": "CA31",
-   "symbol": "CSCO",
-   "type": "Purchase",
-   "date": "2026-10-20",
-   "filed": "2026-11-10",
-   "amount_range": "$1,001 - $15,000",
-   "est_value": 8000,
-   "doc_id": "20035788"
-  },
-  {
-   "member": "Gilbert Cisneros",
-   "state_dst": "CA31",
-   "symbol": "CMS",
-   "type": "Purchase",
-   "date": "2026-10-20",
-   "filed": "2026-11-10",
-   "amount_range": "$1,001 - $15,000",
-   "est_value": 8000,
-   "doc_id": "20035788"
-  },
-  {
-   "member": "Gilbert Cisneros",
-   "state_dst": "CA31",
-   "symbol": "CMCSA",
-   "type": "Purchase",
-   "date": "2026-10-20",
-   "filed": "2026-11-10",
-   "amount_range": "$1,001 - $15,000",
-   "est_value": 8000,
-   "doc_id": "20035788"
-  },
-  {
-   "member": "Gilbert Cisneros",
-   "state_dst": "CA31",
-   "symbol": "EIX",
-   "type": "Purchase",
-   "date": "2026-10-20",
    "filed": "2026-11-10",
    "amount_range": "$1,001 - $15,000",
    "est_value": 8000,
