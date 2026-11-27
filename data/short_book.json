@@ -28,7 +28,7 @@
    "unrealized_pnl": -0.7,
    "unrealized_pct": -2.1,
    "market_value": 32.63,
-   "days_held": 11,
+   "days_held": 12,
    "max_adverse_pct": 2.1,
    "below_sma50_seen": true,
    "stop_price": 46.38,
@@ -52,7 +52,7 @@
    "unrealized_pnl": 2.52,
    "unrealized_pct": 7.56,
    "market_value": 35.85,
-   "days_held": 11,
+   "days_held": 12,
    "max_adverse_pct": 0.0,
    "below_sma50_seen": true,
    "stop_price": 36.972,
@@ -76,7 +76,7 @@
    "unrealized_pnl": -0.35,
    "unrealized_pct": -1.05,
    "market_value": 32.98,
-   "days_held": 11,
+   "days_held": 12,
    "max_adverse_pct": 1.96,
    "below_sma50_seen": false,
    "stop_price": 65.412,
@@ -166,7 +166,13 @@
    "picks": [],
    "exits": [],
    "note": "Book full \u2014 no free slots today."
+  },
+  {
+   "date": "2026-11-27",
+   "picks": [],
+   "exits": [],
+   "note": "Book full \u2014 no free slots today."
   }
  ],
- "updated": "2026-11-26"
+ "updated": "2026-11-27"
 }
