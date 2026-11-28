@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27",
+ "updated": "2026-11-28",
  "source": "U.S. House Clerk \u2014 Periodic Transaction Reports (STOCK Act)",
  "stats": {
   "ptrs_processed": 150,
@@ -92,33 +92,15 @@
   },
   {
    "symbol": "PG",
-   "count": 7,
-   "members": 5,
-   "est_value": 147500
+   "count": 6,
+   "members": 4,
+   "est_value": 139500
   },
   {
    "symbol": "HD",
-   "count": 7,
-   "members": 5,
-   "est_value": 80500
-  },
-  {
-   "symbol": "V",
-   "count": 5,
-   "members": 3,
-   "est_value": 64500
-  },
-  {
-   "symbol": "COST",
-   "count": 4,
-   "members": 3,
-   "est_value": 566000
-  },
-  {
-   "symbol": "MSFT",
-   "count": 4,
-   "members": 3,
-   "est_value": 423500
+   "count": 6,
+   "members": 4,
+   "est_value": 72500
   },
   {
    "symbol": "SOLS",
@@ -127,10 +109,28 @@
    "est_value": 32000
   },
   {
-   "symbol": "WMT",
+   "symbol": "DIS",
    "count": 3,
    "members": 3,
-   "est_value": 158000
+   "est_value": 48500
+  },
+  {
+   "symbol": "MBGL",
+   "count": 4,
+   "members": 2,
+   "est_value": 199000
+  },
+  {
+   "symbol": "V",
+   "count": 4,
+   "members": 2,
+   "est_value": 56500
+  },
+  {
+   "symbol": "COST",
+   "count": 3,
+   "members": 2,
+   "est_value": 558000
   }
  ],
  "recent_trades": [
